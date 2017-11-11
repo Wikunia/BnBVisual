@@ -19,7 +19,7 @@ var g = svg.append('g');
 g.attr("transform", "translate("+(axis_width+10)+", 20)")
  .attr("width", widthActual);
 
- var legend = svg.append('g');
+ var legend = svg.append('g').attr("class","legend");
 legend.attr("transform", "translate("+(width-legend_w+10)+",20)");
 
 // define scales
@@ -33,13 +33,16 @@ let scaleC = d3.scaleOrdinal(d3.schemeCategory10);
  * @param {Array} data 
  */
 function createLegend(data) {
+    d3.selectAll(".legend > *").remove();
     // Legend text
-    let tlegend = legend.selectAll(".tlegend").data(data).enter();
-    tlegend.append("text")
+    let tlegend = legend.selectAll(".tlegend").data(data);
+    tlegend.enter().append("text")
         .attr("class", "tlegend")
         .attr("y", 10)
         .attr("font-family", "sans-serif")
         .text("Legend");
+    tlegend.exit().remove();
+
     let all_status = Array.from(data, d=>{return d.status});
     let status = [...new Set(all_status)];
     
@@ -48,44 +51,52 @@ function createLegend(data) {
     legend_status.attr("transform", "translate(0,20)");
     let height_status = 50+(10*2+5)*status.length;
     legend_dis_vars.attr("transform", "translate(0,"+height_status+")");
-    let tdisvars = legend_dis_vars.selectAll(".tdisvars").data(data).enter();
-    tdisvars.append("text")
+    let tdisvars = legend_dis_vars.selectAll(".tdisvars").data(data);
+    tdisvars.enter().append("text")
     .attr("class", "tdisvars")
     .attr("y", 10)
     .attr("font-family", "sans-serif")
     .text("Discrete Variables");
+    tdisvars.exit().remove();
 
     // status circles
-    let lStatusCircles = legend_status.selectAll(".lStatusCircles").data(status).enter();
-    lStatusCircles.append("circle")
+    let lStatusCircles = legend_status.selectAll(".lStatusCircles").data(status);
+    lStatusCircles.enter().append("circle")
         .attr("class", "lStatusCircles")
         .attr("cx", 20)
         .attr("cy", (d,i) => {return 10+(10*2+5)*i})
         .attr("r", 10)
         .attr("fill", d=> {return scaleC(d)});
-    let lStatusText = legend_status.selectAll(".lStatusText").data(status).enter();
-    lStatusText.append("text")
+    let lStatusText = legend_status.selectAll(".lStatusText").data(status);
+    lStatusText.enter().append("text")
         .attr("class", "lStatusText")
         .attr("x", 40)
         .attr("y", (d,i) => {return 15+(10*2+5)*i})
         .text(d=>{return d});
 
+    lStatusText.exit().remove();
+    lStatusCircles.exit().remove();
+
     // circles for the number of discrete variables
     let disvard = scaleR.domain();    
     let midVal = Math.round((disvard[1]+disvard[0])/10);
     let some_disvar_values = [disvard[0],midVal,disvard[1]];
-    let lDisVarsCircles = legend_dis_vars.selectAll(".lDisVarsCircles").data(some_disvar_values).enter();
-    lDisVarsCircles.append("circle")
+    let lDisVarsCircles = legend_dis_vars.selectAll(".lDisVarsCircles").data(some_disvar_values);
+    lDisVarsCircles.enter().append("circle")
         .attr("class", "lDisVarsCircles")
+        .merge(lDisVarsCircles)
         .attr("cx", 20)
         .attr("cy", (d,i) => {return 30+(scaleR.range()[1]*2+5)*i})
         .attr("r", d => {return scaleR(d)})
-    let lDisVarsText = legend_dis_vars.selectAll(".lDisVarsText").data(some_disvar_values).enter();
-    lDisVarsText.append("text")
+    let lDisVarsText = legend_dis_vars.selectAll(".lDisVarsText").data(some_disvar_values);
+    lDisVarsText.enter().append("text")
         .attr("class", "lDisVarsText")
+        .merge(lDisVarsText)
         .attr("x", 40)
         .attr("y", (d,i) => {return 35+(scaleR.range()[1]*2+5)*i})
         .text(d=>{return d});
+    lDisVarsCircles.exit().remove();
+    lDisVarsText.exit().remove();
 }
 
 /**
@@ -112,17 +123,24 @@ function render(data) {
     /* Invoke the tip in the context of your visualization */
     g.call(tip)
   
-    // draw the data
-    let timeCircles = g.selectAll(".timeCircles").data(data).enter();
-    timeCircles.append("circle")
+    // the key of the data is the instance for updating
+    let timeCircles = g.selectAll(".timeCircles").data(data, d => { return d.instance; });
+
+    timeCircles.enter().append("circle")
         .attr("class", "timeCircles")
+        .on('mouseover', tip.show)
+        .on('mouseout', tip.hide)
+        .merge(timeCircles) // enter + update
+        .transition()
         .attr("cx", (d,i) => {return scaleX(i);})
         .attr("cy", d => {return scaleY(d["time"]);})
         .attr("r", d => {return scaleR(d.int_vars+d.bin_vars)})
         .attr("fill", d=> {return scaleC(d.status)})
-        .on('mouseover', tip.show)
-        .on('mouseout', tip.hide)
+        
 
+    timeCircles.exit().remove();
+    
+    
     // create legend
     createLegend(data);
     axis.call(axisTime);
@@ -152,26 +170,39 @@ function filterSecond(data) {
 var headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
 "sense","objval","best_bound","status","time"].join(",");
 
-// First I get the file or URL data like text
-d3.text("data/bnb_data.csv", function(error, data) {
-    // Then I add the header and parse to csv
-    data = d3.csvParse(headers +"\n"+ data,d=>{
-        return {
-            stdout: d.stdout,
-            instance: d.instance.substr(0,d.instance.length-3).trim(), // get rid of .jl
-            nodes: +d.nodes,
-            bin_vars: +d.bin_vars,
-            int_vars: +d.int_vars,
-            constraints: +d.constraints,
-            sense: d.sense.trim(),
-            objval: +d.objval,
-            best_bound: +d.best_bound,
-            status: d.status.trim(),
-            time: +d.time
-        }
-    }); 
-    data = filterNoDisc(data);
-    data = filterSecond(data);
-    render(data);
+d3.select('#file')
+.on("change", function () {
+    var sect = document.getElementById("file");
+    var section = sect.options[sect.selectedIndex].value;
+    getandrenderdata(section);
 });
+
+// initial
+getandrenderdata("bnb_data");
+
+function getandrenderdata(section) {
+    // First I get the file or URL data like text
+    d3.text("data/"+section+".csv", function(error, data) {
+        // Then I add the header and parse to csv
+        data = d3.csvParse(headers +"\n"+ data,d=>{
+            return {
+                stdout: d.stdout,
+                instance: d.instance.substr(0,d.instance.length-3).trim(), // get rid of .jl
+                nodes: +d.nodes,
+                bin_vars: +d.bin_vars,
+                int_vars: +d.int_vars,
+                constraints: +d.constraints,
+                sense: d.sense.trim(),
+                objval: +d.objval,
+                best_bound: +d.best_bound,
+                status: d.status.trim(),
+                time: +d.time
+            }
+        }); 
+        data = filterNoDisc(data);
+        data = filterSecond(data);
+        render(data);        
+    });
+}
+
 
