@@ -105,6 +105,12 @@ function render(data) {
             ? d
             : d + " seconds";
     });
+
+    tip = d3.tip().attr('class', 'd3-tip').html(function(d) {
+        return "<span>"+d.instance+", "+Math.round(d.time)+" sec, "+(d.bin_vars+d.int_vars)+" dvars</span>"; 
+    });
+    /* Invoke the tip in the context of your visualization */
+    g.call(tip)
   
     // draw the data
     let timeCircles = g.selectAll(".timeCircles").data(data).enter();
@@ -114,10 +120,8 @@ function render(data) {
         .attr("cy", d => {return scaleY(d["time"]);})
         .attr("r", d => {return scaleR(d.int_vars+d.bin_vars)})
         .attr("fill", d=> {return scaleC(d.status)})
-        .append("svg:title")
-            .text(function(d, i) { 
-                return d.instance+"\n"+Math.round(d.time)+" sec\n"+(d.bin_vars+d.int_vars)+" dvars"; 
-            });
+        .on('mouseover', tip.show)
+        .on('mouseout', tip.hide)
 
     // create legend
     createLegend(data);
