@@ -99,11 +99,14 @@ function data2line(data,maxTime) {
         let times = fdata.map(d => {
             return d.time;
         });
+        times.push(1);
         times = times.sort(numberSort);
         let n = 0;
         let lastY = 0;
         for (let t of times) {
-            n += 1;
+            if (t != 1) {
+                n += 1;
+            }
             if (t >= 1) {
                 data[alg].line.push({
                     x: t,
