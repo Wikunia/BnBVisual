@@ -30,7 +30,7 @@ let scaleC = d3.scaleOrdinal(d3.schemeCategory20);
 * Draw the legend
 * @param {Array} data 
 */
-function createLegend(data) {
+function createLegend(data,maxTime,max_perc) {
     d3.selectAll(".legend > *").remove();
     // Legend text
     let tlegend = legend.selectAll(".tlegend").data(data);
@@ -51,13 +51,28 @@ function createLegend(data) {
         .attr("cx", 20)
         .attr("cy", (d,i) => {return 10+(10*2+5)*i})
         .attr("r", 3)
-        .attr("fill", d=> {return scaleC(d.alg)});
+        .attr("fill", d=> {
+            if ("no" in d && d.no) {
+                return "white";
+            } else {
+                return d.color
+            }
+        });
     let lAlgText = legend_alg.selectAll(".lAlgText").data(data);
     lAlgText.enter().append("text")
         .attr("class", "lAlgText")
         .attr("x", 40)
         .attr("y", (d,i) => {return 15+(10*2+5)*i})
-        .text(d=>{return d.alg});
+        .text(d=>{return d.alg})
+        .on("click", (d,i) => {
+            if ("no" in d && d.no) {
+                data[i].no = false
+            } else {
+                data[i].no = true;
+            }
+            console.log(data);
+            render(data,maxTime,max_perc,first_render=false);
+        });
 
     lAlgText.exit().remove();
     lAlg.exit().remove();
@@ -90,17 +105,12 @@ function data2line(data,steps) {
 /**
 * Render the instance using the data
 */
-function render(data) {
+function render(data,maxTime,max_perc,first_render=true) {
     // different scales depending on the data
     // get maximum in time
-    let maxTime = 0;
-    for (let alg in data) {
-        let maxInAlg = Math.max(...data[alg].data.map(d => {return d.time}));
-        maxTime = maxTime > maxInAlg ? maxTime : maxInAlg;
-    }
-    console.log("maxTime: ", maxTime);
+   
     scaleX.domain([1,maxTime]);
-    scaleY.domain([0,100]);
+    scaleY.domain([0,Math.min(Math.ceil(max_perc+5),100)]);
 
     // define the axis
     var axisSolved = d3.axisLeft(scaleY)
@@ -116,23 +126,34 @@ function render(data) {
             : d + "%";
     });
 
-    data,max_perc = data2line(data,numberRange(1,Math.ceil(maxTime)));
-    scaleY.domain([0,Math.min(Math.ceil(max_perc+5),100)]);
-    console.log(data);
+    let fdata = data.filter(d=> {
+        if ("no" in d && d.no) {
+            return false;
+        } else {
+            return true;
+        }
+    })
 
-    let solvedLines = g.selectAll(".solvedLines").data(data);
-    
+    let solvedLines = g.selectAll(".solvedLines").data(fdata, d=>{return d.alg});
+    console.log("fdata", fdata);
+    if (first_render) {
+        for (let di in data) {
+            data[di].color = scaleC(data[di].alg);
+        }
+    }
+
     solvedLines.enter().append("path")
         .attr("class", "solvedLines")
         .attr("d", d=>{return lineFunc(d.line);})
-        .attr("stroke", d=>{return scaleC(d.alg)});
+        .attr("stroke", d=>{
+            return d.color
+        });
             
     
     solvedLines.exit().remove();
 
     // create legend
-    createLegend(data);
-
+    createLegend(data,maxTime,max_perc);
     g.call(axisTime);
     axis.call(axisSolved);
 }
@@ -285,7 +306,14 @@ function getandrenderdata(i,files,data) {
             console.log(data);
             data = algArray(data);
             console.log("instArr: ",data);
-            render(data);
+            let maxTime = 0;
+            for (let alg in data) {
+                let maxInAlg = Math.max(...data[alg].data.map(d => {return d.time}));
+                maxTime = maxTime > maxInAlg ? maxTime : maxInAlg;
+            }
+            console.log("maxTime: ", maxTime);
+            data,max_perc = data2line(data,numberRange(1,Math.ceil(maxTime)));
+            render(data,maxTime,max_perc);
         }else {
           getandrenderdata(i+1,files,data)
         }
