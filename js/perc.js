@@ -210,7 +210,7 @@ function filterSecond(data) {
 }
 
 var files = ["bnb","bnb-bs-mi","bnb-bs-sr","bnb-p02",
-"bnb-p04","bnb-p08","bnb-p16","bnb-ts-bfs","bnb-ts-dbfs","bonmin","couenne"];
+"bnb-p04","bnb-p08","bnb-p16","bnb-ts-dfs","bnb-ts-dbfs","bonmin","couenne"];
 
 getandrenderdata(0,files,{});
 
