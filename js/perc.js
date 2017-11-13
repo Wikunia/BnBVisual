@@ -27,9 +27,11 @@ let scaleY = d3.scaleLinear().range([height-20*2,5]);
 let scaleC = d3.scaleOrdinal(d3.schemeCategory20);
 
 /**
-* Draw the legend
-* @param {Array} data 
-*/
+ * Draw legend
+ * @param {Array} data 
+ * @param {Float} maxTime 
+ * @param {Float} max_perc 
+ */
 function createLegend(data,maxTime,max_perc) {
     d3.selectAll(".legend > *").remove();
     // Legend text
@@ -70,7 +72,6 @@ function createLegend(data,maxTime,max_perc) {
             } else {
                 data[i].no = true;
             }
-            console.log(data);
             render(data,maxTime,max_perc,first_render=false);
         });
 
@@ -78,25 +79,49 @@ function createLegend(data,maxTime,max_perc) {
     lAlg.exit().remove();
 }
 
-function data2line(data,steps) {
+numberSort = function (a,b) {
+    return a - b;
+};
+
+/**
+ * Convert data to line format
+ * @param {Array} data 
+ * @param {Float} maxTime 
+ */
+function data2line(data,maxTime) {
     let max_perc = 0
     for (let alg in data) {
         let dalg = data[alg].data;
         data[alg].line = [];
-        for (let step of steps) {
-            let n = 0;
-            for (let d of dalg) {
-                if (d.time < step && d.status == "Optimal") {
-                   n += 1;
-                }                
+        let fdata = dalg.filter(d => {
+            return d.status == "Optimal";
+        });
+        let times = fdata.map(d => {
+            return d.time;
+        });
+        times = times.sort(numberSort);
+        let n = 0;
+        let lastY = 0;
+        for (let t of times) {
+            n += 1;
+            if (t >= 1) {
+                data[alg].line.push({
+                    x: t,
+                    y: (n/data[alg].data.length)*100,
+                })
+                lastY = (n/data[alg].data.length)*100;
             }
-             data[alg].line.push({
-                 x: step,
-                 y: (n/data[alg].data.length)*100,
-             })
-             if ((n/data[alg].data.length)*100 > max_perc) {
-                 max_perc = (n/data[alg].data.length)*100;
-             }
+        }
+        data[alg].line.unshift({
+            x: 1,
+            y: 0,
+        })
+        data[alg].line.push({
+            x: maxTime,
+            y: lastY,
+        })
+        if (lastY > max_perc) {
+            max_perc = lastY;
         }
     }
     return data,max_perc;
@@ -135,7 +160,6 @@ function render(data,maxTime,max_perc,first_render=true) {
     })
 
     let solvedLines = g.selectAll(".solvedLines").data(fdata, d=>{return d.alg});
-    console.log("fdata", fdata);
     if (first_render) {
         for (let di in data) {
             data[di].color = scaleC(data[di].alg);
@@ -161,15 +185,15 @@ function render(data,maxTime,max_perc,first_render=true) {
 var lineFunc = d3.line()
              .x(function(d) { return scaleX(d.x); })
              .y(function(d) { return scaleY(d.y); })
-             .curve(d3.curveLinear);
+             .curve(d3.curveStepAfter);
 /**
 * Remove data without discrete values
 * @param {Array} data 
 */
 function filterNoDisc(data) {
-return data.filter(d=>{
-    return d.bin_vars+d.int_vars
-})
+    return data.filter(d=>{
+        return d.bin_vars+d.int_vars
+    })
 }
 
 /**
@@ -177,9 +201,9 @@ return data.filter(d=>{
 * @param {Array} data 
 */
 function filterSecond(data) {
-return data.filter(d=>{
-    return d.time >= 0.5
-})
+    return data.filter(d=>{
+        return d.time >= 0.5
+    })
 }
 
 var files = ["bnb","bnb-bs-mi","bnb-bs-sr","bnb-p02",
@@ -234,7 +258,6 @@ function getDiff(left, right) {
 
 function fillNotDefined(data) {
     let keys = Object.keys(data);
-    console.log(keys);
     for (let algi in keys) {
         algi = +algi
         let alg = keys[algi];
@@ -301,18 +324,14 @@ function getandrenderdata(i,files,data) {
     getdata(file,function(d) {
         data[file] = d;
         if (i == files.length-1) {
-            console.log(data);
             data = fillNotDefined(data);
-            console.log(data);
             data = algArray(data);
-            console.log("instArr: ",data);
             let maxTime = 0;
             for (let alg in data) {
                 let maxInAlg = Math.max(...data[alg].data.map(d => {return d.time}));
                 maxTime = maxTime > maxInAlg ? maxTime : maxInAlg;
             }
-            console.log("maxTime: ", maxTime);
-            data,max_perc = data2line(data,numberRange(1,Math.ceil(maxTime)));
+            data,max_perc = data2line(data,maxTime);
             render(data,maxTime,max_perc);
         }else {
           getandrenderdata(i+1,files,data)
