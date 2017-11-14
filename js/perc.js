@@ -145,7 +145,7 @@ function render(data,maxTime,max_perc,first_render=true) {
     var axisTime = d3.axisTop(scaleX)
     axisTime.tickFormat(function(d) {
         return this.parentNode.nextSibling
-            ? d
+            ? (([1,5,10,50,100,500,1000,3000].indexOf(d) >= 0) ? d : "")
             : d + "s";
     });
     axisSolved.tickFormat(function(d) {
