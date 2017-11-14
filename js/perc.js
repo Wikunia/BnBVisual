@@ -145,7 +145,7 @@ function render(data,maxTime,max_perc,first_render=true) {
     var axisTime = d3.axisTop(scaleX)
     axisTime.tickFormat(function(d) {
         return this.parentNode.nextSibling
-            ? d
+            ? (([1,5,10,50,100,500,1000,3000].indexOf(d) >= 0) ? d : "")
             : d + "s";
     });
     axisSolved.tickFormat(function(d) {
@@ -210,7 +210,7 @@ function filterSecond(data) {
 }
 
 var files = ["bnb","bnb-bs-mi","bnb-bs-sr","bnb-p02",
-"bnb-p04","bnb-p08","bnb-p16","bnb-ts-bfs","bnb-ts-dbfs","bonmin","couenne"];
+"bnb-p04","bnb-p08","bnb-p16","bnb-ts-dfs","bnb-ts-dbfs","bonmin","couenne"];
 
 getandrenderdata(0,files,{});
 

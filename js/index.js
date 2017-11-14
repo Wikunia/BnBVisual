@@ -24,7 +24,7 @@ legend.attr("transform", "translate("+(width-legend_w+10)+",20)");
 
 // define scales
 let scaleX = d3.scaleLinear().range([0,widthActual]);
-let scaleY = d3.scaleLog().range([height-10*2,5]);
+let scaleY = d3.scaleLog().range([height-20*2,5]);
 let scaleR = d3.scaleLog();
 let scaleC = d3.scaleOrdinal(d3.schemeCategory10);
 
