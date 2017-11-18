@@ -171,6 +171,7 @@ function render(data,maxTime,max_perc,first_render=true) {
 
     solvedLines.enter().append("path")
         .attr("class", "solvedLines")
+        .attr("stroke-width", "2px")
         .attr("d", d=>{return lineFunc(d.line);})
         .attr("stroke", d=>{
             return d.color
@@ -209,7 +210,7 @@ function filterSecond(data) {
     })
 }
 
-var files = ["bnb","bnb-bs-mi","bnb-bs-sr","bnb-p02",
+var files = ["bnb","bnb-bs-mi","bnb-p02",
 "bnb-p04","bnb-p08","bnb-p16","bnb-ts-dfs","bnb-ts-dbfs","bonmin","couenne"];
 
 getandrenderdata(0,files,{});
