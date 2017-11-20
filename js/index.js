@@ -146,26 +146,7 @@ function render(data) {
     axis.call(axisTime);
 }
 
-/**
- * Remove data without discrete values
- * @param {Array} data 
- */
-function filterNoDisc(data) {
-    return data.filter(d=>{
-        return d.bin_vars+d.int_vars
-    })
-}
 
-/**
- * Remove data where the time is not long enough (for logarithmic scale)
- * @param {Array} data 
- */
-function filterSecond(data) {
-    return data.filter(d=>{
-        return d.time >= 0.5
-    })
-}
-	
 // My header
 var headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
 "sense","objval","best_bound","status","time"].join(",");
