@@ -71,7 +71,7 @@ function render(data,first_render=true) {
     let rects = {};
 
     tip = d3.tip().attr('class', 'd3-tip').html(function(d) {
-        if (d.status == "Infeasible" || d.status == "Error") {
+        if (d.status == "Infeasible" || d.status == "Error" || d.status == "Unbounded") {
             return "<span>"+d.status+"</span>";
         }
         return "<span>"+d.status+", Gap:"+(d.gap*100).toFixed(2)+"%</span>"; 
@@ -188,6 +188,40 @@ function computeGap(data,ai,i) {
 }
 
 
+function determineSortOrder(data) {
+    for (let i = 0; i < data[0].data.length; i++) {
+        let difficulty = 0;
+        for (let ai = 1; ai < data.length; ai++) {
+            let status = data[ai].data[i].status;
+            if (status == "Unbounded") {
+                difficulty += 50;
+            }
+            if (status == "Error") {
+                difficulty += 40;
+            }
+            if (status == "Infeasible") {
+                difficulty += 30;
+            }
+            if (data[ai].data[i].gap > 0.0001) {
+                difficulty += 1;
+            }
+            if (data[ai].data[i].gap > 1) {
+                difficulty += 2;
+            }
+            if (data[ai].data[i].gap > 5) {
+                difficulty += 10;
+            }
+            if (isNaN(data[ai].data[i].gap)) {
+                difficulty += 20;
+            }
+        }
+        for (let ai = 0; ai < data.length; ai++) {
+            data[ai].data[i].difficulty = difficulty;
+        }
+    }
+    return data;
+}
+
 function getandrenderdata(i,files,data) {
     let file = files[i];
     getdata(file,function(d) {
@@ -204,6 +238,13 @@ function getandrenderdata(i,files,data) {
                 maxTime = maxTime > maxInAlg ? maxTime : maxInAlg;
             }
             data = setGaps(data);
+            data = determineSortOrder(data);
+            console.log("data: ", data);
+            for (let ai = 0; ai < data.length; ai++) {
+                data[ai].data.sort((a,b) => {
+                    return a.difficulty < b.difficulty ? -1 : 1;
+                })
+            }
             render(data);
         }else {
           getandrenderdata(i+1,files,data)

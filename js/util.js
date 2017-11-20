@@ -1,3 +1,13 @@
+function getQueryVariable(variable) {
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+
 function fillNotDefined(data) {
     let keys = Object.keys(data);
     for (let algi in keys) {
@@ -67,13 +77,24 @@ function filterNoDisc(data) {
     })
 }
 
+function byDiscrete(a,b) {
+    return a.bin_vars+a.int_vars < b.bin_vars+b.int_vars ? -1 : 1;
+}
+
+function byBus(a,b) {
+    return a.bus < b.bus ? -1 : 1;
+}
+
 /**
  * Remove data where the time is not long enough (for logarithmic scale)
  * @param {Array} data 
  */
-function filterSecond(data) {
-    return data.filter(d=>{
-        return d.time >= 0.5
+function mapSecond(data) {
+    return data.map(d=>{
+        if (d.time < 1) {
+            d.time = 1;
+        }
+        return d;
     })
 }
 
