@@ -35,8 +35,11 @@ sortInst = function(a,b) {
 }
 
 function color(d) {
-    if (d.status == "Error" || d.status == "Infeasible") {
+    if (d.status == "Error") {
         return "black";
+    }
+    if (d.status == "Infeasible") {
+        return d3.rgb(50,50,50);
     }
     if (d.status == "Unbounded") {
         return d3.rgb(128,128,128);
@@ -45,6 +48,17 @@ function color(d) {
         return d3.rgb(255,0,0);
     }
     return scaleC(d.gap);
+}
+
+function strokeColor(d) {
+    let statusColor = {
+        "Error": "black",
+        "Infeasible": d3.rgb(50,50,50),
+        "Unbounded": d3.rgb(128,128,128),
+        "Optimal": "green",
+        "UserLimit": d3.rgb(255,228,0)
+    }
+    return statusColor[d.status];
 }
 
 /**
@@ -75,8 +89,10 @@ function render(data,first_render=true) {
             .on('mouseout', tip.hide)
             .attr("x", (d,i) => {return scaleX(i)})
             .attr("y", (d,i) => {return scaleY(di)})
-            .attr("width", (d,i) => {return scaleX(i+1)-scaleX(i)})
-            .attr("height", (d,i) => {return scaleY(di+1)-scaleY(di)})
+            .attr("width", (d,i) => {return scaleX(i+1)-scaleX(i)-6})
+            .attr("height", (d,i) => {return scaleY(di+1)-scaleY(di)-6})
+            .attr("stroke-width", "4px")
+            .attr("stroke", d => {return strokeColor(d)})
             .attr("fill", d => {return color(d)})
             .attr("data-objval", d => {return d.objval})
             .attr("data-status", d => {return d.status})
@@ -95,9 +111,9 @@ function render(data,first_render=true) {
     let axisTop = g.selectAll(".axisTop").data(data[0].data);
     axisTop.enter().append("text")
         .attr("class", "axisTop")
-        .attr("y", 50)
+        .attr("y", 45)
         .attr("x", (d,i) => {return scaleX(i)+(scaleX(i+1)-scaleX(i))/2})
-        .attr("transform", (d,i) => {return "rotate(330, "+(scaleX(i)+(scaleX(i+1)-scaleX(i))/2)+", 50)"} )
+        .attr("transform", (d,i) => {return "rotate(330, "+(scaleX(i)+(scaleX(i+1)-scaleX(i))/2)+", 45)"} )
         .text(d=>{
             let short = d.inst.replace("genpooling_meyer", "GP_M");
             short = short.replace("genpooling", "GP");
