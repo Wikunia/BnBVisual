@@ -243,7 +243,6 @@ function getandrenderdata(section) {
         } else {
             data.sort(byDiscrete);
         }
-        console.log(data);
         render(data);        
     });
 }

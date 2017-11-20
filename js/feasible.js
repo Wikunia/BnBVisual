@@ -239,7 +239,7 @@ function getandrenderdata(i,files,data) {
             }
             data = setGaps(data);
             data = determineSortOrder(data);
-            console.log("data: ", data);
+            // sort by difficult rank
             for (let ai = 0; ai < data.length; ai++) {
                 data[ai].data.sort((a,b) => {
                     return a.difficulty < b.difficulty ? -1 : 1;
