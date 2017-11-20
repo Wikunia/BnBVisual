@@ -190,16 +190,6 @@ var lineFunc = d3.line()
              .x(function(d) { return scaleX(d.x); })
              .y(function(d) { return scaleY(d.y); })
              .curve(d3.curveStepAfter);
-/**
-* Remove data without discrete values
-* @param {Array} data 
-*/
-function filterNoDisc(data) {
-    return data.filter(d=>{
-        return d.bin_vars+d.int_vars
-    })
-}
-
 
 var files = ["bnb","bnb-bs-mi","bnb-p02",
 "bnb-p04","bnb-p08","bnb-p16","bnb-ts-dfs","bnb-ts-dbfs","bonmin","couenne"];

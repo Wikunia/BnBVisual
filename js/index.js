@@ -4,6 +4,10 @@ var width = 1200,
 
 var legend_w = 200;
 
+// My header
+var headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
+"sense","objval","best_bound","status","time"].join(",");
+
 // Set svg width & height
 var svg = d3.select('#chart').append('svg')
     .attr('width', width)
@@ -146,10 +150,6 @@ function render(data) {
     axis.call(axisTime);
 }
 
-
-// My header
-var headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
-"sense","objval","best_bound","status","time"].join(",");
 
 d3.select('#file')
 .on("change", function () {
