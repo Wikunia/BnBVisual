@@ -83,13 +83,14 @@ function createLegend(data) {
     legend_status.attr("transform", "translate(0,20)");
     let height_status = 50+(10*2+5)*status.length;
     legend_dis_vars.attr("transform", "translate(0,"+height_status+")");
-    let tdisvars = legend_dis_vars.selectAll(".tdisvars").data(data);
-    tdisvars.enter().append("text")
-    .attr("class", "tdisvars")
+    let radiusTextObj = legend_dis_vars.selectAll(".radiusTextObj").data(data);
+    let radiusText = ots ? "#Bus" : "#Discrete Variables";
+    radiusTextObj.enter().append("text")
+    .attr("class", "radiusTextObj")
     .attr("y", 10)
     .attr("font-family", "sans-serif")
-    .text("Discrete Variables");
-    tdisvars.exit().remove();
+    .text(radiusText);
+    radiusTextObj.exit().remove();
 
     // status circles
     let lStatusCircles = legend_status.selectAll(".lStatusCircles").data(status);
