@@ -2,8 +2,8 @@ var width = 1200,
 height = 600,
 centered;
 
-var files = ["minlib","bonmin","couenne","bnb","bnb-ts-dbfs","bnb-bs-mi","bnb-p02",
-"bnb-p04","bnb-p08","bnb-p16","bnb-ts-dfs"];
+var files = ["minlib","bonmin-nlw","couenne-nlw","bnb","bnb-ts-dbfs","bnb-bs-mi","bnb-p02",
+"bnb-p04","bnb-p08","bnb-p16","bnb-ts-dfs","bonmin","couenne"];
 
 var legend_w = 100;
 

@@ -192,7 +192,7 @@ var lineFunc = d3.line()
              .curve(d3.curveStepAfter);
 
 var files = ["bnb","bnb-bs-mi","bnb-p02",
-"bnb-p04","bnb-p08","bnb-p16","bnb-ts-dfs","bnb-ts-dbfs","bonmin","couenne"];
+"bnb-p04","bnb-p08","bnb-p16","bnb-ts-dfs","bnb-ts-dbfs","bonmin","couenne","bonmin-nlw","couenne-nlw"];
 
 getandrenderdata(0,files,{});
 
