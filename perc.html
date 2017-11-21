@@ -1,20 +1,29 @@
 <html>
-    <head>
-        <title>BnB - Percentage solved</title>   
-        <meta charset="utf-8" /> 
-        <link rel="stylesheet" href="//rawgithub.com/Caged/d3-tip/master/examples/example-styles.css">
-        <link rel="stylesheet" href="css/perc.css">
-    </head>
-    <body>
+
+<head>
+    <title>BnB - Percentage solved</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="//rawgithub.com/Caged/d3-tip/master/examples/example-styles.css">
+    <link rel="stylesheet" href="css/perc.css">
+    <link rel="stylesheet" href="css/navbar.css">
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html">Home</a>
+        <a class="active" href="perc.html">Solved over time</a>
+        <a href="feasible.html">Feasibility & Objective</a>
+        <a href="ots_index.html?ots=true">OTS Bubble</a>
+    </div>
+    <div class="graphic">
         <h2>Percentage solved over time</h2>
-        <a href="index.html">back</a>
         <div id="chart"></div>
-        <script src="https://d3js.org/d3.v4.min.js"></script>
-        <script src="https://d3js.org/d3-axis.v1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.8.0-alpha.1/d3-tip.min.js"></script>
-        <script src="./js/util.js"></script>
-        <script src="./js/perc.js"></script>
-    </body>
-    </html>
-    
-    
+    </div>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-axis.v1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.8.0-alpha.1/d3-tip.min.js"></script>
+    <script src="./js/util.js"></script>
+    <script src="./js/perc.js"></script>
+</body>
+
+</html>

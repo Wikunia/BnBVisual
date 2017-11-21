@@ -1,20 +1,29 @@
 <html>
+
 <head>
-    <title>BnB - Feasibility</title>   
-    <meta charset="utf-8" /> 
+    <title>BnB - Feasibility</title>
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="//rawgithub.com/Caged/d3-tip/master/examples/example-styles.css">
     <link rel="stylesheet" href="css/perc.css">
+    <link rel="stylesheet" href="css/navbar.css">
 </head>
+
 <body>
-    <h2>Feasibility & Objective</h2>
-    <a href="index.html">back</a>
-    <div id="chart"></div>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html">Home</a>
+        <a href="perc.html">Solved over time</a>
+        <a class="active" href="feasible.html">Feasibility & Objective</a>
+        <a href="ots_index.html?ots=true">OTS Bubble</a>
+    </div>
+    <div class="graphic">
+        <h2>Feasibility & Objective</h2>
+        <div id="chart"></div>
+    </div>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://d3js.org/d3-axis.v1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.8.0-alpha.1/d3-tip.min.js"></script>
     <script src="./js/util.js"></script>
     <script src="./js/feasible.js"></script>
 </body>
-</html>
 
-    
+</html>
