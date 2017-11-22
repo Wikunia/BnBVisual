@@ -4,6 +4,17 @@ var width = 1200,
 
 var legend_w = 200;
 
+// My header
+var headers;
+var ots = false;
+if (getQueryVariable("ots") == "true") {
+    ots = true;
+    headers = ["stdout","instance","bus","branch","objval","best_bound","time","status"].join(",");
+} else {
+    headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
+    "sense","objval","best_bound","status","time"].join(",");
+}
+
 // Set svg width & height
 var svg = d3.select('#chart').append('svg')
     .attr('width', width)
@@ -26,7 +37,28 @@ legend.attr("transform", "translate("+(width-legend_w+10)+",20)");
 let scaleX = d3.scaleLinear().range([0,widthActual]);
 let scaleY = d3.scaleLog().range([height-20*2,5]);
 let scaleR = d3.scaleLog();
-let scaleC = d3.scaleOrdinal(d3.schemeCategory10);
+
+
+function getRadius(d) {
+    if (ots) {
+        return scaleR(d.bus);
+    }
+    return scaleR(d.int_vars+d.bin_vars);
+}
+
+function getColor(status) {
+    let statusColor = {
+        "UserLimit": d3.rgb(31, 119, 180),
+        "Optimal": d3.rgb(44, 160, 44),
+        "LocalOptimal": d3.rgb(44, 160, 44),
+        "Infeasible": d3.rgb(214, 39, 40),
+        "LocalInfeasible": d3.rgb(214, 39, 40),
+        "Unbounded": d3.rgb(100,100,100),
+        "Error": "black"
+    };
+    return statusColor[status];
+}
+
 
 /**
  * Draw the legend
@@ -51,13 +83,14 @@ function createLegend(data) {
     legend_status.attr("transform", "translate(0,20)");
     let height_status = 50+(10*2+5)*status.length;
     legend_dis_vars.attr("transform", "translate(0,"+height_status+")");
-    let tdisvars = legend_dis_vars.selectAll(".tdisvars").data(data);
-    tdisvars.enter().append("text")
-    .attr("class", "tdisvars")
+    let radiusTextObj = legend_dis_vars.selectAll(".radiusTextObj").data(data);
+    let radiusText = ots ? "#Bus" : "#Discrete Variables";
+    radiusTextObj.enter().append("text")
+    .attr("class", "radiusTextObj")
     .attr("y", 10)
     .attr("font-family", "sans-serif")
-    .text("Discrete Variables");
-    tdisvars.exit().remove();
+    .text(radiusText);
+    radiusTextObj.exit().remove();
 
     // status circles
     let lStatusCircles = legend_status.selectAll(".lStatusCircles").data(status);
@@ -66,7 +99,7 @@ function createLegend(data) {
         .attr("cx", 20)
         .attr("cy", (d,i) => {return 10+(10*2+5)*i})
         .attr("r", 10)
-        .attr("fill", d=> {return scaleC(d)});
+        .attr("fill", d=> {return getColor(d)});
     let lStatusText = legend_status.selectAll(".lStatusText").data(status);
     lStatusText.enter().append("text")
         .attr("class", "lStatusText")
@@ -106,8 +139,13 @@ function render(data) {
     // different scales depending on the data
     scaleX.domain([0,data.length-1]);
     scaleY.domain(d3.extent(data, d=>{return d["time"];}));
-    scaleR.range([1,(scaleX(2)-scaleX(1))/2-2])
+    if (ots) {
+        scaleR.range([1,(scaleX(2)-scaleX(1))/2-2])
+            .domain(d3.extent(data, d=>{return d.bus}));
+    } else {
+        scaleR.range([1,(scaleX(2)-scaleX(1))/2-2])
         .domain(d3.extent(data, d=>{return d.int_vars+d.bin_vars}));
+    }
 
     // define the axis
     var axisTime = d3.axisLeft(scaleY)
@@ -117,9 +155,15 @@ function render(data) {
             : d + " seconds";
     });
 
-    tip = d3.tip().attr('class', 'd3-tip').html(function(d) {
-        return "<span>"+d.instance+", "+Math.round(d.time)+" sec, "+(d.bin_vars+d.int_vars)+" dvars</span>"; 
-    });
+    if (ots) {
+        tip = d3.tip().attr('class', 'd3-tip').html(function(d) {
+            return "<span>"+d.instance+", "+Math.round(d.time)+" sec, "+(d.bus)+" bus</span>"; 
+        });
+    } else {
+        tip = d3.tip().attr('class', 'd3-tip').html(function(d) {
+            return "<span>"+d.instance+", "+Math.round(d.time)+" sec, "+(d.bin_vars+d.int_vars)+" dvars</span>"; 
+        });
+    }
     /* Invoke the tip in the context of your visualization */
     g.call(tip)
   
@@ -134,8 +178,8 @@ function render(data) {
         .transition()
         .attr("cx", (d,i) => {return scaleX(i);})
         .attr("cy", d => {return scaleY(d["time"]);})
-        .attr("r", d => {return scaleR(d.int_vars+d.bin_vars)})
-        .attr("fill", d=> {return scaleC(d.status)})
+        .attr("r", d => {return getRadius(d)})
+        .attr("fill", d=> {return getColor(d.status)})
         
 
     timeCircles.exit().remove();
@@ -146,29 +190,6 @@ function render(data) {
     axis.call(axisTime);
 }
 
-/**
- * Remove data without discrete values
- * @param {Array} data 
- */
-function filterNoDisc(data) {
-    return data.filter(d=>{
-        return d.bin_vars+d.int_vars
-    })
-}
-
-/**
- * Remove data where the time is not long enough (for logarithmic scale)
- * @param {Array} data 
- */
-function filterSecond(data) {
-    return data.filter(d=>{
-        return d.time >= 0.5
-    })
-}
-	
-// My header
-var headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
-"sense","objval","best_bound","status","time"].join(",");
 
 d3.select('#file')
 .on("change", function () {
@@ -178,29 +199,51 @@ d3.select('#file')
 });
 
 // initial
-getandrenderdata("bnb_data");
+var sect = document.getElementById("file");
+var section = sect.options[sect.selectedIndex].value;
+getandrenderdata(section);
 
 function getandrenderdata(section) {
     // First I get the file or URL data like text
     d3.text("data/"+section+".csv", function(error, data) {
         // Then I add the header and parse to csv
         data = d3.csvParse(headers +"\n"+ data,d=>{
-            return {
-                stdout: d.stdout,
-                instance: d.instance.substr(0,d.instance.length-3).trim(), // get rid of .jl
-                nodes: +d.nodes,
-                bin_vars: +d.bin_vars,
-                int_vars: +d.int_vars,
-                constraints: +d.constraints,
-                sense: d.sense.trim(),
-                objval: +d.objval,
-                best_bound: +d.best_bound,
-                status: d.status.trim(),
-                time: +d.time
+            if (ots) {
+                return {
+                    stdout: d.stdout,
+                    instance: d.instance, 
+                    bus: +d.bus,
+                    branch: +d.branch,
+                    objval: +d.objval,
+                    best_bound: +d.best_bound,
+                    status: d.status.trim(),
+                    time: +d.time
+                }
+            } else {
+                return {
+                    stdout: d.stdout,
+                    instance: d.instance.substr(0,d.instance.length-3).trim(), // get rid of .jl
+                    nodes: +d.nodes,
+                    bin_vars: +d.bin_vars,
+                    int_vars: +d.int_vars,
+                    constraints: +d.constraints,
+                    sense: d.sense.trim(),
+                    objval: +d.objval,
+                    best_bound: +d.best_bound,
+                    status: d.status.trim(),
+                    time: +d.time
+                }
             }
         }); 
-        data = filterNoDisc(data);
-        data = filterSecond(data);
+        if (!ots) {
+            data = filterNoDisc(data);
+        }
+        data = mapSecond(data);
+        if (ots) {
+            data.sort(byBus);
+        } else {
+            data.sort(byDiscrete);
+        }
         render(data);        
     });
 }
