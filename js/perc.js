@@ -9,7 +9,7 @@ var files;
 if (getQueryVariable("ots") == "true") {
     ots = true;
     headers = ["stdout","instance","bus","branch","objval","best_bound","time","status"].join(",");
-    files = ["ots-minlpbnb","ots-bonmin","ots-couenne"];
+    files = ["ots-minlpbnb","ots-bonmin","ots-couenne","ots-bonmin-nlw","ots-couenne-nlw"];
 } else {
     headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
     "sense","objval","best_bound","status","time"].join(",");
