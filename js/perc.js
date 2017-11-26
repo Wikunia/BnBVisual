@@ -2,6 +2,21 @@ var width = 1200,
 height = 600,
 centered;
 
+// My header
+var headers;
+var ots = false;
+var files;
+if (getQueryVariable("ots") == "true") {
+    ots = true;
+    headers = ["stdout","instance","bus","branch","objval","best_bound","time","status"].join(",");
+    files = ["ots-minlpbnb","ots-bonmin","ots-couenne","ots-bonmin-nlw","ots-couenne-nlw"];
+} else {
+    headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
+    "sense","objval","best_bound","status","time"].join(",");
+    files = ["bnb","bnb-bs-mi","bnb-p02",
+    "bnb-p04","bnb-p08","bnb-p16","bnb-ts-dfs","bnb-ts-dbfs","bonmin","couenne","bonmin-nlw","couenne-nlw"];
+}
+
 var legend_w = 200;
 
 // Set svg width & height
@@ -65,7 +80,11 @@ function createLegend(data,maxTime,max_perc) {
         .attr("class", "lAlgText")
         .attr("x", 40)
         .attr("y", (d,i) => {return 15+(10*2+5)*i})
-        .text(d=>{return d.alg})
+        .text(d=>{
+            let t = d.alg;
+            t = t.replace("ots-","")
+            return t;
+        })
         .on("click", (d,i) => {
             if ("no" in d && d.no) {
                 data[i].no = false
@@ -94,7 +113,7 @@ function data2line(data,maxTime) {
         let dalg = data[alg].data;
         data[alg].line = [];
         let fdata = dalg.filter(d => {
-            return d.status == "Optimal";
+            return d.status == "Optimal" || d.status == "LocalOptimal";
         });
         let times = fdata.map(d => {
             return d.time;
@@ -136,7 +155,6 @@ function data2line(data,maxTime) {
 function render(data,maxTime,max_perc,first_render=true) {
     // different scales depending on the data
     // get maximum in time
-   
     scaleX.domain([1,maxTime]);
     scaleY.domain([0,Math.min(Math.ceil(max_perc+5),100)]);
 
@@ -191,35 +209,43 @@ var lineFunc = d3.line()
              .y(function(d) { return scaleY(d.y); })
              .curve(d3.curveStepAfter);
 
-var files = ["bnb","bnb-bs-mi","bnb-p02",
-"bnb-p04","bnb-p08","bnb-p16","bnb-ts-dfs","bnb-ts-dbfs","bonmin","couenne","bonmin-nlw","couenne-nlw"];
-
 getandrenderdata(0,files,{});
-
-// My header
-var headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
-"sense","objval","best_bound","status","time"].join(",");
 
 function getdata(section,cb) {
     // First I get the file or URL data like text
     d3.text("data/"+section+"_data.csv", function(error, data) {
         // Then I add the header and parse to csv
         data = d3.csvParse(headers +"\n"+ data,d=>{
-            return {
-                stdout: d.stdout,
-                instance: d.instance.substr(0,d.instance.length-3).trim(), // get rid of .jl
-                nodes: +d.nodes,
-                bin_vars: +d.bin_vars,
-                int_vars: +d.int_vars,
-                constraints: +d.constraints,
-                sense: d.sense.trim(),
-                objval: +d.objval,
-                best_bound: +d.best_bound,
-                status: d.status.trim(),
-                time: +d.time
+            if (ots) {
+                return {
+                    stdout: d.stdout,
+                    instance: d.instance, 
+                    bus: +d.bus,
+                    branch: +d.branch,
+                    objval: +d.objval,
+                    best_bound: +d.best_bound,
+                    status: d.status.trim(),
+                    time: +d.time
+                }
+            } else {
+                return {
+                    stdout: d.stdout,
+                    instance: d.instance.substr(0,d.instance.length-3).trim(), // get rid of .jl
+                    nodes: +d.nodes,
+                    bin_vars: +d.bin_vars,
+                    int_vars: +d.int_vars,
+                    constraints: +d.constraints,
+                    sense: d.sense.trim(),
+                    objval: +d.objval,
+                    best_bound: +d.best_bound,
+                    status: d.status.trim(),
+                    time: +d.time
+                }
             }
         }); 
-        data = filterNoDisc(data);
+        if (!ots) {
+            data = filterNoDisc(data);
+        }
         cb(data);   
     });
 }
