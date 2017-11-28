@@ -121,10 +121,13 @@ function data2line(data,maxTime) {
         times.push(1);
         times = times.sort(numberSort);
         let n = 0;
-        let lastY = 0;
+        let first = true;
         for (let t of times) {
-            if (t != 1) {
-                n += 1;
+            // if there is a problem which took exactly 1s
+            if (first && t == 1) {
+                first = false;
+            } else {
+                n += 1
             }
             if (t >= 1) {
                 data[alg].line.push({
@@ -219,7 +222,7 @@ function getdata(section,cb) {
             if (ots) {
                 return {
                     stdout: d.stdout,
-                    instance: d.instance, 
+                    instance: d.instance.trim(), 
                     bus: +d.bus,
                     branch: +d.branch,
                     objval: +d.objval,
