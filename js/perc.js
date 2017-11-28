@@ -260,6 +260,8 @@ function getandrenderdata(i,files,data) {
         if (i == files.length-1) {
             data = fillNotDefined(data);
             data = algArray(data);
+            nof_instances = data[0].data.length;
+            d3.select("#title").text(d3.select("#title").text()+" ("+nof_instances+" Instances) ");
             let maxTime = 0;
             for (let alg in data) {
                 let maxInAlg = Math.max(...data[alg].data.map(d => {return d.time}));
