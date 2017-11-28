@@ -244,6 +244,7 @@ function getandrenderdata(section) {
         } else {
             data.sort(byDiscrete);
         }
+        console.log("data: ", data);
         render(data);        
     });
 }
