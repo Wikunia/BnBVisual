@@ -222,7 +222,7 @@ function getdata(section,cb) {
             if (ots) {
                 return {
                     stdout: d.stdout,
-                    instance: d.instance, 
+                    instance: d.instance.trim(), 
                     bus: +d.bus,
                     branch: +d.branch,
                     objval: +d.objval,
