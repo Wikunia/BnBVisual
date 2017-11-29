@@ -254,7 +254,7 @@ function getandrenderdata(section) {
             }
         }); 
         if (!ots) {
-            data = filterNoDisc(data);
+            data = filterInstances(data);
         }
         data = mapSecond(data);
         if (ots) {

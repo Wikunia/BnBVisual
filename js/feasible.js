@@ -220,6 +220,7 @@ function determineSortOrder(data) {
 function getandrenderdata(i,files,data) {
     let file = files[i];
     getdata(file,function(d) {
+        d = filterInstances(d);
         data[file] = d;
         if (i == files.length-1) {
             data = fillNotDefined(data);

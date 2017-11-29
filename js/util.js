@@ -1,3 +1,25 @@
+var listOfProblems = 
+[
+ "ex1223a","meanvarx","blend721","util","blend029","blend531",
+ "gear4","johnall","blend718","genpooling_lee1","genpooling_lee2",
+ "ndcc12","blend852","fuel","elf","genpooling_meyer15","ex1264",
+ "ex1266","ex1265","genpooling_meyer10","genpooling_meyer4",
+ "saa_2","blend480","o8_ar4_1","blend146","multiplants_mtg1a",
+ "kport20","kport40","primary","carton7","forest","graphpart_clique_50","wager"
+];
+
+function filterInstances(data) {
+    data = data.filter(d => {
+        if (listOfProblems.indexOf(d.instance) >= 0) {
+            return true;
+        } else {
+            console.log(d.instance);
+            return false;
+        }
+    });
+    return data;
+}
+
 function getQueryVariable(variable) {
        var query = window.location.search.substring(1);
        var vars = query.split("&");

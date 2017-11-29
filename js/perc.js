@@ -231,6 +231,7 @@ function getdata(section,cb) {
                     time: +d.time
                 }
             } else {
+                
                 return {
                     stdout: d.stdout,
                     instance: d.instance.substr(0,d.instance.length-3).trim(), // get rid of .jl
@@ -256,6 +257,7 @@ function getdata(section,cb) {
 function getandrenderdata(i,files,data) {
     let file = files[i];
     getdata(file,function(d) {
+        d = filterInstances(d);
         data[file] = d;
         if (i == files.length-1) {
             data = fillNotDefined(data);
