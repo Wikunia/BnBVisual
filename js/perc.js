@@ -14,7 +14,7 @@ if (getQueryVariable("ots") == "true") {
     headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
     "sense","objval","best_bound","status","time"].join(",");
     files = ["bnb","bnb-bs-mi","bnb-bs-r","bnb-p02",
-    "bnb-p04","bnb-p08","bnb-p16","bnb-ts-dfs","bnb-ts-dbfs","bonmin","couenne","bonmin-nlw","couenne-nlw","scip-nlw"];
+    "bnb-p04","bnb-p08","bnb-p16","bnb-ts-dfs","bnb-ts-dbfs","bonmin","couenne","bonmin-nlw","couenne-nlw","scip-nlw","knitro-nlw"];
 }
 
 var legend_w = 200;
