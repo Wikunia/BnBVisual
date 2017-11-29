@@ -2,8 +2,8 @@ var width = 1200,
 height = 600,
 centered;
 
-var files = ["minlib","bonmin-nlw","couenne-nlw","scip-nlw","knitro-nlw","bnb","bnb-ts-dbfs","bnb-bs-r","bnb-bs-mi","bnb-p02",
-"bnb-p04","bnb-p08","bnb-p16","bnb-ts-dfs","bonmin","couenne"];
+var files = ["minlib","bonmin-nlw","couenne-nlw","scip-nlw","knitro-nlw","bnb","bnb-ts-dbfs","bnb-bs-r","bnb-bs-nsr","bnb-bs-mi","bnb-p03",
+"bnb-p05","bnb-p09","bnb-p17","bnb-ts-dfs","bonmin","couenne"];
 
 var legend_w = 100;
 
