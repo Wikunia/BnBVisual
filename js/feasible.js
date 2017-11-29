@@ -162,7 +162,7 @@ function getdata(section,cb) {
                     sense: d.sense.trim(),
                     objval: +d.objval,
                     best_bound: +d.best_bound,
-                    status: d.status.trim(),
+                    status: getRealStatus(d),
                     time: +d.time
                 }
             }); 
@@ -176,19 +176,10 @@ function getdata(section,cb) {
 function setGaps(data) {
     for (let i = 0; i < data[0].data.length; i++) {
         for (let ai = 1; ai < data.length; ai++) {
-            data[ai].data[i].gap = computeGap(data,ai,i);
+            data[ai].data[i].gap = computeGlobGap(data,ai,i);
         }
     }
     return data;
-}
-
-function computeGap(data,ai,i) {
-    let realObj = data[0].data[i].objval;
-    let obj = data[ai].data[i].objval;
-    if (data[ai].data[i].status == "Optimal" && data[ai].data[i].status == "UserLimit") {
-        return NaN;
-    }
-    return Math.abs(realObj-obj)/Math.abs(obj);
 }
 
 

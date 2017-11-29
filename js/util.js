@@ -121,3 +121,25 @@ function algArray(data) {
     }
     return algArr;
 }
+
+
+function computeGlobGap(data,ai,i) {
+    let realObj = data[0].data[i].objval;
+    let obj = data[ai].data[i].objval;
+    if (data[ai].data[i].status == "Optimal" && data[ai].data[i].status == "UserLimit") {
+        return NaN;
+    }
+    return Math.abs(realObj-obj)/Math.abs(obj);
+}
+
+/**
+ * Change the status from UserLimit to Status if time limit not reached
+ * @param {Object} d one data object
+ */
+function getRealStatus(d) {
+    d.status = d.status.trim();
+    if ((d.status == "UserLimit") && (d.time <= 3500)) { // close to 1h
+        return "Optimal";
+    }
+    return d.status;
+}
