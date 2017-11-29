@@ -180,6 +180,7 @@ function render(data) {
         .attr("cy", d => {return scaleY(d["time"]);})
         .attr("r", d => {return getRadius(d)})
         .attr("fill", d=> {return getColor(d.status)})
+        .attr("id", d => {return "circle-"+d.instance;})
         
 
     timeCircles.exit().remove();
@@ -198,6 +199,23 @@ d3.select('#file')
     getandrenderdata(section);
 });
 
+d3.select('#instance_search')
+.on("keyup", function () {
+    var instname = document.getElementById("instance_search").value;
+    console.log(instname)
+    for (let circle of g.selectAll(".timeCircles").data()) {
+        if ((circle.instance.indexOf(instname) >= 0) && (instname.length > 0)) {
+            console.log(circle.instance)
+            g.select("#circle-"+circle.instance)
+            .attr("stroke-width", "2px")
+            .attr("stroke", "orange")
+        } else {
+            g.select("#circle-"+circle.instance)
+            .attr("stroke-width", "0px")
+        }
+    }
+});
+
 // initial
 var sect = document.getElementById("file");
 var section = sect.options[sect.selectedIndex].value;
@@ -211,7 +229,7 @@ function getandrenderdata(section) {
             if (ots) {
                 return {
                     stdout: d.stdout,
-                    instance: d.instance, 
+                    instance: d.instance.trim(), 
                     bus: +d.bus,
                     branch: +d.branch,
                     objval: +d.objval,
@@ -244,6 +262,7 @@ function getandrenderdata(section) {
         } else {
             data.sort(byDiscrete);
         }
+        console.log("data: ", data);
         render(data);        
     });
 }

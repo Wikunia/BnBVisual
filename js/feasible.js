@@ -2,7 +2,7 @@ var width = 1200,
 height = 600,
 centered;
 
-var files = ["minlib","bonmin-nlw","couenne-nlw","bnb","bnb-ts-dbfs","bnb-bs-mi","bnb-p02",
+var files = ["minlib","bonmin-nlw","couenne-nlw","scip-nlw","bnb","bnb-ts-dbfs","bnb-bs-r","bnb-bs-mi","bnb-p02",
 "bnb-p04","bnb-p08","bnb-p16","bnb-ts-dfs","bonmin","couenne"];
 
 var legend_w = 100;
@@ -71,6 +71,10 @@ function render(data,first_render=true) {
     let rects = {};
 
     tip = d3.tip().attr('class', 'd3-tip').html(function(d) {
+        if (d.alg == "minlib") {
+            // show objective for minlip (which just represents the global objective)
+            return "<span>Obj: "+d.objval+"</span>";
+        }
         if (d.status == "Infeasible" || d.status == "Error" || d.status == "Unbounded") {
             return "<span>"+d.status+"</span>";
         }
@@ -85,7 +89,7 @@ function render(data,first_render=true) {
         rects[alg] = g.selectAll(".rects-"+alg).data(data[di].data);
         rects[alg].enter().append("rect")
             .attr("class", "rects-"+alg)
-            .on('mouseover', (d) => {if (di > 0) {return tip.show(d)}})
+            .on('mouseover', (d) => {return tip.show(d)})
             .on('mouseout', tip.hide)
             .attr("x", (d,i) => {return scaleX(i)})
             .attr("y", (d,i) => {return scaleY(di)})

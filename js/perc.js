@@ -13,8 +13,8 @@ if (getQueryVariable("ots") == "true") {
 } else {
     headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
     "sense","objval","best_bound","status","time"].join(",");
-    files = ["bnb","bnb-bs-mi","bnb-p02",
-    "bnb-p04","bnb-p08","bnb-p16","bnb-ts-dfs","bnb-ts-dbfs","bonmin","couenne","bonmin-nlw","couenne-nlw"];
+    files = ["bnb","bnb-bs-mi","bnb-bs-r","bnb-p02",
+    "bnb-p04","bnb-p08","bnb-p16","bnb-ts-dfs","bnb-ts-dbfs","bonmin","couenne","bonmin-nlw","couenne-nlw","scip-nlw"];
 }
 
 var legend_w = 200;
@@ -121,10 +121,13 @@ function data2line(data,maxTime) {
         times.push(1);
         times = times.sort(numberSort);
         let n = 0;
-        let lastY = 0;
+        let first = true;
         for (let t of times) {
-            if (t != 1) {
-                n += 1;
+            // if there is a problem which took exactly 1s
+            if (first && t == 1) {
+                first = false;
+            } else {
+                n += 1
             }
             if (t >= 1) {
                 data[alg].line.push({
@@ -219,7 +222,7 @@ function getdata(section,cb) {
             if (ots) {
                 return {
                     stdout: d.stdout,
-                    instance: d.instance, 
+                    instance: d.instance.trim(), 
                     bus: +d.bus,
                     branch: +d.branch,
                     objval: +d.objval,
