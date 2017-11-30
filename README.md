@@ -1,6 +1,6 @@
-# Visualization of MINLPBnB
+# Visualization of Juniper
 
-Different visualizations for [MINLPBnB](https://github.com/Wikunia/MINLPBnB)
+Different visualizations for [Juniper](https://github.com/lanl-ansi/Juniper)
 
 ## Visualization of status, time and number of discrete variables
 
