@@ -227,7 +227,7 @@ function getdata(section,cb) {
                     branch: +d.branch,
                     objval: +d.objval,
                     best_bound: +d.best_bound,
-                    status: getRealStatus(d),
+                    status: d.status.trim(),
                     time: +d.time
                 }
             } else {
