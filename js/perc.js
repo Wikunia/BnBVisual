@@ -13,8 +13,8 @@ if (getQueryVariable("ots") == "true") {
 } else {
     headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
     "sense","objval","best_bound","status","time"].join(",");
-    files = ["bnb","bnb-bs-mi","bnb-bs-r","bnb-p02",
-    "bnb-p04","bnb-p08","bnb-p16","bnb-ts-dfs","bnb-ts-dbfs","bonmin","couenne","bonmin-nlw","couenne-nlw","scip-nlw"];
+    files = ["bnb","bnb-bs-mi","bnb-bs-nsr","bnb-bs-r","bnb-p03",
+    "bnb-p05","bnb-p09","bnb-p17","bnb-ts-dfs","bnb-ts-dbfs","bonmin","couenne","bonmin-nlw","couenne-nlw","scip-nlw","knitro-nlw"];
 }
 
 var legend_w = 200;
@@ -227,10 +227,11 @@ function getdata(section,cb) {
                     branch: +d.branch,
                     objval: +d.objval,
                     best_bound: +d.best_bound,
-                    status: d.status.trim(),
+                    status: getRealStatus(d),
                     time: +d.time
                 }
             } else {
+                
                 return {
                     stdout: d.stdout,
                     instance: d.instance.substr(0,d.instance.length-3).trim(), // get rid of .jl
@@ -241,7 +242,7 @@ function getdata(section,cb) {
                     sense: d.sense.trim(),
                     objval: +d.objval,
                     best_bound: +d.best_bound,
-                    status: d.status.trim(),
+                    status: getRealStatus(d),
                     time: +d.time
                 }
             }
@@ -256,10 +257,13 @@ function getdata(section,cb) {
 function getandrenderdata(i,files,data) {
     let file = files[i];
     getdata(file,function(d) {
+        d = filterInstances(d);
         data[file] = d;
         if (i == files.length-1) {
             data = fillNotDefined(data);
             data = algArray(data);
+            nof_instances = data[0].data.length;
+            d3.select("#title").text(d3.select("#title").text()+" ("+nof_instances+" Instances) ");
             let maxTime = 0;
             for (let alg in data) {
                 let maxInAlg = Math.max(...data[alg].data.map(d => {return d.time}));

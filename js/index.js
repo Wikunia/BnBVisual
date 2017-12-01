@@ -234,7 +234,7 @@ function getandrenderdata(section) {
                     branch: +d.branch,
                     objval: +d.objval,
                     best_bound: +d.best_bound,
-                    status: d.status.trim(),
+                    status: getRealStatus(d),
                     time: +d.time
                 }
             } else {
@@ -248,13 +248,13 @@ function getandrenderdata(section) {
                     sense: d.sense.trim(),
                     objval: +d.objval,
                     best_bound: +d.best_bound,
-                    status: d.status.trim(),
+                    status: getRealStatus(d),
                     time: +d.time
                 }
             }
         }); 
         if (!ots) {
-            data = filterNoDisc(data);
+            data = filterInstances(data);
         }
         data = mapSecond(data);
         if (ots) {

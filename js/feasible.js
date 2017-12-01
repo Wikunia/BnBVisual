@@ -2,8 +2,8 @@ var width = 1200,
 height = 600,
 centered;
 
-var files = ["minlib","bonmin-nlw","couenne-nlw","scip-nlw","bnb","bnb-ts-dbfs","bnb-bs-r","bnb-bs-mi","bnb-p02",
-"bnb-p04","bnb-p08","bnb-p16","bnb-ts-dfs","bonmin","couenne"];
+var files = ["minlib","bonmin-nlw","couenne-nlw","scip-nlw","knitro-nlw","bnb","bnb-ts-dbfs","bnb-bs-r","bnb-bs-nsr","bnb-bs-mi","bnb-p03",
+"bnb-p05","bnb-p09","bnb-p17","bnb-ts-dfs","bonmin","couenne"];
 
 var legend_w = 100;
 
@@ -162,7 +162,7 @@ function getdata(section,cb) {
                     sense: d.sense.trim(),
                     objval: +d.objval,
                     best_bound: +d.best_bound,
-                    status: d.status.trim(),
+                    status: getRealStatus(d),
                     time: +d.time
                 }
             }); 
@@ -176,19 +176,10 @@ function getdata(section,cb) {
 function setGaps(data) {
     for (let i = 0; i < data[0].data.length; i++) {
         for (let ai = 1; ai < data.length; ai++) {
-            data[ai].data[i].gap = computeGap(data,ai,i);
+            data[ai].data[i].gap = computeGlobGap(data,ai,i);
         }
     }
     return data;
-}
-
-function computeGap(data,ai,i) {
-    let realObj = data[0].data[i].objval;
-    let obj = data[ai].data[i].objval;
-    if (data[ai].data[i].status == "Optimal" && data[ai].data[i].status == "UserLimit") {
-        return NaN;
-    }
-    return Math.abs(realObj-obj)/Math.abs(obj);
 }
 
 
@@ -229,6 +220,7 @@ function determineSortOrder(data) {
 function getandrenderdata(i,files,data) {
     let file = files[i];
     getdata(file,function(d) {
+        d = filterInstances(d);
         data[file] = d;
         if (i == files.length-1) {
             data = fillNotDefined(data);

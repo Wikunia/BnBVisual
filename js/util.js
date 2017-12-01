@@ -1,3 +1,25 @@
+var listOfProblems = 
+[
+ "ex1223a","meanvarx","blend721","util","blend029","blend531",
+ "gear4","johnall","blend718","genpooling_lee1","genpooling_lee2",
+ "ndcc12","blend852","fuel","elf","genpooling_meyer15","ex1264",
+ "ex1266","ex1265","genpooling_meyer10","genpooling_meyer4",
+ "saa_2","blend480","o8_ar4_1","blend146","multiplants_mtg1a",
+ "kport20","kport40","primary","carton7","forest","graphpart_clique_50","wager"
+];
+
+function filterInstances(data) {
+    data = data.filter(d => {
+        if (listOfProblems.indexOf(d.instance) >= 0) {
+            return true;
+        } else {
+            console.log(d.instance);
+            return false;
+        }
+    });
+    return data;
+}
+
 function getQueryVariable(variable) {
        var query = window.location.search.substring(1);
        var vars = query.split("&");
@@ -120,4 +142,26 @@ function algArray(data) {
         algArr.push({alg: alg, data:algObj[alg]})
     }
     return algArr;
+}
+
+
+function computeGlobGap(data,ai,i) {
+    let realObj = data[0].data[i].objval;
+    let obj = data[ai].data[i].objval;
+    if (data[ai].data[i].status == "Optimal" && data[ai].data[i].status == "UserLimit") {
+        return NaN;
+    }
+    return Math.abs(realObj-obj)/Math.abs(obj);
+}
+
+/**
+ * Change the status from UserLimit to Status if time limit not reached
+ * @param {Object} d one data object
+ */
+function getRealStatus(d) {
+    d.status = d.status.trim();
+    if ((d.status == "UserLimit") && (d.time <= 3500)) { // close to 1h
+        return "Optimal";
+    }
+    return d.status;
 }
