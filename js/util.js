@@ -3,9 +3,9 @@ var listOfProblems =
  "ex1223a","meanvarx","blend721","util","blend029","blend531",
  "gear4","johnall","blend718","genpooling_lee1","genpooling_lee2",
  "ndcc12","blend852","fuel","elf","genpooling_meyer15","ex1264",
- "ex1266","ex1265","genpooling_meyer10","genpooling_meyer4",
+ "ex1266","ex1265","genpooling_meyer10","genpooling_meyer04",
  "saa_2","blend480","o8_ar4_1","blend146","multiplants_mtg1a",
- "kport20","kport40","primary","carton7","forest","graphpart_clique_50","wager"
+ "kport20","kport40","primary","carton7","forest","graphpart_clique-50","wager"
 ];
 
 function filterInstances(data) {

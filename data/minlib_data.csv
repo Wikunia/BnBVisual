@@ -1,6 +1,5 @@
 kport20.jl,31.80929820,2,38
 graphpart_clique-50.jl,,150,0
-graphpart_clique_50.jl,,150,0
 castro15m2.jl,,0,0
 castro6m2.jl,,0,0
 house.jl,-4500,0,0
@@ -13,7 +12,7 @@ wager.jl,20339.43184,30,54
 castro7m2.jl,,0,0
 util.jl,999.5787502,28,0
 genpooling_meyer15.jl,943734.04360000,352,0
-genpooling_meyer4.jl,1086187.13700000,55,0
+genpooling_meyer04.jl,1086187.13700000,55,0
 castro12m2.jl,,0,0
 primary.jl,-1.28796692,8,52
 kport40.jl,37.17581241,3,111
