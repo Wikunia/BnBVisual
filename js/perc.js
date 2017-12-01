@@ -9,12 +9,12 @@ var files;
 if (getQueryVariable("ots") == "true") {
     ots = true;
     headers = ["stdout","instance","bus","branch","objval","best_bound","time","status"].join(",");
-    files = ["ots-minlpbnb","ots-bonmin","ots-couenne","ots-bonmin-nlw","ots-couenne-nlw"];
+    files = ["ots-juniper","ots-bonmin","ots-couenne","ots-bonmin-nlw","ots-couenne-nlw"];
 } else {
     headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
     "sense","objval","best_bound","status","time"].join(",");
-    files = ["bnb","bnb-bs-mi","bnb-bs-nsr","bnb-bs-r","bnb-p03",
-    "bnb-p05","bnb-p09","bnb-p17","bnb-ts-dfs","bnb-ts-dbfs","bonmin","couenne","bonmin-nlw","couenne-nlw","scip-nlw","knitro-nlw"];
+    files = ["juniper","juniper-bs-mi","juniper-bs-nsr","juniper-bs-r","juniper-p03",
+    "juniper-p05","juniper-p09","juniper-p17","juniper-ts-dfs","juniper-ts-dbfs","bonmin-nlw","couenne-nlw","scip-nlw","knitro-nlw"];
 }
 
 var legend_w = 200;
@@ -231,7 +231,7 @@ function getdata(section,cb) {
                     time: +d.time
                 }
             } else {
-                
+                console.log(d);
                 return {
                     stdout: d.stdout,
                     instance: d.instance.substr(0,d.instance.length-3).trim(), // get rid of .jl

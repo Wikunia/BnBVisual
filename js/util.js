@@ -13,7 +13,6 @@ function filterInstances(data) {
         if (listOfProblems.indexOf(d.instance) >= 0) {
             return true;
         } else {
-            console.log(d.instance);
             return false;
         }
     });

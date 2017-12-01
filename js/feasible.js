@@ -2,8 +2,8 @@ var width = 1200,
 height = 600,
 centered;
 
-var files = ["minlib","bonmin-nlw","couenne-nlw","scip-nlw","knitro-nlw","bnb","bnb-ts-dbfs","bnb-bs-r","bnb-bs-nsr","bnb-bs-mi","bnb-p03",
-"bnb-p05","bnb-p09","bnb-p17","bnb-ts-dfs","bonmin","couenne"];
+var files = ["minlib","bonmin-nlw","couenne-nlw","scip-nlw","knitro-nlw","juniper","juniper-ts-dbfs","juniper-bs-r","juniper-bs-nsr","juniper-bs-mi","juniper-p03",
+"juniper-p05","juniper-p09","juniper-p17","juniper-ts-dfs"];
 
 var legend_w = 100;
 
@@ -12,7 +12,7 @@ var svg = d3.select('#chart').append('svg')
 .attr('width', width)
 .attr('height', height);
 
-let axis_width = 80;
+let axis_width = 100;
 
 var axis = svg.append('g');
 axis.attr("transform", "translate(0, 20)");
