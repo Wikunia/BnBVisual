@@ -133,7 +133,8 @@ function algArray(data) {
                 gap = NaN;
             }
             algObj[alg].push({alg: alg, inst: inst, time:o.time,status:o.status,
-                 objval: o.objval, best_bound: o.best_bound, gap: gap});
+                 objval: o.objval, best_bound: o.best_bound, gap: gap,
+                nodes: o.nodes, constraints: o.constraints});
         }
     }   
     let algArr = [];
@@ -150,7 +151,7 @@ function computeGlobGap(data,ai,i) {
     if (data[ai].data[i].status == "Optimal" && data[ai].data[i].status == "UserLimit") {
         return NaN;
     }
-    return Math.abs(realObj-obj)/Math.abs(obj);
+    return Math.abs(realObj-obj)/Math.abs(realObj);
 }
 
 /**
