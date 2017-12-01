@@ -257,7 +257,9 @@ function getdata(section,cb) {
 function getandrenderdata(i,files,data) {
     let file = files[i];
     getdata(file,function(d) {
-        d = filterInstances(d);
+        if (!ots) {
+            d = filterInstances(d);
+        }
         data[file] = d;
         if (i == files.length-1) {
             data = fillNotDefined(data);
