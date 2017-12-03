@@ -3,7 +3,8 @@ height = 600,
 centered;
 
 var files = ["minlib","bonmin-nlw","couenne-nlw","scip-nlw","knitro-nlw","juniper","juniper-ts-dbfs","juniper-bs-r","juniper-bs-nsr","juniper-bs-mi","juniper-p03",
-"juniper-p05","juniper-p09","juniper-p17","juniper-ts-dfs"];
+"juniper-p05","juniper-p09","juniper-p17","juniper-ts-dfs","juniper-nic",
+"juniper-fp-cbc","juniper-fp-cbc-nic","juniper-fp-grb"];
 
 var legend_w = 100;
 

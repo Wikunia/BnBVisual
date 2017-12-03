@@ -14,7 +14,9 @@ if (getQueryVariable("ots") == "true") {
     headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
     "sense","objval","best_bound","status","time"].join(",");
     files = ["juniper","juniper-bs-mi","juniper-bs-nsr","juniper-bs-r","juniper-p03",
-    "juniper-p05","juniper-p09","juniper-p17","juniper-ts-dfs","juniper-ts-dbfs","bonmin-nlw","couenne-nlw","scip-nlw","knitro-nlw"];
+    "juniper-p05","juniper-p09","juniper-p17","juniper-ts-dfs","juniper-ts-dbfs","juniper-nic",
+    "juniper-fp-cbc","juniper-fp-cbc-nic","juniper-fp-grb",
+    "bonmin-nlw","couenne-nlw","scip-nlw","knitro-nlw"];
 }
 
 var legend_w = 200;
