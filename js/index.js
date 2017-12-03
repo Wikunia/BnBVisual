@@ -202,10 +202,8 @@ d3.select('#file')
 d3.select('#instance_search')
 .on("keyup", function () {
     var instname = document.getElementById("instance_search").value;
-    console.log(instname)
     for (let circle of g.selectAll(".timeCircles").data()) {
         if ((circle.instance.indexOf(instname) >= 0) && (instname.length > 0)) {
-            console.log(circle.instance)
             g.select("#circle-"+circle.instance)
             .attr("stroke-width", "2px")
             .attr("stroke", "orange")
@@ -262,7 +260,6 @@ function getandrenderdata(section) {
         } else {
             data.sort(byDiscrete);
         }
-        console.log("data: ", data);
         render(data);        
     });
 }
