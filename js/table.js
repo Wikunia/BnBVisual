@@ -1,5 +1,5 @@
-var files = ["minlib","bonmin-nlw","couenne-nlw","scip-nlw","knitro-nlw","bnb","bnb-ts-dbfs","bnb-bs-r","bnb-bs-nsr","bnb-bs-mi","bnb-p03",
-"bnb-p05","bnb-p09","bnb-p17","bnb-ts-dfs","bonmin","couenne"];
+var files = ["minlib","bonmin-nlw","couenne-nlw","scip-nlw","knitro-nlw","juniper","juniper-ts-dbfs","juniper-bs-r","juniper-bs-nsr","juniper-bs-mi","juniper-p03",
+"juniper-p05","juniper-p09","juniper-p17","juniper-ts-dfs"];
 
 getalldata(0,files,{});
 
@@ -61,28 +61,8 @@ function determineSortOrder(data) {
     for (let i = 0; i < data[0].data.length; i++) {
         let difficulty = 0;
         for (let ai = 1; ai < data.length; ai++) {
-            let status = data[ai].data[i].status;
-            if (status == "Unbounded") {
-                difficulty += 50;
-            }
-            if (status == "Error") {
-                difficulty += 40;
-            }
-            if (status == "Infeasible") {
-                difficulty += 30;
-            }
-            if (data[ai].data[i].gap > 0.0001) {
-                difficulty += 1;
-            }
-            if (data[ai].data[i].gap > 1) {
-                difficulty += 2;
-            }
-            if (data[ai].data[i].gap > 5) {
-                difficulty += 10;
-            }
-            if (isNaN(data[ai].data[i].gap)) {
-                difficulty += 20;
-            }
+            let time = data[ai].data[i].time;
+            difficulty += time;
         }
         for (let ai = 0; ai < data.length; ai++) {
             data[ai].data[i].difficulty = difficulty;
@@ -104,6 +84,12 @@ function getalldata(i,files,data) {
                 let maxInAlg = Math.max(...data[alg].data.map(d => {return d.time}));
                 maxTime = maxTime > maxInAlg ? maxTime : maxInAlg;
             }
+            // first sort by name
+            for (let ai = 0; ai < data.length; ai++) {
+                data[ai].data.sort((a,b) => {
+                    return a.inst < b.inst ? -1 : 1;
+                })
+            }
             data = setGaps(data);
             data = determineSortOrder(data);
             // sort by difficult rank
@@ -112,7 +98,6 @@ function getalldata(i,files,data) {
                     return a.difficulty < b.difficulty ? -1 : 1;
                 })
             }
-            console.log(data);
             printJsonTable(data);
         }else {
           getalldata(i+1,files,data)
@@ -123,8 +108,8 @@ function getalldata(i,files,data) {
 function sortObject(obj) {
     return Object.keys(obj).sort((l,r) => {
         let list = ["Instance","V","C","Obj",
-                    "bnb-gap","bonmin-nlw-gap","knitro-nlw-gap","couenne-nlw-gap","scip-nlw-gap",
-                    "bnb-time","bonmin-nlw-time","knitro-nlw-time","couenne-nlw-time","scip-nlw-time"];
+                    "juniper-gap","bonmin-nlw-gap","knitro-nlw-gap","couenne-nlw-gap","scip-nlw-gap",
+                    "juniper-time","bonmin-nlw-time","knitro-nlw-time","couenne-nlw-time","scip-nlw-time"];
 
         return list.indexOf(l) < list.indexOf(r) ? -1 : 1;
     }).reduce((a, v) => {
@@ -136,7 +121,7 @@ function sortObject(obj) {
 function printJsonTable(data) {
     let row = 0;
     let arr = [];
-    let alg_list = ["bnb","couenne-nlw","scip-nlw","bonmin-nlw","knitro-nlw"]
+    let alg_list = ["juniper","couenne-nlw","scip-nlw","bonmin-nlw","knitro-nlw"]
     for (let row = 0; row < data[0].data.length; row++) {
         let rowObj = {};
         let c = 0;
@@ -158,7 +143,11 @@ function printJsonTable(data) {
                         }
                     }
                     rowObj[alg+"-time"] = Math.round(data[c].data[row].time);
+                    if (rowObj[alg+"-time"] >= 3600) {
+                        rowObj[alg+"-time"] = "T.L.";   
+                    }
                 }
+
             }
             c += 1;
         }

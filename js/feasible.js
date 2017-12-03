@@ -233,6 +233,12 @@ function getandrenderdata(i,files,data) {
                 let maxInAlg = Math.max(...data[alg].data.map(d => {return d.time}));
                 maxTime = maxTime > maxInAlg ? maxTime : maxInAlg;
             }
+            // first sort by name
+            for (let ai = 0; ai < data.length; ai++) {
+                data[ai].data.sort((a,b) => {
+                    return a.inst < b.inst ? -1 : 1;
+                })
+            }
             data = setGaps(data);
             data = determineSortOrder(data);
             // sort by difficult rank
