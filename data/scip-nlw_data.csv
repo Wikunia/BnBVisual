@@ -1,57 +1,668 @@
-./solvers/scip-nlw/PODLib/castro10m2.stdout:DATA, castro10m2.jl, 156, 0, 0, 138, Min, 586.6800191098339, NaN, UserLimit, 1619.841875076294
-./solvers/scip-nlw/PODLib/castro3m2.stdout:DATA, castro3m2.jl, 51, 0, 0, 54, Min, 99.4949494949495, NaN, Optimal, 0.6548230648040771
-./solvers/scip-nlw/PODLib/kport20.stdout:DATA, kport20.jl, 102, 2, 38, 28, Min, 27.922267203655863, NaN, Optimal, 0.26186490058898926
-./solvers/scip-nlw/PODLib/castro16m2.stdout:DATA, castro16m2.jl, 244, 0, 0, 234, Min, NaN, NaN, Error, 2171.0121459960938
-./solvers/scip-nlw/PODLib/castro4m2.stdout:DATA, castro4m2.jl, 76, 0, 0, 66, Min, 89.83606557377048, NaN, UserLimit, 0.525468111038208
-./solvers/scip-nlw/PODLib/graphpart_clique-50.stdout:DATA, graphpart_clique-50.jl, 151, 150, 0, 51, Min, 3480.0, NaN, UserLimit, 3841.916920900345
-./solvers/scip-nlw/PODLib/genpooling_meyer04.stdout:DATA, genpooling_meyer04.jl, 119, 55, 0, 142, Min, 1.1828932663708301e6, NaN, UserLimit, 3801.7861499786377
-./solvers/scip-nlw/PODLib/castro15m2.stdout:DATA, castro15m2.jl, 174, 0, 0, 152, Min, 2446.428570987454, NaN, UserLimit, 60.25626492500305
-./solvers/scip-nlw/PODLib/castro6m2.stdout:DATA, castro6m2.jl, 174, 0, 0, 152, Min, 173.47840519980258, NaN, Optimal, 23.47539710998535
-./solvers/scip-nlw/PODLib/house.stdout:DATA, house.jl, 9, 0, 0, 9, Min, -4500.000000824166, NaN, UserLimit, 0.3990302085876465
-./solvers/scip-nlw/PODLib/alkyl.stdout:DATA, alkyl.jl, 15, 0, 0, 8, Min, -1.7650105037490624, NaN, Optimal, 0.738088846206665
-./solvers/scip-nlw/PODLib/genpooling_lee2.stdout:DATA, genpooling_lee2.jl, 54, 9, 0, 93, Min, -3849.265452246464, NaN, UserLimit, 71.79786109924316
-./solvers/scip-nlw/PODLib/ex1265.stdout:DATA, ex1265.jl, 130, 100, 0, 134, Min, 10.3, NaN, Optimal, 1.0586931705474854
-./solvers/scip-nlw/PODLib/gear4.stdout:DATA, gear4.jl, 7, 0, 4, 2, Min, 1.5242283355328254, NaN, Optimal, 6.650736093521118
-./solvers/scip-nlw/PODLib/meanvarx.stdout:DATA, meanvarx.jl, 35, 14, 0, 44, Min, 14.36923211486091, NaN, UserLimit, 0.2712879180908203
-./solvers/scip-nlw/PODLib/wager.stdout:DATA, wager.jl, 157, 30, 54, 143, Min, NaN, NaN, Error, 181.25682616233826
-./solvers/scip-nlw/PODLib/castro7m2.stdout:DATA, castro7m2.jl, 174, 0, 0, 152, Min, 0.0, NaN, Optimal, 0.8577389717102051
-./solvers/scip-nlw/PODLib/util.stdout:DATA, util.jl, 145, 28, 0, 167, Min, 999.5787502353551, NaN, UserLimit, 0.31824493408203125
-./solvers/scip-nlw/PODLib/genpooling_meyer15.stdout:DATA, genpooling_meyer15.jl, 735, 352, 0, 769, Min, 1.6113694347889652e6, NaN, UserLimit, 3796.9374990463257
-./solvers/scip-nlw/PODLib/castro12m2.stdout:DATA, castro12m2.jl, 517, 0, 0, 408, Min, 1201.0384615392768, NaN, UserLimit, 3869.415014028549
-./solvers/scip-nlw/PODLib/primary.stdout:DATA, primary.jl, 82, 8, 52, 164, Min, -62.06854971606041, NaN, UserLimit, 3850.691677093506
-./solvers/scip-nlw/PODLib/kport40.stdout:DATA, kport40.jl, 268, 3, 111, 49, Min, 31.00321151413234, NaN, Optimal, 33.67516803741455
-./solvers/scip-nlw/PODLib/camshape100.stdout:DATA, camshape100.jl, 200, 0, 0, 201, Min, -4.284400537561272, NaN, UserLimit, 4338.0042719841
-./solvers/scip-nlw/PODLib/castro8m2.stdout:DATA, castro8m2.jl, 359, 0, 0, 335, Min, 109.40140495360605, NaN, Optimal, 176.8215069770813
-./solvers/scip-nlw/PODLib/castro11m2.stdout:DATA, castro11m2.jl, 384, 0, 0, 252, Min, NaN, NaN, Error, 2333.2239990234375
-./solvers/scip-nlw/PODLib/knp5-40.stdout:DATA, knp5-40.jl, 201, 0, 0, 820, Max, 0.9754569341887953, NaN, UserLimit, 3695.1264910697937
-./solvers/scip-nlw/PODLib/castro5m2.stdout:DATA, castro5m2.jl, 182, 0, 0, 152, Min, 229.70083936776382, NaN, Optimal, 6.560091018676758
-./solvers/scip-nlw/PODLib/fuel.stdout:DATA, fuel.jl, 15, 3, 0, 30, Min, 8566.118961687705, NaN, UserLimit, 0.24533700942993164
-./solvers/scip-nlw/PODLib/johnall.stdout:DATA, johnall.jl, 195, 190, 0, 193, Min, -224.73016169004805, NaN, Optimal, 11.652183055877686
-./solvers/scip-nlw/PODLib/nlp1.stdout:DATA, nlp1.jl, 2, 0, 0, 1, Min, 58.38366884996522, NaN, UserLimit, 0.22534394264221191
-./solvers/scip-nlw/PODLib/nlp2.stdout:DATA, nlp2.jl, 2, 0, 0, 0, Min, 2.035571279317363e-18, NaN, Optimal, 0.24942898750305176
-./solvers/scip-nlw/PODLib/saa_2.stdout:DATA, saa_2.jl, 4408, 400, 0, 6206, Min, 12.703017903682282, NaN, UserLimit, 3605.404006958008
-./solvers/scip-nlw/PODLib/genpooling_lee1.stdout:DATA, genpooling_lee1.jl, 50, 9, 0, 83, Min, -4640.082414754392, NaN, Optimal, 10.41185188293457
-./solvers/scip-nlw/PODLib/carton7.stdout:DATA, carton7.jl, 329, 200, 56, 688, Min, 191.72954812252502, NaN, Optimal, 388.8759491443634
-./solvers/scip-nlw/PODLib/forest.stdout:DATA, forest.jl, 237, 73, 0, 310, Max, NaN, NaN, UserLimit, 3608.4180538654327
-./solvers/scip-nlw/PODLib/bayes2_10.stdout:DATA, bayes2_10.jl, 87, 0, 0, 78, Min, 0.0003055591912614488, NaN, UserLimit, 3885.8210830688477
-./solvers/scip-nlw/PODLib/blend718.stdout:DATA, blend718.jl, 222, 87, 0, 519, Max, 7.393601191271031, NaN, UserLimit, 4043.8668160438538
-./solvers/scip-nlw/PODLib/blend531.stdout:DATA, blend531.jl, 272, 104, 0, 736, Max, 20.039001048886014, NaN, Optimal, 124.91039991378784
-./solvers/scip-nlw/PODLib/castro14m2.stdout:DATA, castro14m2.jl, 209, 0, 0, 205, Min, NaN, NaN, Error, 106.03652095794678
-./solvers/scip-nlw/PODLib/castro13m2.stdout:DATA, castro13m2.jl, 1040, 0, 0, 783, Min, 1564.9579831964136, NaN, UserLimit, 3770.5555799007416
-./solvers/scip-nlw/PODLib/ex1223a.stdout:DATA, ex1223a.jl, 7, 4, 0, 15, Min, 4.579582745292128, NaN, Optimal, 0.2452399730682373
-./solvers/scip-nlw/PODLib/nlp3.stdout:DATA, nlp3.jl, 8, 0, 0, 6, Min, 7049.248020528725, NaN, UserLimit, 0.9385271072387695
-./solvers/scip-nlw/PODLib/ex1264.stdout:DATA, ex1264.jl, 88, 68, 0, 95, Min, 8.6, NaN, Optimal, 0.402515172958374
-./solvers/scip-nlw/PODLib/blend721.stdout:DATA, blend721.jl, 223, 87, 0, 628, Max, 13.526801761770452, NaN, Optimal, 31.452976942062378
-./solvers/scip-nlw/PODLib/genpooling_meyer10.stdout:DATA, genpooling_meyer10.jl, 395, 187, 0, 424, Min, 2.1038139556742636e6, NaN, UserLimit, 3832.8016669750214
-./solvers/scip-nlw/PODLib/dispatch.stdout:DATA, dispatch.jl, 5, 0, 0, 3, Min, 3155.2879268581632, NaN, Optimal, 0.3548860549926758
-./solvers/scip-nlw/PODLib/elf.stdout:DATA, elf.jl, 55, 24, 0, 39, Min, 0.1916666570571824, NaN, Optimal, 0.881356954574585
-./solvers/scip-nlw/PODLib/blend029.stdout:DATA, blend029.jl, 102, 36, 0, 213, Max, 13.359399999999999, NaN, Optimal, 4.3958899974823
-./solvers/scip-nlw/PODLib/o8_ar4_1.stdout:DATA, o8_ar4_1.jl, 145, 0, 56, 348, Min, 243.07074671171895, NaN, UserLimit, 4230.789037942886
-./solvers/scip-nlw/PODLib/ex1266.stdout:DATA, ex1266.jl, 180, 138, 0, 178, Min, 16.299999999999997, NaN, Optimal, 0.448868989944458
-./solvers/scip-nlw/PODLib/ndcc12.stdout:DATA, ndcc12.jl, 645, 46, 0, 238, Min, NaN, NaN, UserLimit, 3855.2074460983276
-./solvers/scip-nlw/PODLib/blend146.stdout:DATA, blend146.jl, 222, 87, 0, 624, Max, 44.49692224213086, NaN, UserLimit, 4171.523169994354
-./solvers/scip-nlw/PODLib/multiplants_mtg1a.stdout:DATA, multiplants_mtg1a.jl, 194, 93, 0, 257, Min, 0.0, NaN, Optimal, 0.295166015625
-./solvers/scip-nlw/PODLib/castro9m2.stdout:DATA, castro9m2.jl, 517, 0, 0, 573, Min, NaN, NaN, UserLimit, 3697.373095035553
-./solvers/scip-nlw/PODLib/castro2m2.stdout:DATA, castro2m2.jl, 42, 0, 0, 45, Min, 130.70254425382439, NaN, Optimal, 0.5509688854217529
-./solvers/scip-nlw/PODLib/blend852.stdout:DATA, blend852.jl, 305, 120, 0, 861, Max, 53.96270294071112, NaN, UserLimit, 4076.816836118698
-./solvers/scip-nlw/PODLib/blend480.stdout:DATA, blend480.jl, 312, 124, 0, 884, Max, 9.226612442406674, NaN, Optimal, 1156.8642899990082
+./solvers/scip-nlw/JuniperLib/4stufen.stdout:DATA, 4stufen.jl,150,48,0,99, Min,119017.35817409, NaN, UserLimit,4101.62812209129
+./solvers/scip-nlw/JuniperLib/batch_nc.stdout:DATA, batch_nc.jl,35,12,0,68, Min,285506.479886324, NaN, UserLimit,0.535372018814087
+./solvers/scip-nlw/JuniperLib/batch.stdout:DATA, batch.jl,47,24,0,74, Min,285506.508244025, NaN, Optimal,0.435971021652222
+./solvers/scip-nlw/JuniperLib/batch0812_nc.stdout:DATA, batch0812_nc.jl,77,36,0,206, Min,2687026.7841933, NaN, UserLimit,1.35010290145874
+./solvers/scip-nlw/JuniperLib/batch0812.stdout:DATA, batch0812.jl,101,60,0,218, Min,2687026.78410654, NaN, Optimal,0.675390958786011
+./solvers/scip-nlw/JuniperLib/batchdes.stdout:DATA, batchdes.jl,20,9,0,20, Min,167427.657028338, NaN, Optimal,0.257066011428833
+./solvers/scip-nlw/JuniperLib/BatchS101006M.stdout:DATA, BatchS101006M.jl,279,129,0,1020, Min,769440.420358138, NaN, Optimal,5.35125684738159
+./solvers/scip-nlw/JuniperLib/BatchS121208M.stdout:DATA, BatchS121208M.jl,407,203,0,1512, Min,1241125.51389273, NaN, Optimal,11.1755948066711
+./solvers/scip-nlw/JuniperLib/BatchS151208M.stdout:DATA, BatchS151208M.jl,446,203,0,1782, Min,1543472.39765363, NaN, Optimal,18.7557189464569
+./solvers/scip-nlw/JuniperLib/BatchS201210M.stdout:DATA, BatchS201210M.jl,559,251,0,2328, Min,2295348.84852713, NaN, Optimal,19.6043570041656
+./solvers/scip-nlw/JuniperLib/bchoco05.stdout:DATA, bchoco05.jl,91,6,0,104, Max,0.951903056769518, NaN, UserLimit,4019.17306303978
+./solvers/scip-nlw/JuniperLib/bchoco06.stdout:DATA, bchoco06.jl,119,7,0,135, Max, NaN, NaN, UserLimit,3867.91105413437
+./solvers/scip-nlw/JuniperLib/bchoco07.stdout:DATA, bchoco07.jl,135,8,0,154, Max,0, NaN, Infeasible,3.0160129070282
+./solvers/scip-nlw/JuniperLib/bchoco08.stdout:DATA, bchoco08.jl,169,9,0,191, Max, NaN, NaN, UserLimit,3610.73936104774
+./solvers/scip-nlw/JuniperLib/beuster.stdout:DATA, beuster.jl,158,52,0,115, Min,120131.654716134, NaN, UserLimit,3610.58875584602
+./solvers/scip-nlw/JuniperLib/blend029.stdout:DATA, blend029.jl,103,36,0,214, Max,13.3594, NaN, Optimal,7.05016803741455
+./solvers/scip-nlw/JuniperLib/blend146.stdout:DATA, blend146.jl,223,87,0,625, Max,45.2965919738449, NaN, UserLimit,4205.77508115768
+./solvers/scip-nlw/JuniperLib/blend480.stdout:DATA, blend480.jl,313,124,0,885, Max,9.22661174058585, NaN, Optimal,1209.66775798798
+./solvers/scip-nlw/JuniperLib/blend531.stdout:DATA, blend531.jl,273,104,0,737, Max,20.0390010282244, NaN, Optimal,62.6555740833283
+./solvers/scip-nlw/JuniperLib/blend718.stdout:DATA, blend718.jl,223,87,0,607, Max,7.39360107873842, NaN, UserLimit,4060.96450781822
+./solvers/scip-nlw/JuniperLib/blend721.stdout:DATA, blend721.jl,223,87,0,628, Max,13.5268017617705, NaN, Optimal,30.8346431255341
+./solvers/scip-nlw/JuniperLib/blend852.stdout:DATA, blend852.jl,305,120,0,861, Max,53.9627029407111, NaN, UserLimit,4076.85402488709
+./solvers/scip-nlw/JuniperLib/carton7.stdout:DATA, carton7.jl,329,200,56,688, Min,191.729548124062, NaN, Optimal,308.445564031601
+./solvers/scip-nlw/JuniperLib/carton9.stdout:DATA, carton9.jl,361,216,72,894, Min,205.13707937355, NaN, UserLimit,3738.47145915031
+./solvers/scip-nlw/JuniperLib/casctanks.stdout:DATA, casctanks.jl,501,40,0,518, Min,9.16347297799544, NaN, UserLimit,896.018929958344
+./solvers/scip-nlw/JuniperLib/case_1scv2.stdout:DATA, case_1scv2.jl,1557,50,0,1266, Max, NaN, NaN, UserLimit,3668.8395190239
+./solvers/scip-nlw/JuniperLib/cecil_13.stdout:DATA, cecil_13.jl,841,180,0,899, Min,-115606.736066511, NaN, UserLimit,3730.72569704056
+./solvers/scip-nlw/JuniperLib/chp_partload.stdout:DATA, chp_partload.jl,2249,45,0,2517, Min, NaN, NaN, UserLimit,3636.06165790558
+./solvers/scip-nlw/JuniperLib/chp_shorttermplan1a.stdout:DATA, chp_shorttermplan1a.jl,1009,144,0,2069, Min,214.841989537849, NaN, Optimal,229.445659160614
+./solvers/scip-nlw/JuniperLib/chp_shorttermplan1b.stdout:DATA, chp_shorttermplan1b.jl,1681,288,0,3851, Min,257.90947934239, NaN, UserLimit,3748.18470788002
+./solvers/scip-nlw/JuniperLib/chp_shorttermplan2a.stdout:DATA, chp_shorttermplan2a.jl,1585,240,0,3897, Min,245800.412054644, NaN, UserLimit,30.9772088527679
+./solvers/scip-nlw/JuniperLib/chp_shorttermplan2b.stdout:DATA, chp_shorttermplan2b.jl,1393,192,0,2553, Min,-162735.196315674, NaN, UserLimit,3849.88545107841
+./solvers/scip-nlw/JuniperLib/chp_shorttermplan2c.stdout:DATA, chp_shorttermplan2c.jl,2449,384,0,6735, Min, NaN, NaN, UserLimit,3668.33022689819
+./solvers/scip-nlw/JuniperLib/chp_shorttermplan2d.stdout:DATA, chp_shorttermplan2d.jl,3121,528,0,6839, Min, NaN, NaN, UserLimit,3666.37082982063
+./solvers/scip-nlw/JuniperLib/CLay0203H.stdout:DATA, CLay0203H.jl,91,18,0,133, Min,41573.3017607782, NaN, UserLimit,1.23663997650146
+./solvers/scip-nlw/JuniperLib/CLay0203M.stdout:DATA, CLay0203M.jl,31,18,0,55, Min,41573.2624591071, NaN, Optimal,1.23048996925354
+./solvers/scip-nlw/JuniperLib/CLay0204H.stdout:DATA, CLay0204H.jl,165,32,0,235, Min,6544.99960425021, NaN, Optimal,4.72427296638489
+./solvers/scip-nlw/JuniperLib/CLay0204M.stdout:DATA, CLay0204M.jl,53,32,0,91, Min,6544.9996042502, NaN, Optimal,2.98043012619019
+./solvers/scip-nlw/JuniperLib/CLay0205H.stdout:DATA, CLay0205H.jl,261,50,0,366, Min,8092.49951471058, NaN, Optimal,79.3981690406799
+./solvers/scip-nlw/JuniperLib/CLay0205M.stdout:DATA, CLay0205M.jl,81,50,0,136, Min,8092.49959820533, NaN, Optimal,9.57459998130798
+./solvers/scip-nlw/JuniperLib/CLay0303H.stdout:DATA, CLay0303H.jl,100,21,0,151, Min,0, NaN, Infeasible,4.19324398040772
+./solvers/scip-nlw/JuniperLib/CLay0303M.stdout:DATA, CLay0303M.jl,34,21,0,67, Min,26669.1095724292, NaN, Optimal,1.22278189659119
+./solvers/scip-nlw/JuniperLib/CLay0304H.stdout:DATA, CLay0304H.jl,177,36,0,259, Min,40262.4238429742, NaN, UserLimit,9.69188785552979
+./solvers/scip-nlw/JuniperLib/CLay0304M.stdout:DATA, CLay0304M.jl,57,36,0,107, Min,40262.3874674669, NaN, Optimal,3.85815811157227
+./solvers/scip-nlw/JuniperLib/CLay0305H.stdout:DATA, CLay0305H.jl,276,55,0,396, Min,0, NaN, Infeasible,11.5211970806122
+./solvers/scip-nlw/JuniperLib/CLay0305M.stdout:DATA, CLay0305M.jl,86,55,0,156, Min,8092.49999995897, NaN, Optimal,13.6280770301819
+./solvers/scip-nlw/JuniperLib/contvar.stdout:DATA, contvar.jl,297,88,0,285, Min,1629965.50739422, NaN, UserLimit,3690.44740819931
+./solvers/scip-nlw/JuniperLib/crossdock_15x7.stdout:DATA, crossdock_15x7.jl,211,210,0,45, Min,15278, NaN, UserLimit,3670.43927717209
+./solvers/scip-nlw/JuniperLib/crossdock_15x8.stdout:DATA, crossdock_15x8.jl,241,240,0,47, Min,16259, NaN, UserLimit,3669.95032501221
+./solvers/scip-nlw/JuniperLib/crudeoil_lee1_05.stdout:DATA, crudeoil_lee1_05.jl,536,40,0,1241, Max,79.749999999958, NaN, Optimal,1.81371903419495
+./solvers/scip-nlw/JuniperLib/crudeoil_lee1_06.stdout:DATA, crudeoil_lee1_06.jl,643,48,0,1504, Max,79.75, NaN, Optimal,2.90512609481812
+./solvers/scip-nlw/JuniperLib/crudeoil_lee1_07.stdout:DATA, crudeoil_lee1_07.jl,750,56,0,1777, Max,79.7500000000001, NaN, Optimal,5.10653400421143
+./solvers/scip-nlw/JuniperLib/crudeoil_lee1_08.stdout:DATA, crudeoil_lee1_08.jl,857,64,0,2060, Max,79.7500000000001, NaN, Optimal,6.20749711990356
+./solvers/scip-nlw/JuniperLib/crudeoil_lee1_09.stdout:DATA, crudeoil_lee1_09.jl,964,72,0,2353, Max,79.75, NaN, Optimal,8.01154398918152
+./solvers/scip-nlw/JuniperLib/crudeoil_lee1_10.stdout:DATA, crudeoil_lee1_10.jl,1071,80,0,2656, Max,79.75, NaN, Optimal,14.1640210151672
+./solvers/scip-nlw/JuniperLib/crudeoil_lee2_05.stdout:DATA, crudeoil_lee2_05.jl,1156,70,0,2582, Max,96.169875000004, NaN, Optimal,4.47683787345886
+./solvers/scip-nlw/JuniperLib/crudeoil_lee2_06.stdout:DATA, crudeoil_lee2_06.jl,1387,84,0,3118, Max,101.174566259022, NaN, UserLimit,8.47268605232239
+./solvers/scip-nlw/JuniperLib/crudeoil_lee2_07.stdout:DATA, crudeoil_lee2_07.jl,1618,98,0,3671, Max,101.174566259022, NaN, Optimal,15.700394153595
+./solvers/scip-nlw/JuniperLib/crudeoil_lee2_08.stdout:DATA, crudeoil_lee2_08.jl,1849,112,0,4241, Max,101.174566259022, NaN, Optimal,22.1595969200134
+./solvers/scip-nlw/JuniperLib/crudeoil_lee2_09.stdout:DATA, crudeoil_lee2_09.jl,2080,126,0,4828, Max,101.174566259022, NaN, Optimal,45.1851079463959
+./solvers/scip-nlw/JuniperLib/crudeoil_lee2_10.stdout:DATA, crudeoil_lee2_10.jl,2311,140,0,5432, Max,101.174566259022, NaN, Optimal,45.9590799808502
+./solvers/scip-nlw/JuniperLib/crudeoil_lee3_05.stdout:DATA, crudeoil_lee3_05.jl,1281,70,0,2787, Max,85.4489128796895, NaN, UserLimit,8.69426488876343
+./solvers/scip-nlw/JuniperLib/crudeoil_lee3_06.stdout:DATA, crudeoil_lee3_06.jl,1537,84,0,3360, Max,85.4489130774552, NaN, UserLimit,54.0417268276215
+./solvers/scip-nlw/JuniperLib/crudeoil_lee3_07.stdout:DATA, crudeoil_lee3_07.jl,1793,98,0,3950, Max,85.4487339364876, NaN, UserLimit,134.99409198761
+./solvers/scip-nlw/JuniperLib/crudeoil_lee3_08.stdout:DATA, crudeoil_lee3_08.jl,2049,112,0,4557, Max,85.4489130771554, NaN, UserLimit,115.577151060104
+./solvers/scip-nlw/JuniperLib/crudeoil_lee3_09.stdout:DATA, crudeoil_lee3_09.jl,2305,126,0,5181, Max,85.448913050865, NaN, UserLimit,114.464128017426
+./solvers/scip-nlw/JuniperLib/crudeoil_lee3_10.stdout:DATA, crudeoil_lee3_10.jl,2561,140,0,5822, Max,85.4489065617109, NaN, UserLimit,168.575334072113
+./solvers/scip-nlw/JuniperLib/crudeoil_lee4_05.stdout:DATA, crudeoil_lee4_05.jl,1956,95,0,4242, Max,132.53769362824, NaN, UserLimit,7.96845507621765
+./solvers/scip-nlw/JuniperLib/crudeoil_lee4_06.stdout:DATA, crudeoil_lee4_06.jl,2347,114,0,5094, Max,132.547600906667, NaN, UserLimit,16.7761619091034
+./solvers/scip-nlw/JuniperLib/crudeoil_lee4_07.stdout:DATA, crudeoil_lee4_07.jl,2738,133,0,5966, Max,132.54760090667, NaN, Optimal,25.3223929405212
+./solvers/scip-nlw/JuniperLib/crudeoil_lee4_08.stdout:DATA, crudeoil_lee4_08.jl,3129,152,0,6858, Max,132.54759864, NaN, UserLimit,28.8093881607056
+./solvers/scip-nlw/JuniperLib/crudeoil_lee4_09.stdout:DATA, crudeoil_lee4_09.jl,3520,171,0,7770, Max,132.547600906681, NaN, Optimal,68.1729099750519
+./solvers/scip-nlw/JuniperLib/crudeoil_lee4_10.stdout:DATA, crudeoil_lee4_10.jl,3911,190,0,8702, Max,132.547600906667, NaN, Optimal,40.7392568588257
+./solvers/scip-nlw/JuniperLib/crudeoil_li01.stdout:DATA, crudeoil_li01.jl,345,48,0,696, Max,5120.85127393688, NaN, UserLimit,4039.63020586968
+./solvers/scip-nlw/JuniperLib/crudeoil_li02.stdout:DATA, crudeoil_li02.jl,1298,240,0,5005, Max,101563385, NaN, UserLimit,3931.83352708817
+./solvers/scip-nlw/JuniperLib/crudeoil_li03.stdout:DATA, crudeoil_li03.jl,965,132,0,2443, Max,3483.5551023855, NaN, UserLimit,3763.18989300728
+./solvers/scip-nlw/JuniperLib/crudeoil_li05.stdout:DATA, crudeoil_li05.jl,941,132,0,1917, Max,3053.74216177916, NaN, UserLimit,3793.96135997772
+./solvers/scip-nlw/JuniperLib/crudeoil_li06.stdout:DATA, crudeoil_li06.jl,965,132,0,2437, Max,3355.00000000041, NaN, Optimal,908.085695028305
+./solvers/scip-nlw/JuniperLib/crudeoil_li11.stdout:DATA, crudeoil_li11.jl,1178,180,0,3506, Max,4670.83212503434, NaN, UserLimit,3746.85037708282
+./solvers/scip-nlw/JuniperLib/crudeoil_li21.stdout:DATA, crudeoil_li21.jl,1349,216,0,4682, Max,4780.27546544989, NaN, UserLimit,3716.70012116432
+./solvers/scip-nlw/JuniperLib/crudeoil_pooling_ct1.stdout:DATA, crudeoil_pooling_ct1.jl,311,80,0,566, Min,212991.340555565, NaN, UserLimit,3936.00888705254
+./solvers/scip-nlw/JuniperLib/crudeoil_pooling_ct2.stdout:DATA, crudeoil_pooling_ct2.jl,404,108,0,733, Max,10246.2199853699, NaN, UserLimit,4063.18501114845
+./solvers/scip-nlw/JuniperLib/crudeoil_pooling_ct4.stdout:DATA, crudeoil_pooling_ct4.jl,534,138,0,925, Max,13256.1399999985, NaN, UserLimit,4026.50359201431
+./solvers/scip-nlw/JuniperLib/crudeoil_pooling_dt1.stdout:DATA, crudeoil_pooling_dt1.jl,3713,916,0,5779, Min,209585.267857148, NaN, UserLimit,2555.46567988396
+./solvers/scip-nlw/JuniperLib/crudeoil_pooling_dt2.stdout:DATA, crudeoil_pooling_dt2.jl,4963,1270,0,8179, Max,10129.374999998, NaN, UserLimit,3648.42888998985
+./solvers/scip-nlw/JuniperLib/crudeoil_pooling_dt3.stdout:DATA, crudeoil_pooling_dt3.jl,9434,1638,0,13835, Min,284839.642856794, NaN, UserLimit,3640.81739902496
+./solvers/scip-nlw/JuniperLib/crudeoil_pooling_dt4.stdout:DATA, crudeoil_pooling_dt4.jl,5063,1326,0,7699, Max,13247.4499999988, NaN, UserLimit,3644.73681592941
+./solvers/scip-nlw/JuniperLib/csched1.stdout:DATA, csched1.jl,77,63,0,23, Min,-30639.2581346753, NaN, UserLimit,2.74485111236572
+./solvers/scip-nlw/JuniperLib/csched1a.stdout:DATA, csched1a.jl,29,15,0,23, Min,-30430.179505483, NaN, Optimal,0.432994842529297
+./solvers/scip-nlw/JuniperLib/csched2.stdout:DATA, csched2.jl,401,308,0,138, Min,-136422.182883475, NaN, UserLimit,3694.62952303886
+./solvers/scip-nlw/JuniperLib/csched2a.stdout:DATA, csched2a.jl,233,140,0,138, Min,-138639.806213928, NaN, UserLimit,3714.28060102463
+./solvers/scip-nlw/JuniperLib/cvxnonsep_normcon20r.stdout:DATA, cvxnonsep_normcon20r.jl,41,0,10,22, Min,-21.7491479193336, NaN, Optimal,0.465138912200928
+./solvers/scip-nlw/JuniperLib/cvxnonsep_normcon30r.stdout:DATA, cvxnonsep_normcon30r.jl,61,0,15,32, Min,-34.2439666428712, NaN, UserLimit,0.540389060974121
+./solvers/scip-nlw/JuniperLib/cvxnonsep_normcon40r.stdout:DATA, cvxnonsep_normcon40r.jl,81,0,20,42, Min,-32.6296707157862, NaN, UserLimit,0.63231897354126
+./solvers/scip-nlw/JuniperLib/cvxnonsep_nsig20r.stdout:DATA, cvxnonsep_nsig20r.jl,41,0,10,22, Min,80.9490793409008, NaN, UserLimit,0.436554908752441
+./solvers/scip-nlw/JuniperLib/cvxnonsep_nsig30r.stdout:DATA, cvxnonsep_nsig30r.jl,61,0,15,32, Min,156.425726256136, NaN, UserLimit,2.4067530632019
+./solvers/scip-nlw/JuniperLib/cvxnonsep_nsig40r.stdout:DATA, cvxnonsep_nsig40r.jl,81,0,20,42, Min,133.960227628076, NaN, UserLimit,3.25518608093262
+./solvers/scip-nlw/JuniperLib/cvxnonsep_pcon20r.stdout:DATA, cvxnonsep_pcon20r.jl,40,0,10,21, Min,-21.5123012907406, NaN, Optimal,0.493802070617676
+./solvers/scip-nlw/JuniperLib/cvxnonsep_pcon30r.stdout:DATA, cvxnonsep_pcon30r.jl,60,0,15,31, Min,-35.9868425228487, NaN, Optimal,0.599458932876587
+./solvers/scip-nlw/JuniperLib/cvxnonsep_pcon40r.stdout:DATA, cvxnonsep_pcon40r.jl,80,0,20,41, Min,-46.5991689496982, NaN, Optimal,0.688650131225586
+./solvers/scip-nlw/JuniperLib/cvxnonsep_psig20r.stdout:DATA, cvxnonsep_psig20r.jl,43,0,10,23, Min,95.8973123958643, NaN, Optimal,5.79873299598694
+./solvers/scip-nlw/JuniperLib/cvxnonsep_psig30r.stdout:DATA, cvxnonsep_psig30r.jl,63,0,15,33, Min,78.9988197281909, NaN, Optimal,1362.57146286964
+./solvers/scip-nlw/JuniperLib/cvxnonsep_psig40r.stdout:DATA, cvxnonsep_psig40r.jl,83,0,20,43, Min,86.5450709977931, NaN, UserLimit,4919.59875893593
+./solvers/scip-nlw/JuniperLib/du-opt.stdout:DATA, du-opt.jl,21,0,13,10, Min,3.67885366673518, NaN, UserLimit,4703.89560604095
+./solvers/scip-nlw/JuniperLib/du-opt5.stdout:DATA, du-opt5.jl,21,0,13,10, Min,8.07365696471778, NaN, Optimal,0.603813886642456
+./solvers/scip-nlw/JuniperLib/edgecross10-010.stdout:DATA, edgecross10-010.jl,91,90,0,481, Min,1, NaN, Optimal,0.36382007598877
+./solvers/scip-nlw/JuniperLib/edgecross10-020.stdout:DATA, edgecross10-020.jl,91,90,0,481, Min,11, NaN, Optimal,1.5050630569458
+./solvers/scip-nlw/JuniperLib/edgecross10-030.stdout:DATA, edgecross10-030.jl,91,90,0,481, Min,52, NaN, Optimal,1.28075790405273
+./solvers/scip-nlw/JuniperLib/edgecross10-040.stdout:DATA, edgecross10-040.jl,91,90,0,481, Min,142, NaN, Optimal,7.27843189239502
+./solvers/scip-nlw/JuniperLib/edgecross10-050.stdout:DATA, edgecross10-050.jl,91,90,0,481, Min,276, NaN, Optimal,18.3529961109161
+./solvers/scip-nlw/JuniperLib/edgecross10-060.stdout:DATA, edgecross10-060.jl,91,44,0,481, Min,459, NaN, Optimal,34.2165188789368
+./solvers/scip-nlw/JuniperLib/edgecross10-070.stdout:DATA, edgecross10-070.jl,91,90,0,481, Min,717, NaN, Optimal,47.7380559444427
+./solvers/scip-nlw/JuniperLib/edgecross10-080.stdout:DATA, edgecross10-080.jl,91,74,0,481, Min,1037, NaN, Optimal,51.5656199455261
+./solvers/scip-nlw/JuniperLib/edgecross10-090.stdout:DATA, edgecross10-090.jl,91,90,0,481, Min,1387, NaN, Optimal,1.21929407119751
+./solvers/scip-nlw/JuniperLib/edgecross14-019.stdout:DATA, edgecross14-019.jl,183,182,0,1457, Min,4, NaN, Optimal,1.73831701278687
+./solvers/scip-nlw/JuniperLib/edgecross14-039.stdout:DATA, edgecross14-039.jl,183,80,0,1457, Min,109, NaN, Optimal,278.560742855072
+./solvers/scip-nlw/JuniperLib/edgecross14-058.stdout:DATA, edgecross14-058.jl,183,182,0,1457, Min,353, NaN, Optimal,986.896283864975
+./solvers/scip-nlw/JuniperLib/edgecross14-078.stdout:DATA, edgecross14-078.jl,183,155,0,1457, Min,725, NaN, Optimal,2515.81649684906
+./solvers/scip-nlw/JuniperLib/edgecross14-098.stdout:DATA, edgecross14-098.jl,183,182,0,1457, Min,1355, NaN, UserLimit,3969.40532207489
+./solvers/scip-nlw/JuniperLib/edgecross14-176.stdout:DATA, edgecross14-176.jl,183,182,0,1457, Min,5875, NaN, Optimal,531.038229942322
+./solvers/scip-nlw/JuniperLib/edgecross20-040.stdout:DATA, edgecross20-040.jl,381,380,0,4561, Min,57, NaN, Optimal,1053.85877203941
+./solvers/scip-nlw/JuniperLib/edgecross22-048.stdout:DATA, edgecross22-048.jl,463,462,0,6161, Min,83.9999999999999, NaN, UserLimit,3677.57389211655
+./solvers/scip-nlw/JuniperLib/edgecross24-057.stdout:DATA, edgecross24-057.jl,553,552,0,8097, Min,185, NaN, UserLimit,3657.86279797554
+./solvers/scip-nlw/JuniperLib/eg_all_s.stdout:DATA, eg_all_s.jl,8,0,7,28, Min,21.5399008739193, NaN, UserLimit,3661.72417187691
+./solvers/scip-nlw/JuniperLib/eg_disc_s.stdout:DATA, eg_disc_s.jl,8,0,4,28, Min, NaN, NaN, UserLimit,3633.79734706879
+./solvers/scip-nlw/JuniperLib/eg_disc2_s.stdout:DATA, eg_disc2_s.jl,8,0,3,28, Min, NaN, NaN, UserLimit,3625.56653785706
+./solvers/scip-nlw/JuniperLib/eg_int_s.stdout:DATA, eg_int_s.jl,8,0,3,28, Min,100000, NaN, UserLimit,3639.45311117172
+./solvers/scip-nlw/JuniperLib/elf.stdout:DATA, elf.jl,55,24,0,39, Min,0.191666657057182, NaN, Optimal,0.771692991256714
+./solvers/scip-nlw/JuniperLib/eniplac.stdout:DATA, eniplac.jl,142,24,0,190, Min,-132117.083020139, NaN, Optimal,0.688947916030884
+./solvers/scip-nlw/JuniperLib/enpro48.stdout:DATA, enpro48.jl,154,92,0,215, Min,187277.259412669, NaN, Optimal,1.63213205337524
+./solvers/scip-nlw/JuniperLib/enpro48pb.stdout:DATA, enpro48pb.jl,154,92,0,215, Min,187277.25941826, NaN, Optimal,1.24779415130615
+./solvers/scip-nlw/JuniperLib/enpro56.stdout:DATA, enpro56.jl,128,73,0,192, Min,263428.300971327, NaN, Optimal,1.32015299797058
+./solvers/scip-nlw/JuniperLib/enpro56pb.stdout:DATA, enpro56pb.jl,128,73,0,192, Min,263428.300972644, NaN, Optimal,1.61715984344482
+./solvers/scip-nlw/JuniperLib/ex1223.stdout:DATA, ex1223.jl,12,4,0,14, Min,4.57958240029185, NaN, UserLimit,0.263076066970825
+./solvers/scip-nlw/JuniperLib/ex1223a.stdout:DATA, ex1223a.jl,8,4,0,10, Min,4.57958240029185, NaN, Optimal,0.252135038375854
+./solvers/scip-nlw/JuniperLib/ex1223b.stdout:DATA, ex1223b.jl,8,4,0,10, Min,4.57958240029185, NaN, UserLimit,0.261391162872314
+./solvers/scip-nlw/JuniperLib/ex1225.stdout:DATA, ex1225.jl,9,6,0,11, Min,31, NaN, Optimal,0.340888023376465
+./solvers/scip-nlw/JuniperLib/ex1233.stdout:DATA, ex1233.jl,53,12,0,65, Min,155010.67127764, NaN, UserLimit,4525.49632716179
+./solvers/scip-nlw/JuniperLib/ex1243.stdout:DATA, ex1243.jl,69,16,0,97, Min,83402.5064069889, NaN, UserLimit,1.81092286109924
+./solvers/scip-nlw/JuniperLib/ex1244.stdout:DATA, ex1244.jl,96,23,0,130, Min,82042.9051789601, NaN, UserLimit,28.2284278869629
+./solvers/scip-nlw/JuniperLib/ex1252.stdout:DATA, ex1252.jl,40,15,0,44, Min,186735.592012095, NaN, UserLimit,3700.17838311195
+./solvers/scip-nlw/JuniperLib/ex1252a.stdout:DATA, ex1252a.jl,25,3,6,35, Min,134263.585180701, NaN, UserLimit,3643.43752408028
+./solvers/scip-nlw/JuniperLib/ex1263.stdout:DATA, ex1263.jl,93,72,0,56, Min,19.6, NaN, Optimal,0.756262063980103
+./solvers/scip-nlw/JuniperLib/ex1263a.stdout:DATA, ex1263a.jl,25,4,20,36, Min,19.6, NaN, Optimal,0.507211923599243
+./solvers/scip-nlw/JuniperLib/ex1264.stdout:DATA, ex1264.jl,89,68,0,56, Min,8.6, NaN, Optimal,0.473206996917725
+./solvers/scip-nlw/JuniperLib/ex1264a.stdout:DATA, ex1264a.jl,25,4,20,36, Min,8.6, NaN, Optimal,0.272439956665039
+./solvers/scip-nlw/JuniperLib/ex1265.stdout:DATA, ex1265.jl,131,100,0,75, Min,10.3, NaN, Optimal,0.685054063796997
+./solvers/scip-nlw/JuniperLib/ex1265a.stdout:DATA, ex1265a.jl,36,5,30,45, Min,10.3, NaN, Optimal,0.602818965911865
+./solvers/scip-nlw/JuniperLib/ex1266.stdout:DATA, ex1266.jl,181,138,0,96, Min,16.3, NaN, Optimal,1.1235020160675
+./solvers/scip-nlw/JuniperLib/ex1266a.stdout:DATA, ex1266a.jl,49,6,42,54, Min,16.3, NaN, Optimal,0.254694938659668
+./solvers/scip-nlw/JuniperLib/ex3.stdout:DATA, ex3.jl,33,8,0,32, Min,68.0097360546375, NaN, Optimal,0.304210186004639
+./solvers/scip-nlw/JuniperLib/ex3pb.stdout:DATA, ex3pb.jl,33,8,0,32, Min,68.0097360546375, NaN, Optimal,0.336200952529907
+./solvers/scip-nlw/JuniperLib/ex4.stdout:DATA, ex4.jl,37,25,0,31, Min,-8.0641361696591, NaN, Optimal,1.14453077316284
+./solvers/scip-nlw/JuniperLib/fac1.stdout:DATA, fac1.jl,23,6,0,19, Min,160912612.350169, NaN, Optimal,0.216979026794434
+./solvers/scip-nlw/JuniperLib/fac2.stdout:DATA, fac2.jl,67,12,0,34, Min,331837498.17677, NaN, Optimal,0.520684957504272
+./solvers/scip-nlw/JuniperLib/fac3.stdout:DATA, fac3.jl,67,12,0,34, Min,31982309.848, NaN, Optimal,0.406023979187012
+./solvers/scip-nlw/JuniperLib/faclay20h.stdout:DATA, faclay20h.jl,191,190,0,2281, Min,16213, NaN, UserLimit,3636.02940487862
+./solvers/scip-nlw/JuniperLib/feedtray.stdout:DATA, feedtray.jl,98,7,0,92, Min, NaN, NaN, UserLimit,3735.77872300148
+./solvers/scip-nlw/JuniperLib/feedtray2.stdout:DATA, feedtray2.jl,88,36,0,284, Min,0, NaN, Optimal,0.30705714225769
+./solvers/scip-nlw/JuniperLib/FLay02H.stdout:DATA, FLay02H.jl,47,4,0,52, Min,37.9473305384636, NaN, Optimal,0.285945892333984
+./solvers/scip-nlw/JuniperLib/FLay02M.stdout:DATA, FLay02M.jl,15,4,0,12, Min,37.947329698514, NaN, Optimal,0.268716812133789
+./solvers/scip-nlw/JuniperLib/FLay03H.stdout:DATA, FLay03H.jl,123,12,0,145, Min,48.9897921318135, NaN, UserLimit,0.642807960510254
+./solvers/scip-nlw/JuniperLib/FLay03M.stdout:DATA, FLay03M.jl,27,12,0,25, Min,48.9897917142334, NaN, UserLimit,0.454839944839478
+./solvers/scip-nlw/JuniperLib/FLay04H.stdout:DATA, FLay04H.jl,235,24,0,283, Min,54.4058784606127, NaN, UserLimit,3.28017902374268
+./solvers/scip-nlw/JuniperLib/FLay04M.stdout:DATA, FLay04M.jl,43,24,0,43, Min,54.4058590980034, NaN, UserLimit,1.60197114944458
+./solvers/scip-nlw/JuniperLib/FLay05H.stdout:DATA, FLay05H.jl,383,40,0,466, Min,64.4980543915989, NaN, Optimal,142.625190019608
+./solvers/scip-nlw/JuniperLib/FLay05M.stdout:DATA, FLay05M.jl,63,40,0,66, Min,64.4979792506234, NaN, Optimal,45.4441769123077
+./solvers/scip-nlw/JuniperLib/FLay06H.stdout:DATA, FLay06H.jl,567,60,0,694, Min,66.9327948354986, NaN, UserLimit,3941.29622483253
+./solvers/scip-nlw/JuniperLib/FLay06M.stdout:DATA, FLay06M.jl,87,60,0,94, Min,66.9325181551781, NaN, UserLimit,1700.64300298691
+./solvers/scip-nlw/JuniperLib/fo7_2.stdout:DATA, fo7_2.jl,115,42,0,212, Min,17.7493453458421, NaN, Optimal,34.386647939682
+./solvers/scip-nlw/JuniperLib/fo7_ar2_1.stdout:DATA, fo7_ar2_1.jl,113,0,42,270, Min,24.8398468651832, NaN, Optimal,33.0933301448822
+./solvers/scip-nlw/JuniperLib/fo7_ar25_1.stdout:DATA, fo7_ar25_1.jl,113,0,42,270, Min,23.0935672932695, NaN, Optimal,29.7840149402618
+./solvers/scip-nlw/JuniperLib/fo7_ar3_1.stdout:DATA, fo7_ar3_1.jl,113,0,42,270, Min,22.517468014723, NaN, Optimal,33.7441740036011
+./solvers/scip-nlw/JuniperLib/fo7_ar4_1.stdout:DATA, fo7_ar4_1.jl,113,0,42,270, Min,20.7298233548034, NaN, Optimal,26.3404388427734
+./solvers/scip-nlw/JuniperLib/fo7_ar5_1.stdout:DATA, fo7_ar5_1.jl,113,0,42,270, Min,17.7493294137421, NaN, Optimal,9.8014280796051
+./solvers/scip-nlw/JuniperLib/fo7.stdout:DATA, fo7.jl,115,42,0,212, Min,20.729822713674, NaN, Optimal,61.1409120559692
+./solvers/scip-nlw/JuniperLib/fo8_ar2_1.stdout:DATA, fo8_ar2_1.jl,145,0,56,348, Min,30.3406091572791, NaN, Optimal,94.777309179306
+./solvers/scip-nlw/JuniperLib/fo8_ar25_1.stdout:DATA, fo8_ar25_1.jl,145,0,56,348, Min,28.0451810596741, NaN, Optimal,165.993850946426
+./solvers/scip-nlw/JuniperLib/fo8_ar3_1.stdout:DATA, fo8_ar3_1.jl,145,0,56,348, Min,23.9100496763849, NaN, Optimal,58.3023359775543
+./solvers/scip-nlw/JuniperLib/fo8_ar4_1.stdout:DATA, fo8_ar4_1.jl,145,0,56,348, Min,22.381893921753, NaN, Optimal,80.4476850032807
+./solvers/scip-nlw/JuniperLib/fo8_ar5_1.stdout:DATA, fo8_ar5_1.jl,145,0,56,348, Min,22.3818949995485, NaN, Optimal,105.872038125992
+./solvers/scip-nlw/JuniperLib/fo8.stdout:DATA, fo8.jl,147,56,0,274, Min,22.3818949051507, NaN, Optimal,91.5694010257721
+./solvers/scip-nlw/JuniperLib/fo9_ar2_1.stdout:DATA, fo9_ar2_1.jl,181,0,72,436, Min,32.6249935292209, NaN, Optimal,1049.70549106598
+./solvers/scip-nlw/JuniperLib/fo9_ar25_1.stdout:DATA, fo9_ar25_1.jl,181,0,72,436, Min,32.1864307484108, NaN, UserLimit,4346.88649606705
+./solvers/scip-nlw/JuniperLib/fo9_ar3_1.stdout:DATA, fo9_ar3_1.jl,181,0,72,436, Min,24.8154751585291, NaN, Optimal,527.512370109558
+./solvers/scip-nlw/JuniperLib/fo9_ar4_1.stdout:DATA, fo9_ar4_1.jl,181,0,72,436, Min,23.4642828261746, NaN, Optimal,507.396754026413
+./solvers/scip-nlw/JuniperLib/fo9_ar5_1.stdout:DATA, fo9_ar5_1.jl,181,0,72,436, Min,23.4642852387596, NaN, Optimal,869.357324838638
+./solvers/scip-nlw/JuniperLib/fo9.stdout:DATA, fo9.jl,183,72,0,344, Min,23.4642851610519, NaN, Optimal,540.34733915329
+./solvers/scip-nlw/JuniperLib/forest.stdout:DATA, forest.jl,237,73,0,310, Max,14396226.4865413, NaN, UserLimit,4121.31735706329
+./solvers/scip-nlw/JuniperLib/fuel.stdout:DATA, fuel.jl,16,3,0,16, Min,8566.118007307, NaN, UserLimit,0.214292049407959
+./solvers/scip-nlw/JuniperLib/gams01.stdout:DATA, gams01.jl,146,110,0,1269, Min,24460.2439773611, NaN, UserLimit,3730.13735318184
+./solvers/scip-nlw/JuniperLib/gams02.stdout:DATA, gams02.jl,12689,96,0,14609, Min,99598570.9040135, NaN, UserLimit,3763.73656201363
+./solvers/scip-nlw/JuniperLib/gasnet_al1.stdout:DATA, gasnet_al1.jl,725,136,0,831, Min,7514.87162929619, NaN, UserLimit,3901.08876299858
+./solvers/scip-nlw/JuniperLib/gasnet_al2.stdout:DATA, gasnet_al2.jl,725,136,0,831, Min, NaN, NaN, UserLimit,3880.16358208656
+./solvers/scip-nlw/JuniperLib/gasnet_al3.stdout:DATA, gasnet_al3.jl,725,136,0,831, Min,7423.42254998891, NaN, UserLimit,3873.66909694672
+./solvers/scip-nlw/JuniperLib/gasnet_al4.stdout:DATA, gasnet_al4.jl,725,136,0,831, Min,7440.08465196284, NaN, UserLimit,3877.31140112877
+./solvers/scip-nlw/JuniperLib/gasnet_al5.stdout:DATA, gasnet_al5.jl,725,136,0,831, Min,7413.44741781248, NaN, UserLimit,3883.3814702034
+./solvers/scip-nlw/JuniperLib/gasnet.stdout:DATA, gasnet.jl,91,10,0,70, Min,0, NaN, Infeasible,0.23368501663208
+./solvers/scip-nlw/JuniperLib/gasprod_sarawak01.stdout:DATA, gasprod_sarawak01.jl,132,38,0,213, Min,-32445.408307121, NaN, UserLimit,1.48280191421509
+./solvers/scip-nlw/JuniperLib/gasprod_sarawak16.stdout:DATA, gasprod_sarawak16.jl,1527,38,0,2253, Min,-32093.9631850383, NaN, UserLimit,3717.81802201271
+./solvers/scip-nlw/JuniperLib/gasprod_sarawak81.stdout:DATA, gasprod_sarawak81.jl,7572,38,0,11093, Min,-32100.4584960543, NaN, UserLimit,3631.91395711899
+./solvers/scip-nlw/JuniperLib/gastrans.stdout:DATA, gastrans.jl,107,21,0,150, Min,89.0858400001434, NaN, Optimal,0.312230110168457
+./solvers/scip-nlw/JuniperLib/gastrans040.stdout:DATA, gastrans040.jl,280,0,48,554, Min,0, NaN, Optimal,0.526340961456299
+./solvers/scip-nlw/JuniperLib/gastrans135.stdout:DATA, gastrans135.jl,1194,0,232,2473, Min, NaN, NaN, UserLimit,3657.53405594826
+./solvers/scip-nlw/JuniperLib/gastrans582_cold13_95.stdout:DATA, gastrans582_cold13_95.jl,2187,0,250,3733, Min,0, NaN, Optimal,1278.91535687447
+./solvers/scip-nlw/JuniperLib/gastrans582_cold13.stdout:DATA, gastrans582_cold13.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3686.90371704102
+./solvers/scip-nlw/JuniperLib/gastrans582_cold17_95.stdout:DATA, gastrans582_cold17_95.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3677.42943406105
+./solvers/scip-nlw/JuniperLib/gastrans582_cold17.stdout:DATA, gastrans582_cold17.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3679.49212598801
+./solvers/scip-nlw/JuniperLib/gastrans582_cool12_95.stdout:DATA, gastrans582_cool12_95.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3670.33987498283
+./solvers/scip-nlw/JuniperLib/gastrans582_cool12.stdout:DATA, gastrans582_cool12.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3681.78608298302
+./solvers/scip-nlw/JuniperLib/gastrans582_cool14_95.stdout:DATA, gastrans582_cool14_95.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3676.54497098923
+./solvers/scip-nlw/JuniperLib/gastrans582_cool14.stdout:DATA, gastrans582_cool14.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3683.48525881767
+./solvers/scip-nlw/JuniperLib/gastrans582_freezing27_95.stdout:DATA, gastrans582_freezing27_95.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3680.88032412529
+./solvers/scip-nlw/JuniperLib/gastrans582_freezing27.stdout:DATA, gastrans582_freezing27.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3701.00493001938
+./solvers/scip-nlw/JuniperLib/gastrans582_freezing30_95.stdout:DATA, gastrans582_freezing30_95.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3689.14229106903
+./solvers/scip-nlw/JuniperLib/gastrans582_freezing30.stdout:DATA, gastrans582_freezing30.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3686.52946686745
+./solvers/scip-nlw/JuniperLib/gastrans582_mild10_95.stdout:DATA, gastrans582_mild10_95.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3683.49943685532
+./solvers/scip-nlw/JuniperLib/gastrans582_mild10.stdout:DATA, gastrans582_mild10.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3663.65347790718
+./solvers/scip-nlw/JuniperLib/gastrans582_mild11_95.stdout:DATA, gastrans582_mild11_95.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3683.14904403686
+./solvers/scip-nlw/JuniperLib/gastrans582_mild11.stdout:DATA, gastrans582_mild11.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3669.2476952076
+./solvers/scip-nlw/JuniperLib/gastrans582_warm15_95.stdout:DATA, gastrans582_warm15_95.jl,2187,0,250,3733, Min,0, NaN, Optimal,4.28371787071228
+./solvers/scip-nlw/JuniperLib/gastrans582_warm15.stdout:DATA, gastrans582_warm15.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3683.86498308182
+./solvers/scip-nlw/JuniperLib/gastrans582_warm31_95.stdout:DATA, gastrans582_warm31_95.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3697.6347360611
+./solvers/scip-nlw/JuniperLib/gastrans582_warm31.stdout:DATA, gastrans582_warm31.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3686.57058596611
+./solvers/scip-nlw/JuniperLib/genpooling_lee1.stdout:DATA, genpooling_lee1.jl,50,9,0,83, Min,-4640.08241475439, NaN, Optimal,10.1921088695526
+./solvers/scip-nlw/JuniperLib/genpooling_lee2.stdout:DATA, genpooling_lee2.jl,54,9,0,93, Min,-3849.26545224646, NaN, UserLimit,71.0474119186401
+./solvers/scip-nlw/JuniperLib/genpooling_meyer04.stdout:DATA, genpooling_meyer04.jl,119,55,0,142, Min,1424312.13493918, NaN, UserLimit,3776.12965202332
+./solvers/scip-nlw/JuniperLib/genpooling_meyer10.stdout:DATA, genpooling_meyer10.jl,395,187,0,424, Min,2091237.57123831, NaN, UserLimit,3836.38873291016
+./solvers/scip-nlw/JuniperLib/genpooling_meyer15.stdout:DATA, genpooling_meyer15.jl,735,352,0,769, Min,1221100.54229947, NaN, UserLimit,3768.40123295784
+./solvers/scip-nlw/JuniperLib/ghg_1veh.stdout:DATA, ghg_1veh.jl,30,12,0,38, Min,7.78163462824558, NaN, UserLimit,7.54753804206848
+./solvers/scip-nlw/JuniperLib/ghg_2veh.stdout:DATA, ghg_2veh.jl,58,18,0,63, Min,7.77090454264192, NaN, UserLimit,3894.66268801689
+./solvers/scip-nlw/JuniperLib/ghg_3veh.stdout:DATA, ghg_3veh.jl,97,36,0,120, Min,7.76608555541607, NaN, UserLimit,3802.19517707825
+./solvers/scip-nlw/JuniperLib/graphpart_2g-0044-1601.stdout:DATA, graphpart_2g-0044-1601.jl,49,48,0,17, Min,-954077, NaN, Optimal,0.58827805519104
+./solvers/scip-nlw/JuniperLib/graphpart_2g-0055-0062.stdout:DATA, graphpart_2g-0055-0062.jl,76,75,0,26, Min,-1484348, NaN, Optimal,7.53402781486511
+./solvers/scip-nlw/JuniperLib/graphpart_2g-0066-0066.stdout:DATA, graphpart_2g-0066-0066.jl,109,108,0,37, Min,-2865560, NaN, Optimal,156.307801008224
+./solvers/scip-nlw/JuniperLib/graphpart_2g-0077-0077.stdout:DATA, graphpart_2g-0077-0077.jl,148,147,0,50, Min,-3282435, NaN, UserLimit,3670.70892000198
+./solvers/scip-nlw/JuniperLib/graphpart_2g-0088-0088.stdout:DATA, graphpart_2g-0088-0088.jl,193,192,0,65, Min,-5882701, NaN, UserLimit,3672.08641910553
+./solvers/scip-nlw/JuniperLib/graphpart_2g-0099-9211.stdout:DATA, graphpart_2g-0099-9211.jl,244,243,0,82, Min,-4349906, NaN, UserLimit,3658.90525412559
+./solvers/scip-nlw/JuniperLib/graphpart_2g-1010-0824.stdout:DATA, graphpart_2g-1010-0824.jl,301,300,0,101, Min,-4713284, NaN, UserLimit,3655.90617609024
+./solvers/scip-nlw/JuniperLib/graphpart_2pm-0044-0044.stdout:DATA, graphpart_2pm-0044-0044.jl,49,48,0,17, Min,-13, NaN, Optimal,0.594457864761353
+./solvers/scip-nlw/JuniperLib/graphpart_2pm-0055-0055.stdout:DATA, graphpart_2pm-0055-0055.jl,76,75,0,26, Min,-20, NaN, Optimal,10.1320638656616
+./solvers/scip-nlw/JuniperLib/graphpart_2pm-0066-0066.stdout:DATA, graphpart_2pm-0066-0066.jl,109,108,0,37, Min,-29, NaN, Optimal,312.702492952347
+./solvers/scip-nlw/JuniperLib/graphpart_2pm-0077-0777.stdout:DATA, graphpart_2pm-0077-0777.jl,148,147,0,50, Min,-40, NaN, UserLimit,4380.59583497047
+./solvers/scip-nlw/JuniperLib/graphpart_2pm-0088-0888.stdout:DATA, graphpart_2pm-0088-0888.jl,193,192,0,65, Min,-55, NaN, UserLimit,4293.08059597015
+./solvers/scip-nlw/JuniperLib/graphpart_2pm-0099-0999.stdout:DATA, graphpart_2pm-0099-0999.jl,244,243,0,82, Min,-61, NaN, UserLimit,4061.54948306084
+./solvers/scip-nlw/JuniperLib/graphpart_3g-0234-0234.stdout:DATA, graphpart_3g-0234-0234.jl,73,72,0,25, Min,-1952753, NaN, Optimal,42.8466331958771
+./solvers/scip-nlw/JuniperLib/graphpart_3g-0244-0244.stdout:DATA, graphpart_3g-0244-0244.jl,97,96,0,33, Min,-2725383, NaN, Optimal,876.853136062622
+./solvers/scip-nlw/JuniperLib/graphpart_3g-0333-0333.stdout:DATA, graphpart_3g-0333-0333.jl,82,81,0,28, Min,-1882389, NaN, Optimal,82.049370765686
+./solvers/scip-nlw/JuniperLib/graphpart_3g-0334-0334.stdout:DATA, graphpart_3g-0334-0334.jl,109,108,0,37, Min,-3410696, NaN, UserLimit,3746.07546901703
+./solvers/scip-nlw/JuniperLib/graphpart_3g-0344-0344.stdout:DATA, graphpart_3g-0344-0344.jl,145,144,0,49, Min,-5301515.99999998, NaN, UserLimit,3701.28261494637
+./solvers/scip-nlw/JuniperLib/graphpart_3g-0444-0444.stdout:DATA, graphpart_3g-0444-0444.jl,193,192,0,65, Min,-6760309, NaN, UserLimit,3659.32421708107
+./solvers/scip-nlw/JuniperLib/graphpart_3pm-0234-0234.stdout:DATA, graphpart_3pm-0234-0234.jl,73,72,0,25, Min,-20, NaN, Optimal,8.11404490470886
+./solvers/scip-nlw/JuniperLib/graphpart_3pm-0244-0244.stdout:DATA, graphpart_3pm-0244-0244.jl,97,96,0,33, Min,-28, NaN, Optimal,1641.15387296677
+./solvers/scip-nlw/JuniperLib/graphpart_3pm-0333-0333.stdout:DATA, graphpart_3pm-0333-0333.jl,82,81,0,28, Min,-26, NaN, Optimal,159.960984945297
+./solvers/scip-nlw/JuniperLib/graphpart_3pm-0334-0334.stdout:DATA, graphpart_3pm-0334-0334.jl,109,108,0,37, Min,-36, NaN, UserLimit,4479.13746500015
+./solvers/scip-nlw/JuniperLib/graphpart_3pm-0344-0344.stdout:DATA, graphpart_3pm-0344-0344.jl,145,144,0,49, Min,-46, NaN, UserLimit,4265.69946885109
+./solvers/scip-nlw/JuniperLib/graphpart_3pm-0444-0444.stdout:DATA, graphpart_3pm-0444-0444.jl,193,192,0,65, Min,-65, NaN, UserLimit,4135.79448509216
+./solvers/scip-nlw/JuniperLib/graphpart_clique-20.stdout:DATA, graphpart_clique-20.jl,61,60,0,21, Min,147, NaN, Optimal,92.9178009033203
+./solvers/scip-nlw/JuniperLib/graphpart_clique-30.stdout:DATA, graphpart_clique-30.jl,91,90,0,31, Min,495, NaN, UserLimit,4376.62352085114
+./solvers/scip-nlw/JuniperLib/graphpart_clique-40.stdout:DATA, graphpart_clique-40.jl,121,120,0,41, Min,1315, NaN, UserLimit,4027.50222396851
+./solvers/scip-nlw/JuniperLib/graphpart_clique-50.stdout:DATA, graphpart_clique-50.jl,151,150,0,51, Min,3480, NaN, UserLimit,3843.4832701683
+./solvers/scip-nlw/JuniperLib/graphpart_clique-60.stdout:DATA, graphpart_clique-60.jl,181,180,0,61, Min,6004, NaN, UserLimit,3787.22642207146
+./solvers/scip-nlw/JuniperLib/graphpart_clique-70.stdout:DATA, graphpart_clique-70.jl,211,210,0,71, Min,9002, NaN, UserLimit,3768.67331910133
+./solvers/scip-nlw/JuniperLib/hda.stdout:DATA, hda.jl,723,13,0,719, Min, NaN, NaN, UserLimit,3795.4993429184
+./solvers/scip-nlw/JuniperLib/heatexch_gen1.stdout:DATA, heatexch_gen1.jl,113,12,0,121, Min,100500.098539781, NaN, UserLimit,1415.8556740284
+./solvers/scip-nlw/JuniperLib/heatexch_gen2.stdout:DATA, heatexch_gen2.jl,149,16,0,167, Min,584215.803382576, NaN, UserLimit,4373.55392599106
+./solvers/scip-nlw/JuniperLib/heatexch_gen3.stdout:DATA, heatexch_gen3.jl,581,60,0,511, Min, NaN, NaN, UserLimit,3970.18092107773
+./solvers/scip-nlw/JuniperLib/heatexch_spec1.stdout:DATA, heatexch_spec1.jl,57,12,0,65, Min,154997.334865993, NaN, UserLimit,4306.66824412346
+./solvers/scip-nlw/JuniperLib/heatexch_spec2.stdout:DATA, heatexch_spec2.jl,77,16,0,91, Min,2064739258.04977, NaN, UserLimit,4202.2206799984
+./solvers/scip-nlw/JuniperLib/heatexch_spec3.stdout:DATA, heatexch_spec3.jl,261,60,0,251, Min,1362024.17752842, NaN, UserLimit,3731.68509697914
+./solvers/scip-nlw/JuniperLib/heatexch_trigen.stdout:DATA, heatexch_trigen.jl,292,45,0,263, Max,1001973.08061233, NaN, UserLimit,15.2430338859558
+./solvers/scip-nlw/JuniperLib/hvb11.stdout:DATA, hvb11.jl,9818,9537,0,10252, Min,46961.9999999934, NaN, UserLimit,126.749670028687
+./solvers/scip-nlw/JuniperLib/hybriddynamic_fixed.stdout:DATA, hybriddynamic_fixed.jl,72,10,0,80, Min,1.47377777677778, NaN, Optimal,0.223858118057251
+./solvers/scip-nlw/JuniperLib/hybriddynamic_var.stdout:DATA, hybriddynamic_var.jl,82,10,0,101, Min,1.53641512719631, NaN, UserLimit,1.7631311416626
+./solvers/scip-nlw/JuniperLib/hydroenergy1.stdout:DATA, hydroenergy1.jl,289,96,0,429, Max,209721.006641018, NaN, UserLimit,4280.78937697411
+./solvers/scip-nlw/JuniperLib/hydroenergy2.stdout:DATA, hydroenergy2.jl,577,192,0,857, Max,371764.775582241, NaN, UserLimit,3901.96014499664
+./solvers/scip-nlw/JuniperLib/hydroenergy3.stdout:DATA, hydroenergy3.jl,1009,336,0,1499, Max,744868.967176237, NaN, UserLimit,3762.36444091797
+./solvers/scip-nlw/JuniperLib/ibs2.stdout:DATA, ibs2.jl,3011,1500,0,1822, Min, NaN, NaN, UserLimit,3709.90893793106
+./solvers/scip-nlw/JuniperLib/jit1.stdout:DATA, jit1.jl,26,0,4,33, Min,173983.329981647, NaN, Optimal,0.24677300453186
+./solvers/scip-nlw/JuniperLib/johnall.stdout:DATA, johnall.jl,195,190,0,193, Min,-224.730161690048, NaN, Optimal,11.6365089416504
+./solvers/scip-nlw/JuniperLib/kport20.stdout:DATA, kport20.jl,102,2,38,28, Min,32.1257372080333, NaN, UserLimit,3702.35054779053
+./solvers/scip-nlw/JuniperLib/kport40.stdout:DATA, kport40.jl,268,3,111,49, Min,40.3791911680046, NaN, UserLimit,3663.36778497696
+./solvers/scip-nlw/JuniperLib/lip.stdout:DATA, lip.jl,61,52,0,84, Max,5685067.87700168, NaN, Optimal,0.341469049453735
+./solvers/scip-nlw/JuniperLib/lop97ic.stdout:DATA, lop97ic.jl,1754,0,1662,92, Min,4692.1152208, NaN, UserLimit,3671.04957389832
+./solvers/scip-nlw/JuniperLib/lop97icx.stdout:DATA, lop97icx.jl,987,0,899,88, Min,4264.8099712, NaN, UserLimit,3696.0515100956
+./solvers/scip-nlw/JuniperLib/m3.stdout:DATA, m3.jl,27,6,0,44, Min,37.7999973890562, NaN, Optimal,0.290621042251587
+./solvers/scip-nlw/JuniperLib/m6.stdout:DATA, m6.jl,87,30,0,158, Min,82.25687689818, NaN, Optimal,0.706038951873779
+./solvers/scip-nlw/JuniperLib/m7_ar2_1.stdout:DATA, m7_ar2_1.jl,113,0,42,270, Min,190.234991999889, NaN, Optimal,3.63876485824585
+./solvers/scip-nlw/JuniperLib/m7_ar25_1.stdout:DATA, m7_ar25_1.jl,113,0,42,270, Min,143.585000000001, NaN, Optimal,1.56965494155884
+./solvers/scip-nlw/JuniperLib/m7_ar3_1.stdout:DATA, m7_ar3_1.jl,113,0,42,270, Min,143.585000000001, NaN, Optimal,4.75127005577087
+./solvers/scip-nlw/JuniperLib/m7_ar4_1.stdout:DATA, m7_ar4_1.jl,113,0,42,270, Min,106.75687691364, NaN, UserLimit,1.87164998054504
+./solvers/scip-nlw/JuniperLib/m7_ar5_1.stdout:DATA, m7_ar5_1.jl,113,0,42,270, Min,106.459999183834, NaN, Optimal,2.18548393249512
+./solvers/scip-nlw/JuniperLib/m7.stdout:DATA, m7.jl,115,42,0,212, Min,106.756874144236, NaN, Optimal,2.37239003181458
+./solvers/scip-nlw/JuniperLib/meanvarx.stdout:DATA, meanvarx.jl,36,14,0,45, Min,14.3700172133027, NaN, UserLimit,0.222446918487549
+./solvers/scip-nlw/JuniperLib/minlphix.stdout:DATA, minlphix.jl,85,20,0,93, Min,-1.13036422581943E+020, NaN, Optimal,8.18101906776428
+./solvers/scip-nlw/JuniperLib/multiplants_mtg1a.stdout:DATA, multiplants_mtg1a.jl,194,93,0,257, Max,391.613368444426, NaN, UserLimit,646.403633832932
+./solvers/scip-nlw/JuniperLib/multiplants_mtg1b.stdout:DATA, multiplants_mtg1b.jl,194,93,0,257, Max,450.547817740741, NaN, UserLimit,3983.2842900753
+./solvers/scip-nlw/JuniperLib/multiplants_mtg1c.stdout:DATA, multiplants_mtg1c.jl,245,120,0,319, Max,683.971188548732, NaN, UserLimit,3973.7501680851
+./solvers/scip-nlw/JuniperLib/multiplants_mtg2.stdout:DATA, multiplants_mtg2.jl,230,112,0,307, Max,7099.18621084174, NaN, UserLimit,906.789158821106
+./solvers/scip-nlw/JuniperLib/multiplants_mtg5.stdout:DATA, multiplants_mtg5.jl,191,78,0,309, Max,5924.52215912588, NaN, UserLimit,4027.1266272068
+./solvers/scip-nlw/JuniperLib/multiplants_mtg6.stdout:DATA, multiplants_mtg6.jl,350,176,0,481, Max,5294.631568011, NaN, UserLimit,3896.46612405777
+./solvers/scip-nlw/JuniperLib/multiplants_stg1.stdout:DATA, multiplants_stg1.jl,415,198,0,262, Max, NaN, NaN, UserLimit,3748.60222697258
+./solvers/scip-nlw/JuniperLib/multiplants_stg1a.stdout:DATA, multiplants_stg1a.jl,424,216,0,250, Max, NaN, NaN, UserLimit,3703.15811705589
+./solvers/scip-nlw/JuniperLib/multiplants_stg1b.stdout:DATA, multiplants_stg1b.jl,476,243,0,280, Max, NaN, NaN, UserLimit,3662.31494188309
+./solvers/scip-nlw/JuniperLib/multiplants_stg1c.stdout:DATA, multiplants_stg1c.jl,477,252,0,270, Max, NaN, NaN, UserLimit,3758.47972488403
+./solvers/scip-nlw/JuniperLib/multiplants_stg5.stdout:DATA, multiplants_stg5.jl,451,216,0,299, Max, NaN, NaN, UserLimit,3739.91764497757
+./solvers/scip-nlw/JuniperLib/multiplants_stg6.stdout:DATA, multiplants_stg6.jl,694,384,0,388, Max, NaN, NaN, UserLimit,3690.96064996719
+./solvers/scip-nlw/JuniperLib/ndcc12.stdout:DATA, ndcc12.jl,645,46,0,238, Min, NaN, NaN, UserLimit,3859.9371008873
+./solvers/scip-nlw/JuniperLib/ndcc12persp.stdout:DATA, ndcc12persp.jl,691,46,0,284, Min, NaN, NaN, UserLimit,3811.99130511284
+./solvers/scip-nlw/JuniperLib/ndcc13.stdout:DATA, ndcc13.jl,631,42,0,255, Min,86.760513388, NaN, UserLimit,3800.45701503754
+./solvers/scip-nlw/JuniperLib/ndcc13persp.stdout:DATA, ndcc13persp.jl,673,42,0,297, Min,89.353785339, NaN, UserLimit,3834.48004293442
+./solvers/scip-nlw/JuniperLib/ndcc14.stdout:DATA, ndcc14.jl,865,54,0,306, Min,126.089695017, NaN, UserLimit,3766.54226016998
+./solvers/scip-nlw/JuniperLib/ndcc14persp.stdout:DATA, ndcc14persp.jl,919,54,0,360, Min,121.304821577, NaN, UserLimit,3738.96902704239
+./solvers/scip-nlw/JuniperLib/ndcc15.stdout:DATA, ndcc15.jl,681,40,0,307, Min,102.422767876, NaN, UserLimit,3768.20893001556
+./solvers/scip-nlw/JuniperLib/ndcc15persp.stdout:DATA, ndcc15persp.jl,721,40,0,347, Min,98.516987487, NaN, UserLimit,3770.0955991745
+./solvers/scip-nlw/JuniperLib/ndcc16.stdout:DATA, ndcc16.jl,1081,60,0,378, Min,122.071568108, NaN, UserLimit,3748.97295594215
+./solvers/scip-nlw/JuniperLib/ndcc16persp.stdout:DATA, ndcc16persp.jl,1141,60,0,438, Min,126.579253633, NaN, UserLimit,3729.2662358284
+./solvers/scip-nlw/JuniperLib/netmod_dol1.stdout:DATA, netmod_dol1.jl,1999,462,0,3138, Min,-0.560008370016741, NaN, Optimal,1503.98861813545
+./solvers/scip-nlw/JuniperLib/netmod_dol2.stdout:DATA, netmod_dol2.jl,1999,462,0,3081, Min,-0.560008370016741, NaN, Optimal,37.3045630455017
+./solvers/scip-nlw/JuniperLib/netmod_kar1.stdout:DATA, netmod_kar1.jl,457,136,0,667, Min,-0.419789612097303, NaN, Optimal,4.47674512863159
+./solvers/scip-nlw/JuniperLib/netmod_kar2.stdout:DATA, netmod_kar2.jl,457,136,0,667, Min,-0.419789612097303, NaN, Optimal,4.5420229434967
+./solvers/scip-nlw/JuniperLib/no7_ar2_1.stdout:DATA, no7_ar2_1.jl,113,0,42,270, Min,107.815295109452, NaN, Optimal,29.8457930088043
+./solvers/scip-nlw/JuniperLib/no7_ar25_1.stdout:DATA, no7_ar25_1.jl,113,0,42,270, Min,107.815292241715, NaN, Optimal,25.8973610401154
+./solvers/scip-nlw/JuniperLib/no7_ar3_1.stdout:DATA, no7_ar3_1.jl,113,0,42,270, Min,107.815299296068, NaN, Optimal,118.940402984619
+./solvers/scip-nlw/JuniperLib/no7_ar4_1.stdout:DATA, no7_ar4_1.jl,113,0,42,270, Min,98.5184017976899, NaN, Optimal,179.62110209465
+./solvers/scip-nlw/JuniperLib/no7_ar5_1.stdout:DATA, no7_ar5_1.jl,113,0,42,270, Min,90.622673655003, NaN, Optimal,60.17693400383
+./solvers/scip-nlw/JuniperLib/nous1.stdout:DATA, nous1.jl,51,2,0,44, Min,1.56707140669985, NaN, Optimal,3117.93784999847
+./solvers/scip-nlw/JuniperLib/nous2.stdout:DATA, nous2.jl,51,2,0,44, Min,0.62596676378017, NaN, Optimal,3.90343594551086
+./solvers/scip-nlw/JuniperLib/nuclear104.stdout:DATA, nuclear104.jl,23814,10816,0,14246, Min, NaN, NaN, UserLimit,3656.57276296616
+./solvers/scip-nlw/JuniperLib/nuclear10a.stdout:DATA, nuclear10a.jl,13011,10920,0,3340, Min, NaN, NaN, UserLimit,3609.98274493217
+./solvers/scip-nlw/JuniperLib/nuclear10b.stdout:DATA, nuclear10b.jl,23827,10920,0,24972, Min,-1.10748495815938, NaN, UserLimit,3607.98638296127
+./solvers/scip-nlw/JuniperLib/nuclear14.stdout:DATA, nuclear14.jl,1563,576,0,1227, Min,-1.1166611042515, NaN, UserLimit,4038.03130698204
+./solvers/scip-nlw/JuniperLib/nuclear14a.stdout:DATA, nuclear14a.jl,993,600,0,634, Min,-1.08759151177576, NaN, UserLimit,3632.20029306412
+./solvers/scip-nlw/JuniperLib/nuclear14b.stdout:DATA, nuclear14b.jl,1569,600,0,1786, Min,-1.07496170613383, NaN, UserLimit,3626.67773103714
+./solvers/scip-nlw/JuniperLib/nuclear25.stdout:DATA, nuclear25.jl,1679,625,0,1304, Min,-1.11001104848325, NaN, UserLimit,4020.31751704216
+./solvers/scip-nlw/JuniperLib/nuclear25a.stdout:DATA, nuclear25a.jl,1059,650,0,660, Min, NaN, NaN, UserLimit,3631.22309684753
+./solvers/scip-nlw/JuniperLib/nuclear25b.stdout:DATA, nuclear25b.jl,1684,650,0,1910, Min,-1.07214570471406, NaN, UserLimit,3625.51545286179
+./solvers/scip-nlw/JuniperLib/nuclear49.stdout:DATA, nuclear49.jl,5736,2401,0,3874, Min,-1.13132354746051, NaN, UserLimit,3752.23623204231
+./solvers/scip-nlw/JuniperLib/nuclear49a.stdout:DATA, nuclear49a.jl,3342,2450,0,1432, Min, NaN, NaN, UserLimit,3619.99028301239
+./solvers/scip-nlw/JuniperLib/nuclear49b.stdout:DATA, nuclear49b.jl,5743,2450,0,6234, Min, NaN, NaN, UserLimit,3615.29276800156
+./solvers/scip-nlw/JuniperLib/nuclearva.stdout:DATA, nuclearva.jl,352,168,0,318, Min,-1.00087258533701, NaN, UserLimit,3608.8197658062
+./solvers/scip-nlw/JuniperLib/nuclearvb.stdout:DATA, nuclearvb.jl,352,168,0,318, Min,-1.02192406846619, NaN, UserLimit,3611.88597297668
+./solvers/scip-nlw/JuniperLib/nuclearvc.stdout:DATA, nuclearvc.jl,352,168,0,318, Min,-0.989930430906372, NaN, UserLimit,3611.50630283356
+./solvers/scip-nlw/JuniperLib/nuclearvd.stdout:DATA, nuclearvd.jl,352,168,0,318, Min,-1.02882261563765, NaN, UserLimit,3609.11651682854
+./solvers/scip-nlw/JuniperLib/nuclearve.stdout:DATA, nuclearve.jl,352,168,0,318, Min,-1.02602813337468, NaN, UserLimit,3606.98037791252
+./solvers/scip-nlw/JuniperLib/nuclearvf.stdout:DATA, nuclearvf.jl,352,168,0,318, Min,-1.0099318624799, NaN, UserLimit,3606.66892695427
+./solvers/scip-nlw/JuniperLib/nvs05.stdout:DATA, nvs05.jl,9,0,2,10, Min,7.75421574486547, NaN, UserLimit,4.27894711494446
+./solvers/scip-nlw/JuniperLib/nvs22.stdout:DATA, nvs22.jl,9,0,4,10, Min,6.05822, NaN, Optimal,13.8070161342621
+./solvers/scip-nlw/JuniperLib/nvs23.stdout:DATA, nvs23.jl,10,0,9,10, Min,-1125.200000001, NaN, Optimal,13.7344288825989
+./solvers/scip-nlw/JuniperLib/nvs24.stdout:DATA, nvs24.jl,11,0,10,11, Min,-1033.2, NaN, UserLimit,13.9608941078186
+./solvers/scip-nlw/JuniperLib/o7_2.stdout:DATA, o7_2.jl,115,42,0,212, Min,116.945929677528, NaN, Optimal,325.381274938583
+./solvers/scip-nlw/JuniperLib/o7_ar2_1.stdout:DATA, o7_ar2_1.jl,113,0,42,270, Min,140.411938551386, NaN, Optimal,129.79437994957
+./solvers/scip-nlw/JuniperLib/o7_ar25_1.stdout:DATA, o7_ar25_1.jl,113,0,42,270, Min,140.411944209235, NaN, Optimal,509.894936084747
+./solvers/scip-nlw/JuniperLib/o7_ar3_1.stdout:DATA, o7_ar3_1.jl,113,0,42,270, Min,137.93183667787, NaN, Optimal,617.570269107819
+./solvers/scip-nlw/JuniperLib/o7_ar4_1.stdout:DATA, o7_ar4_1.jl,113,0,42,270, Min,131.653138117977, NaN, Optimal,1892.28226494789
+./solvers/scip-nlw/JuniperLib/o7_ar5_1.stdout:DATA, o7_ar5_1.jl,113,0,42,270, Min,116.945846330822, NaN, Optimal,556.381591081619
+./solvers/scip-nlw/JuniperLib/o7.stdout:DATA, o7.jl,115,42,0,212, Min,131.653137167433, NaN, Optimal,2394.01381492615
+./solvers/scip-nlw/JuniperLib/o8_ar4_1.stdout:DATA, o8_ar4_1.jl,145,0,56,348, Min,243.070667666178, NaN, UserLimit,4276.9127779007
+./solvers/scip-nlw/JuniperLib/o9_ar4_1.stdout:DATA, o9_ar4_1.jl,181,0,72,436, Min,236.138455873312, NaN, UserLimit,4265.8363301754
+./solvers/scip-nlw/JuniperLib/ortez.stdout:DATA, ortez.jl,88,18,0,75, Min,-9532.03905334848, NaN, UserLimit,0.355041980743408
+./solvers/scip-nlw/JuniperLib/parallel.stdout:DATA, parallel.jl,206,25,0,116, Min,924.279143326921, NaN, UserLimit,4.40218997001648
+./solvers/scip-nlw/JuniperLib/pooling_epa1.stdout:DATA, pooling_epa1.jl,215,30,0,341, Min,-280.806725008831, NaN, UserLimit,1364.72251796722
+./solvers/scip-nlw/JuniperLib/pooling_epa2.stdout:DATA, pooling_epa2.jl,332,45,0,525, Min, NaN, NaN, UserLimit,3837.71786189079
+./solvers/scip-nlw/JuniperLib/pooling_epa3.stdout:DATA, pooling_epa3.jl,1105,150,0,1718, Min, NaN, NaN, UserLimit,3683.51415205002
+./solvers/scip-nlw/JuniperLib/portfol_buyin.stdout:DATA, portfol_buyin.jl,18,8,0,20, Min,0.029413446191585, NaN, Optimal,0.352454900741577
+./solvers/scip-nlw/JuniperLib/portfol_card.stdout:DATA, portfol_card.jl,18,8,0,21, Min,0.03221524609519, NaN, Optimal,0.369150876998901
+./solvers/scip-nlw/JuniperLib/portfol_classical050_1.stdout:DATA, portfol_classical050_1.jl,151,50,0,104, Min,-0.094760729690907, NaN, Optimal,69.4966309070587
+./solvers/scip-nlw/JuniperLib/portfol_classical200_2.stdout:DATA, portfol_classical200_2.jl,601,200,0,404, Min,-0.10468100176679, NaN, UserLimit,3654.09365701675
+./solvers/scip-nlw/JuniperLib/portfol_robust050_34.stdout:DATA, portfol_robust050_34.jl,204,51,0,157, Min,-0.072076310904176, NaN, Optimal,1.9179208278656
+./solvers/scip-nlw/JuniperLib/portfol_robust100_09.stdout:DATA, portfol_robust100_09.jl,404,101,0,307, Min,-0.105005865452255, NaN, Optimal,43.1270799636841
+./solvers/scip-nlw/JuniperLib/portfol_robust200_03.stdout:DATA, portfol_robust200_03.jl,804,201,0,607, Min,-0.127484504901391, NaN, UserLimit,3634.17853999138
+./solvers/scip-nlw/JuniperLib/portfol_roundlot.stdout:DATA, portfol_roundlot.jl,18,0,8,12, Min,0, NaN, Infeasible,0.210344076156616
+./solvers/scip-nlw/JuniperLib/portfol_shortfall050_68.stdout:DATA, portfol_shortfall050_68.jl,205,51,0,158, Min,-1.09720394833762, NaN, Optimal,7.0012309551239
+./solvers/scip-nlw/JuniperLib/portfol_shortfall100_04.stdout:DATA, portfol_shortfall100_04.jl,405,101,0,308, Min,-1.11787918579694, NaN, UserLimit,3699.56881117821
+./solvers/scip-nlw/JuniperLib/portfol_shortfall200_05.stdout:DATA, portfol_shortfall200_05.jl,805,201,0,608, Min,-1.11965386867592, NaN, UserLimit,3648.25720000267
+./solvers/scip-nlw/JuniperLib/primary.stdout:DATA, primary.jl,82,8,52,164, Min,-0.865564915407279, NaN, UserLimit,3857.35164904594
+./solvers/scip-nlw/JuniperLib/procurement1large.stdout:DATA, procurement1large.jl,7177,400,0,6055, Max,3384.08828545985, NaN, UserLimit,3630.23873519897
+./solvers/scip-nlw/JuniperLib/procurement1mot.stdout:DATA, procurement1mot.jl,785,60,0,750, Max,279.036295648305, NaN, UserLimit,3797.80261898041
+./solvers/scip-nlw/JuniperLib/procurement2mot.stdout:DATA, procurement2mot.jl,797,60,0,762, Max,212.070801731564, NaN, Optimal,0.823806047439575
+./solvers/scip-nlw/JuniperLib/product.stdout:DATA, product.jl,1554,107,0,1926, Min,-2142.94808629052, NaN, UserLimit,12.2225911617279
+./solvers/scip-nlw/JuniperLib/product2.stdout:DATA, product2.jl,2843,128,0,3126, Min,-2102.3893101978, NaN, UserLimit,2.77820181846619
+./solvers/scip-nlw/JuniperLib/pump.stdout:DATA, pump.jl,25,3,6,35, Min,186735.592012096, NaN, UserLimit,3701.21320295334
+./solvers/scip-nlw/JuniperLib/qap.stdout:DATA, qap.jl,226,225,0,31, Min,414100, NaN, UserLimit,3662.15900492668
+./solvers/scip-nlw/JuniperLib/qapw.stdout:DATA, qapw.jl,451,225,0,256, Min,402986, NaN, UserLimit,3665.82285881042
+./solvers/scip-nlw/JuniperLib/ravem.stdout:DATA, ravem.jl,113,54,0,187, Min,269590.219315208, NaN, Optimal,0.820418119430542
+./solvers/scip-nlw/JuniperLib/ravempb.stdout:DATA, ravempb.jl,113,54,0,187, Min,269590.21931531, NaN, Optimal,0.631678104400635
+./solvers/scip-nlw/JuniperLib/risk2b.stdout:DATA, risk2b.jl,464,14,0,581, Min,-55.876139395002, NaN, Optimal,0.485169172286987
+./solvers/scip-nlw/JuniperLib/risk2bpb.stdout:DATA, risk2bpb.jl,464,14,0,581, Min,-55.876139395002, NaN, UserLimit,0.399349927902222
+./solvers/scip-nlw/JuniperLib/routingdelay_bigm.stdout:DATA, routingdelay_bigm.jl,1124,396,0,2978, Min,151.030620794081, NaN, UserLimit,3747.58645892143
+./solvers/scip-nlw/JuniperLib/routingdelay_proj.stdout:DATA, routingdelay_proj.jl,1124,396,0,2978, Min, NaN, NaN, UserLimit,3699.83422899246
+./solvers/scip-nlw/JuniperLib/RSyn0805H.stdout:DATA, RSyn0805H.jl,309,37,0,430, Max,1296.12087369266, NaN, Optimal,0.382072925567627
+./solvers/scip-nlw/JuniperLib/RSyn0805M.stdout:DATA, RSyn0805M.jl,171,69,0,287, Max,1296.12065884916, NaN, Optimal,0.811307907104492
+./solvers/scip-nlw/JuniperLib/RSyn0805M02H.stdout:DATA, RSyn0805M02H.jl,701,148,0,1046, Max,2238.39764260756, NaN, UserLimit,0.973290920257568
+./solvers/scip-nlw/JuniperLib/RSyn0805M02M.stdout:DATA, RSyn0805M02M.jl,361,148,0,770, Max,2238.39613938298, NaN, Optimal,10.3392820358276
+./solvers/scip-nlw/JuniperLib/RSyn0805M03H.stdout:DATA, RSyn0805M03H.jl,1051,222,0,1699, Max,3068.93421828524, NaN, Optimal,1.09786891937256
+./solvers/scip-nlw/JuniperLib/RSyn0805M03M.stdout:DATA, RSyn0805M03M.jl,541,222,0,1285, Max,3033.99609136833, NaN, Optimal,6.55080580711365
+./solvers/scip-nlw/JuniperLib/RSyn0805M04H.stdout:DATA, RSyn0805M04H.jl,1401,296,0,2439, Max,7174.22341932603, NaN, Optimal,1.16373085975647
+./solvers/scip-nlw/JuniperLib/RSyn0805M04M.stdout:DATA, RSyn0805M04M.jl,721,296,0,1887, Max,7130.16646918713, NaN, Optimal,21.6774790287018
+./solvers/scip-nlw/JuniperLib/RSyn0810H.stdout:DATA, RSyn0810H.jl,344,42,0,484, Max,1721.4477929292, NaN, UserLimit,0.354635953903198
+./solvers/scip-nlw/JuniperLib/RSyn0810M.stdout:DATA, RSyn0810M.jl,186,74,0,313, Max,1721.44771110357, NaN, Optimal,1.25612902641296
+./solvers/scip-nlw/JuniperLib/RSyn0810M02H.stdout:DATA, RSyn0810M02H.jl,791,168,0,1189, Max,1741.3885395262, NaN, Optimal,1.32375288009644
+./solvers/scip-nlw/JuniperLib/RSyn0810M02M.stdout:DATA, RSyn0810M02M.jl,411,168,0,867, Max,1741.3876462069, NaN, Optimal,34.4270031452179
+./solvers/scip-nlw/JuniperLib/RSyn0810M03H.stdout:DATA, RSyn0810M03H.jl,1186,252,0,1936, Max,2722.45022606441, NaN, UserLimit,3.28588509559631
+./solvers/scip-nlw/JuniperLib/RSyn0810M03M.stdout:DATA, RSyn0810M03M.jl,616,252,0,1453, Max,2301.62778371497, NaN, Optimal,82.7033929824829
+./solvers/scip-nlw/JuniperLib/RSyn0810M04H.stdout:DATA, RSyn0810M04H.jl,1581,336,0,2785, Max,6581.93856381154, NaN, UserLimit,2.35119104385376
+./solvers/scip-nlw/JuniperLib/RSyn0810M04M.stdout:DATA, RSyn0810M04M.jl,821,336,0,2141, Max,6527.28026899108, NaN, Optimal,69.8420479297638
+./solvers/scip-nlw/JuniperLib/RSyn0815H.stdout:DATA, RSyn0815H.jl,388,47,0,553, Max,1269.9258301781, NaN, Optimal,1.06892395019531
+./solvers/scip-nlw/JuniperLib/RSyn0815M.stdout:DATA, RSyn0815M.jl,206,79,0,348, Max,1269.92585793925, NaN, Optimal,1.34328198432922
+./solvers/scip-nlw/JuniperLib/RSyn0815M02H.stdout:DATA, RSyn0815M02H.jl,899,188,0,1362, Max,1774.39921654903, NaN, Optimal,1.94949913024902
+./solvers/scip-nlw/JuniperLib/RSyn0815M02M.stdout:DATA, RSyn0815M02M.jl,471,188,0,982, Max,1774.3974427765, NaN, Optimal,17.9364769458771
+./solvers/scip-nlw/JuniperLib/RSyn0815M03H.stdout:DATA, RSyn0815M03H.jl,1348,282,0,2218, Max,2827.92844030899, NaN, Optimal,3.25038719177246
+./solvers/scip-nlw/JuniperLib/RSyn0815M03M.stdout:DATA, RSyn0815M03M.jl,706,282,0,1648, Max,2827.92641140191, NaN, Optimal,87.7578840255737
+./solvers/scip-nlw/JuniperLib/RSyn0815M04H.stdout:DATA, RSyn0815M04H.jl,1797,376,0,3191, Max,3410.8576137331, NaN, UserLimit,493.98401594162
+./solvers/scip-nlw/JuniperLib/RSyn0815M04M.stdout:DATA, RSyn0815M04M.jl,941,376,0,2431, Max,3410.85457533236, NaN, Optimal,416.108494997025
+./solvers/scip-nlw/JuniperLib/RSyn0820H.stdout:DATA, RSyn0820H.jl,418,52,0,605, Max,1150.3018757359, NaN, Optimal,2.34678411483765
+./solvers/scip-nlw/JuniperLib/RSyn0820M.stdout:DATA, RSyn0820M.jl,216,84,0,372, Max,1150.30128856236, NaN, Optimal,3.76351618766785
+./solvers/scip-nlw/JuniperLib/RSyn0820M02H.stdout:DATA, RSyn0820M02H.jl,979,208,0,1501, Max,1092.09204764017, NaN, Optimal,217.12842798233
+./solvers/scip-nlw/JuniperLib/RSyn0820M02M.stdout:DATA, RSyn0820M02M.jl,511,208,0,1075, Max,1092.09147808017, NaN, Optimal,250.121996879578
+./solvers/scip-nlw/JuniperLib/RSyn0820M03H.stdout:DATA, RSyn0820M03H.jl,1468,312,0,2449, Max,2028.81349107914, NaN, Optimal,4.74274015426636
+./solvers/scip-nlw/JuniperLib/RSyn0820M03M.stdout:DATA, RSyn0820M03M.jl,766,312,0,1810, Max,2028.81277159361, NaN, Optimal,3644.21472501755
+./solvers/scip-nlw/JuniperLib/RSyn0820M04H.stdout:DATA, RSyn0820M04H.jl,1957,416,0,3529, Max,2450.77356031351, NaN, UserLimit,4.57193088531494
+./solvers/scip-nlw/JuniperLib/RSyn0820M04M.stdout:DATA, RSyn0820M04M.jl,1021,416,0,2677, Max,2450.77318128102, NaN, UserLimit,3861.50637888908
+./solvers/scip-nlw/JuniperLib/RSyn0830H.stdout:DATA, RSyn0830H.jl,495,62,0,717, Max,510.07246676268, NaN, Optimal,23.4909482002258
+./solvers/scip-nlw/JuniperLib/RSyn0830M.stdout:DATA, RSyn0830M.jl,251,94,0,426, Max,510.072288696937, NaN, Optimal,2.35061502456665
+./solvers/scip-nlw/JuniperLib/RSyn0830M02H.stdout:DATA, RSyn0830M02H.jl,1173,248,0,1795, Max,730.508270898965, NaN, Optimal,18.0119869709015
+./solvers/scip-nlw/JuniperLib/RSyn0830M02M.stdout:DATA, RSyn0830M02M.jl,621,248,0,1273, Max,730.508113007887, NaN, Optimal,160.617572069168
+./solvers/scip-nlw/JuniperLib/RSyn0830M03H.stdout:DATA, RSyn0830M03H.jl,1759,372,0,2935, Max,1543.06063196802, NaN, Optimal,6.17666888237
+./solvers/scip-nlw/JuniperLib/RSyn0830M03M.stdout:DATA, RSyn0830M03M.jl,931,372,0,2152, Max,1543.06084883667, NaN, Optimal,1804.1235871315
+./solvers/scip-nlw/JuniperLib/RSyn0830M04H.stdout:DATA, RSyn0830M04H.jl,2345,496,0,4237, Max,2529.07555870823, NaN, UserLimit,10.3038589954376
+./solvers/scip-nlw/JuniperLib/RSyn0830M04M.stdout:DATA, RSyn0830M04M.jl,1241,496,0,3193, Max,2522.48178611628, NaN, UserLimit,3844.6034450531
+./solvers/scip-nlw/JuniperLib/RSyn0840H.stdout:DATA, RSyn0840H.jl,569,72,0,838, Max,325.554875184801, NaN, Optimal,2.79147887229919
+./solvers/scip-nlw/JuniperLib/RSyn0840M.stdout:DATA, RSyn0840M.jl,281,104,0,485, Max,325.554749299719, NaN, Optimal,12.7366609573364
+./solvers/scip-nlw/JuniperLib/RSyn0840M02H.stdout:DATA, RSyn0840M02H.jl,1361,288,0,2107, Max,734.985638465746, NaN, Optimal,5.07255506515503
+./solvers/scip-nlw/JuniperLib/RSyn0840M02M.stdout:DATA, RSyn0840M02M.jl,721,288,0,1481, Max,734.984859709634, NaN, Optimal,1131.60466790199
+./solvers/scip-nlw/JuniperLib/RSyn0840M03H.stdout:DATA, RSyn0840M03H.jl,2041,432,0,3448, Max,2742.64692366586, NaN, Optimal,8.85711908340454
+./solvers/scip-nlw/JuniperLib/RSyn0840M03M.stdout:DATA, RSyn0840M03M.jl,1081,432,0,2509, Max,2619.7311100504, NaN, UserLimit,3883.29391598701
+./solvers/scip-nlw/JuniperLib/RSyn0840M04H.stdout:DATA, RSyn0840M04H.jl,2721,576,0,4981, Max,2564.50326438986, NaN, Optimal,16.4308519363403
+./solvers/scip-nlw/JuniperLib/RSyn0840M04M.stdout:DATA, RSyn0840M04M.jl,1441,576,0,3729, Max,2519.61370319535, NaN, UserLimit,3768.34639596939
+./solvers/scip-nlw/JuniperLib/saa_2.stdout:DATA, saa_2.jl,4408,400,0,6206, Min,12.7030179036843, NaN, UserLimit,3605.37739992142
+./solvers/scip-nlw/JuniperLib/sep1.stdout:DATA, sep1.jl,30,2,0,32, Min,-510.080984353056, NaN, Optimal,0.40500807762146
+./solvers/scip-nlw/JuniperLib/sepasequ_complex.stdout:DATA, sepasequ_complex.jl,498,50,0,1311, Min,383.369784415125, NaN, UserLimit,3852.87065696716
+./solvers/scip-nlw/JuniperLib/sepasequ_convent.stdout:DATA, sepasequ_convent.jl,642,20,0,1129, Min,482.499797052609, NaN, UserLimit,26.3273799419403
+./solvers/scip-nlw/JuniperLib/sfacloc1_2_80.stdout:DATA, sfacloc1_2_80.jl,232,62,0,2089, Min,12.7520623246365, NaN, UserLimit,3933.76852893829
+./solvers/scip-nlw/JuniperLib/sfacloc1_2_90.stdout:DATA, sfacloc1_2_90.jl,200,30,0,349, Min,17.9723221346883, NaN, UserLimit,4060.28467988968
+./solvers/scip-nlw/JuniperLib/sfacloc1_2_95.stdout:DATA, sfacloc1_2_95.jl,172,9,0,209, Min,18.8500214709424, NaN, UserLimit,4207.46026515961
+./solvers/scip-nlw/JuniperLib/sfacloc1_3_80.stdout:DATA, sfacloc1_3_80.jl,294,62,0,2162, Min,8.65667658510057, NaN, UserLimit,3862.33903408051
+./solvers/scip-nlw/JuniperLib/sfacloc1_3_90.stdout:DATA, sfacloc1_3_90.jl,262,30,0,422, Min,11.674976452436, NaN, UserLimit,3916.59107589722
+./solvers/scip-nlw/JuniperLib/sfacloc1_3_95.stdout:DATA, sfacloc1_3_95.jl,234,9,0,282, Min,12.3024593589459, NaN, UserLimit,3907.18170690536
+./solvers/scip-nlw/JuniperLib/sfacloc1_4_80.stdout:DATA, sfacloc1_4_80.jl,356,62,0,2235, Min,8.18278365135036, NaN, UserLimit,3826.39381217957
+./solvers/scip-nlw/JuniperLib/sfacloc1_4_90.stdout:DATA, sfacloc1_4_90.jl,324,30,0,495, Min,10.5484975260242, NaN, UserLimit,3849.81664800644
+./solvers/scip-nlw/JuniperLib/sfacloc1_4_95.stdout:DATA, sfacloc1_4_95.jl,296,9,0,355, Min,11.2292922807879, NaN, UserLimit,3907.00464105606
+./solvers/scip-nlw/JuniperLib/sfacloc2_2_80.stdout:DATA, sfacloc2_2_80.jl,247,92,0,2166, Min,13.27950735813, NaN, Optimal,4.44231605529785
+./solvers/scip-nlw/JuniperLib/sfacloc2_2_90.stdout:DATA, sfacloc2_2_90.jl,215,60,0,394, Min,18.5941091946633, NaN, Optimal,1.06401109695435
+./solvers/scip-nlw/JuniperLib/sfacloc2_2_95.stdout:DATA, sfacloc2_2_95.jl,187,39,0,240, Min,19.5775516542, NaN, Optimal,0.77275800704956
+./solvers/scip-nlw/JuniperLib/sfacloc2_3_80.stdout:DATA, sfacloc2_3_80.jl,324,107,0,2269, Min,11.0585180595333, NaN, Optimal,715.548104047775
+./solvers/scip-nlw/JuniperLib/sfacloc2_3_90.stdout:DATA, sfacloc2_3_90.jl,292,75,0,497, Min,15.0945010483333, NaN, Optimal,4.22815990447998
+./solvers/scip-nlw/JuniperLib/sfacloc2_3_95.stdout:DATA, sfacloc2_3_95.jl,264,54,0,343, Min,16.1511201236667, NaN, Optimal,14.6291508674622
+./solvers/scip-nlw/JuniperLib/sfacloc2_4_80.stdout:DATA, sfacloc2_4_80.jl,401,122,0,2372, Min,9.98294280107088, NaN, UserLimit,4034.44873309135
+./solvers/scip-nlw/JuniperLib/sfacloc2_4_90.stdout:DATA, sfacloc2_4_90.jl,369,90,0,600, Min,13.4115033492667, NaN, Optimal,176.128878116608
+./solvers/scip-nlw/JuniperLib/sfacloc2_4_95.stdout:DATA, sfacloc2_4_95.jl,341,69,0,446, Min,14.2991773274, NaN, Optimal,45.6687240600586
+./solvers/scip-nlw/JuniperLib/sjup2.stdout:DATA, sjup2.jl,1697,8,0,17086, Min,11324.03, NaN, UserLimit,3755.7902867794
+./solvers/scip-nlw/JuniperLib/SLay04H.stdout:DATA, SLay04H.jl,141,24,0,175, Min,9859.6593827585, NaN, Optimal,0.716103076934814
+./solvers/scip-nlw/JuniperLib/SLay04M.stdout:DATA, SLay04M.jl,45,24,0,55, Min,9859.6597074281, NaN, Optimal,0.822204113006592
+./solvers/scip-nlw/JuniperLib/SLay05H.stdout:DATA, SLay05H.jl,231,40,0,291, Min,22664.6782182943, NaN, Optimal,1.75983095169067
+./solvers/scip-nlw/JuniperLib/SLay05M.stdout:DATA, SLay05M.jl,71,40,0,91, Min,22664.6771746791, NaN, Optimal,1.10248208045959
+./solvers/scip-nlw/JuniperLib/SLay06H.stdout:DATA, SLay06H.jl,343,60,0,436, Min,32757.0201813079, NaN, Optimal,3.32274603843689
+./solvers/scip-nlw/JuniperLib/SLay06M.stdout:DATA, SLay06M.jl,103,60,0,136, Min,32757.0201811708, NaN, Optimal,1.5112988948822
+./solvers/scip-nlw/JuniperLib/SLay07H.stdout:DATA, SLay07H.jl,477,84,0,610, Min,64748.825291592, NaN, Optimal,44.153932094574
+./solvers/scip-nlw/JuniperLib/SLay07M.stdout:DATA, SLay07M.jl,141,84,0,190, Min,64748.825291685, NaN, Optimal,310.747966051102
+./solvers/scip-nlw/JuniperLib/SLay08H.stdout:DATA, SLay08H.jl,633,112,0,813, Min,84960.2124186033, NaN, Optimal,72.749293088913
+./solvers/scip-nlw/JuniperLib/SLay08M.stdout:DATA, SLay08M.jl,185,112,0,253, Min,84960.2124188336, NaN, Optimal,5.21107792854309
+./solvers/scip-nlw/JuniperLib/SLay09H.stdout:DATA, SLay09H.jl,811,144,0,1045, Min,107805.752931645, NaN, Optimal,234.297399044037
+./solvers/scip-nlw/JuniperLib/SLay09M.stdout:DATA, SLay09M.jl,235,144,0,325, Min,107805.752931924, NaN, Optimal,34.3400819301605
+./solvers/scip-nlw/JuniperLib/SLay10H.stdout:DATA, SLay10H.jl,1011,180,0,1306, Min,129579.883752776, NaN, UserLimit,3738.31539106369
+./solvers/scip-nlw/JuniperLib/SLay10M.stdout:DATA, SLay10M.jl,291,180,0,406, Min,129579.883752985, NaN, Optimal,100.014200925827
+./solvers/scip-nlw/JuniperLib/space25.stdout:DATA, space25.jl,894,750,0,236, Min, NaN, NaN, UserLimit,3616.08369088173
+./solvers/scip-nlw/JuniperLib/space25a.stdout:DATA, space25a.jl,384,240,0,202, Min,735.25867001801, NaN, UserLimit,3625.57815289497
+./solvers/scip-nlw/JuniperLib/space960.stdout:DATA, space960.jl,5538,0,960,6498, Min, NaN, NaN, UserLimit,3618.4304728508
+./solvers/scip-nlw/JuniperLib/spectra2.stdout:DATA, spectra2.jl,70,30,0,73, Min,13.978303638668, NaN, Optimal,3.70072603225708
+./solvers/scip-nlw/JuniperLib/squfl010-025.stdout:DATA, squfl010-025.jl,261,10,0,276, Min,214.110952008782, NaN, Optimal,662.7672560215
+./solvers/scip-nlw/JuniperLib/squfl010-025persp.stdout:DATA, squfl010-025persp.jl,511,10,0,526, Min,214.110027313696, NaN, Optimal,1.50865316390991
+./solvers/scip-nlw/JuniperLib/squfl010-040.stdout:DATA, squfl010-040.jl,411,10,0,441, Min,312.113915563412, NaN, UserLimit,3605.57859396935
+./solvers/scip-nlw/JuniperLib/squfl010-040persp.stdout:DATA, squfl010-040persp.jl,811,10,0,841, Min,240.597111034208, NaN, Optimal,1.6551730632782
+./solvers/scip-nlw/JuniperLib/squfl010-080.stdout:DATA, squfl010-080.jl,811,10,0,881, Min,649.801047493392, NaN, UserLimit,3611.26981520653
+./solvers/scip-nlw/JuniperLib/squfl010-080persp.stdout:DATA, squfl010-080persp.jl,1611,10,0,1681, Min,509.702858201756, NaN, Optimal,24.4182980060577
+./solvers/scip-nlw/JuniperLib/squfl015-060.stdout:DATA, squfl015-060.jl,916,15,0,961, Min,452.062886696771, NaN, UserLimit,3608.11999583244
+./solvers/scip-nlw/JuniperLib/squfl015-060persp.stdout:DATA, squfl015-060persp.jl,1816,15,0,1861, Min,366.619703225874, NaN, Optimal,17.8786149024963
+./solvers/scip-nlw/JuniperLib/squfl015-080.stdout:DATA, squfl015-080.jl,1216,15,0,1281, Min,493.758472333057, NaN, UserLimit,3615.28617191315
+./solvers/scip-nlw/JuniperLib/squfl015-080persp.stdout:DATA, squfl015-080persp.jl,2416,15,0,2481, Min,402.484564124473, NaN, Optimal,27.5357508659363
+./solvers/scip-nlw/JuniperLib/squfl020-040.stdout:DATA, squfl020-040.jl,821,20,0,841, Min,209.254890153858, NaN, UserLimit,3609.39975190163
+./solvers/scip-nlw/JuniperLib/squfl020-040persp.stdout:DATA, squfl020-040persp.jl,1621,20,0,1641, Min,209.253162835259, NaN, Optimal,6.88403010368347
+./solvers/scip-nlw/JuniperLib/squfl020-050.stdout:DATA, squfl020-050.jl,1021,20,0,1051, Min,244.052505607699, NaN, UserLimit,3617.09841990471
+./solvers/scip-nlw/JuniperLib/squfl020-050persp.stdout:DATA, squfl020-050persp.jl,2021,20,0,2051, Min,230.199031240929, NaN, Optimal,13.5716500282288
+./solvers/scip-nlw/JuniperLib/squfl020-150.stdout:DATA, squfl020-150.jl,3021,20,0,3151, Min,587.866360799351, NaN, UserLimit,3610.30490517616
+./solvers/scip-nlw/JuniperLib/squfl020-150persp.stdout:DATA, squfl020-150persp.jl,6021,20,0,6151, Min,557.83565310781, NaN, Optimal,135.174831151962
+./solvers/scip-nlw/JuniperLib/squfl025-025.stdout:DATA, squfl025-025.jl,651,25,0,651, Min,168.807225564645, NaN, UserLimit,3645.75270915031
+./solvers/scip-nlw/JuniperLib/squfl025-025persp.stdout:DATA, squfl025-025persp.jl,1276,25,0,1276, Min,168.806380570431, NaN, Optimal,7.50953912734985
+./solvers/scip-nlw/JuniperLib/squfl025-030.stdout:DATA, squfl025-030.jl,776,25,0,781, Min,205.501654560032, NaN, UserLimit,3625.05341982841
+./solvers/scip-nlw/JuniperLib/squfl025-030persp.stdout:DATA, squfl025-030persp.jl,1526,25,0,1531, Min,205.50062397389, NaN, Optimal,20.2072260379791
+./solvers/scip-nlw/JuniperLib/squfl025-040.stdout:DATA, squfl025-040.jl,1026,25,0,1041, Min,199.164837793669, NaN, UserLimit,3619.15999388695
+./solvers/scip-nlw/JuniperLib/squfl025-040persp.stdout:DATA, squfl025-040persp.jl,2026,25,0,2041, Min,197.331944410182, NaN, Optimal,28.1537809371948
+./solvers/scip-nlw/JuniperLib/squfl030-100.stdout:DATA, squfl030-100.jl,3031,30,0,3101, Min,424.54974585672, NaN, UserLimit,3606.36558008194
+./solvers/scip-nlw/JuniperLib/squfl030-100persp.stdout:DATA, squfl030-100persp.jl,6031,30,0,6101, Min,363.085893601892, NaN, Optimal,198.923923969269
+./solvers/scip-nlw/JuniperLib/squfl030-150.stdout:DATA, squfl030-150.jl,4531,30,0,4651, Min,460.525927102274, NaN, UserLimit,3605.88802099228
+./solvers/scip-nlw/JuniperLib/squfl030-150persp.stdout:DATA, squfl030-150persp.jl,9031,30,0,9151, Min,430.562190962685, NaN, Optimal,486.394237041473
+./solvers/scip-nlw/JuniperLib/squfl040-080.stdout:DATA, squfl040-080.jl,3241,40,0,3281, Min,263.899161311272, NaN, UserLimit,3613.6964161396
+./solvers/scip-nlw/JuniperLib/squfl040-080persp.stdout:DATA, squfl040-080persp.jl,6441,40,0,6481, Min,263.891955043238, NaN, Optimal,190.981719970703
+./solvers/scip-nlw/JuniperLib/sssd08-04.stdout:DATA, sssd08-04.jl,61,44,0,41, Min,182022.569828413, NaN, Optimal,11.1853251457214
+./solvers/scip-nlw/JuniperLib/sssd08-04persp.stdout:DATA, sssd08-04persp.jl,61,44,0,41, Min,182022.569846408, NaN, Optimal,29.8582429885864
+./solvers/scip-nlw/JuniperLib/sssd12-05.stdout:DATA, sssd12-05.jl,96,75,0,53, Min,281455.653875743, NaN, UserLimit,4440.17908406258
+./solvers/scip-nlw/JuniperLib/sssd12-05persp.stdout:DATA, sssd12-05persp.jl,96,75,0,53, Min,281602.519012015, NaN, UserLimit,4364.04628515244
+./solvers/scip-nlw/JuniperLib/sssd15-04.stdout:DATA, sssd15-04.jl,89,72,0,48, Min,205549.14627141, NaN, UserLimit,3866.48523402214
+./solvers/scip-nlw/JuniperLib/sssd15-04persp.stdout:DATA, sssd15-04persp.jl,89,72,0,48, Min,205454.486675757, NaN, UserLimit,3814.17238998413
+./solvers/scip-nlw/JuniperLib/sssd15-06.stdout:DATA, sssd15-06.jl,133,108,0,64, Min,540856.857659876, NaN, UserLimit,3992.52331113815
+./solvers/scip-nlw/JuniperLib/sssd15-06persp.stdout:DATA, sssd15-06persp.jl,133,108,0,64, Min,542369.203218852, NaN, UserLimit,3991.70587420464
+./solvers/scip-nlw/JuniperLib/sssd15-08.stdout:DATA, sssd15-08.jl,177,144,0,80, Min,565145.835765338, NaN, UserLimit,4377.27566504478
+./solvers/scip-nlw/JuniperLib/sssd15-08persp.stdout:DATA, sssd15-08persp.jl,177,144,0,80, Min,564570.356109016, NaN, UserLimit,4213.30199885368
+./solvers/scip-nlw/JuniperLib/sssd16-07.stdout:DATA, sssd16-07.jl,162,133,0,73, Min,418612.476120698, NaN, UserLimit,4106.53023791313
+./solvers/scip-nlw/JuniperLib/sssd16-07persp.stdout:DATA, sssd16-07persp.jl,162,133,0,73, Min,421015.728655163, NaN, UserLimit,4258.80596494675
+./solvers/scip-nlw/JuniperLib/sssd18-06.stdout:DATA, sssd18-06.jl,151,126,0,67, Min,399267.93521897, NaN, UserLimit,3897.97067403793
+./solvers/scip-nlw/JuniperLib/sssd18-06persp.stdout:DATA, sssd18-06persp.jl,151,126,0,67, Min,401983.217428628, NaN, UserLimit,3902.46344590187
+./solvers/scip-nlw/JuniperLib/sssd18-08.stdout:DATA, sssd18-08.jl,201,168,0,83, Min,833555.507523368, NaN, UserLimit,4220.1368970871
+./solvers/scip-nlw/JuniperLib/sssd18-08persp.stdout:DATA, sssd18-08persp.jl,201,168,0,83, Min,843582.926597182, NaN, UserLimit,4177.69490599632
+./solvers/scip-nlw/JuniperLib/sssd20-04.stdout:DATA, sssd20-04.jl,109,92,0,53, Min,347975.7750753, NaN, UserLimit,3780.5782430172
+./solvers/scip-nlw/JuniperLib/sssd20-04persp.stdout:DATA, sssd20-04persp.jl,109,92,0,53, Min,347902.637293235, NaN, UserLimit,3759.56896519661
+./solvers/scip-nlw/JuniperLib/sssd20-08.stdout:DATA, sssd20-08.jl,217,184,0,85, Min,470757.868751786, NaN, UserLimit,4144.45536899567
+./solvers/scip-nlw/JuniperLib/sssd20-08persp.stdout:DATA, sssd20-08persp.jl,217,184,0,85, Min,472986.572882409, NaN, UserLimit,3967.94097495079
+./solvers/scip-nlw/JuniperLib/sssd22-08.stdout:DATA, sssd22-08.jl,233,200,0,87, Min,509427.611503916, NaN, UserLimit,4117.93342995644
+./solvers/scip-nlw/JuniperLib/sssd22-08persp.stdout:DATA, sssd22-08persp.jl,233,200,0,87, Min,511169.162232639, NaN, UserLimit,4123.35174489021
+./solvers/scip-nlw/JuniperLib/sssd25-04.stdout:DATA, sssd25-04.jl,129,112,0,58, Min,300443.418418054, NaN, UserLimit,3770.64198207855
+./solvers/scip-nlw/JuniperLib/sssd25-04persp.stdout:DATA, sssd25-04persp.jl,129,112,0,58, Min,301096.966756715, NaN, UserLimit,3762.94299697876
+./solvers/scip-nlw/JuniperLib/sssd25-08.stdout:DATA, sssd25-08.jl,257,224,0,90, Min,473107.371650317, NaN, UserLimit,3961.06540584564
+./solvers/scip-nlw/JuniperLib/sssd25-08persp.stdout:DATA, sssd25-08persp.jl,257,224,0,90, Min,476636.507877706, NaN, UserLimit,3858.35316991806
+./solvers/scip-nlw/JuniperLib/st_e14.stdout:DATA, st_e14.jl,12,4,0,14, Min,4.57958240029185, NaN, UserLimit,0.241077899932861
+./solvers/scip-nlw/JuniperLib/st_e31.stdout:DATA, st_e31.jl,113,24,0,136, Min,-2.00000123126046, NaN, UserLimit,0.975018978118896
+./solvers/scip-nlw/JuniperLib/st_e32.stdout:DATA, st_e32.jl,36,0,19,19, Min,-1.43040728645279, NaN, Optimal,2.87123799324036
+./solvers/scip-nlw/JuniperLib/st_e35.stdout:DATA, st_e35.jl,33,7,0,40, Min,64868.0723491556, NaN, UserLimit,3.8942449092865
+./solvers/scip-nlw/JuniperLib/st_miqp5.stdout:DATA, st_miqp5.jl,8,0,2,14, Min,-333.888890538797, NaN, Optimal,0.251061916351318
+./solvers/scip-nlw/JuniperLib/st_test3.stdout:DATA, st_test3.jl,14,0,13,11, Min,-7, NaN, Optimal,0.205487966537476
+./solvers/scip-nlw/JuniperLib/st_test5.stdout:DATA, st_test5.jl,11,0,10,12, Min,-110, NaN, Optimal,0.210418939590454
+./solvers/scip-nlw/JuniperLib/st_test8.stdout:DATA, st_test8.jl,25,0,24,21, Min,-29605, NaN, Optimal,0.228818893432617
+./solvers/scip-nlw/JuniperLib/st_testgr3.stdout:DATA, st_testgr3.jl,21,0,20,21, Min,-20.59, NaN, Optimal,0.221410989761353
+./solvers/scip-nlw/JuniperLib/st_testph4.stdout:DATA, st_testph4.jl,4,0,3,11, Min,-80.5, NaN, Optimal,0.22028112411499
+./solvers/scip-nlw/JuniperLib/stockcycle.stdout:DATA, stockcycle.jl,481,432,0,98, Min,119948.688333333, NaN, Optimal,67.0163750648499
+./solvers/scip-nlw/JuniperLib/super1.stdout:DATA, super1.jl,1308,44,0,1659, Min,0, NaN, Infeasible,0.258037090301514
+./solvers/scip-nlw/JuniperLib/super2.stdout:DATA, super2.jl,1308,44,0,1659, Min,0, NaN, Infeasible,0.279329061508179
+./solvers/scip-nlw/JuniperLib/super3.stdout:DATA, super3.jl,1308,44,0,1659, Min,0, NaN, Infeasible,0.263169050216675
+./solvers/scip-nlw/JuniperLib/super3t.stdout:DATA, super3t.jl,1056,44,0,1343, Min,-0.654860508026842, NaN, UserLimit,3655.14891982079
+./solvers/scip-nlw/JuniperLib/supplychain.stdout:DATA, supplychain.jl,28,3,0,31, Min,2260.42422995793, NaN, UserLimit,0.677656888961792
+./solvers/scip-nlw/JuniperLib/supplychainp1_020306.stdout:DATA, supplychainp1_020306.jl,151,27,0,256, Min,437551.676406165, NaN, Optimal,0.633571863174439
+./solvers/scip-nlw/JuniperLib/supplychainp1_022020.stdout:DATA, supplychainp1_022020.jl,2941,460,0,5301, Min,1776977.06120104, NaN, UserLimit,3907.10798692703
+./solvers/scip-nlw/JuniperLib/supplychainp1_030510.stdout:DATA, supplychainp1_030510.jl,446,70,0,836, Min,860440.91949228, NaN, UserLimit,11.5132520198822
+./solvers/scip-nlw/JuniperLib/supplychainr1_020306.stdout:DATA, supplychainr1_020306.jl,94,27,0,115, Min,437551.182971959, NaN, UserLimit,0.342405080795288
+./solvers/scip-nlw/JuniperLib/supplychainr1_022020.stdout:DATA, supplychainr1_022020.jl,1441,460,0,1841, Min,1776970.20161472, NaN, UserLimit,3902.46365976334
+./solvers/scip-nlw/JuniperLib/supplychainr1_030510.stdout:DATA, supplychainr1_030510.jl,231,70,0,281, Min,860440.157809981, NaN, Optimal,0.396107912063599
+./solvers/scip-nlw/JuniperLib/supplychainr1_053050.stdout:DATA, supplychainr1_053050.jl,5151,1680,0,6581, Min,3828182.92136642, NaN, UserLimit,3643.44635105133
+./solvers/scip-nlw/JuniperLib/Syn05H.stdout:DATA, Syn05H.jl,43,5,0,59, Max,837.73240089798, NaN, Optimal,0.412737846374512
+./solvers/scip-nlw/JuniperLib/Syn05M.stdout:DATA, Syn05M.jl,21,5,0,29, Max,837.732400897979, NaN, Optimal,0.27157711982727
+./solvers/scip-nlw/JuniperLib/Syn05M02H.stdout:DATA, Syn05M02H.jl,105,20,0,152, Max,3032.73588248253, NaN, UserLimit,0.268951177597046
+./solvers/scip-nlw/JuniperLib/Syn05M02M.stdout:DATA, Syn05M02M.jl,61,20,0,102, Max,3032.73583841371, NaN, Optimal,0.427791833877564
+./solvers/scip-nlw/JuniperLib/Syn05M03H.stdout:DATA, Syn05M03H.jl,157,30,0,250, Max,4027.37263060658, NaN, UserLimit,0.273036003112793
+./solvers/scip-nlw/JuniperLib/Syn05M03M.stdout:DATA, Syn05M03M.jl,91,30,0,175, Max,4027.37219453106, NaN, Optimal,0.389922857284546
+./solvers/scip-nlw/JuniperLib/Syn05M04H.stdout:DATA, Syn05M04H.jl,209,40,0,363, Max,5510.38844808744, NaN, UserLimit,0.328780889511108
+./solvers/scip-nlw/JuniperLib/Syn05M04M.stdout:DATA, Syn05M04M.jl,121,40,0,263, Max,5510.3881236372, NaN, Optimal,0.684848070144653
+./solvers/scip-nlw/JuniperLib/Syn10H.stdout:DATA, Syn10H.jl,78,10,0,113, Max,1267.35355000169, NaN, UserLimit,0.400768995285034
+./solvers/scip-nlw/JuniperLib/Syn10M.stdout:DATA, Syn10M.jl,36,10,0,55, Max,1267.35357933872, NaN, Optimal,0.275284051895142
+./solvers/scip-nlw/JuniperLib/Syn10M02H.stdout:DATA, Syn10M02H.jl,195,40,0,295, Max,2310.30141676766, NaN, Optimal,0.446168184280396
+./solvers/scip-nlw/JuniperLib/Syn10M02M.stdout:DATA, Syn10M02M.jl,111,40,0,199, Max,2310.30103356744, NaN, Optimal,0.504173040390015
+./solvers/scip-nlw/JuniperLib/Syn10M03H.stdout:DATA, Syn10M03H.jl,292,60,0,487, Max,3354.6840142568, NaN, Optimal,0.607701778411865
+./solvers/scip-nlw/JuniperLib/Syn10M03M.stdout:DATA, Syn10M03M.jl,166,60,0,343, Max,3354.68373603421, NaN, Optimal,0.550865888595581
+./solvers/scip-nlw/JuniperLib/Syn10M04H.stdout:DATA, Syn10M04H.jl,389,80,0,709, Max,4557.06446085074, NaN, UserLimit,0.444332838058472
+./solvers/scip-nlw/JuniperLib/Syn10M04M.stdout:DATA, Syn10M04M.jl,221,80,0,517, Max,4557.06353806213, NaN, Optimal,0.648491859436035
+./solvers/scip-nlw/JuniperLib/Syn15H.stdout:DATA, Syn15H.jl,122,15,0,182, Max,853.28479577371, NaN, Optimal,0.367247819900513
+./solvers/scip-nlw/JuniperLib/Syn15M.stdout:DATA, Syn15M.jl,56,15,0,90, Max,853.284802658048, NaN, Optimal,0.354016065597534
+./solvers/scip-nlw/JuniperLib/Syn15M02H.stdout:DATA, Syn15M02H.jl,303,60,0,468, Max,2832.74930034536, NaN, Optimal,0.546118974685669
+./solvers/scip-nlw/JuniperLib/Syn15M02M.stdout:DATA, Syn15M02M.jl,171,60,0,314, Max,2832.74910240534, NaN, Optimal,0.486263990402222
+./solvers/scip-nlw/JuniperLib/Syn15M03H.stdout:DATA, Syn15M03H.jl,454,90,0,769, Max,3850.18303599827, NaN, UserLimit,0.817448854446411
+./solvers/scip-nlw/JuniperLib/Syn15M03M.stdout:DATA, Syn15M03M.jl,256,90,0,538, Max,3850.18188918629, NaN, Optimal,0.691400051116943
+./solvers/scip-nlw/JuniperLib/Syn15M04H.stdout:DATA, Syn15M04H.jl,605,120,0,1115, Max,4937.4794429122, NaN, Optimal,2.11247420310974
+./solvers/scip-nlw/JuniperLib/Syn15M04M.stdout:DATA, Syn15M04M.jl,341,120,0,807, Max,4937.47821838719, NaN, Optimal,1.54715204238892
+./solvers/scip-nlw/JuniperLib/Syn20H.stdout:DATA, Syn20H.jl,152,20,0,234, Max,924.263860043792, NaN, Optimal,0.599910974502564
+./solvers/scip-nlw/JuniperLib/Syn20M.stdout:DATA, Syn20M.jl,66,20,0,114, Max,924.263845837838, NaN, Optimal,0.42236590385437
+./solvers/scip-nlw/JuniperLib/Syn20M02H.stdout:DATA, Syn20M02H.jl,383,80,0,607, Max,1752.13397814834, NaN, UserLimit,1.15692615509033
+./solvers/scip-nlw/JuniperLib/Syn20M02M.stdout:DATA, Syn20M02M.jl,211,80,0,407, Max,1752.13350037765, NaN, Optimal,0.640124082565308
+./solvers/scip-nlw/JuniperLib/Syn20M03H.stdout:DATA, Syn20M03H.jl,574,120,0,1000, Max,2646.95150326467, NaN, UserLimit,2.64837002754211
+./solvers/scip-nlw/JuniperLib/Syn20M03M.stdout:DATA, Syn20M03M.jl,316,120,0,700, Max,2646.95186206115, NaN, Optimal,2.93507099151611
+./solvers/scip-nlw/JuniperLib/Syn20M04H.stdout:DATA, Syn20M04H.jl,765,160,0,1453, Max,3532.74531000363, NaN, Optimal,7.65797686576843
+./solvers/scip-nlw/JuniperLib/Syn20M04M.stdout:DATA, Syn20M04M.jl,421,160,0,1053, Max,3532.74478076166, NaN, Optimal,14.0873408317566
+./solvers/scip-nlw/JuniperLib/Syn30H.stdout:DATA, Syn30H.jl,229,30,0,346, Max,138.16005054576, NaN, Optimal,0.738510131835938
+./solvers/scip-nlw/JuniperLib/Syn30M.stdout:DATA, Syn30M.jl,101,30,0,168, Max,138.159852060782, NaN, Optimal,0.368592977523804
+./solvers/scip-nlw/JuniperLib/Syn30M02H.stdout:DATA, Syn30M02H.jl,577,120,0,901, Max,399.684432139812, NaN, Optimal,1.7053439617157
+./solvers/scip-nlw/JuniperLib/Syn30M02M.stdout:DATA, Syn30M02M.jl,321,120,0,605, Max,399.683928890762, NaN, Optimal,2.03489089012146
+./solvers/scip-nlw/JuniperLib/Syn30M03H.stdout:DATA, Syn30M03H.jl,865,180,0,1486, Max,654.156566831989, NaN, Optimal,3.60372591018677
+./solvers/scip-nlw/JuniperLib/Syn30M03M.stdout:DATA, Syn30M03M.jl,481,180,0,1042, Max,654.155581747128, NaN, Optimal,5.50191283226013
+./solvers/scip-nlw/JuniperLib/Syn30M04H.stdout:DATA, Syn30M04H.jl,1153,240,0,2161, Max,865.725287337675, NaN, UserLimit,3880.41070413589
+./solvers/scip-nlw/JuniperLib/Syn30M04M.stdout:DATA, Syn30M04M.jl,641,240,0,1569, Max,865.72460459633, NaN, Optimal,36.2559409141541
+./solvers/scip-nlw/JuniperLib/Syn40H.stdout:DATA, Syn40H.jl,303,40,0,467, Max,67.7137106901996, NaN, Optimal,1.30379486083984
+./solvers/scip-nlw/JuniperLib/Syn40M.stdout:DATA, Syn40M.jl,131,40,0,227, Max,67.7134373432397, NaN, Optimal,0.802130222320556
+./solvers/scip-nlw/JuniperLib/Syn40M02H.stdout:DATA, Syn40M02H.jl,765,160,0,1213, Max,388.774385530266, NaN, Optimal,1.46081185340881
+./solvers/scip-nlw/JuniperLib/Syn40M02M.stdout:DATA, Syn40M02M.jl,421,160,0,813, Max,388.774253469265, NaN, Optimal,6.68500089645386
+./solvers/scip-nlw/JuniperLib/Syn40M03H.stdout:DATA, Syn40M03H.jl,1147,240,0,1999, Max,395.149634474573, NaN, Optimal,2.11249995231628
+./solvers/scip-nlw/JuniperLib/Syn40M03M.stdout:DATA, Syn40M03M.jl,631,240,0,1399, Max,395.149217048645, NaN, Optimal,230.151283979416
+./solvers/scip-nlw/JuniperLib/Syn40M04H.stdout:DATA, Syn40M04H.jl,1529,320,0,2905, Max,901.555263292473, NaN, UserLimit,3816.28932118416
+./solvers/scip-nlw/JuniperLib/Syn40M04M.stdout:DATA, Syn40M04M.jl,841,320,0,2105, Max,901.754010779709, NaN, Optimal,1182.53171515465
+./solvers/scip-nlw/JuniperLib/synheat.stdout:DATA, synheat.jl,57,12,0,65, Min,154997.334865993, NaN, UserLimit,4312.67300200462
+./solvers/scip-nlw/JuniperLib/synthes2.stdout:DATA, synthes2.jl,12,5,0,15, Min,73.0353073669076, NaN, Optimal,0.272494792938232
+./solvers/scip-nlw/JuniperLib/synthes3.stdout:DATA, synthes3.jl,18,8,0,24, Min,68.0097310421573, NaN, Optimal,0.267331123352051
+./solvers/scip-nlw/JuniperLib/tanksize.stdout:DATA, tanksize.jl,47,9,0,74, Min,1.2686437145013, NaN, UserLimit,1.40653491020203
+./solvers/scip-nlw/JuniperLib/telecomsp_metro.stdout:DATA, telecomsp_metro.jl,4285,4200,0,5079, Min,10592400, NaN, UserLimit,3609.48198580742
+./solvers/scip-nlw/JuniperLib/telecomsp_pacbell.stdout:DATA, telecomsp_pacbell.jl,3571,3528,0,2941, Min,314850, NaN, UserLimit,3612.51387810707
+./solvers/scip-nlw/JuniperLib/tln12.stdout:DATA, tln12.jl,169,12,156,73, Min,99, NaN, UserLimit,3629.60470700264
+./solvers/scip-nlw/JuniperLib/tln2.stdout:DATA, tln2.jl,9,2,6,13, Min,5.3, NaN, Optimal,0.229466915130615
+./solvers/scip-nlw/JuniperLib/tln4.stdout:DATA, tln4.jl,25,4,20,25, Min,8.3, NaN, Optimal,2.61158299446106
+./solvers/scip-nlw/JuniperLib/tln5.stdout:DATA, tln5.jl,36,5,30,31, Min,10.3, NaN, Optimal,129.680208921433
+./solvers/scip-nlw/JuniperLib/tln6.stdout:DATA, tln6.jl,49,6,42,37, Min,15.3, NaN, UserLimit,3634.94552206993
+./solvers/scip-nlw/JuniperLib/tln7.stdout:DATA, tln7.jl,64,7,56,43, Min,16.3, NaN, UserLimit,3632.86275291443
+./solvers/scip-nlw/JuniperLib/tloss.stdout:DATA, tloss.jl,49,6,42,54, Min,16.3, NaN, Optimal,0.477020025253296
+./solvers/scip-nlw/JuniperLib/tls12.stdout:DATA, tls12.jl,813,656,12,385, Min, NaN, NaN, UserLimit,3649.12225389481
+./solvers/scip-nlw/JuniperLib/tls2.stdout:DATA, tls2.jl,38,31,2,25, Min,5.3, NaN, Optimal,0.325631856918335
+./solvers/scip-nlw/JuniperLib/tls4.stdout:DATA, tls4.jl,106,85,4,65, Min,8.3, NaN, Optimal,42.3054800033569
+./solvers/scip-nlw/JuniperLib/tls5.stdout:DATA, tls5.jl,162,131,5,91, Min,10.6, NaN, UserLimit,3738.01189303398
+./solvers/scip-nlw/JuniperLib/tls6.stdout:DATA, tls6.jl,216,173,6,121, Min,15.3, NaN, UserLimit,3680.7400970459
+./solvers/scip-nlw/JuniperLib/tls7.stdout:DATA, tls7.jl,346,289,7,155, Min,17.9, NaN, UserLimit,3683.85802006721
+./solvers/scip-nlw/JuniperLib/tltr.stdout:DATA, tltr.jl,49,12,36,55, Min,48.0666666666667, NaN, Optimal,0.38101601600647
+./solvers/scip-nlw/JuniperLib/transswitch0009r.stdout:DATA, transswitch0009r.jl,70,9,0,104, Min,5296.68619955789, NaN, UserLimit,4033.22927999496
+./solvers/scip-nlw/JuniperLib/transswitch0014r.stdout:DATA, transswitch0014r.jl,139,20,0,198, Min, NaN, NaN, UserLimit,3873.61872601509
+./solvers/scip-nlw/JuniperLib/transswitch0030r.stdout:DATA, transswitch0030r.jl,278,41,0,392, Min, NaN, NaN, UserLimit,3760.01261591911
+./solvers/scip-nlw/JuniperLib/transswitch0039r.stdout:DATA, transswitch0039r.jl,329,46,0,474, Min, NaN, NaN, UserLimit,3757.59889698029
+./solvers/scip-nlw/JuniperLib/transswitch0057r.stdout:DATA, transswitch0057r.jl,519,78,0,726, Min, NaN, NaN, UserLimit,3718.36181402206
+./solvers/scip-nlw/JuniperLib/transswitch0118r.stdout:DATA, transswitch0118r.jl,1240,179,0,1764, Min, NaN, NaN, UserLimit,3658.02051496506
+./solvers/scip-nlw/JuniperLib/transswitch0300r.stdout:DATA, transswitch0300r.jl,2779,408,0,3926, Min, NaN, NaN, UserLimit,3626.10872793198
+./solvers/scip-nlw/JuniperLib/transswitch2383wpr.stdout:DATA, transswitch2383wpr.jl,19851,2886,0,28158, Min, NaN, NaN, UserLimit,3777.20263600349
+./solvers/scip-nlw/JuniperLib/transswitch2736spr.stdout:DATA, transswitch2736spr.jl,23411,3494,0,32846, Min, NaN, NaN, UserLimit,3611.42286300659
+./solvers/scip-nlw/JuniperLib/tspn05.stdout:DATA, tspn05.jl,21,10,0,11, Min,191.255207804018, NaN, UserLimit,165.897783994675
+./solvers/scip-nlw/JuniperLib/tspn08.stdout:DATA, tspn08.jl,45,28,0,19, Min,290.56685391567, NaN, UserLimit,4005.78875303268
+./solvers/scip-nlw/JuniperLib/tspn10.stdout:DATA, tspn10.jl,66,45,0,22, Min,225.473735851886, NaN, UserLimit,3867.15628695488
+./solvers/scip-nlw/JuniperLib/tspn12.stdout:DATA, tspn12.jl,91,66,0,27, Min,265.857894328038, NaN, UserLimit,3792.43852901459
+./solvers/scip-nlw/JuniperLib/tspn15.stdout:DATA, tspn15.jl,136,105,0,35, Min,327.640392663588, NaN, UserLimit,3712.30455803871
+./solvers/scip-nlw/JuniperLib/unitcommit1.stdout:DATA, unitcommit1.jl,961,720,0,5330, Min,578176.639003689, NaN, UserLimit,3.01222395896912
+./solvers/scip-nlw/JuniperLib/unitcommit2.stdout:DATA, unitcommit2.jl,961,720,0,5330, Min,587565.919184183, NaN, UserLimit,3643.74593782425
+./solvers/scip-nlw/JuniperLib/uselinear.stdout:DATA, uselinear.jl,6793,58,0,7031, Min, NaN, NaN, UserLimit,3637.14201188087
+./solvers/scip-nlw/JuniperLib/util.stdout:DATA, util.jl,146,28,0,168, Min,999.586613687183, NaN, UserLimit,0.286816120147705
+./solvers/scip-nlw/JuniperLib/wager.stdout:DATA, wager.jl,157,30,54,143, Min,0, NaN, Infeasible,0.231703042984009
+./solvers/scip-nlw/JuniperLib/waste.stdout:DATA, waste.jl,2485,400,0,1992, Min,622.014548617845, NaN, UserLimit,3827.1316421032
+./solvers/scip-nlw/JuniperLib/wastepaper3.stdout:DATA, wastepaper3.jl,53,27,0,31, Min,0.018918148484598, NaN, Optimal,6.61417412757874
+./solvers/scip-nlw/JuniperLib/wastepaper4.stdout:DATA, wastepaper4.jl,77,44,0,39, Min,0.003479042326494, NaN, Optimal,476.143407821655
+./solvers/scip-nlw/JuniperLib/wastepaper5.stdout:DATA, wastepaper5.jl,105,65,0,47, Min,0.000925350016997, NaN, UserLimit,4172.70854306221
+./solvers/scip-nlw/JuniperLib/wastepaper6.stdout:DATA, wastepaper6.jl,137,90,0,55, Min,0.000158373386978, NaN, UserLimit,4204.69850182533
+./solvers/scip-nlw/JuniperLib/water4.stdout:DATA, water4.jl,196,126,0,138, Min,910.882110655093, NaN, UserLimit,4026.2926530838
+./solvers/scip-nlw/JuniperLib/watercontamination0202.stdout:DATA, watercontamination0202.jl,106705,0,0,0, Min,0, NaN, Optimal,0.762012958526611
+./solvers/scip-nlw/JuniperLib/watercontamination0202r.stdout:DATA, watercontamination0202r.jl,196,7,0,284, Min,97.9044396591299, NaN, UserLimit,3.66983008384705
+./solvers/scip-nlw/JuniperLib/watercontamination0303.stdout:DATA, watercontamination0303.jl,107209,0,0,0, Min,0, NaN, Optimal,0.752466201782227
+./solvers/scip-nlw/JuniperLib/watercontamination0303r.stdout:DATA, watercontamination0303r.jl,385,14,0,557, Min,2630.7629944422, NaN, UserLimit,3609.06196784973
+./solvers/scip-nlw/JuniperLib/waternd1.stdout:DATA, waternd1.jl,75,20,0,84, Min,606763.167523552, NaN, UserLimit,17.2792830467224
+./solvers/scip-nlw/JuniperLib/waternd2.stdout:DATA, waternd2.jl,233,72,0,250, Min,1081767.55492995, NaN, UserLimit,3671.80077409744
+./solvers/scip-nlw/JuniperLib/waterno2_01.stdout:DATA, waterno2_01.jl,167,9,0,205, Min,19.4566771054278, NaN, Optimal,0.374538898468018
+./solvers/scip-nlw/JuniperLib/waterno2_02.stdout:DATA, waterno2_02.jl,333,18,0,411, Min,39.5710444412734, NaN, Optimal,0.931679964065552
+./solvers/scip-nlw/JuniperLib/waterno2_03.stdout:DATA, waterno2_03.jl,499,27,0,617, Min,115.003963146451, NaN, Optimal,286.429355859756
+./solvers/scip-nlw/JuniperLib/waterno2_04.stdout:DATA, waterno2_04.jl,665,36,0,823, Min,145.439330084468, NaN, Optimal,2063.71037888527
+./solvers/scip-nlw/JuniperLib/waterno2_06.stdout:DATA, waterno2_06.jl,997,54,0,1235, Min,309.335466507936, NaN, UserLimit,3771.45219898224
+./solvers/scip-nlw/JuniperLib/waterno2_09.stdout:DATA, waterno2_09.jl,1495,81,0,1853, Min,1143.25489106572, NaN, UserLimit,3720.90891313553
+./solvers/scip-nlw/JuniperLib/waterno2_12.stdout:DATA, waterno2_12.jl,1993,108,0,2471, Min,2657.1719953659, NaN, UserLimit,3701.70429611206
+./solvers/scip-nlw/JuniperLib/waterno2_18.stdout:DATA, waterno2_18.jl,2989,162,0,3707, Min,5798.17543299447, NaN, UserLimit,3680.21518588066
+./solvers/scip-nlw/JuniperLib/waterno2_24.stdout:DATA, waterno2_24.jl,3985,216,0,4943, Min,8991.75533021196, NaN, UserLimit,3668.70936393738
+./solvers/scip-nlw/JuniperLib/watertreatnd_conc.stdout:DATA, watertreatnd_conc.jl,361,5,0,320, Min,348336.760467712, NaN, UserLimit,8.9004168510437
+./solvers/scip-nlw/JuniperLib/watertreatnd_flow.stdout:DATA, watertreatnd_flow.jl,421,5,0,380, Min,349524.678574389, NaN, UserLimit,4153.49414587021
+./solvers/scip-nlw/JuniperLib/waterx.stdout:DATA, waterx.jl,71,14,0,55, Min,919.050861015854, NaN, UserLimit,3949.10530400276
+./solvers/scip-nlw/JuniperLib/waterz.stdout:DATA, waterz.jl,196,126,0,138, Min,953.643567181453, NaN, UserLimit,4165.76552295685

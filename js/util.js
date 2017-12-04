@@ -31,14 +31,16 @@ function getQueryVariable(variable) {
 
 function fillNotDefined(data) {
     let keys = Object.keys(data);
+    console.log(keys);
     for (let algi in keys) {
         algi = +algi
         let alg = keys[algi];
         if (algi == keys.length-1) {
             break;
         }
-        for (let oalgi = algi; oalgi < keys.length; oalgi++) {
+        for (let oalgi = algi+1; oalgi < keys.length; oalgi++) {
             let oalg = keys[oalgi];
+            console.log(alg+" vs. "+oalg)
             let alg_instances = [];
             let oalg_instances = [];
             for (let inst of data[alg]) {
@@ -48,10 +50,15 @@ function fillNotDefined(data) {
                 oalg_instances.push(inst.instance); 
             }
             let diff = getDiff(alg_instances,oalg_instances);
+            console.log("lalg: ", alg_instances.length)
+            console.log("loalg: ", oalg_instances.length)
+            console.log("diff: ", diff)
             for (let inst of diff["add_l"]) {
+                console.log("nanrow: ", inst, " -> " ,alg)
                 data[alg].push(nanrow(inst));
             }
             for (let inst of diff["add_r"]) {
+                console.log("nanrow: ", inst, " -> " ,oalg)
                 data[oalg].push(nanrow(inst));
             }
         }
@@ -160,7 +167,7 @@ function computeGlobGap(data,ai,i) {
  */
 function getRealStatus(d) {
     d.status = d.status.trim();
-    if ((d.status == "UserLimit") && (d.time <= 3500)) { // close to 1h
+    if ((d.status == "UserLimit") && !isNaN(d.objval) && (d.time <= 3500)) { // close to 1h
         return "Optimal";
     }
     return d.status;

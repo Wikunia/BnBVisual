@@ -2,9 +2,14 @@ using DataFrames
 using CSV
 using LatexPrint
 
-files = ["bonmin-nlw","couenne-nlw","scip-nlw","knitro-nlw","juniper"]
+files = ["bonmin-nlw","couenne-nlw","scip-nlw","juniper"]
 header = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
 "sense","objval","best_bound","status","time"]
+objval_cols = [:scip_objval,:couenne_objval,:bonmin_objval,:juniper_objval]
+solver_names = [:scip,:couenne,:bonmin,:juniper]
+tex_headers = [:instance,:nodes,:constraints,:objval,
+:juniper_gap,:bonmin_gap,:couenne_gap,:scip_gap,
+:juniper_time,:bonmin_time,:couenne_time,:scip_time]
 
 data = []
 c = 1
@@ -86,8 +91,6 @@ f[:juniper_gap] = NaN*ones(size(f,1))
 
 f[:sum_time] = zeros(size(f,1))
 
-objval_cols = [:scip_objval,:couenne_objval,:knitro_objval,:bonmin_objval,:juniper_objval]
-solver_names = [:scip,:couenne,:knitro,:bonmin,:juniper]
 for r in eachrow(f) 
     if r[:sense] == "Min"
         r[:objval] = minimum([get_value(:Min, r[Symbol(string(solver)*"_status")], r[Symbol(string(solver)*"_objval")]) for solver in solver_names])
@@ -139,7 +142,7 @@ function format_time(val)
         return "T.L"
     end
     if val < 1
-        return "\$\\leq 1\$"
+        return "\$< 1\$"
     end
 
     return string(@sprintf "%d" ceil(val))
@@ -153,20 +156,21 @@ function format_string(val)
     return string(val)
 end
 
+function format_instance(val)
+    return replace(val,"_","\\_")
+end
+
 # generate tex
-tex_headers = [:instance,:nodes,:constraints,:objval,
-              :juniper_gap,:bonmin_gap,:knitro_gap,:couenne_gap,:scip_gap,
-              :juniper_time,:bonmin_time,:knitro_time,:couenne_time,:scip_time]
 
 format = Dict{Symbol,Any}()
-format[:instance] = nothing
+format[:instance] = format_instance
 format[:nodes] = format_string
 format[:constraints] = format_string
-gap_cols = [:juniper_gap,:bonmin_gap,:knitro_gap,:couenne_gap,:scip_gap]
+gap_cols = [Symbol(string(solver)*"_gap") for solver in solver_names]
 for col in gap_cols
     format[col] = format_gap
 end
-time_cols = [:juniper_time,:bonmin_time,:knitro_time,:couenne_time,:scip_time]
+time_cols = [Symbol(string(solver)*"_time") for solver in solver_names]
 for col in time_cols
     format[col] = format_time
 end
@@ -179,38 +183,111 @@ for col in tex_headers
 end
 
 # get number of spaces
+# extra space for emph in each column :/
 for col in tex_headers
-    spaces[col] = maximum([length(format[col] != nothing ? format[col](value) : value)+1 for value in f[col]])
+    spaces[col] = maximum([length(format[col] != nothing ? format[col](value) : value)+7 for value in f[col]])
 end
 
-open("table_data.tex", "w") do tex_file
-    for r in eachrow(f)
-        ln = ""
-        c = 1
-        for col in tex_headers
-            sval = ""
-            if string(col)[end-3:end] == "time"
-                solver = string(col)[1:end-5]
-                gap_name = Symbol(solver*"_gap")
-                gap = r[gap_name]
-                if format[gap_name](gap) == "-"
-                    sval = "-"
+noprint_c = 0
+tex_file = open("table_data.tex", "w")
+
+tex_start = ["\\begin{landscape}",
+"\\begin{table*}[t]",
+"\\footnotesize",
+"\\caption{Quality and Runtime Results for Various Instances}",
+"\\begin{tabular}{|r|r|r||r||r|r|r|r||r|r|r|r|r|}",
+"\\hline",
+"                        &     &       &             & \\multicolumn{4}{c||}{Gap (\\%)} &  \\multicolumn{4}{c|}{Runtime (seconds)} \\\\",
+"    Instance              & \$|V|\$& \$|C|\$& obj         & juniper    & bonmin & couenne        & scip            & juniper          & bonmin            & couenne         & scip \\\\",
+"    \\hline",
+"    \\hline"]
+
+tex_end = ["\\hline","\\end{tabular}\\\\",
+"\\end{table*}",
+"\\end{landscape}"]
+
+for ln in tex_start
+    write(tex_file, "$ln \n")
+end
+
+
+rc = 0
+for r in eachrow(f)
+    ln = ""
+    c = 1
+    time_smaller_10_c = 0
+    time_greater_3600_c = 0
+    bprint = true
+    if isinf(r[:objval])
+        noprint_c += 1
+        continue
+    end
+
+    # best gap and time
+    str_min_gap = format[gap_cols[1]](minimum([isnan(r[col]) ? Inf : r[col] for col in gap_cols]))
+    str_min_time = format[time_cols[1]](minimum([isnan(r[col]) ? Inf : r[col] for col in time_cols]))
+
+    for col in tex_headers
+        sval = ""
+        if string(col)[end-3:end] == "time"
+            if r[col] <= 10
+                time_smaller_10_c += 1
+                if time_smaller_10_c == length(solver_names)
+                    bprint = false
+                    break
                 end
             end
-            if sval == ""
-                sval = format[col] != nothing ? format[col](r[col]) : r[col]
+            if r[col] >= 3600
+                time_greater_3600_c += 1
+                if time_greater_3600_c == length(solver_names)
+                    bprint = false
+                    break
+                end
             end
-            lval = length(sval)
-            if c == length(tex_headers)
-                ln *= repeat(" ", spaces[col]-lval)*sval*" \\\\"
-            else
-                ln *= repeat(" ", spaces[col]-lval)*sval*" &"
+            solver = string(col)[1:end-5]
+            gap_name = Symbol(solver*"_gap")
+            gap = r[gap_name]
+            if format[gap_name](gap) == "-"
+                sval = "-"
             end
-            c += 1
         end
+        if sval == ""
+            sval = format[col] != nothing ? format[col](r[col]) : r[col]
+            if (col in gap_cols && sval == str_min_gap) || (col in time_cols && sval == str_min_time)
+                sval = "\\textbf{"*sval*"}"
+            end
+        end
+        lval = length(sval)
+        if c == length(tex_headers)
+            ln *= repeat(" ", spaces[col]-lval)*sval*" \\\\"
+        else
+            ln *= repeat(" ", spaces[col]-lval)*sval*" &"
+        end
+        c += 1    
+    end
+    
+    if bprint
         write(tex_file, "$ln \n")
+        rc += 1
+    else 
+        noprint_c += 1
+    end
+
+    if rc % 25 == 0 && rc > 0
+        for eln in tex_end
+            write(tex_file, "$eln \n")
+        end
+
+        for sln in tex_start
+            write(tex_file, "$sln \n")
+        end
     end
 end
 
+for eln in tex_end
+    write(tex_file, "$eln \n")
+end
 
-print() 
+close(tex_file)
+
+print("Uninteresting lines: ", noprint_c) 
