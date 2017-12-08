@@ -2,8 +2,9 @@ var width = 1500,
 height = 600,
 centered;
 
-var files = ["minlib","bonmin-nlw","couenne-nlw","scip-nlw","juniper","juniper-ts-dbfs","juniper-bs-r",
-"juniper-fp-cbc","juniper-fp-cbc-nic"];
+var files = ["minlib","bonmin-nlw","juniper",
+"juniper-bs-nsr","juniper-bs-r","juniper-fp-grb","juniper-ic","juniper-p03",
+"juniper-p05","juniper-p09","juniper-p17","juniper-ts-dbfs"];
 
 var legend_w = 100;
 

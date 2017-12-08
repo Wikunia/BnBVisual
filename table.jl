@@ -2,7 +2,7 @@ using DataFrames
 using CSV
 using LatexPrint
 
-files = ["bonmin-nlw","couenne-nlw","scip-nlw","juniper-fp-cbc-nic"]
+files = ["juniper","bonmin-nlw","couenne-nlw","scip-nlw"]
 header = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
 "sense","objval","best_bound","status","time"]
 objval_cols = [:scip_objval,:couenne_objval,:bonmin_objval,:juniper_objval]
@@ -13,11 +13,12 @@ tex_headers = [:instance,:nodes,:constraints,:objval,
 
 data = []
 reasonable_instances = []
+written_instances = []
 
 c = 1
 for f in files
-    df = CSV.read("data/"*f*"_data.csv"; header=header,
-    types=[String for h in header])
+    df = CSV.read("data/"*f*"_data.csv"; header=header, types=[String for h in header])
+    println("size: ",size(df,1))
     df[:instance] = [strip(value[1:end-3]) for (i, value) in enumerate(df[:instance])]
     for col in [:sense,:status]
         df[col] = [strip(value) for (i, value) in enumerate(df[col])]
@@ -55,8 +56,10 @@ end
 f = data[1]
 
 for i=2:length(data)
-    f = join(f, data[i], on = :instance)
+    f = join(f, data[i], on = :instance, kind = :outer)
 end
+
+println("size: ",size(f,1))
 
 """
     get_value(sense, status, value)
@@ -95,6 +98,19 @@ f[:juniper_gap] = NaN*ones(size(f,1))
 f[:sum_time] = zeros(size(f,1))
 f[:disc_vars] = zeros(size(f,1))
 
+for solver in solver_names
+    status_symbol = Symbol(string(solver)*"_status")
+    obj_symbol = Symbol(string(solver)*"_objval")
+    time_symbol = Symbol(string(solver)*"_time")
+    for r in eachrow(f)
+        if isa(r[status_symbol],Missings.Missing)
+            r[status_symbol] = "UserLimit"
+            r[obj_symbol] = NaN
+            r[time_symbol] = 4000
+        end
+    end
+end
+
 for r in eachrow(f) 
     if r[:sense] == "Min"
         r[:objval] = minimum([get_value(:Min, r[Symbol(string(solver)*"_status")], r[Symbol(string(solver)*"_objval")]) for solver in solver_names])
@@ -110,16 +126,9 @@ for r in eachrow(f)
         r[gap_col] = get_gap(status, value, r[:objval])
     end
 
-    # get sum time for sorting
-    for solver in solver_names
-        time =  r[Symbol(string(solver)*"_time")]
-        r[:sum_time] += time
-    end
-
     r[:disc_vars] = r[:int_vars]+r[:bin_vars]
 
 end 
-
 
 f = sort(f, cols = :disc_vars)
 
@@ -128,9 +137,12 @@ for obj_col in objval_cols
     delete!(f, obj_col)
 end
 
+c = 0
 for r in eachrow(f)
     println(r)
+    c += 1
 end
+println("c: ", c)
 
 
 function format_gap(val)
@@ -221,6 +233,7 @@ end
 rc = 0
 last_rc = 0
 write_counter = 0
+println("lf: ", length(f))
 for r in eachrow(f)
     l_arr = []
     c = 1
@@ -229,16 +242,19 @@ for r in eachrow(f)
     bprint = true
 
     if isinf(r[:objval])
+        println("isinf: ",r[:instance])
         noprint_c += 1
         continue
     end
 
     if r[:scip_time] <= 60 || r[:couenne_time] <= 60
+        println("scip or couenne: ",r[:instance])
         noprint_c += 1
         continue
     end
 
-    if r[:juniper_time] >= 3600 && r[:bonmin_time] >= 3600 
+    if r[:juniper_time] >= 3600 && r[:bonmin_time] >= 3600
+        println("juniper and bonmin", r[:instance]) 
         noprint_c += 1
         continue
     end
@@ -249,6 +265,7 @@ for r in eachrow(f)
             if r[col] <= 10
                 time_smaller_10_c += 1
                 if time_smaller_10_c == length(solver_names)
+                    println("< 10: ", r[:instance])
                     bprint = false
                     break
                 end
@@ -256,6 +273,7 @@ for r in eachrow(f)
             if r[col] >= 3600
                 time_greater_3600_c += 1
                 if time_greater_3600_c == length(solver_names)
+                    println("> 3600: ", r[:instance]) 
                     bprint = false
                     break
                 end
@@ -263,9 +281,10 @@ for r in eachrow(f)
             solver = string(col)[1:end-5]
             gap_name = Symbol(solver*"_gap")
             gap = r[gap_name]
-            if format[gap_name](gap) == "-"
+            if format[gap_name](gap) == "-" && r[col] < 3600
                 time_greater_3600_c += 1
                 if time_greater_3600_c == length(solver_names)
+                    println(r[:instance]) 
                     bprint = false
                     break
                 end
@@ -286,14 +305,9 @@ for r in eachrow(f)
         str_min_gap  = format[gap_cols[1]](minimum([isnan(r[col]) ? Inf : r[col] for col in gap_cols]))
         str_min_time = format[time_cols[1]](minimum([isnan(r[col]) ? Inf :r[col] for col in time_cols]))
 
-        println("min gap: ",str_min_gap)
-        println("min time: ",str_min_time)
         ci = 1
         for sval in l_arr
             col = tex_headers[ci]
-            if col in gap_cols
-                println(str_min_gap*" vs. "*sval)
-            end
             if (col in gap_cols && sval == str_min_gap) || (col in time_cols && sval == str_min_time)
                 if r[col] >= 1 || col in gap_cols
                     l_arr[ci] = "\\textbf{"*l_arr[ci]*"}"
@@ -315,7 +329,8 @@ for r in eachrow(f)
         end
     
         push!(reasonable_instances, r[:instance])
-        if rc % 1 == 0
+        if rc % 4 == 0
+            push!(written_instances, r[:instance])
             write_counter += 1
             write(tex_file, "$ln \n")
         end
@@ -347,3 +362,6 @@ println("Resonable lines: ", rc)
 println("Written lines: ", write_counter)
 println("reasonable_instances: ")
 println(reasonable_instances)
+
+println("written_instances: ")
+println(written_instances)
