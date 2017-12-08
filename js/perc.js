@@ -17,6 +17,9 @@ if (getQueryVariable("ots") == "true") {
     "juniper-p05","juniper-p09","juniper-p17","juniper-ts-dfs","juniper-ts-dbfs","juniper-nic",
     "juniper-fp-cbc","juniper-fp-cbc-nic","juniper-fp-grb",
     "bonmin-nlw","couenne-nlw","scip-nlw","knitro-nlw"];
+    files = ["juniper",
+    "bonmin-nlw","couenne-nlw","scip-nlw", "juniper-p09", "juniper-bs-r", "juniper-ts-dbfs", 
+    "juniper-fp-cbc", "juniper-fp-cbc-nic", "juniper-fp-cbc-nic-60"];
 }
 
 var legend_w = 200;
@@ -139,10 +142,10 @@ function data2line(data,maxTime) {
                 lastY = (n/data[alg].data.length)*100;
             }
         }
-        data[alg].line.unshift({
+        /*data[alg].line.unshift({
             x: 1,
             y: 0,
-        })
+        })*/
         data[alg].line.push({
             x: maxTime,
             y: lastY,
@@ -250,6 +253,7 @@ function getdata(section,cb) {
         }); 
         if (!ots) {
             data = filterNoDisc(data);
+            data = filterInstances(data);
         }
         cb(data);   
     });
@@ -258,9 +262,9 @@ function getdata(section,cb) {
 function getandrenderdata(i,files,data) {
     let file = files[i];
     getdata(file,function(d) {
-        if (!ots) {
+        /*if (!ots) {
             d = filterInstances(d);
-        }
+        }*/
         data[file] = d;
         if (i == files.length-1) {
             data = fillNotDefined(data);

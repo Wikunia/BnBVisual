@@ -1,0 +1,180 @@
+\begin{landscape} 
+\begin{table*}[t] 
+\footnotesize 
+\caption{Quality and Runtime Results for Various Instances} 
+\begin{tabular}{|r|r|r||r||r|r|r|r||r|r|r|r|r|} 
+\hline 
+                        &     &       &             & \multicolumn{4}{c||}{Gap (\%)} &  \multicolumn{4}{c|}{Runtime (seconds)} \\ 
+    Instance              & $|V|$& $|C|$& obj         & juniper    & bonmin & couenne        & scip            & juniper          & bonmin            & couenne         & scip \\ 
+    \hline 
+    \hline 
+                               nous1 &            51 &            44 &                              1.57 &  \textbf{0.00} &              - &  \textbf{0.00} &  \textbf{0.00} &         \textbf{4} &                  - &                T.L &               3118 \\ 
+                            feedtray &            98 &            92 &                            -13.41 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &              - &                  2 &         $\bm{< 1}$ &                T.L &                  - \\ 
+                     sfacloc1\_2\_95 &           172 &           209 &                             18.85 &  \textbf{0.00} &          38.55 &  \textbf{0.00} &  \textbf{0.00} &                  2 &         $\bm{< 1}$ &                T.L &                T.L \\ 
+                     sfacloc1\_3\_95 &           234 &           282 &                             12.30 &           1.25 &  \textbf{0.00} &          51.70 &  \textbf{0.00} &         \textbf{2} &         \textbf{2} &                T.L &                T.L \\ 
+                     sfacloc1\_4\_95 &           296 &           355 &                             11.23 &           0.12 &           0.12 &          10.11 &  \textbf{0.00} &         \textbf{4} &                 14 &                T.L &                T.L \\ 
+                    transswitch0009r &            70 &           104 &                           5296.69 &  \textbf{0.00} &              - &           0.03 &  \textbf{0.00} &        \textbf{14} &                  - &                T.L &                T.L \\ 
+                              ex1233 &            53 &            65 &                         155010.67 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &                  3 &         \textbf{2} &                T.L &                T.L \\ 
+                      heatexch\_gen1 &           113 &           121 &                         100500.10 &          90.95 &          54.13 &              - &  \textbf{0.00} &                 35 &        \textbf{15} &                  - &               1416 \\ 
+                     heatexch\_spec1 &            57 &            65 &                         154997.33 &  \textbf{0.00} &  \textbf{0.00} &           0.01 &  \textbf{0.00} &                  3 &         $\bm{< 1}$ &                T.L &                T.L \\ 
+                             synheat &            57 &            65 &                         154997.33 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &                  3 &         $\bm{< 1}$ &                T.L &                T.L \\ 
+             watercontamination0303r &           385 &           557 &                            424.54 &  \textbf{0.00} &  \textbf{0.00} &          95.17 &         519.67 &               3558 &        \textbf{47} &                T.L &                T.L \\ 
+                              waterx &            71 &            55 &                            909.03 &  \textbf{0.00} &  \textbf{0.00} &         206.35 &           1.10 &                 11 &         \textbf{4} &                T.L &                T.L \\ 
+                        squfl015-060 &           916 &           961 &                            366.62 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &          23.31 &                 31 &        \textbf{13} &                136 &                T.L \\ 
+                        squfl015-080 &          1216 &          1281 &                            402.49 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &          22.68 &                106 &        \textbf{25} &                293 &                T.L \\ 
+                      heatexch\_gen2 &           149 &           167 &                         584215.80 &          44.56 &          15.78 &              - &  \textbf{0.00} &        \textbf{38} &                 57 &                  - &                T.L \\ 
+                     heatexch\_spec2 &            77 &            91 &                         634976.32 &  \textbf{0.00} &  \textbf{0.00} &           0.04 &          $\gg$ &         \textbf{8} &                 13 &                T.L &                T.L \\ 
+                           ghg\_2veh &            58 &            63 &                              7.77 &  \textbf{0.00} &  \textbf{0.00} &           0.07 &  \textbf{0.00} &                  5 &         $\bm{< 1}$ &                T.L &                T.L \\ 
+                  cvxnonsep\_psig40r &            83 &            43 &                             86.55 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &                  5 &         $\bm{< 1}$ &                T.L &                T.L \\ 
+                        squfl020-040 &           821 &           841 &                            209.25 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &                 15 &         \textbf{6} &                 79 &                T.L \\ 
+                        squfl020-050 &          1021 &          1051 &                            230.20 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &           6.02 &                 65 &        \textbf{21} &                302 &                T.L \\ 
+                        squfl020-150 &          3021 &          3151 &                            557.85 &  \textbf{0.00} &  \textbf{0.00} &           3.47 &           5.38 &               2033 &       \textbf{359} &                T.L &                T.L \\ 
+                   squfl020-150persp &          6021 &          6151 &                            557.84 &  \textbf{0.00} &  \textbf{0.00} &          39.31 &  \textbf{0.00} &                244 &                229 &                T.L &       \textbf{136} \\ 
+                        squfl025-025 &           651 &           651 &                            168.81 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &                 29 &        \textbf{11} &                 69 &                T.L \\ 
+                        squfl025-030 &           776 &           781 &                            205.50 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &                 32 &        \textbf{13} &                 95 &                T.L \\ 
+                        squfl025-040 &          1026 &          1041 &                            197.33 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &           0.93 &                226 &        \textbf{65} &                570 &                T.L \\ 
+                        waterno2\_03 &           499 &           617 &                            115.00 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &       \textbf{177} &                338 &                T.L &                287 \\ 
+                     sfacloc1\_2\_90 &           200 &           349 &                             17.89 &  \textbf{0.00} &  \textbf{0.00} &           1.05 &           0.45 &                  3 &         \textbf{2} &                T.L &                T.L \\ 
+                     sfacloc1\_3\_90 &           262 &           422 &                             11.62 &  \textbf{0.00} &           2.39 &          28.43 &           0.46 &                  4 &         \textbf{3} &                T.L &                T.L \\ 
+                     sfacloc1\_4\_90 &           324 &           495 &                             10.46 &  \textbf{0.00} &           1.10 &          88.39 &           0.87 &         \textbf{5} &                  6 &                T.L &                T.L \\ 
+                        squfl030-100 &          3031 &          3101 &                            363.09 &         542.82 &  \textbf{0.00} &           5.04 &          16.93 &                T.L &      \textbf{1437} &                T.L &                T.L \\ 
+                   squfl030-100persp &          6031 &          6101 &                            363.09 &  \textbf{0.00} &  \textbf{0.00} &         137.24 &  \textbf{0.00} &                687 &                635 &                T.L &       \textbf{199} \\ 
+                        squfl030-150 &          4531 &          4651 &                            430.58 &         834.04 &  \textbf{0.00} &           6.77 &           6.96 &                T.L &      \textbf{3119} &                T.L &                T.L \\ 
+                   squfl030-150persp &          9031 &          9151 &                            430.56 &  \textbf{0.00} &  \textbf{0.00} &          99.19 &  \textbf{0.00} &                915 &               2403 &                T.L &       \textbf{487} \\ 
+                                tln5 &            36 &            31 &                             10.30 &  \textbf{0.00} &           3.88 &  \textbf{0.00} &  \textbf{0.00} &               1765 &                T.L &                T.L &       \textbf{130} \\ 
+                           ghg\_3veh &            97 &           120 &                              7.77 &           0.11 &           0.06 &           0.02 &  \textbf{0.00} &                  6 &         \textbf{2} &                T.L &                T.L \\ 
+\hline 
+\end{tabular}\\ 
+\end{table*} 
+\end{landscape} 
+\begin{landscape} 
+\begin{table*}[t] 
+\footnotesize 
+\caption{Quality and Runtime Results for Various Instances} 
+\begin{tabular}{|r|r|r||r||r|r|r|r||r|r|r|r|r|} 
+\hline 
+                        &     &       &             & \multicolumn{4}{c||}{Gap (\%)} &  \multicolumn{4}{c|}{Runtime (seconds)} \\ 
+    Instance              & $|V|$& $|C|$& obj         & juniper    & bonmin & couenne        & scip            & juniper          & bonmin            & couenne         & scip \\ 
+    \hline 
+    \hline 
+                        waterno2\_04 &           665 &           823 &                            145.44 &  \textbf{0.00} &  \textbf{0.00} &           0.94 &  \textbf{0.00} &               2236 &               2347 &                T.L &      \textbf{2064} \\ 
+                  gasprod\_sarawak16 &          1527 &          2253 &                         -32271.22 &  \textbf{0.00} &  \textbf{0.00} &          45.73 &           0.55 &        \textbf{59} &                177 &                T.L &                T.L \\ 
+                             FLay05H &           383 &           466 &                             64.50 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &                T.L &               2271 &                800 &       \textbf{143} \\ 
+                              ndcc15 &           681 &           307 &                             94.61 &  \textbf{0.00} &  \textbf{0.00} &              - &           8.26 &                762 &        \textbf{47} &                  - &                T.L \\ 
+                         ndcc15persp &           721 &           347 &                             94.61 &  \textbf{0.00} &  \textbf{0.00} &              - &           4.13 &                 49 &        \textbf{42} &                  - &                T.L \\ 
+                        squfl040-080 &          3241 &          3281 &                            263.90 &         777.22 &  \textbf{0.00} &           9.39 &  \textbf{0.00} &                T.L &      \textbf{1343} &                T.L &                T.L \\ 
+                   squfl040-080persp &          6441 &          6481 &                            263.89 &           0.50 &  \textbf{0.00} &         255.33 &  \textbf{0.00} &       \textbf{147} &               1347 &                T.L &                191 \\ 
+                         ndcc13persp &           673 &           297 &                             84.92 &  \textbf{0.00} &           1.82 &              - &           5.22 &       \textbf{659} &                722 &                  - &                T.L \\ 
+                      crudeoil\_li01 &           345 &           696 &                           5122.56 &  \textbf{0.00} &  \textbf{0.00} &           0.50 &           0.03 &      \textbf{1578} &                T.L &                T.L &                T.L \\ 
+                           CLay0205H &           261 &           366 &                           8092.50 &  \textbf{0.00} &  \textbf{0.00} &              - &  \textbf{0.00} &               2591 &               1079 &                  - &        \textbf{80} \\ 
+            portfol\_classical050\_1 &           151 &           104 &                             -0.09 &  \textbf{0.00} &  \textbf{0.00} &           7.29 &  \textbf{0.00} &        \textbf{15} &               1418 &                T.L &                 70 \\ 
+                   sepasequ\_complex &           498 &          1311 &                            328.28 &  \textbf{0.00} &           2.36 &          31.84 &          16.78 &                T.L &               1467 &       \textbf{283} &                T.L \\ 
+                 genpooling\_meyer04 &           119 &           142 &                        1249587.43 &          11.10 &              - &  \textbf{0.00} &          13.98 &        \textbf{26} &                  - &                T.L &                T.L \\ 
+                graphpart\_clique-20 &            61 &            21 &                            147.00 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &                 19 &         $\bm{< 1}$ &                 65 &                 93 \\ 
+                     procurement1mot &           785 &           750 &                            291.54 &  \textbf{0.00} &  \textbf{0.00} &           8.19 &           4.29 &                458 &       \textbf{183} &                T.L &                T.L \\ 
+                     sfacloc1\_2\_80 &           232 &          2089 &                             12.75 &  \textbf{0.00} &  \textbf{0.00} &           1.43 &  \textbf{0.00} &        \textbf{22} &        \textbf{22} &                T.L &                T.L \\ 
+                     sfacloc1\_3\_80 &           294 &          2162 &                              8.52 &           1.00 &  \textbf{0.00} &          19.03 &           1.57 &                 22 &        \textbf{20} &                T.L &                T.L \\ 
+                     sfacloc1\_4\_80 &           356 &          2235 &                              7.97 &  \textbf{0.00} &  \textbf{0.00} &           5.59 &           2.66 &        \textbf{33} &                 67 &                T.L &                T.L \\ 
+                           sssd15-04 &            89 &            48 &                         205054.43 &  \textbf{0.00} &  \textbf{0.00} &           0.60 &           0.24 &        \textbf{14} &                 18 &                T.L &                T.L \\ 
+                            waternd2 &           233 &           250 &                        1068202.71 &  \textbf{0.00} &  \textbf{0.00} &              - &           1.27 &        \textbf{34} &                 53 &                  - &                T.L \\ 
+                           sssd12-05 &            96 &            53 &                         281408.60 &  \textbf{0.00} &  \textbf{0.00} &           0.38 &           0.02 &                 80 &        \textbf{33} &                T.L &                T.L \\ 
+                   multiplants\_mtg5 &           191 &           309 &                           5924.65 &  \textbf{0.00} &  \textbf{0.00} &           0.12 &  \textbf{0.00} &               1856 &      \textbf{1807} &                T.L &                T.L \\ 
+                     edgecross14-039 &           183 &          1457 &                            109.00 &           4.59 &           0.92 &           1.83 &  \textbf{0.00} &                 18 &         \textbf{2} &                T.L &                279 \\ 
+                            blend718 &           223 &           607 &                              7.39 &  \textbf{0.00} &  \textbf{0.00} &           3.30 &  \textbf{0.00} &                742 &       \textbf{175} &                T.L &                T.L \\ 
+                             contvar &           297 &           285 &                         809149.80 &  \textbf{0.00} &  \textbf{0.00} &              - &         101.44 &                 45 &         \textbf{5} &                  - &                T.L \\ 
+                graphpart\_clique-30 &            91 &            31 &                            495.00 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &                  2 &         $\bm{< 1}$ &               3321 &                T.L \\ 
+                     sfacloc2\_4\_90 &           369 &           600 &                             13.41 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &               1495 &                912 &               1369 &       \textbf{177} \\ 
+                           sssd20-04 &           109 &            53 &                         347691.37 &  \textbf{0.00} &  \textbf{0.00} &           0.93 &           0.08 &        \textbf{32} &                 62 &                T.L &                T.L \\ 
+                  multiplants\_mtg1a &           194 &           257 &                            391.61 &  \textbf{0.00} &  \textbf{0.00} &           2.46 &  \textbf{0.00} &                922 &                917 &                T.L &       \textbf{647} \\ 
+                        hydroenergy1 &           289 &           429 &                         209721.01 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &                  7 &         \textbf{4} &               3353 &                T.L \\ 
+                            blend531 &           273 &           737 &                             20.04 &  \textbf{0.00} &  \textbf{0.00} &           0.35 &  \textbf{0.00} &               1446 &                283 &                T.L &        \textbf{63} \\ 
+                     sfacloc2\_3\_80 &           324 &          2269 &                             11.06 &          10.13 &  \textbf{0.00} &           2.13 &  \textbf{0.00} &                T.L &               2867 &                T.L &       \textbf{716} \\ 
+              crudeoil\_pooling\_ct2 &           404 &           733 &                          10246.22 &  \textbf{0.00} &           0.36 &           0.36 &  \textbf{0.00} &       \textbf{794} &                T.L &                T.L &                T.L \\ 
+            graphpart\_3pm-0334-0334 &           109 &            37 &                            -36.00 &  \textbf{0.00} &           2.78 &  \textbf{0.00} &  \textbf{0.00} &                 21 &         $\bm{< 1}$ &                 67 &                T.L \\ 
+                           sssd15-06 &           133 &            64 &                         539635.41 &  \textbf{0.00} &  \textbf{0.00} &          22.74 &           0.23 &      \textbf{1774} &               2092 &                T.L &                T.L \\ 
+\hline 
+\end{tabular}\\ 
+\end{table*} 
+\end{landscape} 
+\begin{landscape} 
+\begin{table*}[t] 
+\footnotesize 
+\caption{Quality and Runtime Results for Various Instances} 
+\begin{tabular}{|r|r|r||r||r|r|r|r||r|r|r|r|r|} 
+\hline 
+                        &     &       &             & \multicolumn{4}{c||}{Gap (\%)} &  \multicolumn{4}{c|}{Runtime (seconds)} \\ 
+    Instance              & $|V|$& $|C|$& obj         & juniper    & bonmin & couenne        & scip            & juniper          & bonmin            & couenne         & scip \\ 
+    \hline 
+    \hline 
+                   multiplants\_mtg2 &           230 &           307 &                           7099.19 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &               3364 &               2842 &                T.L &       \textbf{907} \\ 
+                             SLay08H &           633 &           813 &                          84960.21 &  \textbf{0.00} &  \textbf{0.00} &           3.13 &  \textbf{0.00} &                 89 &        \textbf{18} &                T.L &                 73 \\ 
+                           sssd25-04 &           129 &            58 &                         300176.53 &  \textbf{0.00} &  \textbf{0.00} &           1.32 &           0.09 &        \textbf{40} &                 73 &                T.L &                T.L \\ 
+                            blend852 &           305 &           861 &                             53.96 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &               3421 &      \textbf{1711} &                T.L &                T.L \\ 
+                graphpart\_clique-40 &           121 &            41 &                           1183.00 &  \textbf{0.00} &              - &           1.10 &          11.16 &         \textbf{2} &                  - &                T.L &                T.L \\ 
+                  multiplants\_mtg1c &           245 &           319 &                            683.97 &  \textbf{0.00} &              - &           0.16 &  \textbf{0.00} &       \textbf{929} &                  - &                T.L &                T.L \\ 
+                           sssd18-06 &           151 &            67 &                         397992.25 &  \textbf{0.00} &  \textbf{0.00} &          15.18 &           0.32 &       \textbf{904} &                932 &                T.L &                T.L \\ 
+                              water4 &           196 &           138 &                            907.02 &          15.17 &  \textbf{0.00} &          12.38 &           0.43 &                T.L &       \textbf{670} &                T.L &                T.L \\ 
+              crudeoil\_pooling\_ct4 &           534 &           925 &                          13258.27 &  \textbf{0.00} &           0.35 &           0.13 &           0.02 &      \textbf{1340} &                T.L &                T.L &                T.L \\ 
+                chp\_shorttermplan1a &          1009 &          2069 &                            214.84 &           0.34 &           0.35 &          18.35 &  \textbf{0.00} &        \textbf{18} &                 47 &                T.L &                230 \\ 
+            graphpart\_3pm-0344-0344 &           145 &            49 &                            -48.00 &  \textbf{0.00} &          10.42 &  \textbf{0.00} &           4.17 &                 37 &         \textbf{2} &               1318 &                T.L \\ 
+                             SLay09H &           811 &          1045 &                         107805.75 &  \textbf{0.00} &  \textbf{0.00} &          39.84 &  \textbf{0.00} &                218 &        \textbf{28} &                T.L &                235 \\ 
+                graphpart\_clique-50 &           151 &            51 &                           2312.00 &  \textbf{0.00} &              - &           9.52 &          50.52 &         \textbf{4} &                  - &                T.L &                T.L \\ 
+                     edgecross14-078 &           183 &          1457 &                            725.00 &  \textbf{0.00} &           4.69 &  \textbf{0.00} &  \textbf{0.00} &                  3 &         \textbf{2} &                T.L &               2516 \\ 
+                           nuclearva &           352 &           318 &                             -1.01 &  \textbf{0.00} &           0.59 &           0.97 &           1.26 &                 22 &         \textbf{2} &                T.L &                T.L \\ 
+                           nuclearvb &           352 &           318 &                             -1.03 &  \textbf{0.00} &           0.43 &           0.70 &           0.80 &                 21 &         \textbf{2} &                T.L &                T.L \\ 
+                           nuclearvc &           352 &           318 &                             -1.00 &           0.14 &  \textbf{0.00} &              - &           1.13 &         \textbf{2} &                 16 &                  - &                T.L \\ 
+                           nuclearvd &           352 &           318 &                             -1.04 &  \textbf{0.00} &           0.29 &           0.66 &           1.07 &        \textbf{14} &                 64 &                T.L &                T.L \\ 
+                           nuclearve &           352 &           318 &                             -1.04 &  \textbf{0.00} &           0.37 &              - &           1.06 &                 20 &        \textbf{13} &                  - &                T.L \\ 
+                           nuclearvf &           352 &           318 &                             -1.02 &  \textbf{0.00} &           0.74 &              - &           1.06 &                 42 &         \textbf{2} &                  - &                T.L \\ 
+                graphpart\_clique-60 &           181 &            61 &                           3990.00 &  \textbf{0.00} &              - &          36.19 &          50.48 &         \textbf{3} &                  - &                T.L &                T.L \\ 
+                             SLay10H &          1011 &          1306 &                         129579.88 &           0.54 &  \textbf{0.00} &          35.92 &  \textbf{0.00} &                T.L &       \textbf{354} &                T.L &                T.L \\ 
+                             SLay10M &           291 &           406 &                         129579.88 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &               2412 &                134 &                138 &       \textbf{101} \\ 
+                     edgecross14-058 &           183 &          1457 &                            353.00 &           8.78 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &         \textbf{2} &         \textbf{2} &                172 &                987 \\ 
+                     edgecross14-098 &           183 &          1457 &                           1355.00 &           3.99 &           1.70 &           0.30 &  \textbf{0.00} &                  4 &         \textbf{2} &                T.L &                T.L \\ 
+                     edgecross14-176 &           183 &          1457 &                           5875.00 &           0.48 &  \textbf{0.00} &              - &  \textbf{0.00} &                  2 &         $\bm{< 1}$ &                  - &                532 \\ 
+                 genpooling\_meyer10 &           395 &           424 &                        1134751.86 &  \textbf{0.00} &           1.29 &          20.44 &          84.29 &       \textbf{376} &               1653 &                T.L &                T.L \\ 
+                           faclay20h &           191 &          2281 &                          16099.00 &           2.07 &           2.07 &  \textbf{0.00} &           0.71 &                  2 &         $\bm{< 1}$ &                T.L &                T.L \\ 
+             graphpart\_3g-0444-0444 &           193 &            65 &                       -7603756.00 &           1.19 &              - &  \textbf{0.00} &          11.09 &         $\bm{< 1}$ &                  - &                451 &                T.L \\ 
+            graphpart\_3pm-0444-0444 &           193 &            65 &                            -65.00 &  \textbf{0.00} &           6.15 &  \textbf{0.00} &  \textbf{0.00} &                 46 &         \textbf{3} &                T.L &                T.L \\ 
+                        hydroenergy2 &           577 &           857 &                         371811.88 &  \textbf{0.00} &  \textbf{0.00} &           0.03 &           0.01 &                 26 &        \textbf{13} &                T.L &                T.L \\ 
+                        RSyn0820M02H &           979 &          1501 &                           1092.09 &  \textbf{0.00} &  \textbf{0.00} &           4.07 &  \textbf{0.00} &                 41 &        \textbf{28} &                T.L &                218 \\ 
+                     crossdock\_15x7 &           211 &            45 &                          14450.00 &           2.44 &  \textbf{0.00} &           7.93 &           5.73 &                T.L &       \textbf{538} &                T.L &                T.L \\ 
+                graphpart\_clique-70 &           211 &            71 &                           6348.00 &  \textbf{0.00} &              - &          23.77 &          41.81 &         \textbf{4} &                  - &                T.L &                T.L \\ 
+                                 qap &           226 &            31 &                         391667.98 &  \textbf{0.00} &              - &          10.39 &           5.73 &      \textbf{1398} &                  - &                T.L &                T.L \\ 
+\hline 
+\end{tabular}\\ 
+\end{table*} 
+\end{landscape} 
+\begin{landscape} 
+\begin{table*}[t] 
+\footnotesize 
+\caption{Quality and Runtime Results for Various Instances} 
+\begin{tabular}{|r|r|r||r||r|r|r|r||r|r|r|r|r|} 
+\hline 
+                        &     &       &             & \multicolumn{4}{c||}{Gap (\%)} &  \multicolumn{4}{c|}{Runtime (seconds)} \\ 
+    Instance              & $|V|$& $|C|$& obj         & juniper    & bonmin & couenne        & scip            & juniper          & bonmin            & couenne         & scip \\ 
+    \hline 
+    \hline 
+                                qapw &           451 &           256 &                         391539.98 &  \textbf{0.00} &           2.46 &          22.41 &           2.92 &       \textbf{571} &                T.L &                T.L &                T.L \\ 
+                            space25a &           384 &           202 &                            484.33 &  \textbf{0.00} &  \textbf{0.00} &              - &          51.81 &                 31 &        \textbf{12} &                  - &                T.L \\ 
+                           Syn30M04H &          1153 &          2161 &                            865.73 &  \textbf{0.00} &  \textbf{0.00} &           3.77 &  \textbf{0.00} &        \textbf{22} &                 23 &                T.L &                T.L \\ 
+             graphpart\_2g-0099-9211 &           244 &            82 &                       -5070020.00 &           0.77 &           3.72 &  \textbf{0.00} &          14.20 &                 23 &         $\bm{< 1}$ &                166 &                T.L \\ 
+            graphpart\_2pm-0099-0999 &           244 &            82 &                            -64.00 &  \textbf{0.00} &         100.00 &  \textbf{0.00} &           4.69 &                 65 &         $\bm{< 1}$ &                T.L &                T.L \\ 
+                             carton7 &           329 &           688 &                            191.73 &         108.83 &              - &  \textbf{0.00} &  \textbf{0.00} &                T.L &                  - &                T.L &       \textbf{309} \\ 
+                chp\_shorttermplan1b &          1681 &          3851 &                            257.91 &           6.40 &           4.52 &          19.93 &  \textbf{0.00} &        \textbf{20} &                875 &                T.L &                T.L \\ 
+             graphpart\_2g-1010-0824 &           301 &           101 &                       -7024864.00 &           0.91 &           4.10 &  \textbf{0.00} &          32.91 &                 29 &         $\bm{< 1}$ &                161 &                T.L \\ 
+                           Syn40M04H &          1529 &          2905 &                            901.75 &  \textbf{0.00} &  \textbf{0.00} &              - &           0.02 &                 73 &        \textbf{42} &                  - &                T.L \\ 
+                        hydroenergy3 &          1009 &          1499 &                         744963.76 &  \textbf{0.00} &  \textbf{0.00} &           0.10 &           0.01 &                103 &        \textbf{34} &                T.L &                T.L \\ 
+                 genpooling\_meyer15 &           735 &           769 &                         943734.03 &  \textbf{0.00} &              - &          11.82 &          29.39 &        \textbf{70} &                  - &                T.L &                T.L \\ 
+                        RSyn0815M04H &          1797 &          3191 &                           3410.86 &  \textbf{0.00} &  \textbf{0.00} &              - &  \textbf{0.00} &        \textbf{62} &        \textbf{62} &                  - &                494 \\ 
+                     edgecross20-040 &           381 &          4561 &                             57.00 &           1.75 &           1.75 &  \textbf{0.00} &  \textbf{0.00} &        \textbf{12} &                 21 &                117 &               1054 \\ 
+                  routingdelay\_bigm &          1124 &          2978 &                            145.69 &           0.64 &           0.64 &  \textbf{0.00} &           3.66 &                494 &       \textbf{155} &                T.L &                T.L \\ 
+               supplychainp1\_022020 &          2941 &          5301 &                        1776977.06 &          68.65 &           8.96 &          52.38 &  \textbf{0.00} &       \textbf{225} &                T.L &                T.L &                T.L \\ 
+                     edgecross22-048 &           463 &          6161 &                             84.00 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &        \textbf{13} &                 62 &                163 &                T.L \\ 
+                     edgecross24-057 &           553 &          8097 &                            180.00 &          23.33 &  \textbf{0.00} &  \textbf{0.00} &           2.78 &        \textbf{24} &                198 &                T.L &                T.L \\ 
+                           nuclear14 &          1563 &          1227 &                             -1.13 &           0.07 &  \textbf{0.00} &              - &           1.14 &        \textbf{47} &               3270 &                  - &                T.L \\ 
+                          nuclear14a &           993 &           634 &                             -1.13 &  \textbf{0.00} &           0.24 &              - &           3.64 &         \textbf{6} &                 89 &                  - &                T.L \\ 
+\hline 
+\end{tabular}\\ 
+\end{table*} 
+\end{landscape} 
