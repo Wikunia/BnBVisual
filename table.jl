@@ -2,7 +2,7 @@ using DataFrames
 using CSV
 using LatexPrint
 
-files = ["bonmin-nlw","couenne-nlw","scip-nlw","juniper"]
+files = ["bonmin-nlw","couenne-nlw","scip-nlw","juniper-fp-cbc-nic"]
 header = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
 "sense","objval","best_bound","status","time"]
 objval_cols = [:scip_objval,:couenne_objval,:bonmin_objval,:juniper_objval]
@@ -12,18 +12,21 @@ tex_headers = [:instance,:nodes,:constraints,:objval,
 :juniper_time,:bonmin_time,:couenne_time,:scip_time]
 
 data = []
+reasonable_instances = []
+
 c = 1
 for f in files
-    df = CSV.read("data/"*f*"_data.csv"; header=header)
+    df = CSV.read("data/"*f*"_data.csv"; header=header,
+    types=[String for h in header])
     df[:instance] = [strip(value[1:end-3]) for (i, value) in enumerate(df[:instance])]
     for col in [:sense,:status]
         df[col] = [strip(value) for (i, value) in enumerate(df[col])]
     end
     for col in [:nodes,:bin_vars,:int_vars,:constraints]
-        df[col] = [convert(Int64, value) for (i, value) in enumerate(df[col])]
+        df[col] = [parse(Int64, value) for (i, value) in enumerate(df[col])]
     end
     for col in [:objval,:best_bound,:time]
-        df[col] = [isa(value, String) ? parse(Float64, strip(value)) : convert(Float64, value) for (i, value) in enumerate(df[col])]
+        df[col] = [parse(Float64, strip(value)) for (i, value) in enumerate(df[col])]
     end
 
     delete!(df, :stdout)
@@ -37,11 +40,11 @@ for f in files
     delete!(df, :best_bound)
 
     for col in [:objval,:status,:time]
-        if f != "juniper"
+        if !contains(f,"juniper")
             # remove nlw
-            rename!(df, col, convert(Symbol, f[1:end-4]*"_"*string(col)))
+            rename!(df, col => convert(Symbol, f[1:end-4]*"_"*string(col)))
         else 
-            rename!(df, col, convert(Symbol, f*"_"*string(col)))
+            rename!(df, col => convert(Symbol, "juniper_"*string(col)))
         end
      end
     
@@ -90,6 +93,7 @@ f[:bonmin_gap]  = NaN*ones(size(f,1))
 f[:juniper_gap] = NaN*ones(size(f,1))
 
 f[:sum_time] = zeros(size(f,1))
+f[:disc_vars] = zeros(size(f,1))
 
 for r in eachrow(f) 
     if r[:sense] == "Min"
@@ -112,9 +116,12 @@ for r in eachrow(f)
         r[:sum_time] += time
     end
 
+    r[:disc_vars] = r[:int_vars]+r[:bin_vars]
+
 end 
 
-f = sort(f, cols = :sum_time)
+
+f = sort(f, cols = :disc_vars)
 
 # remove objval columns
 for obj_col in objval_cols
@@ -142,7 +149,7 @@ function format_time(val)
         return "T.L"
     end
     if val < 1
-        return "\$< 1\$"
+        return "\$\\bm{< 1}\$"
     end
 
     return string(@sprintf "%d" ceil(val))
@@ -183,9 +190,9 @@ for col in tex_headers
 end
 
 # get number of spaces
-# extra space for emph in each column :/
+# extra space for textbf in each column :/
 for col in tex_headers
-    spaces[col] = maximum([length(format[col] != nothing ? format[col](value) : value)+7 for value in f[col]])
+    spaces[col] = maximum([length(format[col] != nothing ? format[col](value) : value)+9 for value in f[col]])
 end
 
 noprint_c = 0
@@ -212,20 +219,29 @@ end
 
 
 rc = 0
+last_rc = 0
+write_counter = 0
 for r in eachrow(f)
-    ln = ""
+    l_arr = []
     c = 1
     time_smaller_10_c = 0
     time_greater_3600_c = 0
     bprint = true
+
     if isinf(r[:objval])
         noprint_c += 1
         continue
     end
 
-    # best gap and time
-    str_min_gap = format[gap_cols[1]](minimum([isnan(r[col]) ? Inf : r[col] for col in gap_cols]))
-    str_min_time = format[time_cols[1]](minimum([isnan(r[col]) ? Inf : r[col] for col in time_cols]))
+    if r[:scip_time] <= 60 || r[:couenne_time] <= 60
+        noprint_c += 1
+        continue
+    end
+
+    if r[:juniper_time] >= 3600 && r[:bonmin_time] >= 3600 
+        noprint_c += 1
+        continue
+    end
 
     for col in tex_headers
         sval = ""
@@ -248,32 +264,68 @@ for r in eachrow(f)
             gap_name = Symbol(solver*"_gap")
             gap = r[gap_name]
             if format[gap_name](gap) == "-"
+                time_greater_3600_c += 1
+                if time_greater_3600_c == length(solver_names)
+                    bprint = false
+                    break
+                end
                 sval = "-"
+                r[col] = NaN
             end
         end
         if sval == ""
             sval = format[col] != nothing ? format[col](r[col]) : r[col]
-            if (col in gap_cols && sval == str_min_gap) || (col in time_cols && sval == str_min_time)
-                sval = "\\textbf{"*sval*"}"
-            end
         end
         lval = length(sval)
-        if c == length(tex_headers)
-            ln *= repeat(" ", spaces[col]-lval)*sval*" \\\\"
-        else
-            ln *= repeat(" ", spaces[col]-lval)*sval*" &"
-        end
+        
+        push!(l_arr, sval)
         c += 1    
     end
-    
+
     if bprint
-        write(tex_file, "$ln \n")
+        str_min_gap  = format[gap_cols[1]](minimum([isnan(r[col]) ? Inf : r[col] for col in gap_cols]))
+        str_min_time = format[time_cols[1]](minimum([isnan(r[col]) ? Inf :r[col] for col in time_cols]))
+
+        println("min gap: ",str_min_gap)
+        println("min time: ",str_min_time)
+        ci = 1
+        for sval in l_arr
+            col = tex_headers[ci]
+            if col in gap_cols
+                println(str_min_gap*" vs. "*sval)
+            end
+            if (col in gap_cols && sval == str_min_gap) || (col in time_cols && sval == str_min_time)
+                if r[col] >= 1 || col in gap_cols
+                    l_arr[ci] = "\\textbf{"*l_arr[ci]*"}"
+                end
+            end
+            ci += 1
+        end
+        ln = ""
+        ci = 1
+        for sval in l_arr
+            lval = length(sval)
+            col = tex_headers[ci]
+            if ci == length(tex_headers)
+                ln *= repeat(" ", spaces[col]-lval)*sval*" \\\\"
+            else
+                ln *= repeat(" ", spaces[col]-lval)*sval*" &"
+            end
+            ci += 1
+        end
+    
+        push!(reasonable_instances, r[:instance])
+        if rc % 1 == 0
+            write_counter += 1
+            write(tex_file, "$ln \n")
+        end
         rc += 1
     else 
         noprint_c += 1
     end
 
-    if rc % 25 == 0 && rc > 0
+    if write_counter % 35 == 0 && rc != last_rc
+        last_rc = rc
         for eln in tex_end
             write(tex_file, "$eln \n")
         end
@@ -290,4 +342,8 @@ end
 
 close(tex_file)
 
-print("Uninteresting lines: ", noprint_c) 
+println("Uninteresting lines: ", noprint_c) 
+println("Resonable lines: ", rc) 
+println("Written lines: ", write_counter)
+println("reasonable_instances: ")
+println(reasonable_instances)

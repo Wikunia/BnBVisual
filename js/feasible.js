@@ -1,10 +1,9 @@
-var width = 1200,
+var width = 1500,
 height = 600,
 centered;
 
-var files = ["minlib","bonmin-nlw","couenne-nlw","scip-nlw","knitro-nlw","juniper","juniper-ts-dbfs","juniper-bs-r","juniper-bs-nsr","juniper-bs-mi","juniper-p03",
-"juniper-p05","juniper-p09","juniper-p17","juniper-ts-dfs","juniper-nic",
-"juniper-fp-cbc","juniper-fp-cbc-nic","juniper-fp-grb"];
+var files = ["minlib","bonmin-nlw","couenne-nlw","scip-nlw","juniper","juniper-ts-dbfs","juniper-bs-r",
+"juniper-fp-cbc","juniper-fp-cbc-nic"];
 
 var legend_w = 100;
 
@@ -27,7 +26,7 @@ legend.attr("transform", "translate("+(width-legend_w+10)+",20)");
 
 // define scales
 let scaleX = d3.scaleLinear().range([0,widthActual]);
-let scaleY = d3.scaleLinear().range([50,height-20*2]);
+let scaleY = d3.scaleLinear().range([80,height-20*2]);
 let scaleC = d3.scaleLog().range([d3.rgb(0,255,0),d3.rgb(255,128,0)]);
 
 
@@ -116,13 +115,19 @@ function render(data,first_render=true) {
     let axisTop = g.selectAll(".axisTop").data(data[0].data);
     axisTop.enter().append("text")
         .attr("class", "axisTop")
-        .attr("y", 45)
+        .attr("y", 75)
         .attr("x", (d,i) => {return scaleX(i)+(scaleX(i+1)-scaleX(i))/2})
-        .attr("transform", (d,i) => {return "rotate(330, "+(scaleX(i)+(scaleX(i+1)-scaleX(i))/2)+", 45)"} )
+        .attr("transform", (d,i) => {return "rotate(330, "+(scaleX(i)+(scaleX(i+1)-scaleX(i))/2)+", 75)"} )
         .text(d=>{
             let short = d.inst.replace("genpooling_meyer", "GP_M");
             short = short.replace("genpooling", "GP");
             short = short.replace("graphpart_clique", "GP_C");
+            short = short.replace("routingdelay", "RD");
+            short = short.replace("crudeoil_pooling", "C_P");
+            short = short.replace("multiplants", "MP");
+            short = short.replace("watercontamination", "WC");
+            short = short.replace("supplychain", "SC");
+        
             return short})
     axisTop.exit().remove();
 }

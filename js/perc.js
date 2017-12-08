@@ -18,7 +18,8 @@ if (getQueryVariable("ots") == "true") {
     "juniper-fp-cbc","juniper-fp-cbc-nic","juniper-fp-grb",
     "bonmin-nlw","couenne-nlw","scip-nlw","knitro-nlw"];
     files = ["juniper",
-    "bonmin-nlw","couenne-nlw","scip-nlw"];
+    "bonmin-nlw","couenne-nlw","scip-nlw", "juniper-p09", "juniper-bs-r", "juniper-ts-dbfs", 
+    "juniper-fp-cbc", "juniper-fp-cbc-nic", "juniper-fp-cbc-nic-60"];
 }
 
 var legend_w = 200;
@@ -252,6 +253,7 @@ function getdata(section,cb) {
         }); 
         if (!ots) {
             data = filterNoDisc(data);
+            data = filterInstances(data);
         }
         cb(data);   
     });
