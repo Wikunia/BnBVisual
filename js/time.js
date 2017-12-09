@@ -119,14 +119,14 @@ function createLegend(data) {
         .attr("class", "lDisVarsCircles")
         .merge(lDisVarsCircles)
         .attr("cx", 20)
-        .attr("cy", (d,i) => {return 30+(scaleR.range()[1]*2+10)*i})
+        .attr("cy", (d,i) => {return 30+(scaleR.range()[1]*2+5)*i})
         .attr("r", d => {return scaleR(d)})
     let lDisVarsText = legend_dis_vars.selectAll(".lDisVarsText").data(some_disvar_values);
     lDisVarsText.enter().append("text")
         .attr("class", "lDisVarsText")
         .merge(lDisVarsText)
         .attr("x", 40)
-        .attr("y", (d,i) => {return 35+(scaleR.range()[1]*2+10)*i})
+        .attr("y", (d,i) => {return 35+(scaleR.range()[1]*2+5)*i})
         .text(d=>{return d});
     lDisVarsCircles.exit().remove();
     lDisVarsText.exit().remove();
@@ -138,8 +138,7 @@ function createLegend(data) {
 function render(data) {
     // different scales depending on the data
     scaleX.domain([0,data.length-1]);
-    // scaleY.domain(d3.extent(data, d=>{return d["time"];}));
-    scaleY.domain([1,4000]);
+    scaleY.domain(d3.extent(data, d=>{return d["time"];}));
     if (ots) {
         scaleR.range([1,(scaleX(2)-scaleX(1))/2-2])
             .domain(d3.extent(data, d=>{return d.bus}));

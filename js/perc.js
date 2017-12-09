@@ -13,10 +13,10 @@ if (getQueryVariable("ots") == "true") {
 } else {
     headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
     "sense","objval","best_bound","status","time"].join(",");
-    files = ["juniper","juniper-bs-mi","juniper-bs-nsr","juniper-bs-r","juniper-p03",
-    "juniper-p05","juniper-p09","juniper-p17","juniper-ts-dfs","juniper-ts-dbfs","juniper-nic",
-    "juniper-fp-cbc","juniper-fp-cbc-nic","juniper-fp-grb",
-    "bonmin-nlw","couenne-nlw","scip-nlw","knitro-nlw"];
+
+    files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-fp-grb","juniper-ic","juniper-p03",
+    "juniper-p05","juniper-p09","juniper-p17","juniper-ts-dbfs",
+    "bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
 }
 
 var legend_w = 200;
@@ -31,12 +31,15 @@ let axis_width = 80;
 var axis = svg.append('g');
 axis.attr("transform", "translate("+axis_width+", 20)");
 
+var axisRight = svg.append('g');
+axisRight.attr("transform", "translate("+(width-legend_w-5)+", 20)");
+
 var widthActual = width-20-axis_width-legend_w;
 var g = svg.append('g');
 g.attr("transform", "translate("+(axis_width+10)+", 20)");
 
 var legend = svg.append('g').attr("class","legend");
-legend.attr("transform", "translate("+(width-legend_w+10)+",20)");
+legend.attr("transform", "translate("+(width-legend_w+35)+",20)");
 
 // define scales
 let scaleX = d3.scaleLog().range([0,widthActual]);
@@ -139,10 +142,10 @@ function data2line(data,maxTime) {
                 lastY = (n/data[alg].data.length)*100;
             }
         }
-        data[alg].line.unshift({
+        /*data[alg].line.unshift({
             x: 1,
             y: 0,
-        })
+        })*/
         data[alg].line.push({
             x: maxTime,
             y: lastY,
@@ -165,6 +168,7 @@ function render(data,maxTime,max_perc,first_render=true) {
 
     // define the axis
     var axisSolved = d3.axisLeft(scaleY)
+    var axisSolvedRight = d3.axisRight(scaleY)
     var axisTime = d3.axisTop(scaleX)
     axisTime.tickFormat(function(d) {
         return this.parentNode.nextSibling
@@ -176,6 +180,12 @@ function render(data,maxTime,max_perc,first_render=true) {
             ? d
             : d + "%";
     });
+    axisSolvedRight.tickFormat(function(d) {
+        return this.parentNode.nextSibling
+            ? d
+            : d + "%";
+    });
+
 
     let fdata = data.filter(d=> {
         if ("no" in d && d.no) {
@@ -207,6 +217,7 @@ function render(data,maxTime,max_perc,first_render=true) {
     createLegend(data,maxTime,max_perc);
     g.call(axisTime);
     axis.call(axisSolved);
+    axisRight.call(axisSolvedRight);
 }
 
 var lineFunc = d3.line()
@@ -258,9 +269,6 @@ function getdata(section,cb) {
 function getandrenderdata(i,files,data) {
     let file = files[i];
     getdata(file,function(d) {
-        if (!ots) {
-            d = filterInstances(d);
-        }
         data[file] = d;
         if (i == files.length-1) {
             data = fillNotDefined(data);
