@@ -16,7 +16,7 @@ if (getQueryVariable("ots") == "true") {
 
     files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-fp-grb","juniper-ic","juniper-p03",
     "juniper-p05","juniper-p09","juniper-p17","juniper-ts-dbfs",
-    "bonmin-nlw","couenne-nlw","scip-nlw"];
+    "bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
 }
 
 var legend_w = 200;

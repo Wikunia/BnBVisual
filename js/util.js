@@ -159,7 +159,7 @@ function computeGlobGap(data,ai,i) {
  */
 function getRealStatus(d) {
     d.status = d.status.trim();
-    if ((d.status == "UserLimit") && !isNaN(d.objval) && (d.time <= 3500)) { // close to 1h
+    if ((d.status == "UserLimit") && !isNaN(d.objval) && (d.time <= 3590)) { // close to 1h
         return "Optimal";
     }
     return d.status;
