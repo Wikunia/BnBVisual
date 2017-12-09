@@ -12,30 +12,25 @@
         <a class="active" href="index.html">Home</a>
         <a href="perc.html">Solved over time</a>
         <a href="feasible.html">Feasibility & Objective</a>
-        <a href="ots_index.html?ots=true">OTS Bubble</a>
-        <a href="ots_perc.html?ots=true">OTS Solved over time</a>
+        <!-- <a href="ots_index.html?ots=true">OTS Bubble</a> -->
+        <!-- <a href="ots_perc.html?ots=true">OTS Solved over time</a> -->
     </div>
     <div class="graphic">
         <h2>Visualization of instance,duration,discrete variables and status</h2>
         <select id="file">
             <option value="juniper_data" selected="selected">juniper</option>
-            <option value="juniper-bs-mi_data">juniper-bs-mi</option>
-            <option value="juniper-bs-r_data">juniper-bs-r</option>
             <option value="juniper-bs-nsr_data">juniper-bs-nsr</option>
+            <option value="juniper-bs-r_data">juniper-bs-r</option>
+            <option value="juniper-fp-grb_data">juniper-fp-grb</option>
+            <option value="juniper-ic_data">juniper-ic</option>
             <option value="juniper-p03_data">juniper-p03</option>
             <option value="juniper-p05_data">juniper-p05</option>
             <option value="juniper-p09_data">juniper-p09</option>
             <option value="juniper-p17_data">juniper-p17</option>
-            <option value="juniper-ts-dfs_data">juniper-ts-dfs</option>
             <option value="juniper-ts-dbfs_data">juniper-ts-dbfs</option>
-            <option value="juniper-nic_data">juniper-nic</option>
-            <option value="juniper-fp-cbc-nic_data">juniper-fp-cbc-nic</option>
-            <option value="juniper-fp-cbc_data">juniper-fp-cbc</option>
-            <option value="juniper-fp-grb_data">juniper-fp-grb</option>
             <option value="bonmin-nlw_data">bonmin-nlw</option>
             <option value="couenne-nlw_data">couenne-nlw</option>
             <option value="scip-nlw_data">scip-nlw</option>
-            <option value="knitro-nlw_data">knitro-nlw</option>
         </select>
         <input id="instance_search" />
         <div id="chart"></div>

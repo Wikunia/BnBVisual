@@ -1,12 +1,11 @@
 var listOfProblems = 
-[
- "ex1223a","meanvarx","blend721","util","blend029","blend531",
- "gear4","johnall","blend718","genpooling_lee1","genpooling_lee2",
- "ndcc12","blend852","fuel","elf","genpooling_meyer15","ex1264",
- "ex1266","ex1265","genpooling_meyer10","genpooling_meyer04",
- "saa_2","blend480","o8_ar4_1","blend146","multiplants_mtg1a",
- "kport20","kport40","primary","carton7","forest","graphpart_clique-50","wager"
-];
+["nous1", "sfacloc1_4_95", "heatexch_gen1", "squfl015-060", "ghg_2veh", "squfl020-040", "squfl025-030",
+ "sfacloc1_4_90", "squfl030-100", "gasprod_sarawak16", "squfl040-080persp", "sepasequ_complex",
+ "procurement1mot", "sfacloc1_2_80", "multiplants_mtg5", "graphpart_clique-30", "hydroenergy1",
+ "graphpart_3pm-0334-0334", "SLay08H", "water4", "graphpart_3pm-0344-0344", "nuclearve", "nuclearvc",
+ "graphpart_clique-60", "genpooling_meyer10", "graphpart_3pm-0444-0444", "qapw", "graphpart_2g-0099-9211",
+ "graphpart_2g-1010-0824", "RSyn0815M04H", "edgecross22-048"];   
+
 
 function filterInstances(data) {
     data = data.filter(d => {
@@ -37,7 +36,7 @@ function fillNotDefined(data) {
         if (algi == keys.length-1) {
             break;
         }
-        for (let oalgi = algi; oalgi < keys.length; oalgi++) {
+        for (let oalgi = algi+1; oalgi < keys.length; oalgi++) {
             let oalg = keys[oalgi];
             let alg_instances = [];
             let oalg_instances = [];
@@ -160,7 +159,7 @@ function computeGlobGap(data,ai,i) {
  */
 function getRealStatus(d) {
     d.status = d.status.trim();
-    if ((d.status == "UserLimit") && (d.time <= 3500)) { // close to 1h
+    if ((d.status == "UserLimit") && !isNaN(d.objval) && (d.time <= 3500)) { // close to 1h
         return "Optimal";
     }
     return d.status;

@@ -1,0 +1,45 @@
+\begin{landscape} 
+\begin{table*}[t] 
+\footnotesize 
+\caption{Quality and Runtime Results for Various Instances} 
+\begin{tabular}{|r|r|r||r||r|r|r|r||r|r|r|r|r|} 
+\hline 
+                        &     &       &             & \multicolumn{4}{c||}{Gap (\%)} &  \multicolumn{4}{c|}{Runtime (seconds)} \\ 
+    Instance              & $|V|$& $|C|$& obj         & juniper    & bonmin & couenne        & scip            & juniper          & bonmin            & couenne         & scip \\ 
+    \hline 
+    \hline 
+                            nous1 &           51 &           44 &                1.57 &  \textbf{0.00} &              - &  \textbf{0.00} &  \textbf{0.00} &         \textbf{4} &                  - &          T.L &         3067 \\ 
+                  sfacloc1\_4\_95 &          296 &          355 &               11.23 &           0.12 &           0.12 &          10.11 &  \textbf{0.00} &                  4 &         \textbf{3} &          T.L &          T.L \\ 
+                   heatexch\_gen1 &          113 &          121 &           100500.10 &          90.95 &          54.13 &              - &  \textbf{0.00} &                 34 &        \textbf{16} &          T.L &         1414 \\ 
+                     squfl015-060 &          916 &          961 &              366.62 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &          23.31 &                 31 &        \textbf{13} &          136 &          T.L \\ 
+                        ghg\_2veh &           58 &           63 &                7.77 &  \textbf{0.00} &  \textbf{0.00} &           0.07 &  \textbf{0.00} &                  5 &         $\bm{< 1}$ &          T.L &          T.L \\ 
+                     squfl020-040 &          821 &          841 &              209.25 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &                 15 &         \textbf{6} &           79 &          T.L \\ 
+                     squfl025-030 &          776 &          781 &              205.50 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &                 33 &        \textbf{13} &           93 &          T.L \\ 
+                  sfacloc1\_4\_90 &          324 &          495 &               10.46 &  \textbf{0.00} &           1.10 &          88.39 &           0.87 &         \textbf{5} &                  6 &          T.L &          T.L \\ 
+                     squfl030-100 &         3031 &         3101 &              363.09 &         542.82 &  \textbf{0.00} &           5.04 &          16.93 &                T.L &      \textbf{1413} &          T.L &          T.L \\ 
+               gasprod\_sarawak16 &         1527 &         2253 &           -32271.22 &  \textbf{0.00} &  \textbf{0.00} &          45.73 &           0.55 &        \textbf{60} &                175 &          T.L &          T.L \\ 
+                squfl040-080persp &         6441 &         6481 &              263.89 &           0.50 &  \textbf{0.00} &         255.33 &  \textbf{0.00} &       \textbf{154} &               1334 &          T.L &          195 \\ 
+                sepasequ\_complex &          498 &         1311 &              328.28 &  \textbf{0.00} &           2.36 &          31.84 &          16.78 &                T.L &               1463 & \textbf{283} &          T.L \\ 
+                  procurement1mot &          785 &          750 &              291.54 &  \textbf{0.00} &  \textbf{0.00} &           8.19 &           4.29 &                465 &       \textbf{185} &          T.L &          T.L \\ 
+                  sfacloc1\_2\_80 &          232 &         2089 &               12.75 &  \textbf{0.00} &  \textbf{0.00} &           1.43 &  \textbf{0.00} &        \textbf{22} &        \textbf{22} &          T.L &          T.L \\ 
+                multiplants\_mtg5 &          191 &          309 &             5924.65 &  \textbf{0.00} &  \textbf{0.00} &           0.12 &  \textbf{0.00} &               2168 &      \textbf{1809} &          T.L &          T.L \\ 
+             graphpart\_clique-30 &           91 &           31 &              495.00 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &                  2 &         $\bm{< 1}$ &         3306 &          T.L \\ 
+                     hydroenergy1 &          289 &          429 &           209721.01 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &                  7 &         \textbf{4} &         3396 &          T.L \\ 
+         graphpart\_3pm-0334-0334 &          109 &           37 &              -36.00 &  \textbf{0.00} &           2.78 &  \textbf{0.00} &  \textbf{0.00} &                 21 &         \textbf{2} &           67 &          T.L \\ 
+                          SLay08H &          633 &          813 &            84960.21 &  \textbf{0.00} &  \textbf{0.00} &           3.13 &  \textbf{0.00} &                 86 &        \textbf{18} &          T.L &           87 \\ 
+                           water4 &          196 &          138 &              907.02 &          15.17 &  \textbf{0.00} &          12.38 &           0.43 &                T.L &       \textbf{655} &          T.L &          T.L \\ 
+         graphpart\_3pm-0344-0344 &          145 &           49 &              -48.00 &  \textbf{0.00} &          10.42 &  \textbf{0.00} &           4.17 &                 36 &         \textbf{2} &         1316 &          T.L \\ 
+                        nuclearve &          352 &          318 &               -1.04 &  \textbf{0.00} &           0.37 &              - &           1.06 &                 20 &        \textbf{13} &          T.L &          T.L \\ 
+                        nuclearvc &          352 &          318 &               -1.00 &           0.14 &  \textbf{0.00} &              - &           1.13 &         \textbf{2} &                 16 &          T.L &          T.L \\ 
+             graphpart\_clique-60 &          181 &           61 &             3990.00 &  \textbf{0.00} &              - &          36.19 &          50.48 &         \textbf{3} &                  - &          T.L &          T.L \\ 
+              genpooling\_meyer10 &          395 &          424 &          1134751.86 &  \textbf{0.00} &           1.29 &          20.44 &          84.29 &       \textbf{137} &               1626 &          T.L &          T.L \\ 
+         graphpart\_3pm-0444-0444 &          193 &           65 &              -65.00 &  \textbf{0.00} &           6.15 &  \textbf{0.00} &  \textbf{0.00} &                 46 &         \textbf{3} &          T.L &          T.L \\ 
+                             qapw &          451 &          256 &           391539.98 &  \textbf{0.00} &           2.46 &          22.41 &           2.92 &       \textbf{573} &                T.L &          T.L &          T.L \\ 
+          graphpart\_2g-0099-9211 &          244 &           82 &         -5070020.00 &           0.77 &           3.72 &  \textbf{0.00} &          14.20 &                 22 &         $\bm{< 1}$ &          166 &          T.L \\ 
+          graphpart\_2g-1010-0824 &          301 &          101 &         -7024864.00 &           0.91 &           4.10 &  \textbf{0.00} &          32.91 &                 30 &         $\bm{< 1}$ &          162 &          T.L \\ 
+                     RSyn0815M04H &         1797 &         3191 &             3410.86 &  \textbf{0.00} &  \textbf{0.00} &              - &  \textbf{0.00} &        \textbf{62} &                 63 &          T.L &          510 \\ 
+                  edgecross22-048 &          463 &         6161 &               84.00 &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &  \textbf{0.00} &        \textbf{13} &                 62 &          164 &          T.L \\ 
+\hline 
+\end{tabular}\\ 
+\end{table*} 
+\end{landscape} 
