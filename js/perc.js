@@ -1,5 +1,7 @@
 var qcompact = getQueryVariable("compact");
+var qparallel = getQueryVariable("parallel");
 var compact = qcompact ? true : false;
+var parallel = qparallel ? true : false;
 
 var width = 1200,
 height = 600;
@@ -22,6 +24,9 @@ if (getQueryVariable("ots") == "true") {
 
     if (compact) {
         files = ["juniper", "bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
+        if (parallel) {
+            files = ["juniper", "juniper-p03","juniper-p05","juniper-p09","juniper-p17"];
+        }
     } else {
         files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-fp-grb","juniper-ic","juniper-p03",
         "juniper-p05","juniper-p09","juniper-p17","juniper-ts-dbfs",
@@ -55,12 +60,15 @@ if (compact) {
 var g = svg.append('g');
 g.attr("transform", "translate("+(axis_width+10)+", "+margin_top+")");
 
+var legend = svg.append('g').attr("class","legend");
 if (!compact) {
-    var legend = svg.append('g').attr("class","legend");
     legend.attr("transform", "translate("+(width-legend_w+35)+","+margin_top+")");
 } else {
-    var legend = svg.append('g').attr("class","legend");
-    legend.attr("transform", "translate("+(axis_width+35)+","+margin_top+")");
+    if (parallel) {
+        legend.attr("transform", "translate("+(width-legend_w-100)+","+(margin_top+100)+")");
+    } else {
+        legend.attr("transform", "translate("+(axis_width+35)+","+margin_top+")");
+    }   
 }
 
 var yAxisName = svg.append('g').attr("class","yAxisName");
@@ -70,7 +78,7 @@ var xAxisName = svg.append('g').attr("class","xAxisName");
 xAxisName.attr("transform", "translate("+(axis_width+10+(widthActual)/2)+","+(margin_top-25)+")");
 
 // define scales
-let scaleX = d3.scaleLog().range([0,widthActual]);
+let scaleX = d3.scaleLinear().range([0,widthActual]);
 let scaleY = d3.scaleLinear().range([height-margin_top*2,5]);
 let scaleC = d3.scaleOrdinal(d3.schemeCategory20);
 if (compact) {
@@ -327,6 +335,7 @@ function getandrenderdata(i,files,data) {
                 maxTime = maxTime > maxInAlg ? maxTime : maxInAlg;
             }
             data,max_perc = data2line(data,maxTime);
+            console.log(data)
             render(data,maxTime,max_perc);
         }else {
           getandrenderdata(i+1,files,data)

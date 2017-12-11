@@ -227,7 +227,6 @@ end
 vf = generateviewdf(f)
 
 
-
 # generate tex
 written_instances = []
 
