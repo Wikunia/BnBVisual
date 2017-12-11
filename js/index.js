@@ -67,8 +67,7 @@ function getColor(status) {
 function createLegend(data) {
     d3.selectAll(".legend > *").remove();
     // Legend text
-    let tlegend = legend.selectAll(".tlegend").data(data);
-    tlegend.enter().append("text")
+    let tlegend = legend.append("text")
         .attr("class", "tlegend")
         .attr("y", 10)
         .attr("font-family", "sans-serif")
@@ -83,14 +82,12 @@ function createLegend(data) {
     legend_status.attr("transform", "translate(0,20)");
     let height_status = 50+(10*2+5)*status.length;
     legend_dis_vars.attr("transform", "translate(0,"+height_status+")");
-    let radiusTextObj = legend_dis_vars.selectAll(".radiusTextObj").data(data);
     let radiusText = ots ? "#Bus" : "#Discrete Variables";
-    radiusTextObj.enter().append("text")
+    legend_dis_vars.append("text")
     .attr("class", "radiusTextObj")
     .attr("y", 10)
     .attr("font-family", "sans-serif")
     .text(radiusText);
-    radiusTextObj.exit().remove();
 
     // status circles
     let lStatusCircles = legend_status.selectAll(".lStatusCircles").data(status);
