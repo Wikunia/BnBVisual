@@ -1,7 +1,9 @@
 var qcompact = getQueryVariable("compact");
 var qparallel = getQueryVariable("parallel");
+var qconfigs = getQueryVariable("configs");
 var compact = qcompact ? true : false;
 var parallel = qparallel ? true : false;
+var configs = qconfigs ? true : false;
 
 var width = 1200,
 height = 600;
@@ -22,15 +24,19 @@ if (getQueryVariable("ots") == "true") {
     headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
     "sense","objval","best_bound","status","time"].join(",");
 
+
     if (compact) {
         files = ["juniper", "bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
-        if (parallel) {
-            files = ["juniper", "juniper-p03","juniper-p05","juniper-p09","juniper-p17"];
-        }
     } else {
         files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-fp-grb","juniper-ic","juniper-p03",
         "juniper-p05","juniper-p09","juniper-p17","juniper-ts-dbfs",
         "bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
+    }
+    if (parallel) {
+        files = ["juniper", "juniper-p03","juniper-p05","juniper-p09","juniper-p17"];
+    }
+    if (configs) {
+        files = ["juniper-ipopt","juniper-ipopt-grb","juniper-ipopt-glpk","juniper-ipopt-cbc"];
     }
     
 }
@@ -57,6 +63,21 @@ if (compact) {
     axisRight.attr("transform", "translate("+(width-35)+", "+margin_top+")");
 }
 
+// define scales
+let scaleX = d3.scaleLog().range([0,widthActual]);
+let linearScale = false;
+if (parallel) {
+    linearScale = true;
+    scaleX = d3.scaleLinear().range([0,widthActual]);
+}
+
+let scaleY = d3.scaleLinear().range([height-margin_top*2,5]);
+let scaleC = d3.scaleOrdinal(d3.schemeCategory20);
+if (compact) {
+    scaleC = d3.scaleOrdinal(d3.schemeCategory10);
+}
+
+
 var g = svg.append('g');
 g.attr("transform", "translate("+(axis_width+10)+", "+margin_top+")");
 
@@ -64,8 +85,8 @@ var legend = svg.append('g').attr("class","legend");
 if (!compact) {
     legend.attr("transform", "translate("+(width-legend_w+35)+","+margin_top+")");
 } else {
-    if (parallel) {
-        legend.attr("transform", "translate("+(width-legend_w-100)+","+(margin_top+100)+")");
+    if (linearScale) {
+        legend.attr("transform", "translate("+(width-legend_w-75)+","+(margin_top+200)+")");
     } else {
         legend.attr("transform", "translate("+(axis_width+35)+","+margin_top+")");
     }   
@@ -77,13 +98,7 @@ yAxisName.attr("transform", "translate(0,"+margin_top+")");
 var xAxisName = svg.append('g').attr("class","xAxisName");
 xAxisName.attr("transform", "translate("+(axis_width+10+(widthActual)/2)+","+(margin_top-25)+")");
 
-// define scales
-let scaleX = d3.scaleLinear().range([0,widthActual]);
-let scaleY = d3.scaleLinear().range([height-margin_top*2,5]);
-let scaleC = d3.scaleOrdinal(d3.schemeCategory20);
-if (compact) {
-    scaleC = d3.scaleOrdinal(d3.schemeCategory10);
-}
+
 
 /**
  * Draw legend
@@ -204,18 +219,30 @@ function data2line(data,maxTime) {
 function render(data,maxTime,max_perc,first_render=true) {
     // different scales depending on the data
     // get maximum in time
-    scaleX.domain([1,maxTime]);
+    if (linearScale) {
+        scaleX.domain([0,maxTime]);
+    } else {
+        scaleX.domain([1,maxTime]);
+    }
     scaleY.domain([0,Math.min(Math.ceil(max_perc+5),100)]);
 
     // define the axis
     var axisSolved = d3.axisLeft(scaleY)
     var axisSolvedRight = d3.axisRight(scaleY)
     var axisTime = d3.axisTop(scaleX)
-    axisTime.tickFormat(function(d) {
-        return this.parentNode.nextSibling
-            ? (([1,5,10,50,100,500,1000].indexOf(d) >= 0) ? d : "")
+    if (!linearScale) {
+        axisTime.tickFormat(function(d) {
+            return this.parentNode.nextSibling
+                ? (([1,5,10,50,100,500,1000].indexOf(d) >= 0) ? d : "")
+                : d + "s";
+        });
+    } else {
+        axisTime.tickFormat(function(d) {
+            return this.parentNode.nextSibling
+            ? d
             : d + "s";
-    });
+        });
+    }
     axisSolved.tickFormat(function(d) {
         return this.parentNode.nextSibling
             ? d
@@ -271,7 +298,10 @@ function render(data,maxTime,max_perc,first_render=true) {
         .attr("class", "xName")
         .attr("text-anchor", "middle")  
         .attr("font-family", "sans-serif")
-        .text("Time (log, seconds)");
+    xName.text("Time (log, seconds)");
+    if (linearScale) {
+        xName.text("Time (seconds)");
+    }
 }
 
 var lineFunc = d3.line()
@@ -334,6 +364,7 @@ function getandrenderdata(i,files,data) {
                 let maxInAlg = Math.max(...data[alg].data.map(d => {return d.time}));
                 maxTime = maxTime > maxInAlg ? maxTime : maxInAlg;
             }
+            maxTime = 4000;
             data,max_perc = data2line(data,maxTime);
             console.log(data)
             render(data,maxTime,max_perc);
