@@ -74,7 +74,8 @@ if (parallel) {
 let scaleY = d3.scaleLinear().range([height-margin_top*2,5]);
 let scaleC = d3.scaleOrdinal(d3.schemeCategory20);
 if (compact) {
-    scaleC = d3.scaleOrdinal(d3.schemeCategory10);
+    scaleC = d3.scaleOrdinal().range([d3.hsl(0, 0.5, 0),d3.hsl(50, 0.5, 0.17),
+        d3.hsl(100, 0.5, 0.34),d3.hsl(150, 0.5, 0.51),d3.hsl(200, 0.5, 0.68),d3.hsl(250, 0.5, 0.84)]);
 }
 
 
@@ -287,12 +288,16 @@ function render(data,maxTime,max_perc,first_render=true) {
     axis.call(axisSolved);
     axisRight.call(axisSolvedRight);
 
+
+    d3.selectAll(".yName").remove();
+    d3.selectAll(".xName").remove();
     let yName = yAxisName.append("text")
         .attr("class", "yName")
         .attr("text-anchor", "middle")  
         .attr("font-family", "sans-serif")
         .attr("transform", "translate(15,"+(height/2-margin_top)+") rotate(-90)")
         .text("Percentage solved");
+    
 
     let xName = xAxisName.append("text")
         .attr("class", "xName")
@@ -302,6 +307,7 @@ function render(data,maxTime,max_perc,first_render=true) {
     if (linearScale) {
         xName.text("Time (seconds)");
     }
+    
 }
 
 var lineFunc = d3.line()
@@ -353,6 +359,7 @@ function getdata(section,cb) {
 function getandrenderdata(i,files,data) {
     let file = files[i];
     getdata(file,function(d) {
+        d = removeheatexch(d);
         data[file] = d;
         if (i == files.length-1) {
             data = fillNotDefined(data);

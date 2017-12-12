@@ -15,11 +15,10 @@ tex_headers = [:instance,:nodes,:constraints,:disc_vars,:nl_constr,:objval,
 :juniper_time,:bonmin_time,:couenne_time,:scip_time]
 
 mlibheader = ["instance", "gams_obj", "bin", "int", "nl_constr"]
+dir = "/home/ole/GitHub/bnb_visual/"
 
 function readjoindata()
     data = []
-    
-    dir = "/home/ole/GitHub/bnb_visual/"
     
     c = 1
     for f in files
@@ -202,6 +201,8 @@ Get only every forth entry
 """
 function generateviewdf(f)
     println(f[:,[:instance,:juniper_gap,:bonmin_gap,:juniper_time,:bonmin_time]])
+    remove_idx = 0
+    idx = 1
     for r in eachrow(f)
         for solver in solver_names
             gap_col = Symbol(string(solver)*"_gap")
@@ -210,8 +211,14 @@ function generateviewdf(f)
                 r[time_col] = NaN
             end
         end
+        if r[:instance] == "heatexch_gen1"
+            remove_idx = idx
+        end
+        idx += 1
     end
     println(f[:,[:instance,:juniper_gap,:bonmin_gap,:juniper_time,:bonmin_time]])
+    f = vcat(f[1:remove_idx-1,:],f[remove_idx+1:end,:])
+    println("size of view before uniform: ",size(f,1))
     return f[1:4:end,:]
 end
 
