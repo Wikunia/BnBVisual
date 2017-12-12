@@ -1,11 +1,21 @@
 var listOfProblems = 
-["nous1", "sfacloc1_4_95", "heatexch_gen1", "squfl015-060", "ghg_2veh", "squfl020-040", "squfl025-030",
- "sfacloc1_4_90", "squfl030-100", "gasprod_sarawak16", "squfl040-080persp", "sepasequ_complex",
- "procurement1mot", "sfacloc1_2_80", "multiplants_mtg5", "graphpart_clique-30", "hydroenergy1",
- "graphpart_3pm-0334-0334", "SLay08H", "water4", "graphpart_3pm-0344-0344", "nuclearve", "nuclearvc",
- "graphpart_clique-60", "genpooling_meyer10", "graphpart_3pm-0444-0444", "qapw", "graphpart_2g-0099-9211",
- "graphpart_2g-1010-0824", "RSyn0815M04H", "edgecross22-048"];   
+["nous1", "sfacloc1_4_95", "ex1233", "squfl015-080", "cvxnonsep_psig40r", "squfl020-050", "waterno2_03",
+ "sfacloc1_3_90", "tln5", "ndcc15persp", "FLay05H", "portfol_classical050_1", "graphpart_clique-20",
+ "sssd15-04", "edgecross14-039", "sfacloc2_4_90", "blend531", "sssd15-06", "multiplants_mtg1c", "sssd18-06",
+ "chp_shorttermplan1a", "nuclearvb", "nuclearvf", "edgecross14-176", "faclay20h",
+ "RSyn0820M02H", "qap", "graphpart_2pm-0099-0999", "Syn40M04H", "edgecross20-040", "edgecross24-057"];   
 
+
+function removeheatexch(data) {
+    data = data.filter(d => {
+        if (d.instance != "heatexch_gen1") {
+            return true;
+        } else {
+            return false;
+        }
+    });
+    return data;
+}
 
 function filterInstances(data) {
     data = data.filter(d => {
