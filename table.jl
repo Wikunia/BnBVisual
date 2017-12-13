@@ -5,14 +5,14 @@ using CSV
 using LatexPrint
 
 
-files = ["juniper","bonmin-nlw","couenne-nlw","scip-nlw"]
+files = ["juniper","bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw"]
 header = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
 "sense","objval","best_bound","status","time"]
 objval_cols = [:scip_objval,:couenne_objval,:bonmin_objval,:juniper_objval]
-solver_names = [:scip,:couenne,:bonmin,:juniper]
+solver_names = [:scip,:couenne,:bonmin,:knitro,:juniper]
 tex_headers = [:instance,:nodes,:constraints,:disc_vars,:nl_constr,:objval,
-:juniper_gap,:bonmin_gap,:couenne_gap,:scip_gap,
-:juniper_time,:bonmin_time,:couenne_time,:scip_time]
+:juniper_gap,:bonmin_gap,:knitro_gap,:couenne_gap,:scip_gap,
+:juniper_time,:bonmin_time,:knitro_time,:couenne_time,:scip_time]
 
 mlibheader = ["instance", "gams_obj", "bin", "int", "nl_constr"]
 dir = "/home/ole/GitHub/bnb_visual/"
@@ -92,6 +92,13 @@ function get_gap(status, value, best_obj)
     if status == "Infeasible" || status == "Error" || status == "Unbounded" || isnan(value)
         return NaN
     end
+    if abs(best_obj-value)/abs(best_obj)*100 > 300
+        println("status: ", status)
+        println("best_obj: ", best_obj)
+        println("value: ", value)
+        println("gap: ", abs(best_obj-value)/abs(best_obj)*100)
+    end
+
     return abs(best_obj-value)/abs(best_obj)*100
 end
 
@@ -199,8 +206,8 @@ end
 Set time to NaN if gap is NaN
 Get only every forth entry
 """
-function generateviewdf(f)
-    println(f[:,[:instance,:juniper_gap,:bonmin_gap,:juniper_time,:bonmin_time]])
+function generateviewdf(of)
+    f = deepcopy(of)
     remove_idx = 0
     idx = 1
     for r in eachrow(f)
@@ -216,12 +223,10 @@ function generateviewdf(f)
         end
         idx += 1
     end
-    println(f[:,[:instance,:juniper_gap,:bonmin_gap,:juniper_time,:bonmin_time]])
     f = vcat(f[1:remove_idx-1,:],f[remove_idx+1:end,:])
     println("size of view before uniform: ",size(f,1))
-    return f[1:4:end,:]
+    return f,f[1:4:end,:]
 end
-
 
 f = readjoindata()
 f = fillmissings(f)
@@ -231,8 +236,9 @@ f = sort(f, cols = :disc_vars)
 for obj_col in objval_cols
     delete!(f, obj_col)
 end
-vf = generateviewdf(f)
+nf, vf = generateviewdf(f)
 
+println(nf[:,[:instance,:scip_gap,:scip_time]])
 
 # generate tex
 written_instances = []
@@ -272,10 +278,9 @@ tex_start = ["",
 "\\begin{table*}[t]",
 "\\footnotesize",
 "\\caption{Quality and Runtime Results for Various Instances}",
-"\\begin{tabular}{|r|r|r|r|r||r||r|r|r|r||r|r|r|r|r|}",
+"\\begin{tabular}{|r|r|r|r|r||r||r|r|r|r|r||r|r|r|r|r|r|}",
 "\\hline",
-"                        &     &       &        &  &   & \\multicolumn{4}{c||}{Gap (\\%)} &  \\multicolumn{4}{c|}{Runtime (seconds)} \\\\",
-"    Instance              & \$|V|\$& \$|C|\$& \$|I|\$& \$|NC|\$ & obj         & juniper    & bonmin & couenne        & scip            & juniper          & bonmin            & couenne         & scip \\\\",
+" \\multicolumn{6}{|c||}{} & juniper    & bonmin  & knitro & couenne        & scip            & juniper          & bonmin  & knitro  & couenne         & scip \\\\ ",
 "    \\hline",
 "    \\hline"]
 
@@ -287,27 +292,44 @@ for ln in tex_start
     write(tex_file, "$ln \n")
 end
 
-# average for each solver
-ln = "\\multicolumn{6}{|c||}{Average solver feasible} & "
+# average for each solver over all
+ln = "\\multicolumn{6}{|c||}{Feasible instances / Time Limit reached} & "
+ln2 = "\\multicolumn{6}{|c||}{Average solver feasible} & "
 for head in tex_headers 
     sthead = string(head)
     spsthead = split(sthead,"_")
     if Symbol(spsthead[1]) in solver_names
         vals = []
-        for r in eachrow(vf)
+        tl_reached = 0
+        for r in eachrow(f)
+            if r[:instance] == "heatexch_gen1"
+                continue
+            end
             if !isnan(r[Symbol(spsthead[1]*"_gap")])
                 push!(vals,r[head])
             end
+            if r[Symbol(spsthead[1]*"_time")] >= 3600
+                tl_reached += 1
+            end
         end
         println(head)
-        println(vals)
         mean_val = mean(vals)
-        println(mean_val)
-        ln *= string(@sprintf "%.2f" mean_val) * " & "
+        println(sthead[end-3:end])
+        if sthead[end-2:end] == "gap"
+            ln *= string(@sprintf "%d" length(vals)) * " & "
+        else
+            ln *= string(@sprintf "%d" tl_reached) * " & "
+        end
+        ln2 *= string(@sprintf "%.2f" mean_val) * " & "
     end
 end
 ln = ln[1:end-2]*" \\\\"
+ln2 = ln2[1:end-2]*" \\\\"
 write(tex_file, "$ln \n")
+write(tex_file, "\\hline \n")
+write(tex_file, "\\multicolumn{6}{|c||}{} & \\multicolumn{5}{c||}{Gap (\\%)} &  \\multicolumn{5}{c|}{Runtime (seconds)} \\\\ ")
+write(tex_file, "\\hline \n")
+write(tex_file, "$ln2 \n")
 
 function allfeasible(r)
     for solver in solver_names
@@ -320,25 +342,32 @@ function allfeasible(r)
 end
 
 # average where all solves find feasible
-ln = "\\multicolumn{6}{|c||}{Average all solvers feasible} & "
+ln = ""
+l_vals = 0
 for head in tex_headers 
     sthead = string(head)
     spsthead = split(sthead,"_")
     println(head)
     if Symbol(spsthead[1]) in solver_names
         vals = []
-        for r in eachrow(vf)
+        for r in eachrow(f)
+            if r[:instance] == "heatexch_gen1"
+                continue
+            end
             if allfeasible(r)
                 push!(vals,r[head])
             end
         end
         mean_val = mean(vals)
+        l_vals = length(vals)
         ln *= string(@sprintf "%.2f" mean_val) * " & "
     end
 end
 ln = ln[1:end-2]*" \\\\"
-write(tex_file, "$ln \n")
+title_line = "\\multicolumn{6}{|c||}{Average all solvers feasible (n=$l_vals)} & "
+write(tex_file, "$title_line $ln \n")
 write(tex_file, "\\hline \n")
+write(tex_file, "Instance   & \$|V|\$& \$|C|\$& \$|I|\$& \$|NC|\$ & obj  & juniper    & bonmin  & knitro & couenne        & scip            & juniper          & bonmin  & knitro  & couenne         & scip \\\\ \n")
 write(tex_file, "\\hline \n")
 
 rc = 0

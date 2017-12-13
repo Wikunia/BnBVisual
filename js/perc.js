@@ -10,6 +10,10 @@ height = 600;
 
 if (compact) {
     width = 750;
+    if (parallel || configs) {
+        width = 450;
+        height = 450;
+    }
 }
 
 // My header
@@ -30,7 +34,7 @@ if (getQueryVariable("ots") == "true") {
     } else {
         files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-fp-grb","juniper-ic","juniper-p03",
         "juniper-p05","juniper-p09","juniper-p17","juniper-ts-dbfs",
-        "bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
+        "bonmin-nlw","knitro-nlw","knitro-nlw-ms","couenne-nlw","scip-nlw"];
     }
     if (parallel) {
         files = ["juniper", "juniper-p03","juniper-p05","juniper-p09","juniper-p17"];
@@ -74,8 +78,8 @@ if (parallel) {
 let scaleY = d3.scaleLinear().range([height-margin_top*2,5]);
 let scaleC = d3.scaleOrdinal(d3.schemeCategory20);
 if (compact) {
-    scaleC = d3.scaleOrdinal().range([d3.hsl(0, 0.5, 0),d3.hsl(50, 0.5, 0.17),
-        d3.hsl(100, 0.5, 0.34),d3.hsl(150, 0.5, 0.51),d3.hsl(200, 0.5, 0.68),d3.hsl(250, 0.5, 0.84)]);
+    scaleC = d3.scaleOrdinal().range([d3.hsl(0, 0.5, 0),d3.hsl(50, 0.5, 0.20),
+        d3.hsl(100, 0.5, 0.40),d3.hsl(150, 0.5, 0.60),d3.hsl(200, 0.5, 0.80)]);
 }
 
 
