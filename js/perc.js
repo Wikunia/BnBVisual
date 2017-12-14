@@ -10,6 +10,10 @@ height = 600;
 
 if (compact) {
     width = 750;
+    if (parallel || configs) {
+        width = 450;
+        height = 450;
+    }
 }
 
 // My header
@@ -30,7 +34,7 @@ if (getQueryVariable("ots") == "true") {
     } else {
         files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-fp-grb","juniper-ic","juniper-p03",
         "juniper-p05","juniper-p09","juniper-p17","juniper-ts-dbfs",
-        "bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
+        "bonmin-nlw","knitro-nlw","knitro-nlw-ms","couenne-nlw","scip-nlw"];
     }
     if (parallel) {
         files = ["juniper", "juniper-p03","juniper-p05","juniper-p09","juniper-p17"];
@@ -74,7 +78,8 @@ if (parallel) {
 let scaleY = d3.scaleLinear().range([height-margin_top*2,5]);
 let scaleC = d3.scaleOrdinal(d3.schemeCategory20);
 if (compact) {
-    scaleC = d3.scaleOrdinal(d3.schemeCategory10);
+    scaleC = d3.scaleOrdinal().range([d3.hsl(0, 0.5, 0),d3.hsl(50, 0.5, 0.20),
+        d3.hsl(100, 0.5, 0.40),d3.hsl(150, 0.5, 0.60),d3.hsl(200, 0.5, 0.80)]);
 }
 
 
@@ -287,12 +292,16 @@ function render(data,maxTime,max_perc,first_render=true) {
     axis.call(axisSolved);
     axisRight.call(axisSolvedRight);
 
+
+    d3.selectAll(".yName").remove();
+    d3.selectAll(".xName").remove();
     let yName = yAxisName.append("text")
         .attr("class", "yName")
         .attr("text-anchor", "middle")  
         .attr("font-family", "sans-serif")
         .attr("transform", "translate(15,"+(height/2-margin_top)+") rotate(-90)")
         .text("Percentage solved");
+    
 
     let xName = xAxisName.append("text")
         .attr("class", "xName")
@@ -302,6 +311,7 @@ function render(data,maxTime,max_perc,first_render=true) {
     if (linearScale) {
         xName.text("Time (seconds)");
     }
+    
 }
 
 var lineFunc = d3.line()
@@ -353,6 +363,7 @@ function getdata(section,cb) {
 function getandrenderdata(i,files,data) {
     let file = files[i];
     getdata(file,function(d) {
+        d = removeheatexch(d);
         data[file] = d;
         if (i == files.length-1) {
             data = fillNotDefined(data);
