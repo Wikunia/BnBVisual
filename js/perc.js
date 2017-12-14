@@ -9,11 +9,8 @@ var width = 1200,
 height = 600;
 
 if (compact) {
-    width = 750;
-    if (parallel || configs) {
-        width = 450;
-        height = 450;
-    }
+    width = 450;
+    height = 450;
 }
 
 // My header
@@ -300,7 +297,7 @@ function render(data,maxTime,max_perc,first_render=true) {
         .attr("text-anchor", "middle")  
         .attr("font-family", "sans-serif")
         .attr("transform", "translate(15,"+(height/2-margin_top)+") rotate(-90)")
-        .text("Percentage solved");
+        .text("Percentage solved (n=123)");
     
 
     let xName = xAxisName.append("text")
