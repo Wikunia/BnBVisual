@@ -38,7 +38,7 @@ if (getQueryVariable("ots") == "true") {
     }
     if (configs) {
         files = ["juniper-ipopt","juniper-ipopt-grb","juniper-ipopt-glpk","juniper-ipopt-cbc",
-                 "juniper-knitro-cbc"];
+                 "juniper-knitro-cbc","juniper-knitro"];
     }
     
 }
