@@ -1,6 +1,7 @@
 using DataFrames
 using CSV
 using LatexPrint
+include("util.jl")
 
 files = ["bonmin-nlw","couenne-nlw","scip-nlw","juniper"]
 header = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
@@ -13,6 +14,7 @@ tex_headers = [:instance,:nodes,:constraints,:objval,
 
 data = []
 reasonable_instances = []
+scip_couenne_filtered = []
 
 c = 1
 for f in files
@@ -30,16 +32,9 @@ for f in files
     end
 
     delete!(df, :stdout)
-    if c != 1
-        delete!(df, :sense)
-        delete!(df, :nodes)
-        delete!(df, :bin_vars)
-        delete!(df, :int_vars)
-        delete!(df, :constraints)
-    end
     delete!(df, :best_bound)
 
-    for col in [:objval,:status,:time]
+    for col in [:objval,:status,:time,:sense,:nodes,:bin_vars,:int_vars,:constraints]
         if !contains(f,"juniper")
             # remove nlw
             rename!(df, col => convert(Symbol, f[1:end-4]*"_"*string(col)))
@@ -55,70 +50,27 @@ end
 f = data[1]
 
 for i=2:length(data)
-    f = join(f, data[i], on = :instance)
-end
-
-"""
-    get_value(sense, status, value)
-    
-return value if optimal
-return worst value if Infeasible, Error, Unbounded or value is NaN 
-"""
-function get_value(sense, status, value)
-    if status == "Infeasible" || status == "Error" || status == "Unbounded" || isnan(value)
-        if sense == :Min
-            return Inf
-        else 
-            return -Inf
-        end
-    end
-    return value
-end
-
-function get_gap(status, value, best_obj)
-    if status == "Infeasible" || status == "Error" || status == "Unbounded" || isnan(value)
-        return NaN
-    end
-    return abs(best_obj-value)/abs(best_obj)*100
+    f = join(f, data[i], on = :instance, kind = :outer)
 end
 
 
-# get best objective from all
+for col in [:sense,:nodes,:bin_vars,:int_vars,:constraints]
+    a_col = Symbol("bonmin_"*string(col))
+    b_col = Symbol("couenne_"*string(col))
+    c_col = Symbol("scip_"*string(col))
+    d_col = Symbol("juniper_"*string(col))
+    f[col] = map((a,b,c,d) -> not_missing([a,b,c,d]), f[a_col], f[b_col], f[c_col], f[d_col])
+    delete!(f, a_col)
+    delete!(f, b_col)
+    delete!(f, c_col)
+    delete!(f, d_col)
+end
 
-f[:objval]      = NaN*ones(size(f,1))
-f[:scip_gap]    = NaN*ones(size(f,1))
-f[:couenne_gap] = NaN*ones(size(f,1))
-f[:knitro_gap]  = NaN*ones(size(f,1))
-f[:bonmin_gap]  = NaN*ones(size(f,1))
-f[:juniper_gap] = NaN*ones(size(f,1))
+fillmissings(f)
+# set time to 4000 if error or unbounded or Infeasible
+time_adjustment(f)
 
-f[:sum_time] = zeros(size(f,1))
-f[:disc_vars] = zeros(size(f,1))
-
-for r in eachrow(f) 
-    if r[:sense] == "Min"
-        r[:objval] = minimum([get_value(:Min, r[Symbol(string(solver)*"_status")], r[Symbol(string(solver)*"_objval")]) for solver in solver_names])
-    else
-        r[:objval] = maximum([get_value(:Max, r[Symbol(string(solver)*"_status")], r[Symbol(string(solver)*"_objval")]) for solver in solver_names])
-    end
-
-    # compute gap
-    for solver in solver_names
-        gap_col = Symbol(string(solver)*"_gap")
-        status = r[Symbol(string(solver)*"_status")]
-        value = r[Symbol(string(solver)*"_objval")]
-        r[gap_col] = get_gap(status, value, r[:objval])
-    end
-
-    # get sum time for sorting
-    for solver in solver_names
-        time =  r[Symbol(string(solver)*"_time")]
-        r[:sum_time] += time
-    end
-
-    r[:disc_vars] = r[:int_vars]+r[:bin_vars]
-
-end 
+computegaps(f, knitro=false)
 
 
 f = sort(f, cols = :disc_vars)
@@ -127,47 +79,6 @@ f = sort(f, cols = :disc_vars)
 for obj_col in objval_cols
     delete!(f, obj_col)
 end
-
-for r in eachrow(f)
-    println(r)
-end
-
-
-function format_gap(val)
-    if isnan(val)
-        return "-"
-    end
-    if val >= 1000
-        return "\$\\gg\$"
-    end
-
-    return string(@sprintf "%.2f" val)
-end
-
-function format_time(val)
-    if val >= 3600
-        return "T.L"
-    end
-    if val < 1
-        return "\$\\bm{< 1}\$"
-    end
-
-    return string(@sprintf "%d" ceil(val))
-end
-
-function format_objval(val)
-    return string(@sprintf "%.2f" val)
-end
-
-function format_string(val)
-    return string(val)
-end
-
-function format_instance(val)
-    return replace(val,"_","\\_")
-end
-
-# generate tex
 
 format = Dict{Symbol,Any}()
 format[:instance] = format_instance
@@ -200,6 +111,7 @@ noprint_c = 0
 rc = 0
 last_rc = 0
 write_counter = 0
+break_after = false
 for r in eachrow(f)
     l_arr = []
     c = 1
@@ -214,6 +126,7 @@ for r in eachrow(f)
 
     if r[:scip_time] <= 60 || r[:couenne_time] <= 60
         noprint_c += 1
+        push!(scip_couenne_filtered,r[:instance])
         continue
     end
 
@@ -242,7 +155,7 @@ for r in eachrow(f)
             solver = string(col)[1:end-5]
             gap_name = Symbol(solver*"_gap")
             gap = r[gap_name]
-            if format[gap_name](gap) == "-"
+            if format[gap_name](gap) == "-" && r[col] < 3600
                 time_greater_3600_c += 1
                 if time_greater_3600_c == length(solver_names)
                     bprint = false
@@ -267,9 +180,16 @@ for r in eachrow(f)
     else 
         noprint_c += 1
     end
+    if break_after
+        error("1")
+    end
 end
+
+sort!(scip_couenne_filtered)
 
 println("Uninteresting lines: ", noprint_c) 
 println("Resonable lines: ", rc) 
 println("reasonable_instances: ")
 println(reasonable_instances)
+println("Filtered by scip/couenne: ")
+println(scip_couenne_filtered)
