@@ -9,11 +9,8 @@ var width = 1200,
 height = 600;
 
 if (compact) {
-    width = 750;
-    if (parallel || configs) {
-        width = 450;
-        height = 450;
-    }
+    width = 450;
+    height = 450;
 }
 
 // My header
@@ -40,7 +37,8 @@ if (getQueryVariable("ots") == "true") {
         files = ["juniper", "juniper-p03","juniper-p05","juniper-p09","juniper-p17"];
     }
     if (configs) {
-        files = ["juniper-ipopt","juniper-ipopt-grb","juniper-ipopt-glpk","juniper-ipopt-cbc"];
+        files = ["juniper-ipopt","juniper-ipopt-grb","juniper-ipopt-glpk","juniper-ipopt-cbc",
+                 "juniper-knitro-cbc","juniper-knitro"];
     }
     
 }
@@ -300,7 +298,7 @@ function render(data,maxTime,max_perc,first_render=true) {
         .attr("text-anchor", "middle")  
         .attr("font-family", "sans-serif")
         .attr("transform", "translate(15,"+(height/2-margin_top)+") rotate(-90)")
-        .text("Percentage solved");
+        .text("Percentage solved (n=123)");
     
 
     let xName = xAxisName.append("text")
