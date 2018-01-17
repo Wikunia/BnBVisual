@@ -80,7 +80,6 @@ Get only every forth entry
 """
 function generateviewdf(of)
     f = deepcopy(of)
-    remove_idx = 0
     idx = 1
     for r in eachrow(f)
         for solver in solver_names
@@ -90,12 +89,8 @@ function generateviewdf(of)
                 r[time_col] = NaN
             end
         end
-        if r[:instance] == "heatexch_gen1"
-            remove_idx = idx
-        end
         idx += 1
     end
-    f = vcat(f[1:remove_idx-1,:],f[remove_idx+1:end,:])
     println("size of view before uniform: ",size(f,1))
     return f,f[1:4:end,:]
 end
