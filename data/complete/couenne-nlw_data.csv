@@ -1,0 +1,683 @@
+./solvers/couenne-nlw/JuniperLib/4stufen.stdout:DATA, 4stufen.jl,150,48,0,99, Min, NaN, NaN, UserLimit,3641.712277174
+./solvers/couenne-nlw/JuniperLib/batch_nc.stdout:DATA, batch_nc.jl,35,12,0,68, Min,285504.794027653, NaN, Optimal,1.80260396003723
+./solvers/couenne-nlw/JuniperLib/batch.stdout:DATA, batch.jl,47,24,0,74, Min,285505.921866744, NaN, Optimal,0.925956010818481
+./solvers/couenne-nlw/JuniperLib/batch0812_nc.stdout:DATA, batch0812_nc.jl,77,36,0,206, Min,2686998.98630623, NaN, Optimal,5.75486898422241
+./solvers/couenne-nlw/JuniperLib/batch0812.stdout:DATA, batch0812.jl,101,60,0,218, Min,2687015.20990328, NaN, Optimal,2.34663200378418
+./solvers/couenne-nlw/JuniperLib/batchdes.stdout:DATA, batchdes.jl,20,9,0,20, Min,167427.656717801, NaN, Optimal,0.268900871276856
+./solvers/couenne-nlw/JuniperLib/BatchS101006M.stdout:DATA, BatchS101006M.jl,279,129,0,1020, Min,769437.428338594, NaN, Optimal,26.4660680294037
+./solvers/couenne-nlw/JuniperLib/BatchS121208M.stdout:DATA, BatchS121208M.jl,407,203,0,1512, Min,1241118.5632168, NaN, Optimal,83.004499912262
+./solvers/couenne-nlw/JuniperLib/BatchS151208M.stdout:DATA, BatchS151208M.jl,446,203,0,1782, Min,1543464.71902956, NaN, Optimal,149.500273942947
+./solvers/couenne-nlw/JuniperLib/BatchS201210M.stdout:DATA, BatchS201210M.jl,559,251,0,2328, Min,2295338.62276317, NaN, Optimal,228.246807098389
+./solvers/couenne-nlw/JuniperLib/bchoco06.stdout:DATA, bchoco06.jl,119,7,0,135, Max, NaN, NaN, UserLimit,3750.38732194901
+./solvers/couenne-nlw/JuniperLib/bchoco07.stdout:DATA, bchoco07.jl,135,8,0,154, Max, NaN, NaN, UserLimit,3725.48306703567
+./solvers/couenne-nlw/JuniperLib/bchoco08.stdout:DATA, bchoco08.jl,169,9,0,191, Max, NaN, NaN, UserLimit,3711.93106985092
+./solvers/couenne-nlw/JuniperLib/beuster.stdout:DATA, beuster.jl,158,52,0,115, Min, NaN, NaN, UserLimit,3648.10037612915
+./solvers/couenne-nlw/JuniperLib/blend029.stdout:DATA, blend029.jl,103,36,0,214, Max,13.3594, NaN, Optimal,18.8136510848999
+./solvers/couenne-nlw/JuniperLib/blend146.stdout:DATA, blend146.jl,223,87,0,625, Max,45.1813517696323, NaN, UserLimit,3733.93950200081
+./solvers/couenne-nlw/JuniperLib/blend480.stdout:DATA, blend480.jl,313,124,0,885, Max,7.73479285714286, NaN, UserLimit,3722.54480314255
+./solvers/couenne-nlw/JuniperLib/blend531.stdout:DATA, blend531.jl,273,104,0,737, Max,19.969, NaN, UserLimit,3734.75087809563
+./solvers/couenne-nlw/JuniperLib/blend718.stdout:DATA, blend718.jl,223,87,0,607, Max,7.1496, NaN, UserLimit,3743.18603110313
+./solvers/couenne-nlw/JuniperLib/blend721.stdout:DATA, blend721.jl,223,87,0,628, Max,13.5268, NaN, Optimal,550.524309873581
+./solvers/couenne-nlw/JuniperLib/blend852.stdout:DATA, blend852.jl,305,120,0,861, Max,53.9627, NaN, UserLimit,3720.26022696495
+./solvers/couenne-nlw/JuniperLib/carton7.stdout:DATA, carton7.jl,329,200,56,688, Min,191.729548125002, NaN, UserLimit,3747.66564893723
+./solvers/couenne-nlw/JuniperLib/carton9.stdout:DATA, carton9.jl,361,216,72,894, Min,401.439504375, NaN, UserLimit,3734.2774541378
+./solvers/couenne-nlw/JuniperLib/casctanks.stdout:ANALYSIS TEST: DATA, casctanks.jl,501,40,0,518, Min, NaN, NaN, Error,0.260459899902344
+./solvers/couenne-nlw/JuniperLib/case_1scv2.stdout:DATA, case_1scv2.jl,1557,50,0,1266, Max,0, NaN, Infeasible,2482.26634478569
+./solvers/couenne-nlw/JuniperLib/cecil_13.stdout:DATA, cecil_13.jl,841,180,0,899, Min,-115569.5199449, NaN, UserLimit,3799.95460486412
+./solvers/couenne-nlw/JuniperLib/chp_partload.stdout:DATA, chp_partload.jl,2249,45,0,2517, Min, NaN, NaN, UserLimit,3623.25010585785
+./solvers/couenne-nlw/JuniperLib/chp_shorttermplan1a.stdout:DATA, chp_shorttermplan1a.jl,1009,144,0,2069, Min,254.258220717451, NaN, UserLimit,3736.08678507805
+./solvers/couenne-nlw/JuniperLib/chp_shorttermplan1b.stdout:DATA, chp_shorttermplan1b.jl,1681,288,0,3851, Min,309.298721062317, NaN, UserLimit,3671.61201405525
+./solvers/couenne-nlw/JuniperLib/chp_shorttermplan2a.stdout:DATA, chp_shorttermplan2a.jl,1585,240,0,3897, Min,248224.599366641, NaN, UserLimit,3639.26633191109
+./solvers/couenne-nlw/JuniperLib/chp_shorttermplan2b.stdout:DATA, chp_shorttermplan2b.jl,1393,192,0,2553, Min,-160309.286706383, NaN, UserLimit,3665.31219387054
+./solvers/couenne-nlw/JuniperLib/chp_shorttermplan2c.stdout:DATA, chp_shorttermplan2c.jl,2449,384,0,6735, Min, NaN, NaN, UserLimit,3611.84364295006
+./solvers/couenne-nlw/JuniperLib/chp_shorttermplan2d.stdout:DATA, chp_shorttermplan2d.jl,3121,528,0,6839, Min, NaN, NaN, UserLimit,3612.93663215637
+./solvers/couenne-nlw/JuniperLib/CLay0203H.stdout:DATA, CLay0203H.jl,91,18,0,133, Min,41709.8081483069, NaN, Optimal,8.66733908653259
+./solvers/couenne-nlw/JuniperLib/CLay0203M.stdout:DATA, CLay0203M.jl,31,18,0,55, Min,41573.2542486379, NaN, Optimal,1.63024497032166
+./solvers/couenne-nlw/JuniperLib/CLay0204H.stdout:DATA, CLay0204H.jl,165,32,0,235, Min,6545, NaN, Optimal,11.1176328659058
+./solvers/couenne-nlw/JuniperLib/CLay0204M.stdout:DATA, CLay0204M.jl,53,32,0,91, Min,6544.99999999999, NaN, Optimal,5.52103614807129
+./solvers/couenne-nlw/JuniperLib/CLay0205H.stdout:DATA, CLay0205H.jl,261,50,0,366, Min,0, NaN, Infeasible,746.005059957504
+./solvers/couenne-nlw/JuniperLib/CLay0205M.stdout:DATA, CLay0205M.jl,81,50,0,136, Min,8092.49999999985, NaN, Optimal,27.3070840835571
+./solvers/couenne-nlw/JuniperLib/CLay0303H.stdout:DATA, CLay0303H.jl,100,21,0,151, Min,26669.1331842297, NaN, Optimal,11.8050627708435
+./solvers/couenne-nlw/JuniperLib/CLay0303M.stdout:DATA, CLay0303M.jl,34,21,0,67, Min,26669.0983951653, NaN, Optimal,2.4294068813324
+./solvers/couenne-nlw/JuniperLib/CLay0304H.stdout:DATA, CLay0304H.jl,177,36,0,259, Min,74994.8933424245, NaN, UserLimit,4804.47021794319
+./solvers/couenne-nlw/JuniperLib/CLay0304M.stdout:DATA, CLay0304M.jl,57,36,0,107, Min,40262.3874967187, NaN, Optimal,5.73623013496399
+./solvers/couenne-nlw/JuniperLib/CLay0305H.stdout:DATA, CLay0305H.jl,276,55,0,396, Min,0, NaN, Infeasible,599.197034835815
+./solvers/couenne-nlw/JuniperLib/CLay0305M.stdout:DATA, CLay0305M.jl,86,55,0,156, Min,8092.49999999999, NaN, Optimal,31.7418539524078
+./solvers/couenne-nlw/JuniperLib/contvar.stdout:DATA, contvar.jl,297,88,0,285, Min, NaN, NaN, UserLimit,3614.26063013077
+./solvers/couenne-nlw/JuniperLib/crossdock_15x7.stdout:DATA, crossdock_15x7.jl,211,210,0,45, Min,15596, NaN, UserLimit,3936.19597792625
+./solvers/couenne-nlw/JuniperLib/crossdock_15x8.stdout:DATA, crossdock_15x8.jl,241,240,0,47, Min,17520, NaN, UserLimit,3852.32158398628
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee1_05.stdout:DATA, crudeoil_lee1_05.jl,536,40,0,1241, Max,79.75, NaN, Optimal,77.7962670326233
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee1_06.stdout:DATA, crudeoil_lee1_06.jl,643,48,0,1504, Max,79.75, NaN, Optimal,111.663626909256
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee1_07.stdout:DATA, crudeoil_lee1_07.jl,750,56,0,1777, Max,79.75, NaN, Optimal,320.095395088196
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee1_08.stdout:DATA, crudeoil_lee1_08.jl,857,64,0,2060, Max,79.7499999999999, NaN, Optimal,1713.95444107056
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee1_09.stdout:DATA, crudeoil_lee1_09.jl,964,72,0,2353, Max,79.75, NaN, Optimal,922.47874712944
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee1_10.stdout:DATA, crudeoil_lee1_10.jl,1071,80,0,2656, Max,79.75, NaN, Optimal,2175.63720393181
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee2_05.stdout:DATA, crudeoil_lee2_05.jl,1156,70,0,2582, Max,90, NaN, Optimal,1000.97242093086
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee2_06.stdout:DATA, crudeoil_lee2_06.jl,1387,84,0,3118, Max,0, NaN, Infeasible,515.033797025681
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee2_07.stdout:DATA, crudeoil_lee2_07.jl,1618,98,0,3671, Max,0, NaN, Infeasible,3276.68882799149
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee2_08.stdout:DATA, crudeoil_lee2_08.jl,1849,112,0,4241, Max, NaN, NaN, UserLimit,3602.26757597923
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee2_09.stdout:DATA, crudeoil_lee2_09.jl,2080,126,0,4828, Max, NaN, NaN, UserLimit,3602.47582197189
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee2_10.stdout:DATA, crudeoil_lee2_10.jl,2311,140,0,5432, Max, NaN, NaN, UserLimit,3606.82541799545
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee3_05.stdout:DATA, crudeoil_lee3_05.jl,1281,70,0,2787, Max,82.5681130639057, NaN, UserLimit,3611.89217114449
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee3_06.stdout:DATA, crudeoil_lee3_06.jl,1537,84,0,3360, Max, NaN, NaN, UserLimit,3603.54435014725
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee3_07.stdout:DATA, crudeoil_lee3_07.jl,1793,98,0,3950, Max, NaN, NaN, UserLimit,3603.0556781292
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee3_08.stdout:DATA, crudeoil_lee3_08.jl,2049,112,0,4557, Max, NaN, NaN, UserLimit,3602.51310706139
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee3_09.stdout:DATA, crudeoil_lee3_09.jl,2305,126,0,5181, Max, NaN, NaN, UserLimit,3601.92866110802
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee3_10.stdout:DATA, crudeoil_lee3_10.jl,2561,140,0,5822, Max, NaN, NaN, UserLimit,3603.93689513206
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee4_05.stdout:DATA, crudeoil_lee4_05.jl,1956,95,0,4242, Max,0, NaN, Infeasible,760.614850997925
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee4_06.stdout:DATA, crudeoil_lee4_06.jl,2347,114,0,5094, Max,131.624016677614, NaN, UserLimit,3602.75967407227
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee4_07.stdout:DATA, crudeoil_lee4_07.jl,2738,133,0,5966, Max,132.16, NaN, UserLimit,3602.56466698647
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee4_08.stdout:DATA, crudeoil_lee4_08.jl,3129,152,0,6858, Max, NaN, NaN, UserLimit,3605.56128001213
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee4_09.stdout:DATA, crudeoil_lee4_09.jl,3520,171,0,7770, Max, NaN, NaN, UserLimit,3605.05147910118
+./solvers/couenne-nlw/JuniperLib/crudeoil_lee4_10.stdout:DATA, crudeoil_lee4_10.jl,3911,190,0,8702, Max, NaN, NaN, UserLimit,3605.78705096245
+./solvers/couenne-nlw/JuniperLib/crudeoil_li01.stdout:DATA, crudeoil_li01.jl,345,48,0,696, Max,5097.180839499, NaN, UserLimit,3693.20851516724
+./solvers/couenne-nlw/JuniperLib/crudeoil_li02.stdout:DATA, crudeoil_li02.jl,1298,240,0,5005, Max,101561072.386777, NaN, UserLimit,3604.03047704697
+./solvers/couenne-nlw/JuniperLib/crudeoil_li03.stdout:DATA, crudeoil_li03.jl,965,132,0,2443, Max, NaN, NaN, UserLimit,3613.42101383209
+./solvers/couenne-nlw/JuniperLib/crudeoil_li05.stdout:DATA, crudeoil_li05.jl,941,132,0,1917, Max,3034.21798717052, NaN, UserLimit,3685.06268811226
+./solvers/couenne-nlw/JuniperLib/crudeoil_li06.stdout:DATA, crudeoil_li06.jl,965,132,0,2437, Max, NaN, NaN, UserLimit,3629.53439116478
+./solvers/couenne-nlw/JuniperLib/crudeoil_li11.stdout:DATA, crudeoil_li11.jl,1178,180,0,3506, Max, NaN, NaN, UserLimit,3604.135876894
+./solvers/couenne-nlw/JuniperLib/crudeoil_li21.stdout:DATA, crudeoil_li21.jl,1349,216,0,4682, Max, NaN, NaN, UserLimit,3603.60966491699
+./solvers/couenne-nlw/JuniperLib/crudeoil_pooling_ct1.stdout:DATA, crudeoil_pooling_ct1.jl,311,80,0,566, Min,215472.320518015, NaN, UserLimit,3713.50193500519
+./solvers/couenne-nlw/JuniperLib/crudeoil_pooling_ct2.stdout:DATA, crudeoil_pooling_ct2.jl,404,108,0,733, Max,10209.5250045254, NaN, UserLimit,3730.0875890255
+./solvers/couenne-nlw/JuniperLib/crudeoil_pooling_ct3.stdout:DATA, crudeoil_pooling_ct3.jl,730,128,0,1199, Min,335273.84588566, NaN, UserLimit,3613.1016368866
+./solvers/couenne-nlw/JuniperLib/crudeoil_pooling_ct4.stdout:DATA, crudeoil_pooling_ct4.jl,534,138,0,925, Max,13241.2693499704, NaN, UserLimit,3737.02120995522
+./solvers/couenne-nlw/JuniperLib/crudeoil_pooling_dt1.stdout:DATA, crudeoil_pooling_dt1.jl,3713,916,0,5779, Min, NaN, NaN, UserLimit,3604.25572919846
+./solvers/couenne-nlw/JuniperLib/crudeoil_pooling_dt2.stdout:DATA, crudeoil_pooling_dt2.jl,4963,1270,0,8179, Max, NaN, NaN, UserLimit,3602.58601307869
+./solvers/couenne-nlw/JuniperLib/crudeoil_pooling_dt3.stdout:DATA, crudeoil_pooling_dt3.jl,9434,1638,0,13835, Min, NaN, NaN, UserLimit,3611.81756186485
+./solvers/couenne-nlw/JuniperLib/crudeoil_pooling_dt4.stdout:DATA, crudeoil_pooling_dt4.jl,5063,1326,0,7699, Max, NaN, NaN, UserLimit,3609.14223003387
+./solvers/couenne-nlw/JuniperLib/csched1.stdout:DATA, csched1.jl,77,63,0,23, Min,-30639.258415181, NaN, Optimal,1.90241694450378
+./solvers/couenne-nlw/JuniperLib/csched1a.stdout:DATA, csched1a.jl,29,15,0,23, Min,-30430.1778922827, NaN, Optimal,0.714968919754028
+./solvers/couenne-nlw/JuniperLib/csched2.stdout:DATA, csched2.jl,401,308,0,138, Min,-142764.654840814, NaN, UserLimit,3615.54846405983
+./solvers/couenne-nlw/JuniperLib/csched2a.stdout:DATA, csched2a.jl,233,140,0,138, Min,-148105.867457177, NaN, UserLimit,3614.21344804764
+./solvers/couenne-nlw/JuniperLib/cvxnonsep_normcon20r.stdout:DATA, cvxnonsep_normcon20r.jl,41,0,10,22, Min,-21.7491475040238, NaN, Optimal,0.327316045761108
+./solvers/couenne-nlw/JuniperLib/cvxnonsep_normcon30r.stdout:DATA, cvxnonsep_normcon30r.jl,61,0,15,32, Min,-34.2439631823273, NaN, Optimal,1.48324990272522
+./solvers/couenne-nlw/JuniperLib/cvxnonsep_normcon40r.stdout:DATA, cvxnonsep_normcon40r.jl,81,0,20,42, Min,-32.6296670989411, NaN, Optimal,3.40865612030029
+./solvers/couenne-nlw/JuniperLib/cvxnonsep_nsig20r.stdout:DATA, cvxnonsep_nsig20r.jl,41,0,10,22, Min,80.9492929324466, NaN, Optimal,0.394876956939697
+./solvers/couenne-nlw/JuniperLib/cvxnonsep_nsig30r.stdout:DATA, cvxnonsep_nsig30r.jl,61,0,15,32, Min,156.426615247332, NaN, Optimal,0.76797890663147
+./solvers/couenne-nlw/JuniperLib/cvxnonsep_nsig40r.stdout:DATA, cvxnonsep_nsig40r.jl,81,0,20,42, Min,133.96130502971, NaN, Optimal,0.980602025985718
+./solvers/couenne-nlw/JuniperLib/cvxnonsep_pcon20r.stdout:DATA, cvxnonsep_pcon20r.jl,40,0,10,21, Min,-21.5123012986561, NaN, Optimal,0.663561105728149
+./solvers/couenne-nlw/JuniperLib/cvxnonsep_pcon30r.stdout:DATA, cvxnonsep_pcon30r.jl,60,0,15,31, Min,-35.9868423751435, NaN, Optimal,1.34234595298767
+./solvers/couenne-nlw/JuniperLib/cvxnonsep_pcon40r.stdout:DATA, cvxnonsep_pcon40r.jl,80,0,20,41, Min,-46.5991685366842, NaN, Optimal,3.54951405525208
+./solvers/couenne-nlw/JuniperLib/cvxnonsep_psig20r.stdout:DATA, cvxnonsep_psig20r.jl,43,0,10,23, Min,95.8973835746461, NaN, Optimal,0.572227001190185
+./solvers/couenne-nlw/JuniperLib/cvxnonsep_psig30r.stdout:DATA, cvxnonsep_psig30r.jl,63,0,15,33, Min,78.9988517850684, NaN, Optimal,1.36124801635742
+./solvers/couenne-nlw/JuniperLib/cvxnonsep_psig40r.stdout:DATA, cvxnonsep_psig40r.jl,83,0,20,43, Min,86.5451737247266, NaN, UserLimit,3895.5499048233
+./solvers/couenne-nlw/JuniperLib/deb10.stdout:DATA, deb10.jl,183,22,0,130, Min, NaN, NaN, UserLimit,3681.41461992264
+./solvers/couenne-nlw/JuniperLib/deb6.stdout:DATA, deb6.jl,476,20,0,508, Min, NaN, NaN, UserLimit,3682.68345499039
+./solvers/couenne-nlw/JuniperLib/deb7.stdout:DATA, deb7.jl,814,20,0,898, Min, NaN, NaN, UserLimit,3965.55664396286
+./solvers/couenne-nlw/JuniperLib/deb8.stdout:DATA, deb8.jl,824,20,0,898, Min, NaN, NaN, UserLimit,3940.2972009182
+./solvers/couenne-nlw/JuniperLib/deb9.stdout:DATA, deb9.jl,814,20,0,918, Min, NaN, NaN, UserLimit,3820.36758112907
+./solvers/couenne-nlw/JuniperLib/du-opt.stdout:DATA, du-opt.jl,21,0,13,10, Min,3.55633880732745, NaN, Optimal,14.137109041214
+./solvers/couenne-nlw/JuniperLib/du-opt5.stdout:DATA, du-opt5.jl,21,0,13,10, Min,8.07365640301563, NaN, Optimal,24.6640479564667
+./solvers/couenne-nlw/JuniperLib/edgecross10-010.stdout:DATA, edgecross10-010.jl,91,90,0,481, Min,0.999999999999998, NaN, Optimal,1.37251091003418
+./solvers/couenne-nlw/JuniperLib/edgecross10-020.stdout:DATA, edgecross10-020.jl,91,90,0,481, Min,10.9999999999999, NaN, Optimal,2.23672795295715
+./solvers/couenne-nlw/JuniperLib/edgecross10-030.stdout:DATA, edgecross10-030.jl,91,90,0,481, Min,51.99999816001, NaN, Optimal,8.49284291267395
+./solvers/couenne-nlw/JuniperLib/edgecross10-040.stdout:DATA, edgecross10-040.jl,91,90,0,481, Min,142, NaN, Optimal,50.1400442123413
+./solvers/couenne-nlw/JuniperLib/edgecross10-050.stdout:DATA, edgecross10-050.jl,91,90,0,481, Min,276, NaN, Optimal,123.143332958221
+./solvers/couenne-nlw/JuniperLib/edgecross10-060.stdout:DATA, edgecross10-060.jl,91,44,0,481, Min,459, NaN, Optimal,124.655365943909
+./solvers/couenne-nlw/JuniperLib/edgecross10-070.stdout:DATA, edgecross10-070.jl,91,90,0,481, Min,716.99997881331, NaN, Optimal,425.529839038849
+./solvers/couenne-nlw/JuniperLib/edgecross10-080.stdout:DATA, edgecross10-080.jl,91,74,0,481, Min,1037, NaN, Optimal,236.19397687912
+./solvers/couenne-nlw/JuniperLib/edgecross10-090.stdout:DATA, edgecross10-090.jl,91,90,0,481, Min,0, NaN, Infeasible,18.6961619853973
+./solvers/couenne-nlw/JuniperLib/edgecross14-019.stdout:DATA, edgecross14-019.jl,183,182,0,1457, Min,3.99999999999997, NaN, Optimal,2.60980486869812
+./solvers/couenne-nlw/JuniperLib/edgecross14-039.stdout:DATA, edgecross14-039.jl,183,80,0,1457, Min,111, NaN, UserLimit,3687.61181116104
+./solvers/couenne-nlw/JuniperLib/edgecross14-058.stdout:DATA, edgecross14-058.jl,183,182,0,1457, Min,352.999999999998, NaN, Optimal,171.68331193924
+./solvers/couenne-nlw/JuniperLib/edgecross14-078.stdout:DATA, edgecross14-078.jl,183,155,0,1457, Min,724.99996372903, NaN, UserLimit,3619.34691214561
+./solvers/couenne-nlw/JuniperLib/edgecross14-098.stdout:DATA, edgecross14-098.jl,183,182,0,1457, Min,1359, NaN, UserLimit,3631.47864413261
+./solvers/couenne-nlw/JuniperLib/edgecross14-176.stdout:DATA, edgecross14-176.jl,183,182,0,1457, Min,0, NaN, Infeasible,1809.06630110741
+./solvers/couenne-nlw/JuniperLib/edgecross20-040.stdout:DATA, edgecross20-040.jl,381,380,0,4561, Min,56.9999999999999, NaN, Optimal,116.162708997726
+./solvers/couenne-nlw/JuniperLib/edgecross22-048.stdout:DATA, edgecross22-048.jl,463,462,0,6161, Min,84.0000000000006, NaN, Optimal,162.800629854202
+./solvers/couenne-nlw/JuniperLib/edgecross24-057.stdout:DATA, edgecross24-057.jl,553,552,0,8097, Min,179.999999999999, NaN, UserLimit,3606.96677994728
+./solvers/couenne-nlw/JuniperLib/eg_all_s.stdout:DATA, eg_all_s.jl,8,0,7,28, Min, NaN, NaN, UserLimit,3755.78752803802
+./solvers/couenne-nlw/JuniperLib/eg_disc_s.stdout:DATA, eg_disc_s.jl,8,0,4,28, Min, NaN, NaN, UserLimit,3756.99661588669
+./solvers/couenne-nlw/JuniperLib/eg_disc2_s.stdout:DATA, eg_disc2_s.jl,8,0,3,28, Min,5.98824185581467, NaN, UserLimit,3625.05868697166
+./solvers/couenne-nlw/JuniperLib/eg_int_s.stdout:DATA, eg_int_s.jl,8,0,3,28, Min,6.45310279243663, NaN, UserLimit,3660.5951089859
+./solvers/couenne-nlw/JuniperLib/elf.stdout:DATA, elf.jl,55,24,0,39, Min,0.19166666666668, NaN, Optimal,2.17509293556213
+./solvers/couenne-nlw/JuniperLib/eniplac.stdout:DATA, eniplac.jl,142,24,0,190, Min,-132117.083025962, NaN, Optimal,140.877985954285
+./solvers/couenne-nlw/JuniperLib/enpro48.stdout:DATA, enpro48.jl,154,92,0,215, Min,187276.490008588, NaN, Optimal,5.25179290771484
+./solvers/couenne-nlw/JuniperLib/enpro48pb.stdout:DATA, enpro48pb.jl,154,92,0,215, Min,187276.851203896, NaN, Optimal,4.47928595542908
+./solvers/couenne-nlw/JuniperLib/enpro56.stdout:DATA, enpro56.jl,128,73,0,192, Min,263428.296570092, NaN, Optimal,7.41991806030273
+./solvers/couenne-nlw/JuniperLib/enpro56pb.stdout:DATA, enpro56pb.jl,128,73,0,192, Min,263428.151069904, NaN, Optimal,6.93887591362
+./solvers/couenne-nlw/JuniperLib/ex1223.stdout:DATA, ex1223.jl,12,4,0,14, Min,4.57958233434908, NaN, Optimal,0.242975950241089
+./solvers/couenne-nlw/JuniperLib/ex1223a.stdout:DATA, ex1223a.jl,8,4,0,10, Min,4.57958233311929, NaN, Optimal,0.209597826004028
+./solvers/couenne-nlw/JuniperLib/ex1223b.stdout:DATA, ex1223b.jl,8,4,0,10, Min,4.57958233434908, NaN, Optimal,0.221909046173096
+./solvers/couenne-nlw/JuniperLib/ex1225.stdout:ANALYSIS TEST: DATA, ex1225.jl,9,6,0,11, Min, NaN, NaN, Error,0.187365055084228
+./solvers/couenne-nlw/JuniperLib/ex1233.stdout:DATA, ex1233.jl,53,12,0,65, Min,155010.744277661, NaN, UserLimit,3743.89823007584
+./solvers/couenne-nlw/JuniperLib/ex1243.stdout:DATA, ex1243.jl,69,16,0,97, Min,83402.5064102562, NaN, Optimal,3.24261903762817
+./solvers/couenne-nlw/JuniperLib/ex1244.stdout:DATA, ex1244.jl,96,23,0,130, Min,82042.9052197471, NaN, Optimal,4.10311102867126
+./solvers/couenne-nlw/JuniperLib/ex1252.stdout:DATA, ex1252.jl,40,15,0,44, Min,128892.017876306, NaN, Optimal,13.8123309612274
+./solvers/couenne-nlw/JuniperLib/ex1252a.stdout:DATA, ex1252a.jl,25,3,6,35, Min,128893.258037976, NaN, Optimal,10.9218668937683
+./solvers/couenne-nlw/JuniperLib/ex1263.stdout:DATA, ex1263.jl,93,72,0,56, Min,19.6, NaN, Optimal,4.96481895446777
+./solvers/couenne-nlw/JuniperLib/ex1263a.stdout:DATA, ex1263a.jl,25,4,20,36, Min,19.6, NaN, Optimal,1.77803611755371
+./solvers/couenne-nlw/JuniperLib/ex1264.stdout:DATA, ex1264.jl,89,68,0,56, Min,8.6, NaN, Optimal,7.77160286903381
+./solvers/couenne-nlw/JuniperLib/ex1264a.stdout:DATA, ex1264a.jl,25,4,20,36, Min,8.6, NaN, Optimal,2.61272406578064
+./solvers/couenne-nlw/JuniperLib/ex1265.stdout:DATA, ex1265.jl,131,100,0,75, Min,10.3, NaN, Optimal,7.24345397949219
+./solvers/couenne-nlw/JuniperLib/ex1265a.stdout:DATA, ex1265a.jl,36,5,30,45, Min,10.3, NaN, Optimal,2.62499213218689
+./solvers/couenne-nlw/JuniperLib/ex1266.stdout:DATA, ex1266.jl,181,138,0,96, Min,16.3, NaN, Optimal,5.10263800621033
+./solvers/couenne-nlw/JuniperLib/ex1266a.stdout:DATA, ex1266a.jl,49,6,42,54, Min,16.3, NaN, Optimal,3.62049603462219
+./solvers/couenne-nlw/JuniperLib/ex3.stdout:DATA, ex3.jl,33,8,0,32, Min,68.0097430927795, NaN, Optimal,0.323208808898926
+./solvers/couenne-nlw/JuniperLib/ex3pb.stdout:DATA, ex3pb.jl,33,8,0,32, Min,68.0097430927795, NaN, Optimal,0.295881032943726
+./solvers/couenne-nlw/JuniperLib/ex4.stdout:DATA, ex4.jl,37,25,0,31, Min,-8.06438054749917, NaN, Optimal,4.80307698249817
+./solvers/couenne-nlw/JuniperLib/fac1.stdout:DATA, fac1.jl,23,6,0,19, Min,0, NaN, Infeasible,0.260063886642456
+./solvers/couenne-nlw/JuniperLib/fac2.stdout:DATA, fac2.jl,67,12,0,34, Min,331837498.175363, NaN, Optimal,3.64785814285278
+./solvers/couenne-nlw/JuniperLib/fac3.stdout:DATA, fac3.jl,67,12,0,34, Min,31982309.8330348, NaN, Optimal,1.05409002304077
+./solvers/couenne-nlw/JuniperLib/faclay20h.stdout:DATA, faclay20h.jl,191,190,0,2281, Min,16098.9999999999, NaN, UserLimit,3626.23737597466
+./solvers/couenne-nlw/JuniperLib/feedtray.stdout:DATA, feedtray.jl,98,7,0,92, Min,-13.4060055544991, NaN, UserLimit,3639.89506697655
+./solvers/couenne-nlw/JuniperLib/feedtray2.stdout:DATA, feedtray2.jl,88,36,0,284, Min,7.51878337591421E-10, NaN, Optimal,7.98070907592773
+./solvers/couenne-nlw/JuniperLib/fin2bb.stdout:DATA, fin2bb.jl,589,175,0,619, Min,50.5486670335224, NaN, UserLimit,3609.28038191795
+./solvers/couenne-nlw/JuniperLib/FLay02H.stdout:DATA, FLay02H.jl,47,4,0,52, Min,37.947331742402, NaN, Optimal,0.344349145889282
+./solvers/couenne-nlw/JuniperLib/FLay02M.stdout:DATA, FLay02M.jl,15,4,0,12, Min,37.9473302421106, NaN, Optimal,0.344297170639038
+./solvers/couenne-nlw/JuniperLib/FLay03H.stdout:DATA, FLay03H.jl,123,12,0,145, Min,48.9897827484177, NaN, Optimal,1.7682728767395
+./solvers/couenne-nlw/JuniperLib/FLay03M.stdout:DATA, FLay03M.jl,27,12,0,25, Min,48.9897766058602, NaN, Optimal,0.805772066116333
+./solvers/couenne-nlw/JuniperLib/FLay04H.stdout:DATA, FLay04H.jl,235,24,0,283, Min,54.4058725092566, NaN, Optimal,11.8842840194702
+./solvers/couenne-nlw/JuniperLib/FLay04M.stdout:DATA, FLay04M.jl,43,24,0,43, Min,54.4058678104847, NaN, Optimal,2.89723205566406
+./solvers/couenne-nlw/JuniperLib/FLay05H.stdout:DATA, FLay05H.jl,383,40,0,466, Min,64.4980323455587, NaN, Optimal,799.429025888443
+./solvers/couenne-nlw/JuniperLib/FLay05M.stdout:DATA, FLay05M.jl,63,40,0,66, Min,64.4980293641404, NaN, Optimal,113.926319122314
+./solvers/couenne-nlw/JuniperLib/FLay06H.stdout:DATA, FLay06H.jl,567,60,0,694, Min,66.9327746352603, NaN, UserLimit,3716.5800909996
+./solvers/couenne-nlw/JuniperLib/FLay06M.stdout:DATA, FLay06M.jl,87,60,0,94, Min,66.9327561258005, NaN, UserLimit,3680.86977005005
+./solvers/couenne-nlw/JuniperLib/fo7_2.stdout:DATA, fo7_2.jl,115,42,0,212, Min,20.9839253679564, NaN, UserLimit,3686.57854008675
+./solvers/couenne-nlw/JuniperLib/fo7_ar2_1.stdout:DATA, fo7_ar2_1.jl,113,0,42,270, Min,24.8398451276443, NaN, Optimal,714.187061071396
+./solvers/couenne-nlw/JuniperLib/fo7_ar25_1.stdout:DATA, fo7_ar25_1.jl,113,0,42,270, Min,23.1210133110724, NaN, UserLimit,3705.62103199959
+./solvers/couenne-nlw/JuniperLib/fo7_ar3_1.stdout:DATA, fo7_ar3_1.jl,113,0,42,270, Min,22.5174702881186, NaN, UserLimit,3686.06107711792
+./solvers/couenne-nlw/JuniperLib/fo7_ar4_1.stdout:DATA, fo7_ar4_1.jl,113,0,42,270, Min,20.7298250532393, NaN, UserLimit,3721.58798384666
+./solvers/couenne-nlw/JuniperLib/fo7_ar5_1.stdout:DATA, fo7_ar5_1.jl,113,0,42,270, Min,17.7493280426884, NaN, UserLimit,3717.27399206162
+./solvers/couenne-nlw/JuniperLib/fo7.stdout:DATA, fo7.jl,115,42,0,212, Min,20.7298211653169, NaN, UserLimit,3696.90529417992
+./solvers/couenne-nlw/JuniperLib/fo8_ar2_1.stdout:DATA, fo8_ar2_1.jl,145,0,56,348, Min,32.6072761590648, NaN, UserLimit,3680.6563770771
+./solvers/couenne-nlw/JuniperLib/fo8_ar25_1.stdout:DATA, fo8_ar25_1.jl,145,0,56,348, Min,28.1585535143692, NaN, UserLimit,3681.72256708145
+./solvers/couenne-nlw/JuniperLib/fo8_ar3_1.stdout:DATA, fo8_ar3_1.jl,145,0,56,348, Min,23.9100508241591, NaN, UserLimit,3675.78457403183
+./solvers/couenne-nlw/JuniperLib/fo8_ar4_1.stdout:DATA, fo8_ar4_1.jl,145,0,56,348, Min,24.6521977135981, NaN, UserLimit,3683.2824048996
+./solvers/couenne-nlw/JuniperLib/fo8_ar5_1.stdout:DATA, fo8_ar5_1.jl,145,0,56,348, Min,23.9976107323352, NaN, UserLimit,3682.98516106605
+./solvers/couenne-nlw/JuniperLib/fo8.stdout:DATA, fo8.jl,147,56,0,274, Min,26.3974713657026, NaN, UserLimit,3680.9684882164
+./solvers/couenne-nlw/JuniperLib/fo9_ar2_1.stdout:DATA, fo9_ar2_1.jl,181,0,72,436, Min,50.9649005490387, NaN, UserLimit,3684.10465598106
+./solvers/couenne-nlw/JuniperLib/fo9_ar25_1.stdout:DATA, fo9_ar25_1.jl,181,0,72,436, Min,39.1346120403068, NaN, UserLimit,3681.84215688705
+./solvers/couenne-nlw/JuniperLib/fo9_ar3_1.stdout:DATA, fo9_ar3_1.jl,181,0,72,436, Min,41.3012732770213, NaN, UserLimit,3685.95777177811
+./solvers/couenne-nlw/JuniperLib/fo9_ar4_1.stdout:DATA, fo9_ar4_1.jl,181,0,72,436, Min,30.8215438705029, NaN, UserLimit,3688.89222311974
+./solvers/couenne-nlw/JuniperLib/fo9_ar5_1.stdout:DATA, fo9_ar5_1.jl,181,0,72,436, Min,43.6613642332519, NaN, UserLimit,3695.36568593979
+./solvers/couenne-nlw/JuniperLib/fo9.stdout:DATA, fo9.jl,183,72,0,344, Min,23.4642857065502, NaN, UserLimit,3679.18587994575
+./solvers/couenne-nlw/JuniperLib/forest.stdout:DATA, forest.jl,237,73,0,310, Max,0, NaN, Infeasible,38.5962791442871
+./solvers/couenne-nlw/JuniperLib/fuel.stdout:DATA, fuel.jl,16,3,0,16, Min,0, NaN, Infeasible,0.241062879562378
+./solvers/couenne-nlw/JuniperLib/gams01.stdout:DATA, gams01.jl,146,110,0,1269, Min, NaN, NaN, UserLimit,3604.32061386108
+./solvers/couenne-nlw/JuniperLib/gams02.stdout:DATA, gams02.jl,12689,96,0,14609, Min, NaN, NaN, UserLimit,3656.45169115067
+./solvers/couenne-nlw/JuniperLib/gasnet_al1.stdout:ANALYSIS TEST: DATA, gasnet_al1.jl,725,136,0,831, Min, NaN, NaN, Error,13.5833821296692
+./solvers/couenne-nlw/JuniperLib/gasnet_al2.stdout:ANALYSIS TEST: DATA, gasnet_al2.jl,725,136,0,831, Min, NaN, NaN, Error,0.31010913848877
+./solvers/couenne-nlw/JuniperLib/gasnet_al3.stdout:ANALYSIS TEST: DATA, gasnet_al3.jl,725,136,0,831, Min, NaN, NaN, Error,0.304960966110229
+./solvers/couenne-nlw/JuniperLib/gasnet_al4.stdout:ANALYSIS TEST: DATA, gasnet_al4.jl,725,136,0,831, Min, NaN, NaN, Error,0.323329925537109
+./solvers/couenne-nlw/JuniperLib/gasnet_al5.stdout:ANALYSIS TEST: DATA, gasnet_al5.jl,725,136,0,831, Min, NaN, NaN, Error,0.348572969436645
+./solvers/couenne-nlw/JuniperLib/gasnet.stdout:DATA, gasnet.jl,91,10,0,70, Min, NaN, NaN, UserLimit,3760.33961105347
+./solvers/couenne-nlw/JuniperLib/gasprod_sarawak01.stdout:DATA, gasprod_sarawak01.jl,132,38,0,213, Min,-32445.4049091856, NaN, Optimal,48.7194938659668
+./solvers/couenne-nlw/JuniperLib/gasprod_sarawak16.stdout:DATA, gasprod_sarawak16.jl,1527,38,0,2253, Min,-17513.3290047874, NaN, UserLimit,3742.58869504929
+./solvers/couenne-nlw/JuniperLib/gasprod_sarawak81.stdout:DATA, gasprod_sarawak81.jl,7572,38,0,11093, Min, NaN, NaN, UserLimit,3604.69243407249
+./solvers/couenne-nlw/JuniperLib/gastrans.stdout:DATA, gastrans.jl,107,21,0,150, Min,89.0858399999994, NaN, Optimal,3.53801107406616
+./solvers/couenne-nlw/JuniperLib/gastrans040.stdout:DATA, gastrans040.jl,280,0,48,554, Min,0, NaN, Optimal,2.47855615615845
+./solvers/couenne-nlw/JuniperLib/gastrans135.stdout:DATA, gastrans135.jl,1194,0,232,2473, Min, NaN, NaN, UserLimit,3690.45420002937
+./solvers/couenne-nlw/JuniperLib/gastrans582_cold13_95.stdout:DATA, gastrans582_cold13_95.jl,2187,0,250,3733, Min,0, NaN, Infeasible,1625.85936617851
+./solvers/couenne-nlw/JuniperLib/gastrans582_cold13.stdout:DATA, gastrans582_cold13.jl,2187,0,250,3733, Min,0, NaN, Infeasible,2007.45407795906
+./solvers/couenne-nlw/JuniperLib/gastrans582_cold17_95.stdout:DATA, gastrans582_cold17_95.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3635.25635790825
+./solvers/couenne-nlw/JuniperLib/gastrans582_cold17.stdout:DATA, gastrans582_cold17.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3626.24681806564
+./solvers/couenne-nlw/JuniperLib/gastrans582_cool12_95.stdout:DATA, gastrans582_cool12_95.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3620.86214804649
+./solvers/couenne-nlw/JuniperLib/gastrans582_cool12.stdout:DATA, gastrans582_cool12.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3617.11735010147
+./solvers/couenne-nlw/JuniperLib/gastrans582_cool14_95.stdout:DATA, gastrans582_cool14_95.jl,2187,0,250,3733, Min,0, NaN, Infeasible,425.589164972305
+./solvers/couenne-nlw/JuniperLib/gastrans582_cool14.stdout:DATA, gastrans582_cool14.jl,2187,0,250,3733, Min,0, NaN, Infeasible,1593.9250099659
+./solvers/couenne-nlw/JuniperLib/gastrans582_freezing27_95.stdout:DATA, gastrans582_freezing27_95.jl,2187,0,250,3733, Min,0, NaN, Infeasible,1531.24396395683
+./solvers/couenne-nlw/JuniperLib/gastrans582_freezing27.stdout:DATA, gastrans582_freezing27.jl,2187,0,250,3733, Min,0, NaN, Infeasible,966.608273983002
+./solvers/couenne-nlw/JuniperLib/gastrans582_freezing30_95.stdout:DATA, gastrans582_freezing30_95.jl,2187,0,250,3733, Min,0, NaN, Infeasible,1243.99328684807
+./solvers/couenne-nlw/JuniperLib/gastrans582_freezing30.stdout:DATA, gastrans582_freezing30.jl,2187,0,250,3733, Min,0, NaN, Infeasible,79.2311210632324
+./solvers/couenne-nlw/JuniperLib/gastrans582_mild10_95.stdout:DATA, gastrans582_mild10_95.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3624.23012495041
+./solvers/couenne-nlw/JuniperLib/gastrans582_mild10.stdout:DATA, gastrans582_mild10.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3622.83754897118
+./solvers/couenne-nlw/JuniperLib/gastrans582_mild11_95.stdout:DATA, gastrans582_mild11_95.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3655.15742492676
+./solvers/couenne-nlw/JuniperLib/gastrans582_mild11.stdout:DATA, gastrans582_mild11.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3639.71034598351
+./solvers/couenne-nlw/JuniperLib/gastrans582_warm15_95.stdout:DATA, gastrans582_warm15_95.jl,2187,0,250,3733, Min,0, NaN, Infeasible,1548.62045001984
+./solvers/couenne-nlw/JuniperLib/gastrans582_warm15.stdout:DATA, gastrans582_warm15.jl,2187,0,250,3733, Min,0, NaN, Infeasible,1356.89979219437
+./solvers/couenne-nlw/JuniperLib/gastrans582_warm31_95.stdout:DATA, gastrans582_warm31_95.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3741.37618279457
+./solvers/couenne-nlw/JuniperLib/gastrans582_warm31.stdout:DATA, gastrans582_warm31.jl,2187,0,250,3733, Min, NaN, NaN, UserLimit,3636.31304717064
+./solvers/couenne-nlw/JuniperLib/genpooling_lee1.stdout:DATA, genpooling_lee1.jl,50,9,0,83, Min,-4640.08246068739, NaN, Optimal,43.2345440387726
+./solvers/couenne-nlw/JuniperLib/genpooling_lee2.stdout:DATA, genpooling_lee2.jl,54,9,0,93, Min,-3848.21516938546, NaN, Optimal,43.1530900001526
+./solvers/couenne-nlw/JuniperLib/genpooling_meyer04.stdout:DATA, genpooling_meyer04.jl,119,55,0,142, Min,1249587.42820711, NaN, UserLimit,3707.35997390747
+./solvers/couenne-nlw/JuniperLib/genpooling_meyer10.stdout:DATA, genpooling_meyer10.jl,395,187,0,424, Min,1366751.06290296, NaN, UserLimit,3764.71005916595
+./solvers/couenne-nlw/JuniperLib/genpooling_meyer15.stdout:DATA, genpooling_meyer15.jl,735,352,0,769, Min,1055263.96939929, NaN, UserLimit,3648.79319190979
+./solvers/couenne-nlw/JuniperLib/ghg_1veh.stdout:DATA, ghg_1veh.jl,30,12,0,38, Min,7.7815071334362, NaN, UserLimit,3636.26369285583
+./solvers/couenne-nlw/JuniperLib/ghg_2veh.stdout:DATA, ghg_2veh.jl,58,18,0,63, Min,7.77621212045578, NaN, UserLimit,3637.27176094055
+./solvers/couenne-nlw/JuniperLib/ghg_3veh.stdout:DATA, ghg_3veh.jl,97,36,0,120, Min,7.76759693317514, NaN, UserLimit,3645.36519908905
+./solvers/couenne-nlw/JuniperLib/graphpart_2g-0044-1601.stdout:DATA, graphpart_2g-0044-1601.jl,49,48,0,17, Min,-954077, NaN, Optimal,0.436030864715576
+./solvers/couenne-nlw/JuniperLib/graphpart_2g-0055-0062.stdout:DATA, graphpart_2g-0055-0062.jl,76,75,0,26, Min,-1484348, NaN, Optimal,1.15487909317017
+./solvers/couenne-nlw/JuniperLib/graphpart_2g-0066-0066.stdout:DATA, graphpart_2g-0066-0066.jl,109,108,0,37, Min,-2865560, NaN, Optimal,3.17737317085266
+./solvers/couenne-nlw/JuniperLib/graphpart_2g-0077-0077.stdout:DATA, graphpart_2g-0077-0077.jl,148,147,0,50, Min,-3282435, NaN, Optimal,6.72661399841309
+./solvers/couenne-nlw/JuniperLib/graphpart_2g-0088-0088.stdout:DATA, graphpart_2g-0088-0088.jl,193,192,0,65, Min,-5935341, NaN, Optimal,39.2308480739594
+./solvers/couenne-nlw/JuniperLib/graphpart_2g-0099-9211.stdout:DATA, graphpart_2g-0099-9211.jl,244,243,0,82, Min,-5070020, NaN, Optimal,165.49685716629
+./solvers/couenne-nlw/JuniperLib/graphpart_2g-1010-0824.stdout:DATA, graphpart_2g-1010-0824.jl,301,300,0,101, Min,-7024864, NaN, Optimal,160.541115045548
+./solvers/couenne-nlw/JuniperLib/graphpart_2pm-0044-0044.stdout:DATA, graphpart_2pm-0044-0044.jl,49,48,0,17, Min,-13, NaN, Optimal,0.565219163894653
+./solvers/couenne-nlw/JuniperLib/graphpart_2pm-0055-0055.stdout:DATA, graphpart_2pm-0055-0055.jl,76,75,0,26, Min,-20, NaN, Optimal,1.92754602432251
+./solvers/couenne-nlw/JuniperLib/graphpart_2pm-0066-0066.stdout:DATA, graphpart_2pm-0066-0066.jl,109,108,0,37, Min,-29, NaN, Optimal,3.75864005088806
+./solvers/couenne-nlw/JuniperLib/graphpart_2pm-0077-0777.stdout:DATA, graphpart_2pm-0077-0777.jl,148,147,0,50, Min,-40, NaN, Optimal,12.53875207901
+./solvers/couenne-nlw/JuniperLib/graphpart_2pm-0088-0888.stdout:DATA, graphpart_2pm-0088-0888.jl,193,192,0,65, Min,-55, NaN, Optimal,23.9765701293945
+./solvers/couenne-nlw/JuniperLib/graphpart_2pm-0099-0999.stdout:DATA, graphpart_2pm-0099-0999.jl,244,243,0,82, Min,-64, NaN, UserLimit,3640.13129711151
+./solvers/couenne-nlw/JuniperLib/graphpart_3g-0234-0234.stdout:DATA, graphpart_3g-0234-0234.jl,73,72,0,25, Min,-1952753, NaN, Optimal,2.61076498031616
+./solvers/couenne-nlw/JuniperLib/graphpart_3g-0244-0244.stdout:DATA, graphpart_3g-0244-0244.jl,97,96,0,33, Min,-2725383, NaN, Optimal,3.60182595252991
+./solvers/couenne-nlw/JuniperLib/graphpart_3g-0333-0333.stdout:DATA, graphpart_3g-0333-0333.jl,82,81,0,28, Min,-1882389, NaN, Optimal,5.14181184768677
+./solvers/couenne-nlw/JuniperLib/graphpart_3g-0334-0334.stdout:DATA, graphpart_3g-0334-0334.jl,109,108,0,37, Min,-3410696, NaN, Optimal,10.4952239990234
+./solvers/couenne-nlw/JuniperLib/graphpart_3g-0344-0344.stdout:DATA, graphpart_3g-0344-0344.jl,145,144,0,49, Min,-5301516, NaN, Optimal,16.3968899250031
+./solvers/couenne-nlw/JuniperLib/graphpart_3g-0444-0444.stdout:DATA, graphpart_3g-0444-0444.jl,193,192,0,65, Min,-7603756, NaN, Optimal,450.181804895401
+./solvers/couenne-nlw/JuniperLib/graphpart_3pm-0234-0234.stdout:DATA, graphpart_3pm-0234-0234.jl,73,72,0,25, Min,-20, NaN, Optimal,3.00291299819946
+./solvers/couenne-nlw/JuniperLib/graphpart_3pm-0244-0244.stdout:DATA, graphpart_3pm-0244-0244.jl,97,96,0,33, Min,-28, NaN, Optimal,14.1483798027039
+./solvers/couenne-nlw/JuniperLib/graphpart_3pm-0333-0333.stdout:DATA, graphpart_3pm-0333-0333.jl,82,81,0,28, Min,-26, NaN, Optimal,9.44826507568359
+./solvers/couenne-nlw/JuniperLib/graphpart_3pm-0334-0334.stdout:DATA, graphpart_3pm-0334-0334.jl,109,108,0,37, Min,-36, NaN, Optimal,66.697830915451
+./solvers/couenne-nlw/JuniperLib/graphpart_3pm-0344-0344.stdout:DATA, graphpart_3pm-0344-0344.jl,145,144,0,49, Min,-48, NaN, Optimal,1317.96555399895
+./solvers/couenne-nlw/JuniperLib/graphpart_3pm-0444-0444.stdout:DATA, graphpart_3pm-0444-0444.jl,193,192,0,65, Min,-65, NaN, UserLimit,3675.81300091743
+./solvers/couenne-nlw/JuniperLib/graphpart_clique-20.stdout:DATA, graphpart_clique-20.jl,61,60,0,21, Min,147, NaN, Optimal,64.8214209079742
+./solvers/couenne-nlw/JuniperLib/graphpart_clique-30.stdout:DATA, graphpart_clique-30.jl,91,90,0,31, Min,495, NaN, Optimal,3320.92626595497
+./solvers/couenne-nlw/JuniperLib/graphpart_clique-40.stdout:DATA, graphpart_clique-40.jl,121,120,0,41, Min,1196, NaN, UserLimit,3708.21898508072
+./solvers/couenne-nlw/JuniperLib/graphpart_clique-50.stdout:DATA, graphpart_clique-50.jl,151,150,0,51, Min,2532, NaN, UserLimit,3678.9582259655
+./solvers/couenne-nlw/JuniperLib/graphpart_clique-60.stdout:DATA, graphpart_clique-60.jl,181,180,0,61, Min,5434, NaN, UserLimit,3673.71796607971
+./solvers/couenne-nlw/JuniperLib/graphpart_clique-70.stdout:DATA, graphpart_clique-70.jl,211,210,0,71, Min,7857, NaN, UserLimit,3676.10721707344
+./solvers/couenne-nlw/JuniperLib/hda.stdout:DATA, hda.jl,723,13,0,719, Min, NaN, NaN, UserLimit,3639.19365215302
+./solvers/couenne-nlw/JuniperLib/heatexch_gen1.stdout:DATA, heatexch_gen1.jl,113,12,0,121, Min, NaN, NaN, UserLimit,3909.229418993
+./solvers/couenne-nlw/JuniperLib/heatexch_gen2.stdout:DATA, heatexch_gen2.jl,149,16,0,167, Min, NaN, NaN, UserLimit,4019.18530988693
+./solvers/couenne-nlw/JuniperLib/heatexch_gen3.stdout:DATA, heatexch_gen3.jl,581,60,0,511, Min, NaN, NaN, UserLimit,3918.22667384148
+./solvers/couenne-nlw/JuniperLib/heatexch_spec1.stdout:DATA, heatexch_spec1.jl,57,12,0,65, Min,155016.662234941, NaN, UserLimit,3729.2955930233
+./solvers/couenne-nlw/JuniperLib/heatexch_spec2.stdout:DATA, heatexch_spec2.jl,77,16,0,91, Min,635224.02510642, NaN, UserLimit,3735.76400303841
+./solvers/couenne-nlw/JuniperLib/heatexch_spec3.stdout:DATA, heatexch_spec3.jl,261,60,0,251, Min,64500.7348302239, NaN, UserLimit,3746.19278788567
+./solvers/couenne-nlw/JuniperLib/heatexch_trigen.stdout:ANALYSIS TEST: DATA, heatexch_trigen.jl,292,45,0,263, Max, NaN, NaN, Error,0.205157041549683
+./solvers/couenne-nlw/JuniperLib/hvb11.stdout:DATA, hvb11.jl,9818,9537,0,10252, Min,46961.9999389026, NaN, UserLimit,3602.41727685928
+./solvers/couenne-nlw/JuniperLib/hybriddynamic_fixed.stdout:DATA, hybriddynamic_fixed.jl,72,10,0,80, Min,1.47377777777778, NaN, Optimal,0.203312158584595
+./solvers/couenne-nlw/JuniperLib/hybriddynamic_var.stdout:DATA, hybriddynamic_var.jl,82,10,0,101, Min,1.53641514794226, NaN, Optimal,2.17147016525269
+./solvers/couenne-nlw/JuniperLib/hydroenergy1.stdout:DATA, hydroenergy1.jl,289,96,0,429, Max,209721.012034287, NaN, Optimal,3352.04439210892
+./solvers/couenne-nlw/JuniperLib/hydroenergy2.stdout:DATA, hydroenergy2.jl,577,192,0,857, Max,371692.868932231, NaN, UserLimit,3724.84487104416
+./solvers/couenne-nlw/JuniperLib/hydroenergy3.stdout:DATA, hydroenergy3.jl,1009,336,0,1499, Max,744196.514128862, NaN, UserLimit,3710.22285604477
+./solvers/couenne-nlw/JuniperLib/ibs2.stdout:DATA, ibs2.jl,3011,1500,0,1822, Min,8.12156100762765, NaN, UserLimit,3605.14264988899
+./solvers/couenne-nlw/JuniperLib/jit1.stdout:DATA, jit1.jl,26,0,4,33, Min,173982.609981647, NaN, Optimal,5.44946503639221
+./solvers/couenne-nlw/JuniperLib/johnall.stdout:DATA, johnall.jl,195,190,0,193, Min,-224.73020822858, NaN, Optimal,2.10479497909546
+./solvers/couenne-nlw/JuniperLib/kport20.stdout:ANALYSIS TEST: DATA, kport20.jl,102,2,38,28, Min, NaN, NaN, Error,0.208746910095215
+./solvers/couenne-nlw/JuniperLib/kport40.stdout:ANALYSIS TEST: DATA, kport40.jl,268,3,111,49, Min, NaN, NaN, Error,0.220471143722534
+./solvers/couenne-nlw/JuniperLib/lip.stdout:ANALYSIS TEST: DATA, lip.jl,61,52,0,84, Max, NaN, NaN, Error,0.198220014572144
+./solvers/couenne-nlw/JuniperLib/lop97ic.stdout:DATA, lop97ic.jl,1754,0,1662,92, Min,4849.19108649002, NaN, UserLimit,3745.53296518326
+./solvers/couenne-nlw/JuniperLib/lop97icx.stdout:DATA, lop97icx.jl,987,0,899,88, Min,4215.0836096, NaN, UserLimit,3741.40159583092
+./solvers/couenne-nlw/JuniperLib/m3.stdout:DATA, m3.jl,27,6,0,44, Min,37.8, NaN, Optimal,0.677479028701782
+./solvers/couenne-nlw/JuniperLib/m6.stdout:DATA, m6.jl,87,30,0,158, Min,82.2568769136558, NaN, Optimal,18.4082520008087
+./solvers/couenne-nlw/JuniperLib/m7_ar2_1.stdout:DATA, m7_ar2_1.jl,113,0,42,270, Min,190.23499998636, NaN, Optimal,58.0608379840851
+./solvers/couenne-nlw/JuniperLib/m7_ar25_1.stdout:DATA, m7_ar25_1.jl,113,0,42,270, Min,143.584999990963, NaN, Optimal,16.869197845459
+./solvers/couenne-nlw/JuniperLib/m7_ar3_1.stdout:DATA, m7_ar3_1.jl,113,0,42,270, Min,143.584999599095, NaN, Optimal,51.1803140640259
+./solvers/couenne-nlw/JuniperLib/m7_ar4_1.stdout:DATA, m7_ar4_1.jl,113,0,42,270, Min,106.756876913656, NaN, Optimal,113.448300123215
+./solvers/couenne-nlw/JuniperLib/m7_ar5_1.stdout:DATA, m7_ar5_1.jl,113,0,42,270, Min,106.460005760002, NaN, Optimal,124.186184883118
+./solvers/couenne-nlw/JuniperLib/m7.stdout:DATA, m7.jl,115,42,0,212, Min,106.756876913656, NaN, Optimal,313.252101898193
+./solvers/couenne-nlw/JuniperLib/meanvarx.stdout:DATA, meanvarx.jl,36,14,0,45, Min,14.3692315678771, NaN, Optimal,0.748635053634644
+./solvers/couenne-nlw/JuniperLib/minlphix.stdout:DATA, minlphix.jl,85,20,0,93, Min,316.692695415647, NaN, Optimal,1.21009492874146
+./solvers/couenne-nlw/JuniperLib/multiplants_mtg1a.stdout:DATA, multiplants_mtg1a.jl,194,93,0,257, Max,381.995837030405, NaN, UserLimit,3707.01207399368
+./solvers/couenne-nlw/JuniperLib/multiplants_mtg1b.stdout:DATA, multiplants_mtg1b.jl,194,93,0,257, Max,0, NaN, Infeasible,1.89829182624817
+./solvers/couenne-nlw/JuniperLib/multiplants_mtg1c.stdout:DATA, multiplants_mtg1c.jl,245,120,0,319, Max,682.895569507969, NaN, UserLimit,3710.28337407112
+./solvers/couenne-nlw/JuniperLib/multiplants_mtg2.stdout:DATA, multiplants_mtg2.jl,230,112,0,307, Max,7099.16397453745, NaN, UserLimit,3704.52782583237
+./solvers/couenne-nlw/JuniperLib/multiplants_mtg5.stdout:DATA, multiplants_mtg5.jl,191,78,0,309, Max,5917.26328260292, NaN, UserLimit,3720.34709811211
+./solvers/couenne-nlw/JuniperLib/multiplants_mtg6.stdout:DATA, multiplants_mtg6.jl,350,176,0,481, Max,5276.44039745257, NaN, UserLimit,3687.64080405235
+./solvers/couenne-nlw/JuniperLib/multiplants_stg1.stdout:DATA, multiplants_stg1.jl,415,198,0,262, Max, NaN, NaN, UserLimit,3710.86051297188
+./solvers/couenne-nlw/JuniperLib/multiplants_stg1a.stdout:DATA, multiplants_stg1a.jl,424,216,0,250, Max, NaN, NaN, UserLimit,3675.30592489243
+./solvers/couenne-nlw/JuniperLib/multiplants_stg1b.stdout:DATA, multiplants_stg1b.jl,476,243,0,280, Max, NaN, NaN, UserLimit,3694.06187319756
+./solvers/couenne-nlw/JuniperLib/multiplants_stg1c.stdout:DATA, multiplants_stg1c.jl,477,252,0,270, Max, NaN, NaN, UserLimit,3680.29442811012
+./solvers/couenne-nlw/JuniperLib/multiplants_stg5.stdout:DATA, multiplants_stg5.jl,451,216,0,299, Max, NaN, NaN, UserLimit,3699.05875396728
+./solvers/couenne-nlw/JuniperLib/multiplants_stg6.stdout:DATA, multiplants_stg6.jl,694,384,0,388, Max, NaN, NaN, UserLimit,3652.71470808983
+./solvers/couenne-nlw/JuniperLib/ndcc12.stdout:DATA, ndcc12.jl,645,46,0,238, Min, NaN, NaN, UserLimit,3604.54614210129
+./solvers/couenne-nlw/JuniperLib/ndcc12persp.stdout:DATA, ndcc12persp.jl,691,46,0,284, Min, NaN, NaN, UserLimit,3645.11523294449
+./solvers/couenne-nlw/JuniperLib/ndcc13.stdout:DATA, ndcc13.jl,631,42,0,255, Min, NaN, NaN, UserLimit,3641.97173213959
+./solvers/couenne-nlw/JuniperLib/ndcc13persp.stdout:DATA, ndcc13persp.jl,673,42,0,297, Min, NaN, NaN, UserLimit,3688.46581506729
+./solvers/couenne-nlw/JuniperLib/ndcc14.stdout:DATA, ndcc14.jl,865,54,0,306, Min, NaN, NaN, UserLimit,3612.37027406692
+./solvers/couenne-nlw/JuniperLib/ndcc14persp.stdout:DATA, ndcc14persp.jl,919,54,0,360, Min, NaN, NaN, UserLimit,3622.68131613731
+./solvers/couenne-nlw/JuniperLib/ndcc15.stdout:DATA, ndcc15.jl,681,40,0,307, Min, NaN, NaN, UserLimit,3606.20362997055
+./solvers/couenne-nlw/JuniperLib/ndcc15persp.stdout:DATA, ndcc15persp.jl,721,40,0,347, Min, NaN, NaN, UserLimit,3611.56693601608
+./solvers/couenne-nlw/JuniperLib/ndcc16.stdout:DATA, ndcc16.jl,1081,60,0,378, Min, NaN, NaN, UserLimit,3610.02394104004
+./solvers/couenne-nlw/JuniperLib/ndcc16persp.stdout:DATA, ndcc16persp.jl,1141,60,0,438, Min, NaN, NaN, UserLimit,3618.675096035
+./solvers/couenne-nlw/JuniperLib/netmod_dol1.stdout:DATA, netmod_dol1.jl,1999,462,0,3138, Min,-0.270243040620487, NaN, UserLimit,3677.94928193092
+./solvers/couenne-nlw/JuniperLib/netmod_dol2.stdout:DATA, netmod_dol2.jl,1999,462,0,3081, Min,-0.315092380834889, NaN, UserLimit,3602.67758202553
+./solvers/couenne-nlw/JuniperLib/netmod_kar1.stdout:DATA, netmod_kar1.jl,457,136,0,667, Min,-0.346071686521061, NaN, UserLimit,3674.47066783905
+./solvers/couenne-nlw/JuniperLib/netmod_kar2.stdout:DATA, netmod_kar2.jl,457,136,0,667, Min,-0.346071686521061, NaN, UserLimit,3675.31809306145
+./solvers/couenne-nlw/JuniperLib/no7_ar2_1.stdout:DATA, no7_ar2_1.jl,113,0,42,270, Min,107.862625484835, NaN, UserLimit,3713.6356511116
+./solvers/couenne-nlw/JuniperLib/no7_ar25_1.stdout:DATA, no7_ar25_1.jl,113,0,42,270, Min,113.565760083163, NaN, UserLimit,3692.8942759037
+./solvers/couenne-nlw/JuniperLib/no7_ar3_1.stdout:DATA, no7_ar3_1.jl,113,0,42,270, Min,111.238630634178, NaN, UserLimit,3687.22844195366
+./solvers/couenne-nlw/JuniperLib/no7_ar4_1.stdout:DATA, no7_ar4_1.jl,113,0,42,270, Min,105.379995963331, NaN, UserLimit,3684.74939203262
+./solvers/couenne-nlw/JuniperLib/no7_ar5_1.stdout:DATA, no7_ar5_1.jl,113,0,42,270, Min,92.0313688343644, NaN, UserLimit,3695.65248799324
+./solvers/couenne-nlw/JuniperLib/nous1.stdout:DATA, nous1.jl,51,2,0,44, Min,1.56707194569554, NaN, UserLimit,3747.34236192703
+./solvers/couenne-nlw/JuniperLib/nous2.stdout:DATA, nous2.jl,51,2,0,44, Min,0.625967398719135, NaN, Optimal,1.75864100456238
+./solvers/couenne-nlw/JuniperLib/nuclear104.stdout:DATA, nuclear104.jl,23814,10816,0,14246, Min, NaN, NaN, UserLimit,3601.19202280045
+./solvers/couenne-nlw/JuniperLib/nuclear10a.stdout:DATA, nuclear10a.jl,13011,10920,0,3340, Min, NaN, NaN, UserLimit,3731.81702113152
+./solvers/couenne-nlw/JuniperLib/nuclear10b.stdout:DATA, nuclear10b.jl,23827,10920,0,24972, Min, NaN, NaN, UserLimit,3614.34721899033
+./solvers/couenne-nlw/JuniperLib/nuclear14.stdout:DATA, nuclear14.jl,1563,576,0,1227, Min, NaN, NaN, UserLimit,3694.44288396835
+./solvers/couenne-nlw/JuniperLib/nuclear14a.stdout:DATA, nuclear14a.jl,993,600,0,634, Min, NaN, NaN, UserLimit,3621.91371202469
+./solvers/couenne-nlw/JuniperLib/nuclear14b.stdout:DATA, nuclear14b.jl,1569,600,0,1786, Min, NaN, NaN, UserLimit,3618.66464686394
+./solvers/couenne-nlw/JuniperLib/nuclear25.stdout:DATA, nuclear25.jl,1679,625,0,1304, Min, NaN, NaN, UserLimit,3627.02525019646
+./solvers/couenne-nlw/JuniperLib/nuclear25a.stdout:DATA, nuclear25a.jl,1059,650,0,660, Min, NaN, NaN, UserLimit,3639.55296707153
+./solvers/couenne-nlw/JuniperLib/nuclear25b.stdout:DATA, nuclear25b.jl,1684,650,0,1910, Min, NaN, NaN, UserLimit,3607.53523492813
+./solvers/couenne-nlw/JuniperLib/nuclear49.stdout:DATA, nuclear49.jl,5736,2401,0,3874, Min, NaN, NaN, UserLimit,3606.95803689957
+./solvers/couenne-nlw/JuniperLib/nuclear49a.stdout:DATA, nuclear49a.jl,3342,2450,0,1432, Min, NaN, NaN, UserLimit,3602.84857296944
+./solvers/couenne-nlw/JuniperLib/nuclear49b.stdout:DATA, nuclear49b.jl,5743,2450,0,6234, Min, NaN, NaN, UserLimit,3621.39444804192
+./solvers/couenne-nlw/JuniperLib/nuclearva.stdout:DATA, nuclearva.jl,352,168,0,318, Min,-1.00389893846589, NaN, UserLimit,3747.43614411354
+./solvers/couenne-nlw/JuniperLib/nuclearvb.stdout:DATA, nuclearvb.jl,352,168,0,318, Min,-1.02287243388261, NaN, UserLimit,3700.38869595528
+./solvers/couenne-nlw/JuniperLib/nuclearvc.stdout:DATA, nuclearvc.jl,352,168,0,318, Min, NaN, NaN, UserLimit,3672.29812788963
+./solvers/couenne-nlw/JuniperLib/nuclearvd.stdout:DATA, nuclearvd.jl,352,168,0,318, Min,-1.03305647227867, NaN, UserLimit,3741.57321095467
+./solvers/couenne-nlw/JuniperLib/nuclearve.stdout:DATA, nuclearve.jl,352,168,0,318, Min, NaN, NaN, UserLimit,3696.4857070446
+./solvers/couenne-nlw/JuniperLib/nuclearvf.stdout:DATA, nuclearvf.jl,352,168,0,318, Min, NaN, NaN, UserLimit,3744.12078404427
+./solvers/couenne-nlw/JuniperLib/nvs05.stdout:DATA, nvs05.jl,9,0,2,10, Min,5.47093408265378, NaN, Optimal,0.536980867385864
+./solvers/couenne-nlw/JuniperLib/nvs22.stdout:DATA, nvs22.jl,9,0,4,10, Min,6.05822, NaN, Optimal,0.255791902542114
+./solvers/couenne-nlw/JuniperLib/nvs23.stdout:DATA, nvs23.jl,10,0,9,10, Min,-1125.2, NaN, Optimal,8.15830707550049
+./solvers/couenne-nlw/JuniperLib/nvs24.stdout:DATA, nvs24.jl,11,0,10,11, Min,-1033.2, NaN, Optimal,24.5044848918915
+./solvers/couenne-nlw/JuniperLib/o7_2.stdout:DATA, o7_2.jl,115,42,0,212, Min,129.0886443876, NaN, UserLimit,3688.84179186821
+./solvers/couenne-nlw/JuniperLib/o7_ar2_1.stdout:DATA, o7_ar2_1.jl,113,0,42,270, Min,140.411944483628, NaN, UserLimit,3703.74754500389
+./solvers/couenne-nlw/JuniperLib/o7_ar25_1.stdout:DATA, o7_ar25_1.jl,113,0,42,270, Min,144.07864416932, NaN, UserLimit,3690.70815515518
+./solvers/couenne-nlw/JuniperLib/o7_ar3_1.stdout:DATA, o7_ar3_1.jl,113,0,42,270, Min,137.931817364502, NaN, UserLimit,3691.60957098007
+./solvers/couenne-nlw/JuniperLib/o7_ar4_1.stdout:DATA, o7_ar4_1.jl,113,0,42,270, Min,136.731313659272, NaN, UserLimit,3695.25036096573
+./solvers/couenne-nlw/JuniperLib/o7_ar5_1.stdout:DATA, o7_ar5_1.jl,113,0,42,270, Min,119.070257159249, NaN, UserLimit,3693.80844688416
+./solvers/couenne-nlw/JuniperLib/o7.stdout:DATA, o7.jl,115,42,0,212, Min,140.413400890391, NaN, UserLimit,3682.52935481071
+./solvers/couenne-nlw/JuniperLib/o8_ar4_1.stdout:DATA, o8_ar4_1.jl,145,0,56,348, Min,260.8859861086, NaN, UserLimit,3686.11653208733
+./solvers/couenne-nlw/JuniperLib/o9_ar4_1.stdout:DATA, o9_ar4_1.jl,181,0,72,436, Min, NaN, NaN, UserLimit,3686.96066594124
+./solvers/couenne-nlw/JuniperLib/oil.stdout:DATA, oil.jl,1536,19,0,1547, Min, NaN, NaN, UserLimit,3648.83879089355
+./solvers/couenne-nlw/JuniperLib/oil2.stdout:DATA, oil2.jl,937,2,0,927, Min,0, NaN, Infeasible,137.335263967514
+./solvers/couenne-nlw/JuniperLib/ortez.stdout:ANALYSIS TEST: DATA, ortez.jl,88,18,0,75, Min, NaN, NaN, Error,0.196934938430786
+./solvers/couenne-nlw/JuniperLib/parallel.stdout:DATA, parallel.jl,206,25,0,116, Min,924.294846654827, NaN, Optimal,25.120493888855
+./solvers/couenne-nlw/JuniperLib/pooling_epa1.stdout:ANALYSIS TEST: DATA, pooling_epa1.jl,215,30,0,341, Min, NaN, NaN, Error,0.212203979492187
+./solvers/couenne-nlw/JuniperLib/pooling_epa2.stdout:ANALYSIS TEST: DATA, pooling_epa2.jl,332,45,0,525, Min, NaN, NaN, Error,0.268249034881592
+./solvers/couenne-nlw/JuniperLib/pooling_epa3.stdout:DATA, pooling_epa3.jl,1105,150,0,1718, Min, NaN, NaN, Error,0.400962829589844
+./solvers/couenne-nlw/JuniperLib/portfol_buyin.stdout:DATA, portfol_buyin.jl,18,8,0,20, Min, NaN, NaN, Error,0.214837074279785
+./solvers/couenne-nlw/JuniperLib/portfol_card.stdout:ANALYSIS TEST: DATA, portfol_card.jl,18,8,0,21, Min, NaN, NaN, Error,0.201154947280884
+./solvers/couenne-nlw/JuniperLib/portfol_classical050_1.stdout:DATA, portfol_classical050_1.jl,151,50,0,104, Min,-0.087852340888701, NaN, UserLimit,3752.71872997284
+./solvers/couenne-nlw/JuniperLib/portfol_classical200_2.stdout:DATA, portfol_classical200_2.jl,601,200,0,404, Min,-0.090664576690085, NaN, UserLimit,3609.07893896103
+./solvers/couenne-nlw/JuniperLib/portfol_robust050_34.stdout:DATA, portfol_robust050_34.jl,204,51,0,157, Min,-0.068531881260539, NaN, UserLimit,3774.80527997017
+./solvers/couenne-nlw/JuniperLib/portfol_robust100_09.stdout:DATA, portfol_robust100_09.jl,404,101,0,307, Min,-0.091522271023502, NaN, UserLimit,3691.34495615959
+./solvers/couenne-nlw/JuniperLib/portfol_robust200_03.stdout:DATA, portfol_robust200_03.jl,804,201,0,607, Min,-0.106816698538115, NaN, UserLimit,3611.13730692863
+./solvers/couenne-nlw/JuniperLib/portfol_shortfall050_68.stdout:DATA, portfol_shortfall050_68.jl,205,51,0,158, Min,-1.08602339970978, NaN, UserLimit,3813.07585811615
+./solvers/couenne-nlw/JuniperLib/portfol_shortfall100_04.stdout:DATA, portfol_shortfall100_04.jl,405,101,0,308, Min,-1.09524195185324, NaN, UserLimit,3692.04138708115
+./solvers/couenne-nlw/JuniperLib/portfol_shortfall200_05.stdout:DATA, portfol_shortfall200_05.jl,805,201,0,608, Min,-1.07023501023033, NaN, UserLimit,3621.01429510117
+./solvers/couenne-nlw/JuniperLib/procurement1large.stdout:DATA, procurement1large.jl,7177,400,0,6055, Max, NaN, NaN, UserLimit,3601.1995010376
+./solvers/couenne-nlw/JuniperLib/procurement1mot.stdout:DATA, procurement1mot.jl,785,60,0,750, Max,267.653099828413, NaN, UserLimit,3689.75259590149
+./solvers/couenne-nlw/JuniperLib/procurement2mot.stdout:ANALYSIS TEST: DATA, procurement2mot.jl,797,60,0,762, Max, NaN, NaN, Error,0.256864786148071
+./solvers/couenne-nlw/JuniperLib/product.stdout:DATA, product.jl,1554,107,0,1926, Min,0, NaN, Infeasible,3.28214597702026
+./solvers/couenne-nlw/JuniperLib/product2.stdout:DATA, product2.jl,2843,128,0,3126, Min,0, NaN, Infeasible,5.34740281105042
+./solvers/couenne-nlw/JuniperLib/pump.stdout:DATA, pump.jl,25,3,6,35, Min,128893.258447221, NaN, Optimal,22.6306281089783
+./solvers/couenne-nlw/JuniperLib/qap.stdout:DATA, qap.jl,226,225,0,31, Min,432348, NaN, UserLimit,3966.8545589447
+./solvers/couenne-nlw/JuniperLib/qapw.stdout:DATA, qapw.jl,451,225,0,256, Min,479274.000000001, NaN, UserLimit,3660.99270606041
+./solvers/couenne-nlw/JuniperLib/ravem.stdout:DATA, ravem.jl,113,54,0,187, Min,269590.216576666, NaN, Optimal,2.47674489021301
+./solvers/couenne-nlw/JuniperLib/ravempb.stdout:DATA, ravempb.jl,113,54,0,187, Min,269590.216576664, NaN, Optimal,2.02482676506042
+./solvers/couenne-nlw/JuniperLib/risk2b.stdout:ANALYSIS TEST: DATA, risk2b.jl,464,14,0,581, Min, NaN, NaN, Error,0.249057054519653
+./solvers/couenne-nlw/JuniperLib/risk2bpb.stdout:ANALYSIS TEST: DATA, risk2bpb.jl,464,14,0,581, Min, NaN, NaN, Error,0.24849796295166
+./solvers/couenne-nlw/JuniperLib/routingdelay_bigm.stdout:DATA, routingdelay_bigm.jl,1124,396,0,2978, Min,145.69425, NaN, UserLimit,3627.28277611732
+./solvers/couenne-nlw/JuniperLib/routingdelay_proj.stdout:DATA, routingdelay_proj.jl,1124,396,0,2978, Min, NaN, NaN, UserLimit,3738.39272212982
+./solvers/couenne-nlw/JuniperLib/RSyn0805H.stdout:DATA, RSyn0805H.jl,309,37,0,430, Max,1290.31745151329, NaN, Optimal,212.673030853271
+./solvers/couenne-nlw/JuniperLib/RSyn0805M.stdout:DATA, RSyn0805M.jl,171,69,0,287, Max,1296.12063087303, NaN, Optimal,20.3314039707184
+./solvers/couenne-nlw/JuniperLib/RSyn0805M02H.stdout:DATA, RSyn0805M02H.jl,701,148,0,1046, Max,2215.6597740824, NaN, UserLimit,3682.58776783943
+./solvers/couenne-nlw/JuniperLib/RSyn0805M02M.stdout:DATA, RSyn0805M02M.jl,361,148,0,770, Max,2231.72989128343, NaN, UserLimit,3647.87929677963
+./solvers/couenne-nlw/JuniperLib/RSyn0805M03H.stdout:DATA, RSyn0805M03H.jl,1051,222,0,1699, Max,3022.90138551742, NaN, UserLimit,3675.35985398293
+./solvers/couenne-nlw/JuniperLib/RSyn0805M03M.stdout:DATA, RSyn0805M03M.jl,541,222,0,1285, Max,2863.90804336728, NaN, UserLimit,3617.09227705002
+./solvers/couenne-nlw/JuniperLib/RSyn0805M04H.stdout:DATA, RSyn0805M04H.jl,1401,296,0,2439, Max,7174.22576543277, NaN, UserLimit,3629.5114569664
+./solvers/couenne-nlw/JuniperLib/RSyn0805M04M.stdout:DATA, RSyn0805M04M.jl,721,296,0,1887, Max,4960.41247746101, NaN, UserLimit,3643.96193504333
+./solvers/couenne-nlw/JuniperLib/RSyn0810H.stdout:DATA, RSyn0810H.jl,344,42,0,484, Max,1721.44779291083, NaN, Optimal,314.324795007706
+./solvers/couenne-nlw/JuniperLib/RSyn0810M.stdout:DATA, RSyn0810M.jl,186,74,0,313, Max,1721.44771104512, NaN, Optimal,63.0122919082642
+./solvers/couenne-nlw/JuniperLib/RSyn0810M02H.stdout:DATA, RSyn0810M02H.jl,791,168,0,1189, Max,1696.07855640746, NaN, UserLimit,3694.59013700485
+./solvers/couenne-nlw/JuniperLib/RSyn0810M02M.stdout:DATA, RSyn0810M02M.jl,411,168,0,867, Max,1707.07239018372, NaN, UserLimit,3611.81107091904
+./solvers/couenne-nlw/JuniperLib/RSyn0810M03M.stdout:DATA, RSyn0810M03M.jl,616,252,0,1453, Max,2296.38507767491, NaN, UserLimit,3611.13629412651
+./solvers/couenne-nlw/JuniperLib/RSyn0810M04H.stdout:DATA, RSyn0810M04H.jl,1581,336,0,2785, Max,6567.41502056119, NaN, UserLimit,3637.32608509064
+./solvers/couenne-nlw/JuniperLib/RSyn0810M04M.stdout:DATA, RSyn0810M04M.jl,821,336,0,2141, Max,3786.9347910349, NaN, UserLimit,3615.42298197746
+./solvers/couenne-nlw/JuniperLib/RSyn0815H.stdout:DATA, RSyn0815H.jl,388,47,0,553, Max,1257.560251439, NaN, Optimal,639.140715122223
+./solvers/couenne-nlw/JuniperLib/RSyn0815M.stdout:DATA, RSyn0815M.jl,206,79,0,348, Max,1269.92566420685, NaN, Optimal,47.804722070694
+./solvers/couenne-nlw/JuniperLib/RSyn0815M02H.stdout:DATA, RSyn0815M02H.jl,899,188,0,1362, Max,1765.79456849734, NaN, UserLimit,3677.7883939743
+./solvers/couenne-nlw/JuniperLib/RSyn0815M02M.stdout:DATA, RSyn0815M02M.jl,471,188,0,982, Max,1667.62623253299, NaN, UserLimit,3619.42752099037
+./solvers/couenne-nlw/JuniperLib/RSyn0815M03H.stdout:DATA, RSyn0815M03H.jl,1348,282,0,2218, Max,2771.8740370924, NaN, UserLimit,3678.15786981583
+./solvers/couenne-nlw/JuniperLib/RSyn0815M03M.stdout:DATA, RSyn0815M03M.jl,706,282,0,1648, Max,2251.07207913555, NaN, UserLimit,3613.22528982162
+./solvers/couenne-nlw/JuniperLib/RSyn0815M04H.stdout:DATA, RSyn0815M04H.jl,1797,376,0,3191, Max, NaN, NaN, UserLimit,3626.72649407387
+./solvers/couenne-nlw/JuniperLib/RSyn0815M04M.stdout:DATA, RSyn0815M04M.jl,941,376,0,2431, Max, NaN, NaN, UserLimit,3623.14445590973
+./solvers/couenne-nlw/JuniperLib/RSyn0820H.stdout:DATA, RSyn0820H.jl,418,52,0,605, Max,0, NaN, Infeasible,1075.27252388001
+./solvers/couenne-nlw/JuniperLib/RSyn0820M.stdout:DATA, RSyn0820M.jl,216,84,0,372, Max,1150.30063198858, NaN, Optimal,521.155611991882
+./solvers/couenne-nlw/JuniperLib/RSyn0820M02H.stdout:DATA, RSyn0820M02H.jl,979,208,0,1501, Max,1047.62566850541, NaN, UserLimit,3692.09745597839
+./solvers/couenne-nlw/JuniperLib/RSyn0820M02M.stdout:DATA, RSyn0820M02M.jl,511,208,0,1075, Max,773.4139487785, NaN, UserLimit,3620.35024309158
+./solvers/couenne-nlw/JuniperLib/RSyn0820M03H.stdout:DATA, RSyn0820M03H.jl,1468,312,0,2449, Max,2014.33347219234, NaN, UserLimit,3651.89891600609
+./solvers/couenne-nlw/JuniperLib/RSyn0820M03M.stdout:DATA, RSyn0820M03M.jl,766,312,0,1810, Max,1439.34543113615, NaN, UserLimit,3615.84666204453
+./solvers/couenne-nlw/JuniperLib/RSyn0820M04H.stdout:DATA, RSyn0820M04H.jl,1957,416,0,3529, Max,2377.4379283014, NaN, UserLimit,3630.6585149765
+./solvers/couenne-nlw/JuniperLib/RSyn0820M04M.stdout:DATA, RSyn0820M04M.jl,1021,416,0,2677, Max, NaN, NaN, UserLimit,3617.47091889381
+./solvers/couenne-nlw/JuniperLib/RSyn0830H.stdout:DATA, RSyn0830H.jl,495,62,0,717, Max,508.072765824444, NaN, UserLimit,3632.19132995605
+./solvers/couenne-nlw/JuniperLib/RSyn0830M.stdout:DATA, RSyn0830M.jl,251,94,0,426, Max,489.589029389207, NaN, UserLimit,3613.70640993118
+./solvers/couenne-nlw/JuniperLib/RSyn0830M02H.stdout:DATA, RSyn0830M02H.jl,1173,248,0,1795, Max,636.156403191983, NaN, UserLimit,3663.96419906616
+./solvers/couenne-nlw/JuniperLib/RSyn0830M02M.stdout:DATA, RSyn0830M02M.jl,621,248,0,1273, Max,363.11684016279, NaN, UserLimit,3617.00102996826
+./solvers/couenne-nlw/JuniperLib/RSyn0830M03H.stdout:DATA, RSyn0830M03H.jl,1759,372,0,2935, Max,1115.98946592244, NaN, UserLimit,3665.18499994278
+./solvers/couenne-nlw/JuniperLib/RSyn0830M03M.stdout:DATA, RSyn0830M03M.jl,931,372,0,2152, Max, NaN, NaN, UserLimit,3619.00419402123
+./solvers/couenne-nlw/JuniperLib/RSyn0830M04H.stdout:DATA, RSyn0830M04H.jl,2345,496,0,4237, Max,2436.74405742434, NaN, UserLimit,3641.00215816498
+./solvers/couenne-nlw/JuniperLib/RSyn0830M04M.stdout:DATA, RSyn0830M04M.jl,1241,496,0,3193, Max, NaN, NaN, UserLimit,3619.35097098351
+./solvers/couenne-nlw/JuniperLib/RSyn0840H.stdout:DATA, RSyn0840H.jl,569,72,0,838, Max,259.248712189473, NaN, Optimal,370.960264921188
+./solvers/couenne-nlw/JuniperLib/RSyn0840M.stdout:DATA, RSyn0840M.jl,281,104,0,485, Max,273.011709747426, NaN, UserLimit,3615.70555400848
+./solvers/couenne-nlw/JuniperLib/RSyn0840M02H.stdout:DATA, RSyn0840M02H.jl,1361,288,0,2107, Max, NaN, NaN, UserLimit,3652.08042788506
+./solvers/couenne-nlw/JuniperLib/RSyn0840M02M.stdout:DATA, RSyn0840M02M.jl,721,288,0,1481, Max,295.352703980362, NaN, UserLimit,3619.98344397545
+./solvers/couenne-nlw/JuniperLib/RSyn0840M03H.stdout:DATA, RSyn0840M03H.jl,2041,432,0,3448, Max,2487.3980865119, NaN, UserLimit,3644.39566802978
+./solvers/couenne-nlw/JuniperLib/RSyn0840M03M.stdout:DATA, RSyn0840M03M.jl,1081,432,0,2509, Max,1364.95594614174, NaN, UserLimit,3625.48663878441
+./solvers/couenne-nlw/JuniperLib/RSyn0840M04H.stdout:DATA, RSyn0840M04H.jl,2721,576,0,4981, Max, NaN, NaN, UserLimit,3643.8240480423
+./solvers/couenne-nlw/JuniperLib/RSyn0840M04M.stdout:DATA, RSyn0840M04M.jl,1441,576,0,3729, Max, NaN, NaN, UserLimit,3632.4406080246
+./solvers/couenne-nlw/JuniperLib/saa_2.stdout:DATA, saa_2.jl,4408,400,0,6206, Min, NaN, NaN, UserLimit,3608.91159510612
+./solvers/couenne-nlw/JuniperLib/sep1.stdout:DATA, sep1.jl,30,2,0,32, Min,-510.081002055857, NaN, Optimal,0.308344125747681
+./solvers/couenne-nlw/JuniperLib/sepasequ_complex.stdout:DATA, sepasequ_complex.jl,498,50,0,1311, Min,432.810837639662, NaN, Optimal,282.193108081818
+./solvers/couenne-nlw/JuniperLib/sepasequ_convent.stdout:DATA, sepasequ_convent.jl,642,20,0,1129, Min,0, NaN, Infeasible,41.9456858634949
+./solvers/couenne-nlw/JuniperLib/sfacloc1_2_80.stdout:DATA, sfacloc1_2_80.jl,232,62,0,2089, Min,12.9348626283646, NaN, UserLimit,3720.2476849556
+./solvers/couenne-nlw/JuniperLib/sfacloc1_2_90.stdout:DATA, sfacloc1_2_90.jl,200,30,0,349, Min,18.080026072333, NaN, UserLimit,3715.31904506683
+./solvers/couenne-nlw/JuniperLib/sfacloc1_2_95.stdout:DATA, sfacloc1_2_95.jl,172,9,0,209, Min,18.8500698614614, NaN, UserLimit,3702.16169404984
+./solvers/couenne-nlw/JuniperLib/sfacloc1_3_80.stdout:DATA, sfacloc1_3_80.jl,294,62,0,2162, Min,10.1453782598537, NaN, UserLimit,3674.50528097153
+./solvers/couenne-nlw/JuniperLib/sfacloc1_3_90.stdout:DATA, sfacloc1_3_90.jl,262,30,0,422, Min,14.9258260600475, NaN, UserLimit,3693.07288694382
+./solvers/couenne-nlw/JuniperLib/sfacloc1_3_95.stdout:DATA, sfacloc1_3_95.jl,234,9,0,282, Min,18.6630551548626, NaN, UserLimit,3702.11498498917
+./solvers/couenne-nlw/JuniperLib/sfacloc1_4_80.stdout:DATA, sfacloc1_4_80.jl,356,62,0,2235, Min,8.41657861114391, NaN, UserLimit,3615.24805378914
+./solvers/couenne-nlw/JuniperLib/sfacloc1_4_90.stdout:DATA, sfacloc1_4_90.jl,324,30,0,495, Min,19.7012042032126, NaN, UserLimit,3742.97958087921
+./solvers/couenne-nlw/JuniperLib/sfacloc1_4_95.stdout:DATA, sfacloc1_4_95.jl,296,9,0,355, Min,12.3644617933342, NaN, UserLimit,3707.61227107048
+./solvers/couenne-nlw/JuniperLib/sfacloc2_2_80.stdout:DATA, sfacloc2_2_80.jl,247,92,0,2166, Min,13.3337169110332, NaN, UserLimit,3714.85903310776
+./solvers/couenne-nlw/JuniperLib/sfacloc2_2_90.stdout:DATA, sfacloc2_2_90.jl,215,60,0,394, Min,18.5941091941333, NaN, Optimal,62.0087740421295
+./solvers/couenne-nlw/JuniperLib/sfacloc2_2_95.stdout:DATA, sfacloc2_2_95.jl,187,39,0,240, Min,19.5775516542, NaN, Optimal,22.3636379241943
+./solvers/couenne-nlw/JuniperLib/sfacloc2_3_80.stdout:DATA, sfacloc2_3_80.jl,324,107,0,2269, Min,11.2942439620667, NaN, UserLimit,3707.13822102547
+./solvers/couenne-nlw/JuniperLib/sfacloc2_3_90.stdout:DATA, sfacloc2_3_90.jl,292,75,0,497, Min,15.0945010483333, NaN, Optimal,177.704592943192
+./solvers/couenne-nlw/JuniperLib/sfacloc2_3_95.stdout:DATA, sfacloc2_3_95.jl,264,54,0,343, Min,16.1511201236667, NaN, Optimal,44.8530898094177
+./solvers/couenne-nlw/JuniperLib/sfacloc2_4_80.stdout:DATA, sfacloc2_4_80.jl,401,122,0,2372, Min,10.1820128169333, NaN, UserLimit,3696.73857688904
+./solvers/couenne-nlw/JuniperLib/sfacloc2_4_90.stdout:DATA, sfacloc2_4_90.jl,369,90,0,600, Min,13.4115033492667, NaN, Optimal,1368.13613700867
+./solvers/couenne-nlw/JuniperLib/sfacloc2_4_95.stdout:DATA, sfacloc2_4_95.jl,341,69,0,446, Min,14.2991773274, NaN, Optimal,72.284716129303
+./solvers/couenne-nlw/JuniperLib/sjup2.stdout:DATA, sjup2.jl,1697,8,0,17086, Min,0, NaN, Optimal,3924.50706219673
+./solvers/couenne-nlw/JuniperLib/SLay04H.stdout:DATA, SLay04H.jl,141,24,0,175, Min,9859.6595994665, NaN, Optimal,3.57033705711365
+./solvers/couenne-nlw/JuniperLib/SLay04M.stdout:DATA, SLay04M.jl,45,24,0,55, Min,9859.65962585575, NaN, Optimal,5.62752079963684
+./solvers/couenne-nlw/JuniperLib/SLay05H.stdout:DATA, SLay05H.jl,231,40,0,291, Min,22664.6785289341, NaN, Optimal,13.4052340984344
+./solvers/couenne-nlw/JuniperLib/SLay05M.stdout:DATA, SLay05M.jl,71,40,0,91, Min,22664.6785369839, NaN, Optimal,1.46405506134033
+./solvers/couenne-nlw/JuniperLib/SLay06H.stdout:DATA, SLay06H.jl,343,60,0,436, Min,32757.0200615009, NaN, Optimal,77.6494288444519
+./solvers/couenne-nlw/JuniperLib/SLay06M.stdout:DATA, SLay06M.jl,103,60,0,136, Min,32757.0200682334, NaN, Optimal,2.49404406547546
+./solvers/couenne-nlw/JuniperLib/SLay07H.stdout:DATA, SLay07H.jl,477,84,0,610, Min,64748.8251192584, NaN, Optimal,2358.46770405769
+./solvers/couenne-nlw/JuniperLib/SLay07M.stdout:DATA, SLay07M.jl,141,84,0,190, Min,64748.825147218, NaN, Optimal,3.88905715942383
+./solvers/couenne-nlw/JuniperLib/SLay08H.stdout:DATA, SLay08H.jl,633,112,0,813, Min,87622.3612817855, NaN, UserLimit,3710.28328514099
+./solvers/couenne-nlw/JuniperLib/SLay08M.stdout:DATA, SLay08M.jl,185,112,0,253, Min,84960.2122565395, NaN, Optimal,5.94109416007996
+./solvers/couenne-nlw/JuniperLib/SLay09H.stdout:DATA, SLay09H.jl,811,144,0,1045, Min,150755.521610276, NaN, UserLimit,3724.24531888962
+./solvers/couenne-nlw/JuniperLib/SLay09M.stdout:DATA, SLay09M.jl,235,144,0,325, Min,107805.75270749, NaN, Optimal,10.1402268409729
+./solvers/couenne-nlw/JuniperLib/SLay10H.stdout:DATA, SLay10H.jl,1011,180,0,1306, Min,176119.900582607, NaN, UserLimit,3711.82699108124
+./solvers/couenne-nlw/JuniperLib/SLay10M.stdout:DATA, SLay10M.jl,291,180,0,406, Min,129579.883434747, NaN, Optimal,137.296542882919
+./solvers/couenne-nlw/JuniperLib/space25.stdout:DATA, space25.jl,894,750,0,236, Min, NaN, NaN, UserLimit,3705.30216002464
+./solvers/couenne-nlw/JuniperLib/space25a.stdout:DATA, space25a.jl,384,240,0,202, Min, NaN, NaN, UserLimit,3679.04310798645
+./solvers/couenne-nlw/JuniperLib/space960.stdout:DATA, space960.jl,5538,0,960,6498, Min, NaN, NaN, UserLimit,3601.2556169033
+./solvers/couenne-nlw/JuniperLib/spectra2.stdout:DATA, spectra2.jl,70,30,0,73, Min,13.9783059969571, NaN, Optimal,1.66256499290466
+./solvers/couenne-nlw/JuniperLib/squfl010-025.stdout:DATA, squfl010-025.jl,261,10,0,276, Min,214.11082097328, NaN, Optimal,6.60283780097961
+./solvers/couenne-nlw/JuniperLib/squfl010-025persp.stdout:DATA, squfl010-025persp.jl,511,10,0,526, Min,214.110233804863, NaN, Optimal,64.4883189201355
+./solvers/couenne-nlw/JuniperLib/squfl010-040.stdout:DATA, squfl010-040.jl,411,10,0,441, Min,240.598332655369, NaN, Optimal,13.3743810653687
+./solvers/couenne-nlw/JuniperLib/squfl010-040persp.stdout:DATA, squfl010-040persp.jl,811,10,0,841, Min,240.598215142754, NaN, Optimal,142.918083190918
+./solvers/couenne-nlw/JuniperLib/squfl010-080.stdout:DATA, squfl010-080.jl,811,10,0,881, Min,509.705588965135, NaN, Optimal,49.5319287776947
+./solvers/couenne-nlw/JuniperLib/squfl010-080persp.stdout:DATA, squfl010-080persp.jl,1611,10,0,1681, Min,509.70534291939, NaN, Optimal,948.172059059143
+./solvers/couenne-nlw/JuniperLib/squfl015-060.stdout:DATA, squfl015-060.jl,916,15,0,961, Min,366.621355730038, NaN, Optimal,135.405946969986
+./solvers/couenne-nlw/JuniperLib/squfl015-060persp.stdout:DATA, squfl015-060persp.jl,1816,15,0,1861, Min,366.621228299347, NaN, Optimal,1544.88058614731
+./solvers/couenne-nlw/JuniperLib/squfl015-080.stdout:DATA, squfl015-080.jl,1216,15,0,1281, Min,402.488107589534, NaN, Optimal,292.679079055786
+./solvers/couenne-nlw/JuniperLib/squfl015-080persp.stdout:DATA, squfl015-080persp.jl,2416,15,0,2481, Min,406.225507259149, NaN, UserLimit,3680.67381715775
+./solvers/couenne-nlw/JuniperLib/squfl020-040.stdout:DATA, squfl020-040.jl,821,20,0,841, Min,209.254731348796, NaN, Optimal,78.458783864975
+./solvers/couenne-nlw/JuniperLib/squfl020-040persp.stdout:DATA, squfl020-040persp.jl,1621,20,0,1641, Min,209.254555443514, NaN, Optimal,941.981816053391
+./solvers/couenne-nlw/JuniperLib/squfl020-050.stdout:DATA, squfl020-050.jl,1021,20,0,1051, Min,230.20183451992, NaN, Optimal,301.005550861359
+./solvers/couenne-nlw/JuniperLib/squfl020-050persp.stdout:DATA, squfl020-050persp.jl,2021,20,0,2051, Min,230.201692135191, NaN, Optimal,2305.15733098984
+./solvers/couenne-nlw/JuniperLib/squfl020-150.stdout:DATA, squfl020-150.jl,3021,20,0,3151, Min,577.227566298271, NaN, UserLimit,3704.14528393745
+./solvers/couenne-nlw/JuniperLib/squfl020-150persp.stdout:DATA, squfl020-150persp.jl,6021,20,0,6151, Min,777.109562083061, NaN, UserLimit,3637.29447603226
+./solvers/couenne-nlw/JuniperLib/squfl025-025.stdout:DATA, squfl025-025.jl,651,25,0,651, Min,168.8068592872, NaN, Optimal,68.3981540203095
+./solvers/couenne-nlw/JuniperLib/squfl025-025persp.stdout:DATA, squfl025-025persp.jl,1276,25,0,1276, Min,168.807014298919, NaN, Optimal,476.227272033691
+./solvers/couenne-nlw/JuniperLib/squfl025-030.stdout:DATA, squfl025-030.jl,776,25,0,781, Min,205.501519471615, NaN, Optimal,94.272962808609
+./solvers/couenne-nlw/JuniperLib/squfl025-030persp.stdout:DATA, squfl025-030persp.jl,1526,25,0,1531, Min,205.500599565631, NaN, Optimal,623.361335039139
+./solvers/couenne-nlw/JuniperLib/squfl025-040.stdout:DATA, squfl025-040.jl,1026,25,0,1041, Min,197.333460698721, NaN, Optimal,569.742772102356
+./solvers/couenne-nlw/JuniperLib/squfl025-040persp.stdout:DATA, squfl025-040persp.jl,2026,25,0,2041, Min,197.333515319168, NaN, Optimal,2202.67183804512
+./solvers/couenne-nlw/JuniperLib/squfl030-100.stdout:DATA, squfl030-100.jl,3031,30,0,3101, Min,381.396733733719, NaN, UserLimit,3728.36935400963
+./solvers/couenne-nlw/JuniperLib/squfl030-100persp.stdout:DATA, squfl030-100persp.jl,6031,30,0,6101, Min,861.375008071837, NaN, UserLimit,3601.03802490234
+./solvers/couenne-nlw/JuniperLib/squfl030-150.stdout:DATA, squfl030-150.jl,4531,30,0,4651, Min,459.727752280924, NaN, UserLimit,3690.60632705688
+./solvers/couenne-nlw/JuniperLib/squfl030-150persp.stdout:DATA, squfl030-150persp.jl,9031,30,0,9151, Min,857.65601750805, NaN, UserLimit,3655.34502410889
+./solvers/couenne-nlw/JuniperLib/squfl040-080.stdout:DATA, squfl040-080.jl,3241,40,0,3281, Min,288.679217773204, NaN, UserLimit,3733.88553094864
+./solvers/couenne-nlw/JuniperLib/squfl040-080persp.stdout:DATA, squfl040-080persp.jl,6441,40,0,6481, Min,937.685163095535, NaN, UserLimit,3600.80105614662
+./solvers/couenne-nlw/JuniperLib/sssd08-04.stdout:DATA, sssd08-04.jl,61,44,0,41, Min,182022.544297072, NaN, Optimal,803.37876200676
+./solvers/couenne-nlw/JuniperLib/sssd08-04persp.stdout:DATA, sssd08-04persp.jl,61,44,0,41, Min,182022.570297181, NaN, Optimal,135.22100186348
+./solvers/couenne-nlw/JuniperLib/sssd12-05.stdout:DATA, sssd12-05.jl,96,75,0,53, Min,282470.127086107, NaN, UserLimit,3678.75571513176
+./solvers/couenne-nlw/JuniperLib/sssd12-05persp.stdout:DATA, sssd12-05persp.jl,96,75,0,53, Min,282239.393754094, NaN, UserLimit,3735.58711886406
+./solvers/couenne-nlw/JuniperLib/sssd15-04.stdout:DATA, sssd15-04.jl,89,72,0,48, Min,206274.53456332, NaN, UserLimit,3677.0200009346
+./solvers/couenne-nlw/JuniperLib/sssd15-04persp.stdout:DATA, sssd15-04persp.jl,89,72,0,48, Min,205424.787550872, NaN, UserLimit,3718.18651914597
+./solvers/couenne-nlw/JuniperLib/sssd15-06.stdout:DATA, sssd15-06.jl,133,108,0,64, Min,662328.898174411, NaN, UserLimit,3687.31121087074
+./solvers/couenne-nlw/JuniperLib/sssd15-06persp.stdout:DATA, sssd15-06persp.jl,133,108,0,64, Min,862690.832918632, NaN, UserLimit,3718.46181511879
+./solvers/couenne-nlw/JuniperLib/sssd15-08.stdout:DATA, sssd15-08.jl,177,144,0,80, Min,572320.239170226, NaN, UserLimit,3691.95283412933
+./solvers/couenne-nlw/JuniperLib/sssd15-08persp.stdout:DATA, sssd15-08persp.jl,177,144,0,80, Min,772764.084312836, NaN, UserLimit,3710.28476500511
+./solvers/couenne-nlw/JuniperLib/sssd16-07.stdout:DATA, sssd16-07.jl,162,133,0,73, Min,422410.651627999, NaN, UserLimit,3680.76854491234
+./solvers/couenne-nlw/JuniperLib/sssd16-07persp.stdout:DATA, sssd16-07persp.jl,162,133,0,73, Min,479351.328608527, NaN, UserLimit,3726.38299489021
+./solvers/couenne-nlw/JuniperLib/sssd18-06.stdout:DATA, sssd18-06.jl,151,126,0,67, Min,458412.857900423, NaN, UserLimit,3682.49889206886
+./solvers/couenne-nlw/JuniperLib/sssd18-06persp.stdout:DATA, sssd18-06persp.jl,151,126,0,67, Min,460003.608418352, NaN, UserLimit,3719.18187499046
+./solvers/couenne-nlw/JuniperLib/sssd18-08.stdout:DATA, sssd18-08.jl,201,168,0,83, Min,848209.32391818, NaN, UserLimit,3688.87765097618
+./solvers/couenne-nlw/JuniperLib/sssd18-08persp.stdout:DATA, sssd18-08persp.jl,201,168,0,83, Min,1045355.19554269, NaN, UserLimit,3710.89254808426
+./solvers/couenne-nlw/JuniperLib/sssd20-04.stdout:DATA, sssd20-04.jl,109,92,0,53, Min,350916.103406272, NaN, UserLimit,3686.08457803726
+./solvers/couenne-nlw/JuniperLib/sssd20-04persp.stdout:DATA, sssd20-04persp.jl,109,92,0,53, Min,349138.863903783, NaN, UserLimit,3709.75605201721
+./solvers/couenne-nlw/JuniperLib/sssd20-08.stdout:DATA, sssd20-08.jl,217,184,0,85, Min,485259.759241621, NaN, UserLimit,3684.32347893715
+./solvers/couenne-nlw/JuniperLib/sssd20-08persp.stdout:DATA, sssd20-08persp.jl,217,184,0,85, Min,609148.296944976, NaN, UserLimit,3715.14071202278
+./solvers/couenne-nlw/JuniperLib/sssd22-08.stdout:DATA, sssd22-08.jl,233,200,0,87, Min,521082.271587878, NaN, UserLimit,3687.51994085312
+./solvers/couenne-nlw/JuniperLib/sssd22-08persp.stdout:DATA, sssd22-08persp.jl,233,200,0,87, Min,846065.232691834, NaN, UserLimit,3717.18263697624
+./solvers/couenne-nlw/JuniperLib/sssd25-04.stdout:DATA, sssd25-04.jl,129,112,0,58, Min,304125.507780417, NaN, UserLimit,3689.7956829071
+./solvers/couenne-nlw/JuniperLib/sssd25-04persp.stdout:DATA, sssd25-04persp.jl,129,112,0,58, Min,301194.469186985, NaN, UserLimit,3712.59223294258
+./solvers/couenne-nlw/JuniperLib/sssd25-08.stdout:DATA, sssd25-08.jl,257,224,0,90, Min,484285.302787595, NaN, UserLimit,3688.1097650528
+./solvers/couenne-nlw/JuniperLib/sssd25-08persp.stdout:DATA, sssd25-08persp.jl,257,224,0,90, Min,690519.72959649, NaN, UserLimit,3716.70171093941
+./solvers/couenne-nlw/JuniperLib/st_e14.stdout:DATA, st_e14.jl,12,4,0,14, Min,4.57958233434908, NaN, Optimal,0.210853099822998
+./solvers/couenne-nlw/JuniperLib/st_e31.stdout:DATA, st_e31.jl,113,24,0,136, Min,-2.00000252806345, NaN, Optimal,5.90121912956238
+./solvers/couenne-nlw/JuniperLib/st_e35.stdout:NLP Heuristic: DATA, st_e35.jl,33,7,0,40, Min, NaN, NaN, Error,1.67454195022583
+./solvers/couenne-nlw/JuniperLib/st_miqp5.stdout:DATA, st_miqp5.jl,8,0,2,14, Min,-333.888890369889, NaN, Optimal,0.226077079772949
+./solvers/couenne-nlw/JuniperLib/st_test3.stdout:DATA, st_test3.jl,14,0,13,11, Min,-7, NaN, Optimal,0.231702089309692
+./solvers/couenne-nlw/JuniperLib/st_test5.stdout:DATA, st_test5.jl,11,0,10,12, Min,-110, NaN, Optimal,0.215471029281616
+./solvers/couenne-nlw/JuniperLib/st_test8.stdout:DATA, st_test8.jl,25,0,24,21, Min,-29605, NaN, Optimal,0.225227832794189
+./solvers/couenne-nlw/JuniperLib/st_testgr3.stdout:DATA, st_testgr3.jl,21,0,20,21, Min,-20.59, NaN, Optimal,1.28820300102234
+./solvers/couenne-nlw/JuniperLib/st_testph4.stdout:DATA, st_testph4.jl,4,0,3,11, Min,-80.5, NaN, Optimal,0.208235025405884
+./solvers/couenne-nlw/JuniperLib/stockcycle.stdout:DATA, stockcycle.jl,481,432,0,98, Min,119948.688333333, NaN, Optimal,19.6175520420074
+./solvers/couenne-nlw/JuniperLib/super1.stdout:DATA, super1.jl,1308,44,0,1659, Min, NaN, NaN, UserLimit,3618.96695184708
+./solvers/couenne-nlw/JuniperLib/super2.stdout:DATA, super2.jl,1308,44,0,1659, Min, NaN, NaN, UserLimit,3619.15904092789
+./solvers/couenne-nlw/JuniperLib/super3.stdout:DATA, super3.jl,1308,44,0,1659, Min, NaN, NaN, UserLimit,3618.56082105637
+./solvers/couenne-nlw/JuniperLib/super3t.stdout:DATA, super3t.jl,1056,44,0,1343, Min,-0.640247004636645, NaN, UserLimit,3623.02702379227
+./solvers/couenne-nlw/JuniperLib/supplychain.stdout:DATA, supplychain.jl,28,3,0,31, Min,2260.25656752782, NaN, Optimal,0.966119050979614
+./solvers/couenne-nlw/JuniperLib/supplychainp1_020306.stdout:DATA, supplychainp1_020306.jl,151,27,0,256, Min,437551.675619471, NaN, Optimal,3.48362994194031
+./solvers/couenne-nlw/JuniperLib/supplychainp1_022020.stdout:DATA, supplychainp1_022020.jl,2941,460,0,5301, Min,2707736.7472891, NaN, UserLimit,3603.27294015884
+./solvers/couenne-nlw/JuniperLib/supplychainp1_030510.stdout:DATA, supplychainp1_030510.jl,446,70,0,836, Min,860440.915598718, NaN, Optimal,38.8153479099274
+./solvers/couenne-nlw/JuniperLib/supplychainr1_020306.stdout:DATA, supplychainr1_020306.jl,94,27,0,115, Min,437551.129758506, NaN, Optimal,7.21859502792358
+./solvers/couenne-nlw/JuniperLib/supplychainr1_022020.stdout:DATA, supplychainr1_022020.jl,1441,460,0,1841, Min,1776969.44555653, NaN, UserLimit,3652.57781219482
+./solvers/couenne-nlw/JuniperLib/supplychainr1_030510.stdout:DATA, supplychainr1_030510.jl,231,70,0,281, Min,860440.075367674, NaN, Optimal,15.9411971569061
+./solvers/couenne-nlw/JuniperLib/supplychainr1_053050.stdout:DATA, supplychainr1_053050.jl,5151,1680,0,6581, Min, NaN, NaN, UserLimit,3605.99701404572
+./solvers/couenne-nlw/JuniperLib/Syn05H.stdout:DATA, Syn05H.jl,43,5,0,59, Max,837.73240089798, NaN, Optimal,0.301061153411865
+./solvers/couenne-nlw/JuniperLib/Syn05M.stdout:DATA, Syn05M.jl,21,5,0,29, Max,837.73240089798, NaN, Optimal,0.330012083053589
+./solvers/couenne-nlw/JuniperLib/Syn05M02H.stdout:DATA, Syn05M02H.jl,105,20,0,152, Max,3032.73839268253, NaN, Optimal,1.17729496955872
+./solvers/couenne-nlw/JuniperLib/Syn05M02M.stdout:DATA, Syn05M02M.jl,61,20,0,102, Max,3032.73541324514, NaN, Optimal,0.957084894180298
+./solvers/couenne-nlw/JuniperLib/Syn05M03H.stdout:DATA, Syn05M03H.jl,157,30,0,250, Max,4027.37708028385, NaN, Optimal,2.57268500328064
+./solvers/couenne-nlw/JuniperLib/Syn05M03M.stdout:DATA, Syn05M03M.jl,91,30,0,175, Max,4027.37183782963, NaN, Optimal,1.99647998809814
+./solvers/couenne-nlw/JuniperLib/Syn05M04H.stdout:DATA, Syn05M04H.jl,209,40,0,363, Max,5510.39692139417, NaN, Optimal,7.25760293006897
+./solvers/couenne-nlw/JuniperLib/Syn05M04M.stdout:DATA, Syn05M04M.jl,121,40,0,263, Max,5510.38744799932, NaN, Optimal,3.98574709892273
+./solvers/couenne-nlw/JuniperLib/Syn10H.stdout:DATA, Syn10H.jl,78,10,0,113, Max,0, NaN, Infeasible,1.13536405563355
+./solvers/couenne-nlw/JuniperLib/Syn10M.stdout:DATA, Syn10M.jl,36,10,0,55, Max,1267.35355000169, NaN, Optimal,0.85531210899353
+./solvers/couenne-nlw/JuniperLib/Syn10M02H.stdout:DATA, Syn10M02H.jl,195,40,0,295, Max,2306.37690282114, NaN, Optimal,10.2903740406036
+./solvers/couenne-nlw/JuniperLib/Syn10M02M.stdout:DATA, Syn10M02M.jl,111,40,0,199, Max,2310.30077565199, NaN, Optimal,7.52888107299805
+./solvers/couenne-nlw/JuniperLib/Syn10M03H.stdout:DATA, Syn10M03H.jl,292,60,0,487, Max,3350.76067883, NaN, Optimal,28.4528510570526
+./solvers/couenne-nlw/JuniperLib/Syn10M03M.stdout:DATA, Syn10M03M.jl,166,60,0,343, Max,3354.68294130365, NaN, Optimal,22.4876179695129
+./solvers/couenne-nlw/JuniperLib/Syn10M04H.stdout:DATA, Syn10M04H.jl,389,80,0,709, Max,0, NaN, Infeasible,444.817668199539
+./solvers/couenne-nlw/JuniperLib/Syn10M04M.stdout:DATA, Syn10M04M.jl,221,80,0,517, Max,4557.06250931639, NaN, Optimal,83.1833009719849
+./solvers/couenne-nlw/JuniperLib/Syn15H.stdout:DATA, Syn15H.jl,122,15,0,182, Max,853.284828858524, NaN, Optimal,2.44604396820068
+./solvers/couenne-nlw/JuniperLib/Syn15M.stdout:DATA, Syn15M.jl,56,15,0,90, Max,853.284746556755, NaN, Optimal,2.15136003494263
+./solvers/couenne-nlw/JuniperLib/Syn15M02H.stdout:DATA, Syn15M02H.jl,303,60,0,468, Max,2832.74919343339, NaN, Optimal,20.6010761260986
+./solvers/couenne-nlw/JuniperLib/Syn15M02M.stdout:DATA, Syn15M02M.jl,171,60,0,314, Max,2832.74893413326, NaN, Optimal,28.1340589523315
+./solvers/couenne-nlw/JuniperLib/Syn15M03H.stdout:DATA, Syn15M03H.jl,454,90,0,769, Max,3850.18235000649, NaN, Optimal,51.1670360565186
+./solvers/couenne-nlw/JuniperLib/Syn15M03M.stdout:DATA, Syn15M03M.jl,256,90,0,538, Max,3850.18184191789, NaN, Optimal,153.827284097672
+./solvers/couenne-nlw/JuniperLib/Syn15M04H.stdout:DATA, Syn15M04H.jl,605,120,0,1115, Max,4758.7028824525, NaN, Optimal,60.4947609901428
+./solvers/couenne-nlw/JuniperLib/Syn15M04M.stdout:DATA, Syn15M04M.jl,341,120,0,807, Max,4937.47777370884, NaN, Optimal,2200.2974691391
+./solvers/couenne-nlw/JuniperLib/Syn20H.stdout:DATA, Syn20H.jl,152,20,0,234, Max,0, NaN, Infeasible,20.8968169689178
+./solvers/couenne-nlw/JuniperLib/Syn20M.stdout:DATA, Syn20M.jl,66,20,0,114, Max,924.263428348599, NaN, Optimal,20.6032159328461
+./solvers/couenne-nlw/JuniperLib/Syn20M02H.stdout:DATA, Syn20M02H.jl,383,80,0,607, Max,1731.64244509953, NaN, Optimal,40.7383010387421
+./solvers/couenne-nlw/JuniperLib/Syn20M02M.stdout:DATA, Syn20M02M.jl,211,80,0,407, Max,1752.13323957953, NaN, Optimal,1298.96201086044
+./solvers/couenne-nlw/JuniperLib/Syn20M03H.stdout:DATA, Syn20M03H.jl,574,120,0,1000, Max,0, NaN, Infeasible,97.9738371372223
+./solvers/couenne-nlw/JuniperLib/Syn20M03M.stdout:DATA, Syn20M03M.jl,316,120,0,700, Max,2638.95099123171, NaN, UserLimit,3616.03784704208
+./solvers/couenne-nlw/JuniperLib/Syn20M04H.stdout:DATA, Syn20M04H.jl,765,160,0,1453, Max,0, NaN, Infeasible,613.901913881302
+./solvers/couenne-nlw/JuniperLib/Syn20M04M.stdout:DATA, Syn20M04M.jl,421,160,0,1053, Max,3492.39517292822, NaN, UserLimit,3615.73985886574
+./solvers/couenne-nlw/JuniperLib/Syn30H.stdout:DATA, Syn30H.jl,229,30,0,346, Max,112.83873193576, NaN, Optimal,11.5794539451599
+./solvers/couenne-nlw/JuniperLib/Syn30M.stdout:DATA, Syn30M.jl,101,30,0,168, Max,138.159620489035, NaN, Optimal,168.50005698204
+./solvers/couenne-nlw/JuniperLib/Syn30M02H.stdout:DATA, Syn30M02H.jl,577,120,0,901, Max,388.438813748287, NaN, Optimal,77.6393477916718
+./solvers/couenne-nlw/JuniperLib/Syn30M02M.stdout:DATA, Syn30M02M.jl,321,120,0,605, Max,360.526492516007, NaN, UserLimit,3615.48012495041
+./solvers/couenne-nlw/JuniperLib/Syn30M03H.stdout:DATA, Syn30M03H.jl,865,180,0,1486, Max,617.408000483304, NaN, UserLimit,3634.41663002968
+./solvers/couenne-nlw/JuniperLib/Syn30M03M.stdout:DATA, Syn30M03M.jl,481,180,0,1042, Max,496.883338733502, NaN, UserLimit,3615.28208494186
+./solvers/couenne-nlw/JuniperLib/Syn30M04H.stdout:DATA, Syn30M04H.jl,1153,240,0,2161, Max,833.06509833914, NaN, UserLimit,3641.79050183296
+./solvers/couenne-nlw/JuniperLib/Syn30M04M.stdout:DATA, Syn30M04M.jl,641,240,0,1569, Max, NaN, NaN, UserLimit,3613.76326394081
+./solvers/couenne-nlw/JuniperLib/Syn40H.stdout:DATA, Syn40H.jl,303,40,0,467, Max,0, NaN, Infeasible,22.8783130645752
+./solvers/couenne-nlw/JuniperLib/Syn40M.stdout:DATA, Syn40M.jl,131,40,0,227, Max,52.5501588139986, NaN, UserLimit,3609.81412410736
+./solvers/couenne-nlw/JuniperLib/Syn40M02H.stdout:DATA, Syn40M02H.jl,765,160,0,1213, Max,387.283790677961, NaN, UserLimit,3628.15824699402
+./solvers/couenne-nlw/JuniperLib/Syn40M02M.stdout:DATA, Syn40M02M.jl,421,160,0,813, Max,352.043935721663, NaN, UserLimit,3619.82318997383
+./solvers/couenne-nlw/JuniperLib/Syn40M03H.stdout:DATA, Syn40M03H.jl,1147,240,0,1999, Max, NaN, NaN, UserLimit,3646.46696782112
+./solvers/couenne-nlw/JuniperLib/Syn40M03M.stdout:DATA, Syn40M03M.jl,631,240,0,1399, Max,165.591687203688, NaN, UserLimit,3621.07375001907
+./solvers/couenne-nlw/JuniperLib/Syn40M04H.stdout:DATA, Syn40M04H.jl,1529,320,0,2905, Max, NaN, NaN, UserLimit,3663.0417971611
+./solvers/couenne-nlw/JuniperLib/Syn40M04M.stdout:DATA, Syn40M04M.jl,841,320,0,2105, Max, NaN, NaN, UserLimit,3615.42515587807
+./solvers/couenne-nlw/JuniperLib/synheat.stdout:DATA, synheat.jl,57,12,0,65, Min,154998.599999205, NaN, UserLimit,3722.24188494682
+./solvers/couenne-nlw/JuniperLib/synthes2.stdout:DATA, synthes2.jl,12,5,0,15, Min,73.0353108602968, NaN, Optimal,0.342356204986572
+./solvers/couenne-nlw/JuniperLib/synthes3.stdout:DATA, synthes3.jl,18,8,0,24, Min,68.0097390491344, NaN, Optimal,0.393426895141602
+./solvers/couenne-nlw/JuniperLib/tanksize.stdout:ANALYSIS TEST: DATA, tanksize.jl,47,9,0,74, Min, NaN, NaN, Error,0.19737696647644
+./solvers/couenne-nlw/JuniperLib/telecomsp_metro.stdout:DATA, telecomsp_metro.jl,4285,4200,0,5079, Min, NaN, NaN, UserLimit,3788.24752116203
+./solvers/couenne-nlw/JuniperLib/telecomsp_pacbell.stdout:DATA, telecomsp_pacbell.jl,3571,3528,0,2941, Min, NaN, NaN, UserLimit,3732.21698093414
+./solvers/couenne-nlw/JuniperLib/tln12.stdout:DATA, tln12.jl,169,12,156,73, Min, NaN, NaN, UserLimit,3749.94020295143
+./solvers/couenne-nlw/JuniperLib/tln2.stdout:DATA, tln2.jl,9,2,6,13, Min,5.3, NaN, Optimal,0.247431993484497
+./solvers/couenne-nlw/JuniperLib/tln4.stdout:DATA, tln4.jl,25,4,20,25, Min,8.30000000000001, NaN, Optimal,141.836390972137
+./solvers/couenne-nlw/JuniperLib/tln5.stdout:DATA, tln5.jl,36,5,30,31, Min,10.3, NaN, UserLimit,3732.71012020111
+./solvers/couenne-nlw/JuniperLib/tln6.stdout:DATA, tln6.jl,49,6,42,37, Min,15.6, NaN, UserLimit,3724.62288808823
+./solvers/couenne-nlw/JuniperLib/tln7.stdout:DATA, tln7.jl,64,7,56,43, Min,16.1, NaN, UserLimit,3735.39494204521
+./solvers/couenne-nlw/JuniperLib/tloss.stdout:DATA, tloss.jl,49,6,42,54, Min,16.3, NaN, Optimal,3.24665212631226
+./solvers/couenne-nlw/JuniperLib/tls12.stdout:ANALYSIS TEST: DATA, tls12.jl,813,656,12,385, Min, NaN, NaN, Error,0.261924982070923
+./solvers/couenne-nlw/JuniperLib/tls2.stdout:ANALYSIS TEST: DATA, tls2.jl,38,31,2,25, Min, NaN, NaN, Error,0.193839073181152
+./solvers/couenne-nlw/JuniperLib/tls4.stdout:ANALYSIS TEST: DATA, tls4.jl,106,85,4,65, Min, NaN, NaN, Error,0.204324007034302
+./solvers/couenne-nlw/JuniperLib/tls5.stdout:ANALYSIS TEST: DATA, tls5.jl,162,131,5,91, Min, NaN, NaN, Error,0.243421077728271
+./solvers/couenne-nlw/JuniperLib/tls6.stdout:ANALYSIS TEST: DATA, tls6.jl,216,173,6,121, Min, NaN, NaN, Error,0.228431940078735
+./solvers/couenne-nlw/JuniperLib/tls7.stdout:ANALYSIS TEST: DATA, tls7.jl,346,289,7,155, Min, NaN, NaN, Error,0.221467971801758
+./solvers/couenne-nlw/JuniperLib/tltr.stdout:DATA, tltr.jl,49,12,36,55, Min,48.0666666666667, NaN, Optimal,1.85815000534058
+./solvers/couenne-nlw/JuniperLib/transswitch0009p.stdout:DATA, transswitch0009p.jl,70,9,0,140, Min,5296.68612573094, NaN, UserLimit,3772.09207415581
+./solvers/couenne-nlw/JuniperLib/transswitch0009r.stdout:DATA, transswitch0009r.jl,70,9,0,104, Min,5298.21552212901, NaN, UserLimit,3784.85060715675
+./solvers/couenne-nlw/JuniperLib/transswitch0014p.stdout:DATA, transswitch0014p.jl,139,20,0,278, Min,8082.58161725336, NaN, UserLimit,3719.74976110458
+./solvers/couenne-nlw/JuniperLib/transswitch0014r.stdout:DATA, transswitch0014r.jl,139,20,0,198, Min,8351.62272895244, NaN, UserLimit,3738.50529694557
+./solvers/couenne-nlw/JuniperLib/transswitch0030p.stdout:DATA, transswitch0030p.jl,278,41,0,556, Min,583.781359754258, NaN, UserLimit,3677.67058086395
+./solvers/couenne-nlw/JuniperLib/transswitch0030r.stdout:DATA, transswitch0030r.jl,278,41,0,392, Min, NaN, NaN, UserLimit,3698.0159778595
+./solvers/couenne-nlw/JuniperLib/transswitch0039p.stdout:DATA, transswitch0039p.jl,329,46,0,658, Min,41866.1222750748, NaN, UserLimit,3633.58674693108
+./solvers/couenne-nlw/JuniperLib/transswitch0039r.stdout:DATA, transswitch0039r.jl,329,46,0,474, Min, NaN, NaN, UserLimit,3668.57107210159
+./solvers/couenne-nlw/JuniperLib/transswitch0057p.stdout:DATA, transswitch0057p.jl,519,78,0,1038, Min, NaN, NaN, UserLimit,3626.4949529171
+./solvers/couenne-nlw/JuniperLib/transswitch0057r.stdout:DATA, transswitch0057r.jl,519,78,0,726, Min, NaN, NaN, UserLimit,3664.2947280407
+./solvers/couenne-nlw/JuniperLib/transswitch0118p.stdout:DATA, transswitch0118p.jl,1240,179,0,2480, Min, NaN, NaN, UserLimit,3617.48411107063
+./solvers/couenne-nlw/JuniperLib/transswitch0118r.stdout:DATA, transswitch0118r.jl,1240,179,0,1764, Min, NaN, NaN, UserLimit,3641.66878294945
+./solvers/couenne-nlw/JuniperLib/transswitch0300p.stdout:DATA, transswitch0300p.jl,2779,408,0,5558, Min, NaN, NaN, UserLimit,3618.12659502029
+./solvers/couenne-nlw/JuniperLib/transswitch0300r.stdout:DATA, transswitch0300r.jl,2779,408,0,3926, Min, NaN, NaN, UserLimit,3617.21932983398
+./solvers/couenne-nlw/JuniperLib/transswitch2383wpp.stdout:DATA, transswitch2383wpp.jl,19851,2886,0,39702, Min, NaN, NaN, UserLimit,3977.22920393944
+./solvers/couenne-nlw/JuniperLib/transswitch2383wpr.stdout:DATA, transswitch2383wpr.jl,19851,2886,0,28158, Min, NaN, NaN, UserLimit,3606.97173213959
+./solvers/couenne-nlw/JuniperLib/transswitch2736spp.stdout:DATA, transswitch2736spp.jl,23411,3494,0,46822, Min, NaN, NaN, UserLimit,3917.4627468586
+./solvers/couenne-nlw/JuniperLib/transswitch2736spr.stdout:DATA, transswitch2736spr.jl,23411,3494,0,32846, Min, NaN, NaN, UserLimit,3607.24082303047
+./solvers/couenne-nlw/JuniperLib/tspn05.stdout:ANALYSIS TEST: DATA, tspn05.jl,21,10,0,11, Min, NaN, NaN, Error,4.75073099136353
+./solvers/couenne-nlw/JuniperLib/tspn08.stdout:ANALYSIS TEST: DATA, tspn08.jl,45,28,0,19, Min, NaN, NaN, Error,0.206510066986084
+./solvers/couenne-nlw/JuniperLib/tspn10.stdout:ANALYSIS TEST: DATA, tspn10.jl,66,45,0,22, Min, NaN, NaN, Error,0.219743967056274
+./solvers/couenne-nlw/JuniperLib/tspn12.stdout:ANALYSIS TEST: DATA, tspn12.jl,91,66,0,27, Min, NaN, NaN, Error,0.203159093856812
+./solvers/couenne-nlw/JuniperLib/tspn15.stdout:ANALYSIS TEST: DATA, tspn15.jl,136,105,0,35, Min, NaN, NaN, Error,0.217284917831421
+./solvers/couenne-nlw/JuniperLib/unitcommit1.stdout:DATA, unitcommit1.jl,961,720,0,5330, Min,578807.156341134, NaN, UserLimit,3680.82110691071
+./solvers/couenne-nlw/JuniperLib/unitcommit2.stdout:DATA, unitcommit2.jl,961,720,0,5330, Min,584491.670217642, NaN, UserLimit,3679.58982396126
+./solvers/couenne-nlw/JuniperLib/uselinear.stdout:NLP Heuristic: DATA, uselinear.jl,6793,58,0,7031, Min, NaN, NaN, Error,146.833892822266
+./solvers/couenne-nlw/JuniperLib/util.stdout:DATA, util.jl,146,28,0,168, Min,999.578750235364, NaN, Optimal,2.41395807266235
+./solvers/couenne-nlw/JuniperLib/var_con10.stdout:DATA, var_con10.jl,574,12,0,465, Min, NaN, NaN, UserLimit,3737.44924116135
+./solvers/couenne-nlw/JuniperLib/var_con5.stdout:DATA, var_con5.jl,574,12,0,465, Min, NaN, NaN, UserLimit,3634.96052408218
+./solvers/couenne-nlw/JuniperLib/waste.stdout:DATA, waste.jl,2485,400,0,1992, Min,662.917275920166, NaN, UserLimit,3691.67496800423
+./solvers/couenne-nlw/JuniperLib/wastepaper3.stdout:ANALYSIS TEST: DATA, wastepaper3.jl,53,27,0,31, Min, NaN, NaN, Error,0.194720029830933
+./solvers/couenne-nlw/JuniperLib/wastepaper4.stdout:ANALYSIS TEST: DATA, wastepaper4.jl,77,44,0,39, Min, NaN, NaN, Error,0.213208913803101
+./solvers/couenne-nlw/JuniperLib/wastepaper5.stdout:ANALYSIS TEST: DATA, wastepaper5.jl,105,65,0,47, Min, NaN, NaN, Error,0.204843997955322
+./solvers/couenne-nlw/JuniperLib/wastepaper6.stdout:ANALYSIS TEST: DATA, wastepaper6.jl,137,90,0,55, Min, NaN, NaN, Error,0.202398061752319
+./solvers/couenne-nlw/JuniperLib/water4.stdout:DATA, water4.jl,196,126,0,138, Min,1019.32412933136, NaN, UserLimit,3674.01920199394
+./solvers/couenne-nlw/JuniperLib/watercontamination0202.stdout:DATA, watercontamination0202.jl,106705,0,0,0, Min,0, NaN, Optimal,45.0636930465698
+./solvers/couenne-nlw/JuniperLib/watercontamination0202r.stdout:DATA, watercontamination0202r.jl,196,7,0,284, Min,97.9044367703498, NaN, Optimal,242.328143835068
+./solvers/couenne-nlw/JuniperLib/watercontamination0303.stdout:DATA, watercontamination0303.jl,107209,0,0,0, Min,0, NaN, Optimal,46.4146881103516
+./solvers/couenne-nlw/JuniperLib/watercontamination0303r.stdout:DATA, watercontamination0303r.jl,385,14,0,557, Min,828.568712532083, NaN, UserLimit,3804.45919489861
+./solvers/couenne-nlw/JuniperLib/waternd1.stdout:DATA, waternd1.jl,75,20,0,84, Min,606763.767361308, NaN, Optimal,460.350062847138
+./solvers/couenne-nlw/JuniperLib/waternd2.stdout:DATA, waternd2.jl,233,72,0,250, Min, NaN, NaN, UserLimit,3638.68270206451
+./solvers/couenne-nlw/JuniperLib/waterno2_01.stdout:DATA, waterno2_01.jl,167,9,0,205, Min,19.4566661188368, NaN, Optimal,0.842232942581177
+./solvers/couenne-nlw/JuniperLib/waterno2_02.stdout:DATA, waterno2_02.jl,333,18,0,411, Min,39.571022949439, NaN, Optimal,16.7371599674225
+./solvers/couenne-nlw/JuniperLib/waterno2_03.stdout:DATA, waterno2_03.jl,499,27,0,617, Min,115.002148086012, NaN, UserLimit,3752.41461491585
+./solvers/couenne-nlw/JuniperLib/waterno2_04.stdout:DATA, waterno2_04.jl,665,36,0,823, Min,146.802581007509, NaN, UserLimit,3751.42061305046
+./solvers/couenne-nlw/JuniperLib/waterno2_06.stdout:DATA, waterno2_06.jl,997,54,0,1235, Min,300.251166078273, NaN, UserLimit,3773.02170109749
+./solvers/couenne-nlw/JuniperLib/waterno2_09.stdout:DATA, waterno2_09.jl,1495,81,0,1853, Min, NaN, NaN, UserLimit,3705.82468605041
+./solvers/couenne-nlw/JuniperLib/waterno2_12.stdout:DATA, waterno2_12.jl,1993,108,0,2471, Min, NaN, NaN, UserLimit,3769.67060184479
+./solvers/couenne-nlw/JuniperLib/waterno2_18.stdout:DATA, waterno2_18.jl,2989,162,0,3707, Min, NaN, NaN, UserLimit,3633.36251401901
+./solvers/couenne-nlw/JuniperLib/waterno2_24.stdout:DATA, waterno2_24.jl,3985,216,0,4943, Min, NaN, NaN, UserLimit,3607.09753704071
+./solvers/couenne-nlw/JuniperLib/watertreatnd_conc.stdout:ANALYSIS TEST: DATA, watertreatnd_conc.jl,361,5,0,320, Min, NaN, NaN, Error,0.212183952331543
+./solvers/couenne-nlw/JuniperLib/watertreatnd_flow.stdout:ANALYSIS TEST: DATA, watertreatnd_flow.jl,421,5,0,380, Min, NaN, NaN, Error,0.23855996131897
+./solvers/couenne-nlw/JuniperLib/waterx.stdout:DATA, waterx.jl,71,14,0,55, Min,2784.76851512693, NaN, UserLimit,3783.23836493492
+./solvers/couenne-nlw/JuniperLib/waterz.stdout:DATA, waterz.jl,196,126,0,138, Min,999.88174796816, NaN, UserLimit,3696.12531399727
+./solvers/couenne-nlw/JuniperLib/windfac.stdout:DATA, windfac.jl,15,0,3,14, Min,0.254487298335783, NaN, Optimal,0.222280025482178
