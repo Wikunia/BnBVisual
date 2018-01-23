@@ -68,8 +68,13 @@ function readjoindata()
     end
     
     println("size: ",size(f,1))
-    return f[1:124,:] # first 124 instances as rest is missing ...
+    f = sort(f, cols = :bin_vars)
+    println(f)
+    return f #f[1:172,:] # first 172 instances as rest is missing ...
+    
 end
+
+
 
 
 """

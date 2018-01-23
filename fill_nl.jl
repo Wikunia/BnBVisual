@@ -6,14 +6,14 @@ using Ipopt
 using JuMP
 
 
-dir = "/home/ole/GitHub/bnb_visual/"
-header = ["instance", "obj", "bin", "int"]
+dir = "/home/ole/GitHub/bnb_visual/data/"
+header = ["instance", "obj", "bin", "int", "nl_constr"]
 
 c = 1
-df = CSV.read(dir*"data/minlib_data.csv"; header=header, types=[String for h in header])
-df[:instance] = [strip(value[1:end-3]) for (i, value) in enumerate(df[:instance])]
+df = CSV.read(dir*"minlib_extra_data.csv"; header=header, types=[String,Float64,Int64,Int64,Int64])
+# df[:instance] = [strip(value[1:end-3]) for (i, value) in enumerate(df[:instance])]
 
-df[:nl_constr] = zeros(size(df,1))
+# df[:nl_constr] = zeros(size(df,1))
 
 
 juniper = JuniperSolver(IpoptSolver(print_level=0);
@@ -23,16 +23,24 @@ juniper = JuniperSolver(IpoptSolver(print_level=0);
     incumbent_constr = false,
 )
 
+c = 1
 for r in eachrow(df)
-    println("Started "*r[:instance])
+    println("c: ",c)
+    # println("Started "*r[:instance])
+    c += 1
+
     m = fetch_model("JuniperLibSm/"*r[:instance]) 
     if typeof(m) != Void
-        setsolver(m, juniper)
-        solve(m)
-        r[:nl_constr] = m.internalModel.num_nl_constr
+        # setsolver(m, juniper)
+        # solve(m)
+        # r[:nl_constr] = m.internalModel.num_nl_constr
+    else
+        println(r)
     end
-    println("Finished "*r[:instance])
+    # println("Finished "*r[:instance])
+    # CSV.write("minlib_extra_data_new.csv", df)
+    
 end
 
 println(df)
-CSV.write("minlib_extra_data.csv", df)
+# CSV.write("minlib_extra_data_new.csv", df)

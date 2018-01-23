@@ -39,12 +39,12 @@ if (getQueryVariable("ots") == "true") {
     }
     if (configs) {
         files = ["juniper-ipopt","juniper-ipopt-grb","juniper-ipopt-glpk","juniper-ipopt-cbc",
-                 "juniper-knitro-cbc","juniper-knitro"];
+                 "juniper-knitro-cbc"];
     }
     
 }
 
-var legend_w = 200;
+var legend_w = 220;
 
 // Set svg width & height
 var svg = d3.select('#chart').append('svg')
