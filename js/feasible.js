@@ -2,7 +2,7 @@ var width = 1500,
 height = 600,
 centered;
 
-var files = ["minlib","bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw","juniper",
+var files = ["minlib","couenne-nlw","scip-nlw","bonmin-nlw","knitro-nlw","juniper",
 "juniper-bs-nsr","juniper-bs-r","juniper-fp-grb","juniper-ic","juniper-p03",
 "juniper-p05","juniper-p09","juniper-p17","juniper-ts-dbfs"];
 
