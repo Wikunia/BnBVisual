@@ -1,0 +1,9 @@
+./solvers/minotaur-bnb-fp-nlw/JuniperLibSm/nuclear49a.stdout:DATA, nuclear49a.jl, 3342, 2450, 0, 1432, Min, 0, NaN, Infeasible, 1.0032517910003662
+./solvers/minotaur-bnb-fp-nlw/JuniperLibSm/chp_shorttermplan1b.stdout:DATA, chp_shorttermplan1b.jl, 1681, 288, 0, 3851, Min, 0, NaN, Infeasible, 0.6169631481170654
+./solvers/minotaur-bnb-fp-nlw/JuniperLibSm/heatexch_gen2.stdout:DATA, heatexch_gen2.jl, 149, 16, 0, 167, Min, 0, NaN, Infeasible, 0.22510695457458496
+./solvers/minotaur-bnb-fp-nlw/JuniperLibSm/waternd2.stdout:DATA, waternd2.jl, 233, 72, 0, 250, Min, 0, NaN, Infeasible, 0.21269512176513672
+./solvers/minotaur-bnb-fp-nlw/JuniperLibSm/nuclear14a.stdout:DATA, nuclear14a.jl, 993, 600, 0, 634, Min, 0, NaN, Infeasible, 0.3324851989746094
+./solvers/minotaur-bnb-fp-nlw/JuniperLibSm/ghg_3veh.stdout:DATA, ghg_3veh.jl, 97, 36, 0, 120, Min, 0, NaN, Infeasible, 0.20575308799743652
+./solvers/minotaur-bnb-fp-nlw/JuniperLibSm/gasnet_al3.stdout:DATA, gasnet_al3.jl, 725, 136, 0, 831, Min, 0, NaN, Infeasible, 0.21436786651611328
+./solvers/minotaur-bnb-fp-nlw/JuniperLibSm/chp_shorttermplan1a.stdout:DATA, chp_shorttermplan1a.jl, 1009, 144, 0, 2069, Min, 0, NaN, Infeasible, 0.362746000289917
+./solvers/minotaur-bnb-fp-nlw/JuniperLibSm/nuclear25a.stdout:DATA, nuclear25a.jl, 1059, 650, 0, 660, Min, 0, NaN, Infeasible, 0.3451721668243408
