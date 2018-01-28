@@ -6,7 +6,8 @@ var parallel = qparallel ? true : false;
 var configs = qconfigs ? true : false;
 
 var width = 1200,
-height = 600;
+height = 600,
+legend_nof_instances = 172;
 
 if (compact) {
     width = 450;
@@ -29,21 +30,21 @@ if (getQueryVariable("ots") == "true") {
     if (compact) {
         files = ["juniper", "bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
     } else {
-        files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-fp-grb","juniper-ic","juniper-p03",
+        files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-ipopt-grb","juniper-ic","juniper-p03",
         "juniper-p05","juniper-p09","juniper-p17","juniper-ts-dbfs",
-        "bonmin-nlw","knitro-nlw","knitro-nlw-ms","couenne-nlw","scip-nlw"];
+        "bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
     }
     if (parallel) {
         files = ["juniper", "juniper-p03","juniper-p05","juniper-p09","juniper-p17"];
     }
     if (configs) {
         files = ["juniper-ipopt","juniper-ipopt-grb","juniper-ipopt-glpk","juniper-ipopt-cbc",
-                 "juniper-knitro-cbc","juniper-knitro"];
+                 "juniper-knitro-cbc"];
     }
     
 }
 
-var legend_w = 200;
+var legend_w = 220;
 
 // Set svg width & height
 var svg = d3.select('#chart').append('svg')
@@ -298,7 +299,7 @@ function render(data,maxTime,max_perc,first_render=true) {
         .attr("text-anchor", "middle")  
         .attr("font-family", "sans-serif")
         .attr("transform", "translate(15,"+(height/2-margin_top)+") rotate(-90)")
-        .text("Percentage solved (n=123)");
+        .text("Percentage solved (n="+legend_nof_instances+")");
     
 
     let xName = xAxisName.append("text")
