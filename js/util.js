@@ -164,7 +164,8 @@ function computeGlobGap(data,ai,i) {
 }
 
 /**
- * Change the status from UserLimit to Status if time limit not reached
+ * Change the status from UserLimit to status optimal if solution found and
+ * if time limit not reached
  * @param {Object} d one data object
  */
 function getRealStatus(d) {
