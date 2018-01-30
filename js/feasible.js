@@ -1,6 +1,7 @@
 var width = 1500,
 height = 600,
 centered;
+var max_time = 3600;
 
 var files = ["minlib","bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw","juniper",
 "juniper-bs-nsr","juniper-bs-r","juniper-fp-grb","juniper-ic","juniper-p03",

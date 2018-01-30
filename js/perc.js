@@ -9,6 +9,8 @@ var width = 1200,
 height = 600,
 legend_nof_instances = 142;
 
+var max_time = 1200;
+
 if (compact) {
     width = 450;
     height = 450;
@@ -30,10 +32,13 @@ if (getQueryVariable("ots") == "true") {
     if (compact) {
         files = ["juniper", "bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
     } else {
-        files = ["ibm/juniper", "ibm/bonmin-nlw", "ibm/minotaur-bnb-nlw", 
-                "ibm/minotaur-bnb-ipopt-nlw","ibm/minotaur-msbnb-nlw",
-                "ibm/couenne-nlw","ibm/scip-nlw"];
-        // files = ["juniper", "juniper_devel"];
+        files = ["ibm/bonmin-nlw","ibm/couenne-nlw","ibm/scip-nlw",
+                 "ibm/minotaur-bnb-nlw","ibm/minotaur-msbnb-nlw","ibm/minotaur-bnb-ipopt-nlw"
+            ]
+
+        // files = ["complete/juniper", "complete/bonmin-nlw", "complete/minotaur-nlw", 
+        //         "complete/couenne-nlw","complete/scip-nlw"];
+        files = ["devel/juniper_devel","devel/juniper_mu-0.5"];
         
         // files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-ipopt-grb","juniper-ic","juniper-p03",
         // "juniper-p05","juniper-p09","juniper-p17","juniper-ts-dbfs",
@@ -367,7 +372,7 @@ function getdata(section,cb) {
 function getandrenderdata(i,files,data) {
     let file = files[i];
     getdata(file,function(d) {
-        d = removeheatexch(d);
+        // d = filterInstances(d);
         data[file] = d;
         if (i == files.length-1) {
             data = fillNotDefined(data);

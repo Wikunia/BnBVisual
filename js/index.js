@@ -3,6 +3,7 @@ var width = 1200,
     centered;
 
 var legend_w = 200;
+var max_time = 3600;
 
 // My header
 var headers;
