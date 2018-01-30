@@ -7,7 +7,7 @@ var configs = qconfigs ? true : false;
 
 var width = 1200,
 height = 600,
-legend_nof_instances = 172;
+legend_nof_instances = 142;
 
 if (compact) {
     width = 450;
@@ -30,9 +30,14 @@ if (getQueryVariable("ots") == "true") {
     if (compact) {
         files = ["juniper", "bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
     } else {
-        files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-ipopt-grb","juniper-ic","juniper-p03",
-        "juniper-p05","juniper-p09","juniper-p17","juniper-ts-dbfs",
-        "bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
+        files = ["ibm/juniper", "ibm/bonmin-nlw", "ibm/minotaur-bnb-nlw", 
+                "ibm/minotaur-bnb-ipopt-nlw","ibm/minotaur-msbnb-nlw",
+                "ibm/couenne-nlw","ibm/scip-nlw"];
+        // files = ["juniper", "juniper_devel"];
+        
+        // files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-ipopt-grb","juniper-ic","juniper-p03",
+        // "juniper-p05","juniper-p09","juniper-p17","juniper-ts-dbfs",
+        // "bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
     }
     if (parallel) {
         files = ["juniper", "juniper-p03","juniper-p05","juniper-p09","juniper-p17"];
@@ -44,7 +49,7 @@ if (getQueryVariable("ots") == "true") {
     
 }
 
-var legend_w = 220;
+var legend_w = 300;
 
 // Set svg width & height
 var svg = d3.select('#chart').append('svg')
