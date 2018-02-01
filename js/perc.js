@@ -7,7 +7,7 @@ var configs = qconfigs ? true : false;
 
 var width = 1200,
 height = 600,
-legend_nof_instances = 142;
+legend_nof_instances = 306;
 
 var max_time = 1200;
 
@@ -35,10 +35,14 @@ if (getQueryVariable("ots") == "true") {
         files = ["ibm/bonmin-nlw","ibm/couenne-nlw","ibm/scip-nlw",
                  "ibm/minotaur-bnb-nlw","ibm/minotaur-msbnb-nlw","ibm/minotaur-bnb-ipopt-nlw"
             ]
+    
+       files = ["bonmin-nlw","couenne-nlw","scip-nlw",
+            "minotaur-bnb-nlw","juniper"
+       ]
 
         // files = ["complete/juniper", "complete/bonmin-nlw", "complete/minotaur-nlw", 
         //         "complete/couenne-nlw","complete/scip-nlw"];
-        files = ["devel/juniper_devel","devel/juniper_mu-0.5"];
+        files = ["devel/juniper_devel","devel/juniper_rerun-strong","devel/juniper_rerun-strong-200"];
         
         // files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-ipopt-grb","juniper-ic","juniper-p03",
         // "juniper-p05","juniper-p09","juniper-p17","juniper-ts-dbfs",
@@ -158,6 +162,11 @@ function createLegend(data,maxTime,max_perc) {
         .text(d=>{
             let t = d.alg;
             t = t.replace("ots-","")
+            let split = t.split("/")
+            if (split.length > 1) {
+                t = split[split.length-1];
+            }
+    
             return t;
         })
         .on("click", (d,i) => {
