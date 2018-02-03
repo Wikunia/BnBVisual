@@ -42,11 +42,12 @@ if (getQueryVariable("ots") == "true") {
 
         // files = ["complete/juniper", "complete/bonmin-nlw", "complete/minotaur-nlw", 
         //         "complete/couenne-nlw","complete/scip-nlw"];
-        files = ["devel/juniper_devel","devel/juniper_rerun-strong","devel/juniper_rerun-strong-200"];
+        files = ["devel/juniper_devel","devel/juniper_rerun-strong-200"];
         
-        // files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-ipopt-grb","juniper-ic","juniper-p03",
-        // "juniper-p05","juniper-p09","juniper-p17","juniper-ts-dbfs",
-        // "bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
+        // files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-ipopt-grb",
+            // "juniper-ipopt-cbc","juniper-ipopt-glpk","juniper-ipopt","juniper-ic","juniper-p02",
+            //  "juniper-p04","juniper-p08","juniper-p16","juniper-ts-dbfs",
+            //  "bonmin-nlw","knitro-nlw","minotaur-bnb-nlw","couenne-nlw","scip-nlw"];
     }
     if (parallel) {
         files = ["juniper", "juniper-p03","juniper-p05","juniper-p09","juniper-p17"];

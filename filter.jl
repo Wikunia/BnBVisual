@@ -18,7 +18,7 @@ scip_couenne_filtered = []
 
 c = 1
 for f in files
-    df = CSV.read("data/complete/"*f*"_data.csv"; header=header,
+    df = CSV.read("data/"*f*"_data.csv"; header=header,
     types=[String for h in header])
     df[:instance] = [strip(value[1:end-3]) for (i, value) in enumerate(df[:instance])]
     for col in [:sense,:status]
@@ -134,10 +134,10 @@ for r in eachrow(f)
         continue
     end
 
-    # if r[:juniper_time] >= 3600 && r[:bonmin_time] >= 3600 && r[:minotaur_time] >= 3600 
-        # noprint_c += 1
-        # continue
-    # end
+    if r[:juniper_time] >= 3600 && r[:bonmin_time] >= 3600 && r[:minotaur_time] >= 3600 
+        noprint_c += 1
+        continue
+    end
 
     for col in tex_headers
         sval = ""
