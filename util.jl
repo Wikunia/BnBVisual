@@ -63,12 +63,13 @@ function computegaps(f; knitro=true)
     # get best objective from all
 
     f[:objval]      = NaN*ones(size(f,1))
-    f[:scip_gap]    = NaN*ones(size(f,1))
-    f[:couenne_gap] = NaN*ones(size(f,1))
     knitro && (f[:knitro_gap]  = NaN*ones(size(f,1)))
-    f[:bonmin_gap]  = NaN*ones(size(f,1))
-    f[:juniper_gap] = NaN*ones(size(f,1))
 
+    for solver in solver_names
+        gap_col = Symbol(string(solver)*"_gap")
+        f[gap_col]    = NaN*ones(size(f,1))
+    end
+    
     f[:sum_time] = zeros(size(f,1))
     f[:disc_vars] = zeros(size(f,1))
 

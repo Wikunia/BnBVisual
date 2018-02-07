@@ -7,7 +7,9 @@ var configs = qconfigs ? true : false;
 
 var width = 1200,
 height = 600,
-legend_nof_instances = 172;
+legend_nof_instances = 306;
+
+var max_time = 1200;
 
 if (compact) {
     width = 450;
@@ -30,9 +32,22 @@ if (getQueryVariable("ots") == "true") {
     if (compact) {
         files = ["juniper", "bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
     } else {
-        files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-ipopt-grb","juniper-ic","juniper-p03",
-        "juniper-p05","juniper-p09","juniper-p17","juniper-ts-dbfs",
-        "bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
+        files = ["ibm/bonmin-nlw","ibm/couenne-nlw","ibm/scip-nlw",
+                 "ibm/minotaur-bnb-nlw","ibm/minotaur-msbnb-nlw","ibm/minotaur-bnb-ipopt-nlw"
+            ]
+    
+       files = ["bonmin-nlw","couenne-nlw","scip-nlw",
+            "minotaur-bnb-nlw","juniper"
+       ]
+
+        // files = ["complete/juniper", "complete/bonmin-nlw", "complete/minotaur-nlw", 
+        //         "complete/couenne-nlw","complete/scip-nlw"];
+        files = ["devel/juniper_devel","devel/juniper_rerun-strong-200"];
+        
+        files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-ipopt-grb",
+            "juniper-ipopt-cbc","juniper-ipopt-glpk","juniper-ipopt","juniper-ic","juniper-p02",
+             "juniper-p04","juniper-p08","juniper-p16","juniper-ts-dbfs",
+             "bonmin-nlw","knitro-nlw","minotaur-nlw","couenne-nlw","scip-nlw"];
     }
     if (parallel) {
         files = ["juniper", "juniper-p03","juniper-p05","juniper-p09","juniper-p17"];
@@ -44,7 +59,7 @@ if (getQueryVariable("ots") == "true") {
     
 }
 
-var legend_w = 220;
+var legend_w = 300;
 
 // Set svg width & height
 var svg = d3.select('#chart').append('svg')
@@ -148,6 +163,11 @@ function createLegend(data,maxTime,max_perc) {
         .text(d=>{
             let t = d.alg;
             t = t.replace("ots-","")
+            let split = t.split("/")
+            if (split.length > 1) {
+                t = split[split.length-1];
+            }
+    
             return t;
         })
         .on("click", (d,i) => {
@@ -362,7 +382,7 @@ function getdata(section,cb) {
 function getandrenderdata(i,files,data) {
     let file = files[i];
     getdata(file,function(d) {
-        d = removeheatexch(d);
+        // d = filterInstances(d);
         data[file] = d;
         if (i == files.length-1) {
             data = fillNotDefined(data);

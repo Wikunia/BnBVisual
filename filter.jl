@@ -3,14 +3,14 @@ using CSV
 using LatexPrint
 include("util.jl")
 
-files = ["bonmin-nlw","couenne-nlw","scip-nlw","juniper"]
+files = ["minotaur-nlw","bonmin-nlw","couenne-nlw","scip-nlw","juniper"]
 header = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
 "sense","objval","best_bound","status","time"]
-objval_cols = [:scip_objval,:couenne_objval,:bonmin_objval,:juniper_objval]
-solver_names = [:scip,:couenne,:bonmin,:juniper]
+objval_cols = [:scip_objval,:couenne_objval,:bonmin_objval,:minotaur_objval,:juniper_objval]
+solver_names = [:scip,:couenne,:bonmin,:minotaur,:juniper]
 tex_headers = [:instance,:nodes,:constraints,:objval,
-:juniper_gap,:bonmin_gap,:couenne_gap,:scip_gap,
-:juniper_time,:bonmin_time,:couenne_time,:scip_time]
+:juniper_gap,:bonmin_gap,:minotaur_gap,:couenne_gap,:scip_gap,
+:juniper_time,:bonmin_time,:minotaur_time,:couenne_time,:scip_time]
 
 data = []
 reasonable_instances = []
@@ -18,7 +18,7 @@ scip_couenne_filtered = []
 
 c = 1
 for f in files
-    df = CSV.read("data/complete/"*f*"_data.csv"; header=header,
+    df = CSV.read("data/"*f*"_data.csv"; header=header,
     types=[String for h in header])
     df[:instance] = [strip(value[1:end-3]) for (i, value) in enumerate(df[:instance])]
     for col in [:sense,:status]
@@ -53,17 +53,21 @@ for i=2:length(data)
     f = join(f, data[i], on = :instance, kind = :outer)
 end
 
+println(f)
+
 
 for col in [:sense,:nodes,:bin_vars,:int_vars,:constraints]
     a_col = Symbol("bonmin_"*string(col))
     b_col = Symbol("couenne_"*string(col))
     c_col = Symbol("scip_"*string(col))
     d_col = Symbol("juniper_"*string(col))
-    f[col] = map((a,b,c,d) -> not_missing([a,b,c,d]), f[a_col], f[b_col], f[c_col], f[d_col])
+    e_col = Symbol("minotaur_"*string(col))
+    f[col] = map((a,b,c,d,e) -> not_missing([a,b,c,d,e]), f[a_col], f[b_col], f[c_col], f[d_col], f[e_col])
     delete!(f, a_col)
     delete!(f, b_col)
     delete!(f, c_col)
     delete!(f, d_col)
+    delete!(f, e_col)
 end
 
 fillmissings(f)
@@ -130,7 +134,7 @@ for r in eachrow(f)
         continue
     end
 
-    if r[:juniper_time] >= 3600 && r[:bonmin_time] >= 3600 
+    if r[:juniper_time] >= 3600 && r[:bonmin_time] >= 3600 && r[:minotaur_time] >= 3600 
         noprint_c += 1
         continue
     end
@@ -145,6 +149,7 @@ for r in eachrow(f)
                     break
                 end
             end
+            """
             if r[col] >= 3600
                 time_greater_3600_c += 1
                 if time_greater_3600_c == length(solver_names)
@@ -152,9 +157,11 @@ for r in eachrow(f)
                     break
                 end
             end
+            """
             solver = string(col)[1:end-5]
             gap_name = Symbol(solver*"_gap")
             gap = r[gap_name]
+            """
             if format[gap_name](gap) == "-" && r[col] < 3600
                 time_greater_3600_c += 1
                 if time_greater_3600_c == length(solver_names)
@@ -164,6 +171,7 @@ for r in eachrow(f)
                 sval = "-"
                 r[col] = NaN
             end
+            """
         end
         if sval == ""
             sval = format[col] != nothing ? format[col](r[col]) : r[col]
@@ -188,7 +196,7 @@ end
 sort!(scip_couenne_filtered)
 
 println("Uninteresting lines: ", noprint_c) 
-println("Resonable lines: ", rc) 
+println("#Resonable instances: ", length(reasonable_instances))
 println("reasonable_instances: ")
 println(reasonable_instances)
 println("Filtered by scip/couenne: ")
