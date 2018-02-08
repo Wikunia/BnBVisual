@@ -80,6 +80,12 @@ function computegaps(f; knitro=true)
             r[:objval] = maximum([get_value(:Max, r[Symbol(string(solver)*"_status")], r[Symbol(string(solver)*"_objval")]) for solver in solver_names])
         end
 
+        if r[:objval] == 0
+            println("---------------------------")
+            println(r)
+            println("---------------------------")
+        end
+
         # compute gap
         for solver in solver_names
             gap_col = Symbol(string(solver)*"_gap")
