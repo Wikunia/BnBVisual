@@ -5,16 +5,16 @@ using CSV
 using LatexPrint
 include("util.jl")
 
-files = ["juniper","bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw"]
+files = ["juniper","bonmin-nlw","knitro-nlw","minotaur-nlw","couenne-nlw","scip-nlw"]
 header = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
 "sense","objval","best_bound","status","time"]
-objval_cols = [:scip_objval,:couenne_objval,:bonmin_objval,:juniper_objval]
-solver_names = [:scip,:couenne,:bonmin,:knitro,:juniper]
+objval_cols = [:scip_objval,:couenne_objval,:bonmin_objval,:juniper_objval,:knitro_objval,:minotaur_objval]
+solver_names = [:scip,:couenne,:bonmin,:minotaur,:knitro,:juniper]
 tex_headers = [:instance,:nodes,:constraints,:disc_vars,:nl_constr,:objval,
-:juniper_gap,:bonmin_gap,:knitro_gap,:couenne_gap,:scip_gap,
-:juniper_time,:bonmin_time,:knitro_time,:couenne_time,:scip_time]
+:juniper_gap,:bonmin_gap,:minotaur_gap,:knitro_gap,:couenne_gap,:scip_gap,
+:juniper_time,:bonmin_time,:minotaur_time,:knitro_time,:couenne_time,:scip_time]
 
-mlibheader = ["instance", "gams_obj", "bin", "int", "nl_constr"]
+mlibheader = ["instance", "nodes", "constraints", "bin_vars", "int_vars", "nl_constr","sense"]
 dir = "/home/ole/GitHub/bnb_visual/"
 
 function readjoindata()
@@ -35,13 +35,11 @@ function readjoindata()
         end
     
         delete!(df, :stdout)
-        if c != 1
-            delete!(df, :sense)
-            delete!(df, :nodes)
-            delete!(df, :bin_vars)
-            delete!(df, :int_vars)
-            delete!(df, :constraints)
-        end
+        delete!(df, :sense)
+        delete!(df, :nodes)
+        delete!(df, :bin_vars)
+        delete!(df, :int_vars)
+        delete!(df, :constraints)
         delete!(df, :best_bound)
     
         for col in [:objval,:status,:time]
@@ -57,7 +55,7 @@ function readjoindata()
         c += 1
     end
     
-    df = CSV.read(dir*"data/minlib_extra_data.csv"; header=mlibheader, types=[String for h in mlibheader])
+    df = CSV.read(dir*"data/minlib_extra_data.csv"; header=mlibheader, types=[String,Int64,Int64,Int64,Int64,Int64,String])
     println(df)
     push!(data,df)
     
@@ -70,8 +68,7 @@ function readjoindata()
     println("size: ",size(f,1))
     f = sort(f, cols = :bin_vars)
     println(f)
-    return f #f[1:172,:] # first 172 instances as rest is missing ...
-    
+    return f     
 end
 
 
@@ -152,7 +149,7 @@ tex_start = ["",
 "\\caption{Quality and Runtime Results for Various Instances}",
 "\\begin{tabular}{|r|r|r|r|r||r||r|r|r|r|r||r|r|r|r|r|r|}",
 "\\hline",
-" \\multicolumn{6}{|c||}{} & juniper    & bonmin  & knitro & couenne        & scip            & juniper          & bonmin  & knitro  & couenne         & scip \\\\ ",
+" \\multicolumn{6}{|c||}{} & juniper    & bonmin  & minotaur & knitro & couenne        & scip            & juniper          & bonmin  & knitro  & couenne         & scip \\\\ ",
 "    \\hline",
 "    \\hline"]
 
@@ -199,7 +196,7 @@ ln = ln[1:end-2]*" \\\\"
 ln2 = ln2[1:end-2]*" \\\\"
 write(tex_file, "$ln \n")
 write(tex_file, "\\hline \n")
-write(tex_file, "\\multicolumn{6}{|c||}{} & \\multicolumn{5}{c||}{Gap (\\%)} &  \\multicolumn{5}{c|}{Runtime (seconds)} \\\\ ")
+write(tex_file, "\\multicolumn{6}{|c||}{} & \\multicolumn{6}{c||}{Gap (\\%)} &  \\multicolumn{6}{c|}{Runtime (seconds)} \\\\ ")
 write(tex_file, "\\hline \n")
 write(tex_file, "$ln2 \n")
 
