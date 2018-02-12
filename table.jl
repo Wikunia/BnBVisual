@@ -15,7 +15,7 @@ tex_headers = [:instance,:nodes,:constraints,:disc_vars,:nl_constr,:objval,
 :juniper_gap,:bonmin_gap,:minotaur_gap,:knitro_gap,:couenne_gap,:scip_gap,
 :juniper_time,:bonmin_time,:minotaur_time,:knitro_time,:couenne_time,:scip_time]
 
-mlibheader = ["instance", "nodes", "constraints", "bin_vars", "int_vars", "nl_constr","sense"]
+mlibheader = ["instance", "nodes", "constraints", "bin_vars", "int_vars", "nl_constr","sense","dual"]
 dir = "/home/ole/GitHub/bnb_visual/"
 
 function readjoindata()
@@ -56,7 +56,7 @@ function readjoindata()
         c += 1
     end
     
-    df = CSV.read(dir*"data/minlib_extra_data.csv"; header=mlibheader, types=[String,Int64,Int64,Int64,Int64,Int64,String])
+    df = CSV.read(dir*"data/minlib_extra_data.csv"; header=mlibheader, types=[String,Int64,Int64,Int64,Int64,Int64,String,Float64])
     println(df)
     push!(data,df)
     
@@ -114,6 +114,17 @@ f = readjoindata()
 f = fillmissings(f)
 f = computegaps(f)
 f = sort(f, cols = :disc_vars)
+
+println("Check for dual bounds")
+
+for row in eachrow(f)
+    if (row[:sense] == "Min" && row[:objval]+0.01*abs(row[:objval]) < row[:dual]) ||
+        (row[:sense] == "Max" && row[:objval]-0.01*abs(row[:objval]) > row[:dual])
+        println(row)
+        error("1")
+    end
+end
+
 # remove objval columns
 for obj_col in objval_cols
     delete!(f, obj_col)

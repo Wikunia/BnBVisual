@@ -292,7 +292,7 @@
 ./solvers/couenne-nlw/JuniperLibSm/blend852.stdout:DATA, blend852.jl, 305, 120, 0, 861, Max, 53.96270000000003, NaN, UserLimit, 3734.2898190021515
 ./solvers/couenne-nlw/JuniperLibSm/crudeoil_lee3_09.stdout:DATA, crudeoil_lee3_09.jl, 2305, 126, 0, 5181, Max, NaN, NaN, UserLimit, 3601.675844192505
 ./solvers/couenne-nlw/JuniperLibSm/fo8_ar25_1.stdout:DATA, fo8_ar25_1.jl, 145, 0, 56, 348, Min, 28.15855351436919, NaN, UserLimit, 3696.5788009166718
-./solvers/couenne-nlw/JuniperLibSm/sjup2.stdout:DATA, sjup2.jl, 1697, 8, 0, 17086, Min, 0.0, NaN, Optimal, 3882.9508261680603
+./solvers/couenne-nlw/JuniperLibSm/sjup2.stdout:DATA, sjup2.jl, 1697, 8, 0, 17086, Min, NaN, NaN, UserLimit, 3882.9508261680603
 ./solvers/couenne-nlw/JuniperLibSm/transswitch0030p.stdout:DATA, transswitch0030p.jl, 278, 41, 0, 556, Min, 583.7813597542583, NaN, UserLimit, 3687.2354340553284
 ./solvers/couenne-nlw/JuniperLibSm/crossdock_15x7.stdout:DATA, crossdock_15x7.jl, 211, 210, 0, 45, Min, 15595.999999999998, NaN, UserLimit, 3988.5203080177307
 ./solvers/couenne-nlw/JuniperLibSm/portfol_shortfall100_04.stdout:DATA, portfol_shortfall100_04.jl, 405, 101, 0, 308, Min, -1.0952419518532441, NaN, UserLimit, 3701.6031770706177
