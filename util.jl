@@ -142,8 +142,8 @@ function format_instance(val)
     return replace(val,"_","\\_")
 end
 
-function allfeasible(r)
-    for solver in solver_names
+function allfeasible(r, solvers)
+    for solver in solvers
         gap_sym = Symbol(string(solver)*"_gap")
         if isnan(r[gap_sym])
             return false

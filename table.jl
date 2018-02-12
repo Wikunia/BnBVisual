@@ -10,6 +10,7 @@ header = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
 "sense","objval","best_bound","status","time"]
 objval_cols = [:scip_objval,:couenne_objval,:bonmin_objval,:juniper_objval,:knitro_objval,:minotaur_objval]
 solver_names = [:scip,:couenne,:bonmin,:minotaur,:knitro,:juniper]
+local_solver_names = [:bonmin,:minotaur,:knitro,:juniper]
 tex_headers = [:instance,:nodes,:constraints,:disc_vars,:nl_constr,:objval,
 :juniper_gap,:bonmin_gap,:minotaur_gap,:knitro_gap,:couenne_gap,:scip_gap,
 :juniper_time,:bonmin_time,:minotaur_time,:knitro_time,:couenne_time,:scip_time]
@@ -78,10 +79,11 @@ end
     generateviewdf(f)
 
 Set time to NaN if gap is NaN
-Get only every forth entry
+Get only every nineth entry
 """
 function generateviewdf(of)
     f = deepcopy(of)
+    delete_idx = Vector{Int64}()
     idx = 1
     for r in eachrow(f)
         for solver in solver_names
@@ -91,10 +93,21 @@ function generateviewdf(of)
                 r[time_col] = NaN
             end
         end
+        cnf = 0
+        for solver in local_solver_names
+            gap_sym = Symbol(string(solver)*"_gap")
+            if isnan(r[gap_sym])
+                cnf += 1
+            end
+        end
+        if cnf == length(local_solver_names)
+            push!(delete_idx,idx)
+        end
         idx += 1
     end
+    deleterows!(f, delete_idx)
     println("size of view before uniform: ",size(f,1))
-    return f,f[1:4:end,:]
+    return f,f[1:9:end,:]
 end
 
 f = readjoindata()
@@ -147,9 +160,9 @@ tex_start = ["",
 "\\begin{table*}[t]",
 "\\footnotesize",
 "\\caption{Quality and Runtime Results for Various Instances}",
-"\\begin{tabular}{|r|r|r|r|r||r||r|r|r|r|r||r|r|r|r|r|r|}",
+"\\begin{tabular}{|r|r|r|r|r||r||r|r|r|r|r|r||r|r|r|r|r|r|r|}",
 "\\hline",
-" \\multicolumn{6}{|c||}{} & juniper    & bonmin  & minotaur & knitro & couenne        & scip            & juniper          & bonmin  & knitro  & couenne         & scip \\\\ ",
+" \\multicolumn{6}{|c||}{} & juniper    & bonmin  & minot & knitro & couenne        & scip            & juniper          & bonmin  & minot & knitro  & couenne         & scip \\\\ ",
 "    \\hline",
 "    \\hline"]
 
@@ -171,9 +184,6 @@ for head in tex_headers
         vals = []
         tl_reached = 0
         for r in eachrow(f)
-            if r[:instance] == "heatexch_gen1"
-                continue
-            end
             if !isnan(r[Symbol(spsthead[1]*"_gap")])
                 push!(vals,r[head])
             end
@@ -189,7 +199,11 @@ for head in tex_headers
         else
             ln *= string(@sprintf "%d" tl_reached) * " & "
         end
-        ln2 *= string(@sprintf "%.2f" mean_val) * " & "
+        if mean_val >= 10000
+            ln2 *= string(@sprintf "%.0e" mean_val) * " & "
+        else
+            ln2 *= string(@sprintf "%.2f" mean_val) * " & "
+        end
     end
 end
 ln = ln[1:end-2]*" \\\\"
@@ -212,23 +226,60 @@ for head in tex_headers
     if Symbol(spsthead[1]) in solver_names
         vals = []
         for r in eachrow(f)
-            if r[:instance] == "heatexch_gen1"
-                continue
-            end
-            if allfeasible(r)
+            if allfeasible(r,solver_names)
                 push!(vals,r[head])
+                if Symbol(spsthead[1]) == :juniper && spsthead[2] == "gap" && r[head] > 100
+                    println(r)
+                end
             end
         end
         mean_val = mean(vals)
         l_vals = length(vals)
-        ln *= string(@sprintf "%.2f" mean_val) * " & "
+        if mean_val >= 10000
+            ln *= string(@sprintf "%.0e" mean_val) * " & "
+        else
+            ln *= string(@sprintf "%.2f" mean_val) * " & "
+        end
     end
 end
 ln = ln[1:end-2]*" \\\\"
 title_line = "\\multicolumn{6}{|c||}{Average all solvers feasible (n=$l_vals)} & "
 write(tex_file, "$title_line $ln \n")
+
+
+# average where local solves find feasible
+ln = ""
+l_vals = 0
+for head in tex_headers 
+    sthead = string(head)
+    spsthead = split(sthead,"_")
+    println(head)
+    if Symbol(spsthead[1]) in solver_names
+        if Symbol(spsthead[1]) in local_solver_names
+            vals = []
+            for r in eachrow(f)
+                if allfeasible(r,local_solver_names)
+                    push!(vals,r[head])
+                end
+            end
+            mean_val = mean(vals)
+            l_vals = length(vals)
+            if mean_val >= 10000
+                ln *= string(@sprintf "%.0e" mean_val) * " & "
+            else
+                ln *= string(@sprintf "%.2f" mean_val) * " & "
+            end
+        else
+            ln *= "- & "
+        end
+    end
+end
+ln = ln[1:end-2]*" \\\\"
+title_line = "\\multicolumn{6}{|c||}{Average all local solvers feasible (n=$l_vals)} & "
+write(tex_file, "$title_line $ln \n")
+
 write(tex_file, "\\hline \n")
-write(tex_file, "Instance   & \$|V|\$& \$|C|\$& \$|I|\$& \$|NC|\$ & obj  & juniper    & bonmin  & knitro & couenne        & scip            & juniper          & bonmin  & knitro  & couenne         & scip \\\\ \n")
+write(tex_file, "Instance   & \$|V|\$& \$|C|\$& \$|I|\$& \$|NC|\$ & best obj.  & juniper    & bonmin  & minot &  knitro & couenne        & scip            & juniper          & bonmin  & minot & knitro  & couenne         & scip \\\\ \n")
 write(tex_file, "\\hline \n")
 
 rc = 0
@@ -274,7 +325,7 @@ for r in eachrow(vf)
     rc += 1
  
 
-    if write_counter % 35 == 0 && rc != last_rc
+    if write_counter % 35 == 0 && rc != last_rc && size(vf,1) % 35 != 0
         last_rc = rc
         for eln in tex_end
             write(tex_file, "$eln \n")
