@@ -24,7 +24,6 @@
 ./settings/juniper-bs-nsr/JuniperLibSm/sssd18-06persp.stdout:DATA, sssd18-06persp.jl, 151, 126, 0, 67, Min, 0, NaN, Infeasible, 1.8599789142608643
 ./settings/juniper-bs-nsr/JuniperLibSm/tspn08.stdout:DATA, tspn08.jl, 45, 28, 0, 19, Min, 290.5668497473755, 0.0, Optimal, 1.3507261276245117
 ./settings/juniper-bs-nsr/JuniperLibSm/squfl025-025.stdout:DATA, squfl025-025.jl, 651, 25, 0, 651, Min, 168.80717835690118, 168.80717835690118, Optimal, 28.001715898513794
-./settings/juniper-bs-nsr/JuniperLibSm/sepasequ_complex.stdout:DATA, sepasequ_complex.jl, 498, 50, 0, 1311, Min, 328.2844647089921, 228.4022877829262, UserLimit, 3611.6511809825897
 ./settings/juniper-bs-nsr/JuniperLibSm/sssd20-08persp.stdout:DATA, sssd20-08persp.jl, 217, 184, 0, 85, Min, 0, NaN, Infeasible, 2.1097209453582764
 ./settings/juniper-bs-nsr/JuniperLibSm/crudeoil_pooling_ct2.stdout:DATA, crudeoil_pooling_ct2.jl, 404, 108, 0, 733, Max, 10246.219998093628, 10246.219998097475, Optimal, 767.4311180114746
 ./settings/juniper-bs-nsr/JuniperLibSm/multiplants_stg1a.stdout:DATA, multiplants_stg1a.jl, 424, 216, 0, 250, Max, NaN, 569.2455708365147, UserLimit, 3641.710247039795
@@ -37,7 +36,6 @@
 ./settings/juniper-bs-nsr/JuniperLibSm/tspn05.stdout:DATA, tspn05.jl, 21, 10, 0, 11, Min, 191.25520713154873, 0.0, Optimal, 0.6979119777679443
 ./settings/juniper-bs-nsr/JuniperLibSm/procurement1mot.stdout:DATA, procurement1mot.jl, 785, 60, 0, 750, Max, 291.5416662265819, 291.54166673641964, Optimal, 602.7013988494873
 ./settings/juniper-bs-nsr/JuniperLibSm/multiplants_stg1.stdout:DATA, multiplants_stg1.jl, 415, 198, 0, 262, Max, 268.6017050240043, 469.22877459798036, UserLimit, 3601.176091194153
-./settings/juniper-bs-nsr/JuniperLibSm/fo8_ar2_1.stdout:DATA, fo8_ar2_1.jl, 145, 0, 56, 348, Min, 41.54185156368928, 22.909885521829224, UserLimit, 3600.036155939102
 ./settings/juniper-bs-nsr/JuniperLibSm/multiplants_mtg5.stdout:DATA, multiplants_mtg5.jl, 191, 78, 0, 309, Max, 5924.649333987281, 5924.649333987281, Optimal, 1843.3561220169067
 ./settings/juniper-bs-nsr/JuniperLibSm/sssd15-04.stdout:DATA, sssd15-04.jl, 89, 72, 0, 48, Min, 205054.4345738232, 205054.43063709958, Optimal, 13.519125938415527
 ./settings/juniper-bs-nsr/JuniperLibSm/genpooling_meyer04.stdout:DATA, genpooling_meyer04.jl, 119, 55, 0, 142, Min, 1.3979830831454291e6, 1.3979830831454291e6, Optimal, 51.652525901794434
@@ -57,7 +55,6 @@
 ./settings/juniper-bs-nsr/JuniperLibSm/o7_2.stdout:DATA, o7_2.jl, 115, 42, 0, 212, Min, 159.4459503710961, 61.448928482439506, UserLimit, 3600.007508993149
 ./settings/juniper-bs-nsr/JuniperLibSm/edgecross10-060.stdout:DATA, edgecross10-060.jl, 91, 44, 0, 481, Min, 461.99999481909094, 461.99999481909094, Optimal, 1.7464590072631836
 ./settings/juniper-bs-nsr/JuniperLibSm/super3t.stdout:DATA, super3t.jl, 1056, 44, 0, 1343, Min, NaN, -1.000000009090909, UserLimit, 3641.650642156601
-./settings/juniper-bs-nsr/JuniperLibSm/lop97icx.stdout:DATA, lop97icx.jl, 987, 0, 899, 88, Min, NaN, 4017.268102606139, UserLimit, 3600.205230951309
 ./settings/juniper-bs-nsr/JuniperLibSm/4stufen.stdout:DATA, 4stufen.jl, 150, 48, 0, 99, Min, NaN, NaN, UserLimit, 15.786263942718506
 ./settings/juniper-bs-nsr/JuniperLibSm/portfol_shortfall200_05.stdout:DATA, portfol_shortfall200_05.jl, 805, 201, 0, 608, Min, -1.122457743382665, -1.1433944410523529, UserLimit, 3600.06951212883
 ./settings/juniper-bs-nsr/JuniperLibSm/squfl025-040.stdout:DATA, squfl025-040.jl, 1026, 25, 0, 1041, Min, 197.33383429785118, 197.31723093993568, Optimal, 215.5469582080841
@@ -77,11 +74,9 @@
 ./settings/juniper-bs-nsr/JuniperLibSm/waterno2_24.stdout:DATA, waterno2_24.jl, 3985, 216, 0, 4943, Min, NaN, 1450.0271771076827, UserLimit, 3604.1284308433533
 ./settings/juniper-bs-nsr/JuniperLibSm/sssd18-08persp.stdout:DATA, sssd18-08persp.jl, 201, 168, 0, 83, Min, 0, NaN, Infeasible, 2.069669008255005
 ./settings/juniper-bs-nsr/JuniperLibSm/crudeoil_lee3_06.stdout:DATA, crudeoil_lee3_06.jl, 1537, 84, 0, 3360, Max, NaN, NaN, UserLimit, 1692.849377155304
-./settings/juniper-bs-nsr/JuniperLibSm/sepasequ_convent.stdout:DATA, sepasequ_convent.jl, 642, 20, 0, 1129, Min, 446.0742923404153, 446.0742923404153, Optimal, 128.65703082084656
 ./settings/juniper-bs-nsr/JuniperLibSm/squfl020-150persp.stdout:DATA, squfl020-150persp.jl, 6021, 20, 0, 6151, Min, 557.8478156443348, 557.8478156443348, Optimal, 239.77177810668945
 ./settings/juniper-bs-nsr/JuniperLibSm/crossdock_15x8.stdout:DATA, crossdock_15x8.jl, 241, 240, 0, 47, Min, 16914.0, 15483.91727984528, UserLimit, 3600.067852973938
 ./settings/juniper-bs-nsr/JuniperLibSm/fo9_ar3_1.stdout:DATA, fo9_ar3_1.jl, 181, 0, 72, 436, Min, 59.48529359556604, 20.918814931205272, UserLimit, 3600.0452659130096
-./settings/juniper-bs-nsr/JuniperLibSm/lop97ic.stdout:DATA, lop97ic.jl, 1754, 0, 1662, 92, Min, NaN, 3901.2440425946966, UserLimit, 3600.220669031143
 ./settings/juniper-bs-nsr/JuniperLibSm/multiplants_stg1b.stdout:DATA, multiplants_stg1b.jl, 476, 243, 0, 280, Max, 448.558273174125, 520.0881753319419, UserLimit, 3600.372694015503
 ./settings/juniper-bs-nsr/JuniperLibSm/tspn10.stdout:DATA, tspn10.jl, 66, 45, 0, 22, Min, 225.12606528743066, 0.0, Optimal, 0.7741110324859619
 ./settings/juniper-bs-nsr/JuniperLibSm/graphpart_3pm-0334-0334.stdout:DATA, graphpart_3pm-0334-0334.jl, 109, 108, 0, 37, Min, -36.00000121583062, -36.00000121583062, Optimal, 20.034964084625244
@@ -166,7 +161,6 @@
 ./settings/juniper-bs-nsr/JuniperLibSm/space25a.stdout:DATA, space25a.jl, 384, 240, 0, 202, Min, 484.328643562407, 484.3139290582522, Optimal, 19.013911962509155
 ./settings/juniper-bs-nsr/JuniperLibSm/kport40.stdout:DATA, kport40.jl, 268, 3, 111, 49, Min, NaN, 36.544979891880594, UserLimit, 3600.3563668727875
 ./settings/juniper-bs-nsr/JuniperLibSm/sssd25-08.stdout:DATA, sssd25-08.jl, 257, 224, 0, 90, Min, 482004.2505828571, 471780.49952293123, UserLimit, 3600.0248169898987
-./settings/juniper-bs-nsr/JuniperLibSm/gams02.stdout:DATA, gams02.jl, 12689, 96, 0, 14609, Min, NaN, NaN, UserLimit, 426.4509320259094
 ./settings/juniper-bs-nsr/JuniperLibSm/wastepaper5.stdout:DATA, wastepaper5.jl, 105, 65, 0, 47, Min, 0.0008212021912905406, 0.0008212021912905406, Optimal, 11.626800060272217
 ./settings/juniper-bs-nsr/JuniperLibSm/deb6.stdout:DATA, deb6.jl, 476, 20, 0, 508, Min, 201.73926040328627, 201.73926040328627, Optimal, 26.832496881484985
 ./settings/juniper-bs-nsr/JuniperLibSm/crudeoil_li21.stdout:DATA, crudeoil_li21.jl, 1349, 216, 0, 4682, Max, NaN, NaN, UserLimit, 498.8640470504761
@@ -238,7 +232,6 @@
 ./settings/juniper-bs-nsr/JuniperLibSm/genpooling_meyer10.stdout:DATA, genpooling_meyer10.jl, 395, 187, 0, 424, Min, 1.1347518563766254e6, 1.1347518563766254e6, Optimal, 135.12804794311523
 ./settings/juniper-bs-nsr/JuniperLibSm/ndcc12persp.stdout:DATA, ndcc12persp.jl, 691, 46, 0, 284, Min, 106.35415479599999, 106.35415479599999, Optimal, 14.747731924057007
 ./settings/juniper-bs-nsr/JuniperLibSm/gasnet_al3.stdout:DATA, gasnet_al3.jl, 725, 136, 0, 831, Min, 8945.668405250402, 8945.668405250402, Optimal, 1522.0562670230865
-./settings/juniper-bs-nsr/JuniperLibSm/transswitch0039r.stdout:DATA, transswitch0039r.jl, 329, 46, 0, 474, Min, 41866.123169084334, 41866.123169084334, Optimal, 45.00688886642456
 ./settings/juniper-bs-nsr/JuniperLibSm/edgecross14-098.stdout:DATA, edgecross14-098.jl, 183, 182, 0, 1457, Min, 1408.999999990909, 1408.9999753063685, Optimal, 3.728487014770508
 ./settings/juniper-bs-nsr/JuniperLibSm/nous1.stdout:DATA, nous1.jl, 51, 2, 0, 44, Min, 1.5670719637309114, 1.5670719637309114, Optimal, 3.2898828983306885
 ./settings/juniper-bs-nsr/JuniperLibSm/pooling_epa3.stdout:DATA, pooling_epa3.jl, 1105, 150, 0, 1718, Min, -14948.115103178878, -14948.115103178878, Optimal, 84.47655391693115
@@ -274,7 +267,6 @@
 ./settings/juniper-bs-nsr/JuniperLibSm/CLay0305H.stdout:DATA, CLay0305H.jl, 276, 55, 0, 396, Min, 8907.49984136182, 7344.999880209637, UserLimit, 3600.2463009357452
 ./settings/juniper-bs-nsr/JuniperLibSm/fo9_ar5_1.stdout:DATA, fo9_ar5_1.jl, 181, 0, 72, 436, Min, 50.24999924724152, 16.68350947495607, UserLimit, 3600.00812792778
 ./settings/juniper-bs-nsr/JuniperLibSm/crudeoil_lee4_10.stdout:DATA, crudeoil_lee4_10.jl, 3911, 190, 0, 8702, Max, NaN, NaN, UserLimit, 6394.416081905365
-./settings/juniper-bs-nsr/JuniperLibSm/wastepaper4.stdout:DATA, wastepaper4.jl, 77, 44, 0, 39, Min, 0.0034791707953404417, 0.0034791707953404417, Optimal, 3.8110761642456055
 ./settings/juniper-bs-nsr/JuniperLibSm/transswitch0014p.stdout:DATA, transswitch0014p.jl, 139, 20, 0, 278, Min, 8082.581681729161, 8082.301045202543, Optimal, 1.3898611068725586
 ./settings/juniper-bs-nsr/JuniperLibSm/transswitch0118r.stdout:DATA, transswitch0118r.jl, 1240, 179, 0, 1764, Min, 130045.5631708964, 130045.5631708964, Optimal, 178.35412001609802
 ./settings/juniper-bs-nsr/JuniperLibSm/eg_int_s.stdout:DATA, eg_int_s.jl, 8, 0, 3, 28, Min, 6.453102885012206, 6.453102885012206, Optimal, 5.9996349811553955

@@ -23,7 +23,6 @@
 ./solvers/bonmin-nlw/JuniperLibSm/sssd18-06persp.stdout:DATA, sssd18-06persp.jl, 151, 126, 0, 67, Min, 0, NaN, Infeasible, 0.450941801071167
 ./solvers/bonmin-nlw/JuniperLibSm/tspn08.stdout:DATA, tspn08.jl, 45, 28, 0, 19, Min, NaN, NaN, Error, 0.18842101097106934
 ./solvers/bonmin-nlw/JuniperLibSm/squfl025-025.stdout:DATA, squfl025-025.jl, 651, 25, 0, 651, Min, 168.80717808385424, NaN, Optimal, 11.15681505203247
-./solvers/bonmin-nlw/JuniperLibSm/sepasequ_complex.stdout:DATA, sepasequ_complex.jl, 498, 50, 0, 1311, Min, 326.52965708809256, NaN, Optimal, 3407.227732896805
 ./solvers/bonmin-nlw/JuniperLibSm/sssd20-08persp.stdout:DATA, sssd20-08persp.jl, 217, 184, 0, 85, Min, 0, NaN, Infeasible, 0.5353538990020752
 ./solvers/bonmin-nlw/JuniperLibSm/crudeoil_pooling_ct2.stdout:DATA, crudeoil_pooling_ct2.jl, 404, 108, 0, 733, Max, 10209.525004718154, NaN, UserLimit, 3694.4596269130707
 ./solvers/bonmin-nlw/JuniperLibSm/multiplants_stg1a.stdout:DATA, multiplants_stg1a.jl, 424, 216, 0, 250, Max, 390.96552270423774, NaN, UserLimit, 3736.184532880783
@@ -36,7 +35,6 @@
 ./solvers/bonmin-nlw/JuniperLibSm/tspn05.stdout:DATA, tspn05.jl, 21, 10, 0, 11, Min, NaN, NaN, Error, 0.19086480140686035
 ./solvers/bonmin-nlw/JuniperLibSm/procurement1mot.stdout:DATA, procurement1mot.jl, 785, 60, 0, 750, Max, 291.54165829976176, NaN, Optimal, 203.6088490486145
 ./solvers/bonmin-nlw/JuniperLibSm/multiplants_stg1.stdout:DATA, multiplants_stg1.jl, 415, 198, 0, 262, Max, 355.08663910733924, NaN, UserLimit, 3721.6742689609528
-./solvers/bonmin-nlw/JuniperLibSm/fo8_ar2_1.stdout:DATA, fo8_ar2_1.jl, 145, 0, 56, 348, Min, NaN, NaN, UserLimit, 3819.4359130859375
 ./solvers/bonmin-nlw/JuniperLibSm/multiplants_mtg5.stdout:DATA, multiplants_mtg5.jl, 191, 78, 0, 309, Max, 5924.649351536803, NaN, Optimal, 1827.5758881568909
 ./solvers/bonmin-nlw/JuniperLibSm/sssd15-04.stdout:DATA, sssd15-04.jl, 89, 72, 0, 48, Min, 205054.4332876113, NaN, Optimal, 18.91990303993225
 ./solvers/bonmin-nlw/JuniperLibSm/genpooling_meyer04.stdout:DATA, genpooling_meyer04.jl, 119, 55, 0, 142, Min, 0, NaN, Infeasible, 14.043681144714355
@@ -57,7 +55,6 @@
 ./solvers/bonmin-nlw/JuniperLibSm/o7_2.stdout:DATA, o7_2.jl, 115, 42, 0, 212, Min, 121.06246913483727, NaN, UserLimit, 3879.5690989494324
 ./solvers/bonmin-nlw/JuniperLibSm/edgecross10-060.stdout:DATA, edgecross10-060.jl, 91, 44, 0, 481, Min, 458.9999872363451, NaN, Optimal, 0.6379249095916748
 ./solvers/bonmin-nlw/JuniperLibSm/super3t.stdout:DATA, super3t.jl, 1056, 44, 0, 1343, Min, -0.68575008688147, NaN, UserLimit, 3654.240779876709
-./solvers/bonmin-nlw/JuniperLibSm/lop97icx.stdout:DATA, lop97icx.jl, 987, 0, 899, 88, Min, 4104.508056000003, NaN, UserLimit, 3695.2193200588226
 ./solvers/bonmin-nlw/JuniperLibSm/4stufen.stdout:DATA, 4stufen.jl, 150, 48, 0, 99, Min, NaN, NaN, Error, 0.204725980758667
 ./solvers/bonmin-nlw/JuniperLibSm/portfol_shortfall200_05.stdout:DATA, portfol_shortfall200_05.jl, 805, 201, 0, 608, Min, -1.1250494812589755, NaN, UserLimit, 3608.4015579223633
 ./solvers/bonmin-nlw/JuniperLibSm/squfl025-040.stdout:DATA, squfl025-040.jl, 1026, 25, 0, 1041, Min, 197.33383439443452, NaN, Optimal, 66.95010709762573
@@ -76,11 +73,9 @@
 ./solvers/bonmin-nlw/JuniperLibSm/heatexch_gen2.stdout:DATA, heatexch_gen2.jl, 149, 16, 0, 167, Min, 667155.1519541661, NaN, Optimal, 47.59028911590576
 ./solvers/bonmin-nlw/JuniperLibSm/waterno2_24.stdout:DATA, waterno2_24.jl, 3985, 216, 0, 4943, Min, NaN, NaN, UserLimit, 3640.708904981613
 ./solvers/bonmin-nlw/JuniperLibSm/sssd18-08persp.stdout:DATA, sssd18-08persp.jl, 201, 168, 0, 83, Min, 0, NaN, Infeasible, 6.863566875457764
-./solvers/bonmin-nlw/JuniperLibSm/sepasequ_convent.stdout:DATA, sepasequ_convent.jl, 642, 20, 0, 1129, Min, 0, NaN, Infeasible, 235.3327238559723
 ./solvers/bonmin-nlw/JuniperLibSm/squfl020-150persp.stdout:DATA, squfl020-150persp.jl, 6021, 20, 0, 6151, Min, 557.8478126020086, NaN, Optimal, 300.8145411014557
 ./solvers/bonmin-nlw/JuniperLibSm/crossdock_15x8.stdout:DATA, crossdock_15x8.jl, 241, 240, 0, 47, Min, NaN, NaN, UserLimit, 3661.9044859409332
 ./solvers/bonmin-nlw/JuniperLibSm/fo9_ar3_1.stdout:DATA, fo9_ar3_1.jl, 181, 0, 72, 436, Min, NaN, NaN, UserLimit, 3788.1341729164124
-./solvers/bonmin-nlw/JuniperLibSm/lop97ic.stdout:DATA, lop97ic.jl, 1754, 0, 1662, 92, Min, NaN, NaN, UserLimit, 3634.9005880355835
 ./solvers/bonmin-nlw/JuniperLibSm/multiplants_stg1b.stdout:DATA, multiplants_stg1b.jl, 476, 243, 0, 280, Max, 445.1078970128151, NaN, UserLimit, 3710.3565578460693
 ./solvers/bonmin-nlw/JuniperLibSm/tspn10.stdout:DATA, tspn10.jl, 66, 45, 0, 22, Min, NaN, NaN, Error, 0.18953990936279297
 ./solvers/bonmin-nlw/JuniperLibSm/graphpart_3pm-0334-0334.stdout:DATA, graphpart_3pm-0334-0334.jl, 109, 108, 0, 37, Min, -35.000001028836316, NaN, Optimal, 0.3714029788970947
@@ -165,7 +160,6 @@
 ./solvers/bonmin-nlw/JuniperLibSm/space25a.stdout:DATA, space25a.jl, 384, 240, 0, 202, Min, 484.3285717654049, NaN, Optimal, 20.208822011947632
 ./solvers/bonmin-nlw/JuniperLibSm/kport40.stdout:DATA, kport40.jl, 268, 3, 111, 49, Min, NaN, NaN, Error, 0.19859695434570312
 ./solvers/bonmin-nlw/JuniperLibSm/sssd25-08.stdout:DATA, sssd25-08.jl, 257, 224, 0, 90, Min, 472162.934214916, NaN, UserLimit, 3936.9358599185944
-./solvers/bonmin-nlw/JuniperLibSm/gams02.stdout:DATA, gams02.jl, 12689, 96, 0, 14609, Min, 8.946686046254215e7, NaN, Optimal, 280.9918417930603
 ./solvers/bonmin-nlw/JuniperLibSm/wastepaper5.stdout:DATA, wastepaper5.jl, 105, 65, 0, 47, Min, NaN, NaN, Error, 0.1887810230255127
 ./solvers/bonmin-nlw/JuniperLibSm/deb6.stdout:DATA, deb6.jl, 476, 20, 0, 508, Min, 201.73925680496447, NaN, Optimal, 50.611587047576904
 ./solvers/bonmin-nlw/JuniperLibSm/crudeoil_li21.stdout:DATA, crudeoil_li21.jl, 1349, 216, 0, 4682, Max, 0, NaN, Infeasible, 351.2219741344452
@@ -237,7 +231,6 @@
 ./solvers/bonmin-nlw/JuniperLibSm/genpooling_meyer10.stdout:DATA, genpooling_meyer10.jl, 395, 187, 0, 424, Min, 1.1479964068864863e6, NaN, Optimal, 1460.882266998291
 ./solvers/bonmin-nlw/JuniperLibSm/ndcc12persp.stdout:DATA, ndcc12persp.jl, 691, 46, 0, 284, Min, 0, NaN, Infeasible, 2.868828058242798
 ./solvers/bonmin-nlw/JuniperLibSm/gasnet_al3.stdout:DATA, gasnet_al3.jl, 725, 136, 0, 831, Min, NaN, NaN, Error, 0.1990060806274414
-./solvers/bonmin-nlw/JuniperLibSm/transswitch0039r.stdout:DATA, transswitch0039r.jl, 329, 46, 0, 474, Min, 0, NaN, Infeasible, 15.748240947723389
 ./solvers/bonmin-nlw/JuniperLibSm/edgecross14-098.stdout:DATA, edgecross14-098.jl, 183, 182, 0, 1457, Min, 1355.99997857001, NaN, Optimal, 2.039590835571289
 ./solvers/bonmin-nlw/JuniperLibSm/nous1.stdout:DATA, nous1.jl, 51, 2, 0, 44, Min, 0, NaN, Infeasible, 0.3242359161376953
 ./solvers/bonmin-nlw/JuniperLibSm/pooling_epa3.stdout:DATA, pooling_epa3.jl, 1105, 150, 0, 1718, Min, NaN, NaN, Error, 0.19884085655212402
@@ -273,7 +266,6 @@
 ./solvers/bonmin-nlw/JuniperLibSm/CLay0305H.stdout:DATA, CLay0305H.jl, 276, 55, 0, 396, Min, 8184.999851800677, NaN, Optimal, 1294.6663329601288
 ./solvers/bonmin-nlw/JuniperLibSm/fo9_ar5_1.stdout:DATA, fo9_ar5_1.jl, 181, 0, 72, 436, Min, NaN, NaN, UserLimit, 3787.3735959529877
 ./solvers/bonmin-nlw/JuniperLibSm/crudeoil_lee4_10.stdout:DATA, crudeoil_lee4_10.jl, 3911, 190, 0, 8702, Max, NaN, NaN, UserLimit, 6378.3967461586
-./solvers/bonmin-nlw/JuniperLibSm/wastepaper4.stdout:DATA, wastepaper4.jl, 77, 44, 0, 39, Min, NaN, NaN, Error, 2.3309271335601807
 ./solvers/bonmin-nlw/JuniperLibSm/transswitch0014p.stdout:DATA, transswitch0014p.jl, 139, 20, 0, 278, Min, 8082.581681293508, NaN, Optimal, 13.136727809906006
 ./solvers/bonmin-nlw/JuniperLibSm/transswitch0118r.stdout:DATA, transswitch0118r.jl, 1240, 179, 0, 1764, Min, 0, NaN, Infeasible, 45.25458097457886
 ./solvers/bonmin-nlw/JuniperLibSm/eg_int_s.stdout:DATA, eg_int_s.jl, 8, 0, 3, 28, Min, 6.453102792798464, NaN, Optimal, 4.543150901794434

@@ -79,7 +79,7 @@ end
     generateviewdf(f)
 
 Set time to NaN if gap is NaN
-Get only every nineth entry
+Get only every Xth entry (atm x = 13 :D)
 """
 function generateviewdf(of)
     f = deepcopy(of)
@@ -107,7 +107,7 @@ function generateviewdf(of)
     end
     deleterows!(f, delete_idx)
     println("size of view before uniform: ",size(f,1))
-    return f,f[1:9:end,:]
+    return f,f[1:13:end,:]
 end
 
 f = readjoindata()
@@ -117,13 +117,15 @@ f = sort(f, cols = :disc_vars)
 
 println("Check for dual bounds")
 
+nviolations = 0
 for row in eachrow(f)
-    if (row[:sense] == "Min" && row[:objval]+0.01*abs(row[:objval]) < row[:dual]) ||
-        (row[:sense] == "Max" && row[:objval]-0.01*abs(row[:objval]) > row[:dual])
+    if (row[:sense] == "Min" && row[:objval]+0.05*(abs(row[:objval])+0.001) < row[:dual]) ||
+        (row[:sense] == "Max" && row[:objval]-0.05*(abs(row[:objval])+0.001) > row[:dual])
         println(row)
-        error("1")
+        nviolations += 1
     end
 end
+println("#Violations: ", nviolations)
 
 # remove objval columns
 for obj_col in objval_cols

@@ -23,7 +23,6 @@
 ./solvers/knitro-nlw/JuniperLibSm/sssd18-06persp.stdout:DATA, sssd18-06persp.jl, 151, 126, 0, 67, Min, 397992.2949669409, NaN, Optimal, 374.59050583839417
 ./solvers/knitro-nlw/JuniperLibSm/tspn08.stdout:DATA, tspn08.jl, 45, 28, 0, 19, Min, 290.5668539221008, NaN, Optimal, 0.30754518508911133
 ./solvers/knitro-nlw/JuniperLibSm/squfl025-025.stdout:DATA, squfl025-025.jl, 651, 25, 0, 651, Min, 168.80722610311994, NaN, Optimal, 113.45984482765198
-./solvers/knitro-nlw/JuniperLibSm/sepasequ_complex.stdout:DATA, sepasequ_complex.jl, 498, 50, 0, 1311, Min, 7.521167923999325e19, NaN, UserLimit, 3600.321156024933
 ./solvers/knitro-nlw/JuniperLibSm/sssd20-08persp.stdout:DATA, sssd20-08persp.jl, 217, 184, 0, 85, Min, 478787.2028385598, NaN, NodeLimit, 1961.1447191238403
 ./solvers/knitro-nlw/JuniperLibSm/crudeoil_pooling_ct2.stdout:DATA, crudeoil_pooling_ct2.jl, 404, 108, 0, 733, Max, 9639.512499999995, NaN, UserLimit, 3600.3085310459137
 ./solvers/knitro-nlw/JuniperLibSm/multiplants_stg1a.stdout:DATA, multiplants_stg1a.jl, 424, 216, 0, 250, Max, NaN, NaN, UserLimit, 3600.2970938682556
@@ -35,7 +34,6 @@
 ./solvers/knitro-nlw/JuniperLibSm/tspn05.stdout:DATA, tspn05.jl, 21, 10, 0, 11, Min, 191.25520780830496, NaN, Optimal, 0.29712796211242676
 ./solvers/knitro-nlw/JuniperLibSm/procurement1mot.stdout:DATA, procurement1mot.jl, 785, 60, 0, 750, Max, 291.54165772189634, NaN, Optimal, 2344.333368062973
 ./solvers/knitro-nlw/JuniperLibSm/multiplants_stg1.stdout:DATA, multiplants_stg1.jl, 415, 198, 0, 262, Max, NaN, NaN, UserLimit, 3600.318869113922
-./solvers/knitro-nlw/JuniperLibSm/fo8_ar2_1.stdout:DATA, fo8_ar2_1.jl, 145, 0, 56, 348, Min, 28.479875741361706, NaN, UserLimit, 3600.2939960956573
 ./solvers/knitro-nlw/JuniperLibSm/multiplants_mtg5.stdout:DATA, multiplants_mtg5.jl, 191, 78, 0, 309, Max, NaN, NaN, UserLimit, 3600.3649139404297
 ./solvers/knitro-nlw/JuniperLibSm/sssd15-04.stdout:DATA, sssd15-04.jl, 89, 72, 0, 48, Min, 205054.45844754897, NaN, Optimal, 11.64628291130066
 ./solvers/knitro-nlw/JuniperLibSm/genpooling_meyer04.stdout:DATA, genpooling_meyer04.jl, 119, 55, 0, 142, Min, 1.086187136817635e6, NaN, Optimal, 55.021634101867676
@@ -55,7 +53,6 @@
 ./solvers/knitro-nlw/JuniperLibSm/o7_2.stdout:DATA, o7_2.jl, 115, 42, 0, 212, Min, NaN, NaN, UserLimit, 3600.337585926056
 ./solvers/knitro-nlw/JuniperLibSm/edgecross10-060.stdout:DATA, edgecross10-060.jl, 91, 44, 0, 481, Min, 462.0000000550402, NaN, Optimal, 0.5491859912872314
 ./solvers/knitro-nlw/JuniperLibSm/super3t.stdout:DATA, super3t.jl, 1056, 44, 0, 1343, Min, NaN, NaN, UserLimit, 3600.325718164444
-./solvers/knitro-nlw/JuniperLibSm/lop97icx.stdout:DATA, lop97icx.jl, 987, 0, 899, 88, Min, 6124.291363199998, NaN, UserLimit, 3600.333561897278
 ./solvers/knitro-nlw/JuniperLibSm/4stufen.stdout:DATA, 4stufen.jl, 150, 48, 0, 99, Min, 0.0, NaN, Error, 0.42644500732421875
 ./solvers/knitro-nlw/JuniperLibSm/portfol_shortfall200_05.stdout:DATA, portfol_shortfall200_05.jl, 805, 201, 0, 608, Min, -1.113568246460406, NaN, UserLimit, 3600.3358640670776
 ./solvers/knitro-nlw/JuniperLibSm/squfl025-040.stdout:DATA, squfl025-040.jl, 1026, 25, 0, 1041, Min, 197.33388124193786, NaN, Optimal, 574.414880990982
@@ -75,11 +72,9 @@
 ./solvers/knitro-nlw/JuniperLibSm/waterno2_24.stdout:DATA, waterno2_24.jl, 3985, 216, 0, 4943, Min, 9039.951684867941, NaN, UserLimit, 3600.3168029785156
 ./solvers/knitro-nlw/JuniperLibSm/sssd18-08persp.stdout:DATA, sssd18-08persp.jl, 201, 168, 0, 83, Min, 862176.7899315245, NaN, NodeLimit, 3082.2613191604614
 ./solvers/knitro-nlw/JuniperLibSm/crudeoil_lee3_06.stdout:DATA, crudeoil_lee3_06.jl, 1537, 84, 0, 3360, Max, 80.44006567952829, NaN, UserLimit, 3600.603502035141
-./solvers/knitro-nlw/JuniperLibSm/sepasequ_convent.stdout:DATA, sepasequ_convent.jl, 642, 20, 0, 1129, Min, 429.72767218486575, NaN, Optimal, 1150.3564009666443
 ./solvers/knitro-nlw/JuniperLibSm/squfl020-150persp.stdout:DATA, squfl020-150persp.jl, 6021, 20, 0, 6151, Min, 557.8486463023004, NaN, Optimal, 22.660961151123047
 ./solvers/knitro-nlw/JuniperLibSm/crossdock_15x8.stdout:DATA, crossdock_15x8.jl, 241, 240, 0, 47, Min, 15939.612386445064, NaN, UserLimit, 3600.3206210136414
 ./solvers/knitro-nlw/JuniperLibSm/fo9_ar3_1.stdout:DATA, fo9_ar3_1.jl, 181, 0, 72, 436, Min, NaN, NaN, UserLimit, 3600.304004907608
-./solvers/knitro-nlw/JuniperLibSm/lop97ic.stdout:DATA, lop97ic.jl, 1754, 0, 1662, 92, Min, NaN, NaN, UserLimit, 3600.3404281139374
 ./solvers/knitro-nlw/JuniperLibSm/multiplants_stg1b.stdout:DATA, multiplants_stg1b.jl, 476, 243, 0, 280, Max, NaN, NaN, UserLimit, 3600.3056640625
 ./solvers/knitro-nlw/JuniperLibSm/tspn10.stdout:DATA, tspn10.jl, 66, 45, 0, 22, Min, 225.12607161171616, NaN, Optimal, 0.4668910503387451
 ./solvers/knitro-nlw/JuniperLibSm/graphpart_3pm-0334-0334.stdout:DATA, graphpart_3pm-0334-0334.jl, 109, 108, 0, 37, Min, -34.0, NaN, Optimal, 0.3614821434020996
@@ -162,7 +157,6 @@
 ./solvers/knitro-nlw/JuniperLibSm/space25a.stdout:DATA, space25a.jl, 384, 240, 0, 202, Min, NaN, NaN, UserLimit, 3600.3093960285187
 ./solvers/knitro-nlw/JuniperLibSm/kport40.stdout:DATA, kport40.jl, 268, 3, 111, 49, Min, NaN, NaN, UserLimit, 3600.313449859619
 ./solvers/knitro-nlw/JuniperLibSm/sssd25-08.stdout:DATA, sssd25-08.jl, 257, 224, 0, 90, Min, NaN, NaN, NodeLimit, 2246.853991985321
-./solvers/knitro-nlw/JuniperLibSm/gams02.stdout:DATA, gams02.jl, 12689, 96, 0, 14609, Min, 1.0177180530736624e8, NaN, UserLimit, 3600.3773999214172
 ./solvers/knitro-nlw/JuniperLibSm/wastepaper5.stdout:DATA, wastepaper5.jl, 105, 65, 0, 47, Min, 0.0009231790196904886, NaN, UserLimit, 23.096729040145874
 ./solvers/knitro-nlw/JuniperLibSm/deb6.stdout:DATA, deb6.jl, 476, 20, 0, 508, Min, 201.73932074365314, NaN, Optimal, 830.4395849704742
 ./solvers/knitro-nlw/JuniperLibSm/crudeoil_li21.stdout:DATA, crudeoil_li21.jl, 1349, 216, 0, 4682, Max, NaN, NaN, UserLimit, 3600.327337026596
@@ -229,7 +223,6 @@
 ./solvers/knitro-nlw/JuniperLibSm/o9_ar4_1.stdout:DATA, o9_ar4_1.jl, 181, 0, 72, 436, Min, NaN, NaN, UserLimit, 3600.3584468364716
 ./solvers/knitro-nlw/JuniperLibSm/ndcc12persp.stdout:DATA, ndcc12persp.jl, 691, 46, 0, 284, Min, 108.1138853919999, NaN, Optimal, 78.06535792350769
 ./solvers/knitro-nlw/JuniperLibSm/gasnet_al3.stdout:DATA, gasnet_al3.jl, 725, 136, 0, 831, Min, 0.0, NaN, Error, 0.3035459518432617
-./solvers/knitro-nlw/JuniperLibSm/transswitch0039r.stdout:DATA, transswitch0039r.jl, 329, 46, 0, 474, Min, 41869.7357410424, NaN, Optimal, 19.094651222229004
 ./solvers/knitro-nlw/JuniperLibSm/edgecross14-098.stdout:DATA, edgecross14-098.jl, 183, 182, 0, 1457, Min, 1358.0, NaN, Optimal, 1.4270660877227783
 ./solvers/knitro-nlw/JuniperLibSm/nous1.stdout:DATA, nous1.jl, 51, 2, 0, 44, Min, 1.5670720000000034, NaN, Optimal, 1.2881720066070557
 ./solvers/knitro-nlw/JuniperLibSm/pooling_epa3.stdout:DATA, pooling_epa3.jl, 1105, 150, 0, 1718, Min, -14922.106251044544, NaN, UserLimit, 3600.3175950050354
@@ -265,7 +258,6 @@
 ./solvers/knitro-nlw/JuniperLibSm/CLay0305H.stdout:DATA, CLay0305H.jl, 276, 55, 0, 396, Min, 8387.499985662284, NaN, UserLimit, 3600.313852071762
 ./solvers/knitro-nlw/JuniperLibSm/fo9_ar5_1.stdout:DATA, fo9_ar5_1.jl, 181, 0, 72, 436, Min, NaN, NaN, UserLimit, 3600.459619998932
 ./solvers/knitro-nlw/JuniperLibSm/crudeoil_lee4_10.stdout:DATA, crudeoil_lee4_10.jl, 3911, 190, 0, 8702, Max, NaN, NaN, UserLimit, 3600.9012060165405
-./solvers/knitro-nlw/JuniperLibSm/wastepaper4.stdout:DATA, wastepaper4.jl, 77, 44, 0, 39, Min, 0.004200736427034961, NaN, UserLimit, 6.181788921356201
 ./solvers/knitro-nlw/JuniperLibSm/transswitch0014p.stdout:DATA, transswitch0014p.jl, 139, 20, 0, 278, Min, 8082.581689602238, NaN, Optimal, 31.508032083511353
 ./solvers/knitro-nlw/JuniperLibSm/transswitch0118r.stdout:DATA, transswitch0118r.jl, 1240, 179, 0, 1764, Min, 129457.84903235549, NaN, Optimal, 490.8140778541565
 ./solvers/knitro-nlw/JuniperLibSm/eg_int_s.stdout:DATA, eg_int_s.jl, 8, 0, 3, 28, Min, 6.4531031567243655, NaN, Optimal, 6.669654130935669

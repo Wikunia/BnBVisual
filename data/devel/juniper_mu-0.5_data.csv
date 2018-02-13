@@ -34,7 +34,6 @@
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/FLay05H.jl, FLay05H.jl, 383, 40, 0, 466, Min, 64.49806112127324, 59.32958737468963, UserLimit, 1201.264587879181
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/fo7_2.jl, fo7_2.jl, 115, 42, 0, 212, Min, 32.23327561423038, 8.942986266499478, UserLimit, 1200.010883808136
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/forest.jl, forest.jl, 237, 73, 0, 310, Max, 1.4396226486553578e7, 1.439631683865989e7, Optimal, 11.529888153076172
-/home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/gams02.jl, gams02.jl, 12689, 96, 0, 14609, Min, 0, NaN, Infeasible, 685.3987810611725
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/gasnet_al3.jl, gasnet_al3.jl, 725, 136, 0, 831, Min, 0, NaN, Infeasible, 29.54583978652954
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/gasprod_sarawak16.jl, gasprod_sarawak16.jl, 1527, 38, 0, 2253, Min, -32271.218395440796, -32271.218395440796, Optimal, 93.1926519870758
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/gasprod_sarawak81.jl, gasprod_sarawak81.jl, 7572, 38, 0, 11093, Min, -32273.004032949873, -32273.004032949873, Optimal, 739.5768830776215
@@ -100,7 +99,6 @@
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/routingdelay_proj.jl, routingdelay_proj.jl, 1124, 396, 0, 2978, Min, 146.6372689753223, 146.62441848932366, Optimal, 827.1855139732361
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/RSyn0815M04H.jl, RSyn0815M04H.jl, 1797, 376, 0, 3191, Max, 3410.8566171198736, 3410.8566171198736, Optimal, 241.9896318912506
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/RSyn0820M02H.jl, RSyn0820M02H.jl, 979, 208, 0, 1501, Max, 1092.09187935315, 1092.09187935315, Optimal, 81.38448691368103
-/home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/sepasequ_complex.jl, sepasequ_complex.jl, 498, 50, 0, 1311, Min, 525.7574791973495, 97.92619287510335, UserLimit, 1200.4413480758667
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/sfacloc1_2_80.jl, sfacloc1_2_80.jl, 232, 62, 0, 2089, Min, 12.752053228934859, 12.752053228934859, Optimal, 41.12921190261841
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/sfacloc1_2_90.jl, sfacloc1_2_90.jl, 200, 30, 0, 349, Min, 17.891542558255217, 17.891542558255217, Optimal, 4.54654598236084
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/sfacloc1_2_95.jl, sfacloc1_2_95.jl, 172, 9, 0, 209, Min, 18.850070001936963, 18.850070011276497, Optimal, 1.737637996673584
@@ -151,7 +149,6 @@
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/transswitch0030p.jl, transswitch0030p.jl, 278, 41, 0, 556, Min, 573.9181315228456, 573.9181313391396, Optimal, 3.822772979736328
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/transswitch0030r.jl, transswitch0030r.jl, 278, 41, 0, 392, Min, 575.400353271771, 575.4003530870573, Optimal, 34.75111413002014
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/transswitch0039p.jl, transswitch0039p.jl, 329, 46, 0, 658, Min, 41866.12316906461, 41865.917756554954, Optimal, 5.280009031295776
-/home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/transswitch0039r.jl, transswitch0039r.jl, 329, 46, 0, 474, Min, 41866.123169084334, 41866.123169084334, Optimal, 65.34874105453491
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/transswitch0118p.jl, transswitch0118p.jl, 1240, 179, 0, 2480, Min, 129469.31381304075, 129457.87589205596, Optimal, 6.550659894943237
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/tspn05.jl, tspn05.jl, 21, 10, 0, 11, Min, 191.25520713154873, 0.0, Optimal, 0.7711231708526611
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/tspn08.jl, tspn08.jl, 45, 28, 0, 19, Min, 290.5668497473755, 0.0, Optimal, 1.6467931270599365
@@ -160,7 +157,6 @@
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/tspn15.jl, tspn15.jl, 136, 105, 0, 35, Min, 331.089299483446, 0.0, Optimal, 1.0624029636383057
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/var_con10.jl, var_con10.jl, 574, 12, 0, 465, Min, 444.2137914264653, 444.2137914264653, Optimal, 8.584874868392944
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/var_con5.jl, var_con5.jl, 574, 12, 0, 465, Min, 278.1447474830901, 278.1447474830901, Optimal, 8.312597036361694
-/home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/wastepaper4.jl, wastepaper4.jl, 77, 44, 0, 39, Min, 0.003479168129231345, 0.003479168129231345, Optimal, 4.300541877746582
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/wastepaper5.jl, wastepaper5.jl, 105, 65, 0, 47, Min, 0.000821207841983665, 0.000821207841983665, Optimal, 29.973208904266357
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/wastepaper6.jl, wastepaper6.jl, 137, 90, 0, 55, Min, 0.00012637644845352137, 0.00012637644845352137, Optimal, 287.77026200294495
 /home/ole/.julia/v0.6/MINLPLibJuMP/instances/JuniperLibSm/water4.jl, water4.jl, 196, 126, 0, 138, Min, 1044.6495225484887, 819.5998600841506, UserLimit, 1200.156065940857
