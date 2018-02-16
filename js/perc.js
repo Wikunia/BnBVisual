@@ -423,7 +423,6 @@ function getandrenderdata(i,files,data) {
             }
             maxTime = 4000;
             data,max_perc = data2line(data,maxTime);
-            console.log(data)
             render(data,maxTime,max_perc);
         }else {
           getandrenderdata(i+1,files,data)

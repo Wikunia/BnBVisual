@@ -169,7 +169,6 @@ function computeGlobGap(data,ai,i) {
  * @param {Object} d one data object
  */
 function getRealStatus(d) {
-    console.log(d);
     d.status = d.status.trim();
     if ((d.status == "UserLimit") && !isNaN(d.objval) && (d.time <= max_time-10)) { // close to max time
         return "Optimal";
