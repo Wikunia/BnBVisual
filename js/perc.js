@@ -45,7 +45,7 @@ if (getQueryVariable("ots") == "true") {
         files = ["devel/juniper_devel","devel/juniper_rerun-strong-200"];
         
         files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-ipopt-grb",
-            "juniper-ipopt-cbc","juniper-ipopt-glpk","juniper-ipopt","juniper-ic","juniper-p02",
+            "juniper-ipopt-cbc","juniper-ipopt-glpk","juniper-ipopt","juniper-knitro-cbc","juniper-ic","juniper-p02",
              "juniper-p04","juniper-p08","juniper-p16","juniper-ts-dbfs",
              "bonmin-nlw","knitro-nlw","minotaur-nlw","couenne-nlw","scip-nlw"];
     }
