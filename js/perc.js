@@ -7,7 +7,7 @@ var configs = qconfigs ? true : false;
 
 var width = 1200,
 height = 600,
-legend_nof_instances = 306;
+legend_nof_instances = 298;
 var set_100_perc = true;
 
 var max_time = 1200;
@@ -49,7 +49,7 @@ if (getQueryVariable("ots") == "true") {
 
         // files = ["complete/juniper", "complete/bonmin-nlw", "complete/minotaur-nlw", 
         //         "complete/couenne-nlw","complete/scip-nlw"];
-        files = ["devel/juniper_devel","devel/juniper_rerun-strong-200"];
+        files = ["devel/juniper_devel","devel/juniper_presolve"];
         
         files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-ipopt-grb",
             "juniper-ipopt-cbc","juniper-ipopt-glpk","juniper-ipopt","juniper-ic","juniper-p02",

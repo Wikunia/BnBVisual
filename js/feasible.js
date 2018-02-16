@@ -3,9 +3,9 @@ height = 600,
 centered;
 var max_time = 3600;
 
-var files = ["minlib","couenne-nlw","scip-nlw","bonmin-nlw","knitro-nlw","juniper",
-"juniper-bs-nsr","juniper-bs-r","juniper-fp-grb","juniper-ic","juniper-p03",
-"juniper-p05","juniper-p09","juniper-p17","juniper-ts-dbfs"];
+var files = ["minlib_extra","couenne-nlw","scip-nlw","bonmin-nlw","knitro-nlw","juniper",
+"juniper-bs-nsr","juniper-bs-r","juniper-ipopt-grb","juniper-ic","juniper-p02",
+"juniper-p04","juniper-p08","juniper-p16","juniper-ts-dbfs"];
 
 var legend_w = 100;
 
@@ -73,7 +73,7 @@ function render(data,first_render=true) {
     let rects = {};
 
     tip = d3.tip().attr('class', 'd3-tip').html(function(d) {
-        if (d.alg == "minlib") {
+        if (d.alg == "minlib_extra") {
             // show objective for minlip (which just represents the global objective)
             return "<span>Obj: "+d.objval+"</span>";
         }
@@ -126,6 +126,7 @@ function render(data,first_render=true) {
             short = short.replace("graphpart_clique", "GP_C");
             short = short.replace("routingdelay", "RD");
             short = short.replace("crudeoil_pooling", "C_P");
+            short = short.replace("graphpart_3pm", "GP_3");
             short = short.replace("multiplants", "MP");
             short = short.replace("watercontamination", "WC");
             short = short.replace("supplychain", "SC");
@@ -137,28 +138,24 @@ function render(data,first_render=true) {
 
 getandrenderdata(0,files,{});
 
-// My header
 var headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
 "sense","objval","best_bound","status","time"].join(",");
 
-var headers_obj = ["instance","objval","bin_vars","int_vars"].join(",");
+var headers_obj = ["instance", "var", "constr", "bin", "int", "nl_constr","sense","dual","primal"].join(",");
 
 function getdata(section,cb) {
-    // First I get the file or URL data like text
     d3.text("data/"+section+"_data.csv", function(error, data) {
-        if (section == "minlib") {
-             // Then I add the header and parse to csv
+        if (section == "minlib_extra") {
             data = d3.csvParse(headers_obj +"\n"+ data,d=>{
                 return {
-                    instance: d.instance.substr(0,d.instance.length-3).trim(), // get rid of .jl
-                    bin_vars: +d.bin_vars,
-                    int_vars: +d.int_vars,
-                    objval: +d.objval,
-                    status: d.objval != "" ? "Optimal" : "Error"
+                    instance: d.instance,
+                    bin_vars: +d.bin,
+                    int_vars: +d.int,
+                    objval: +d.primal,
+                    status: d.primal != "" ? "Optimal" : "Error"
                 }
             }); 
         } else {
-            // Then I add the header and parse to csv
             data = d3.csvParse(headers +"\n"+ data,d=>{
                 return {
                     stdout: d.stdout,

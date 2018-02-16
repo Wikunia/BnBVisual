@@ -175,7 +175,7 @@ tex_start = ["",
 "\\caption{Quality and Runtime Results for Various Instances}",
 "\\begin{tabular}{|r|r|r|r|r||r||r|r|r|r|r|r||r|r|r|r|r|r|r|}",
 "\\hline",
-" \\multicolumn{6}{|c||}{} & juniper    & bonmin  & minot & knitro & couenne        & scip            & juniper          & bonmin  & minot & knitro  & couenne         & scip \\\\ ",
+" \\multicolumn{6}{|c||}{} & juniper    & bon  & minot & knitro & coue        & scip            & juniper          & bon  & minot & knitro  & coue         & scip \\\\ ",
 "    \\hline",
 "    \\hline"]
 
@@ -263,6 +263,11 @@ write(tex_file, "$title_line $ln \n")
 # average where local solves find feasible
 ln = ""
 l_vals = 0
+histo_dict = Dict{Symbol,Vector{Int16}}()
+for solver_name in local_solver_names
+    histo_dict[solver_name] = zeros(Int16,7)
+end
+
 for head in tex_headers 
     sthead = string(head)
     spsthead = split(sthead,"_")
@@ -272,6 +277,23 @@ for head in tex_headers
             vals = []
             for r in eachrow(f)
                 if allfeasible(r,local_solver_names)
+                    if Symbol(spsthead[2]) == :gap 
+                        if r[head] < 1
+                            histo_dict[Symbol(spsthead[1])][1] += 1
+                        elseif r[head] < 5
+                            histo_dict[Symbol(spsthead[1])][2] += 1
+                        elseif r[head] < 10
+                            histo_dict[Symbol(spsthead[1])][3] += 1
+                        elseif r[head] < 20
+                            histo_dict[Symbol(spsthead[1])][4] += 1
+                        elseif r[head] < 50
+                            histo_dict[Symbol(spsthead[1])][5] += 1
+                        elseif r[head] < 100
+                            histo_dict[Symbol(spsthead[1])][6] += 1
+                        else
+                            histo_dict[Symbol(spsthead[1])][7] += 1
+                        end
+                    end
                     push!(vals,r[head])
                 end
             end
@@ -287,12 +309,14 @@ for head in tex_headers
         end
     end
 end
+println(histo_dict)
+error("1")
 ln = ln[1:end-2]*" \\\\"
 title_line = "\\multicolumn{6}{|c||}{Average all local solvers feasible (n=$l_vals)} & "
 write(tex_file, "$title_line $ln \n")
 
 write(tex_file, "\\hline \n")
-write(tex_file, "Instance   & \$|V|\$& \$|C|\$& \$|I|\$& \$|NC|\$ & best obj.  & juniper    & bonmin  & minot &  knitro & couenne        & scip            & juniper          & bonmin  & minot & knitro  & couenne         & scip \\\\ \n")
+write(tex_file, "Instance   & \$|V|\$& \$|C|\$& \$|I|\$& \$|NC|\$ & best obj.  & juniper    & bon  & minot &  knitro & coue        & scip            & juniper          & bon  & minot & knitro  & coue         & scip \\\\ \n")
 write(tex_file, "\\hline \n")
 
 rc = 0

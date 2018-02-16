@@ -4,7 +4,7 @@
 \caption{Quality and Runtime Results for Various Instances} 
 \begin{tabular}{|r|r|r|r|r||r||r|r|r|r|r|r||r|r|r|r|r|r|r|} 
 \hline 
- \multicolumn{6}{|c||}{} & juniper    & bonmin  & minot & knitro & couenne        & scip            & juniper          & bonmin  & minot & knitro  & couenne         & scip \\  
+ \multicolumn{6}{|c||}{} & juniper    & bon  & minot & knitro & coue        & scip            & juniper          & bon  & minot & knitro  & coue         & scip \\  
     \hline 
     \hline 
 \multicolumn{6}{|c||}{Feasible instances / Time Limit reached} & 228 & 196 & 193 & 187 & 183 & 257 & 114 & 105 & 134 & 144 & 247 & 215  \\ 
@@ -12,32 +12,3 @@
 \multicolumn{6}{|c||}{} & \multicolumn{6}{c||}{Gap (\%)} &  \multicolumn{6}{c|}{Runtime (seconds)} \\ \hline 
 \multicolumn{6}{|c||}{Average solver feasible} & 324.51 & 6.34 & 25.52 & 1364.77 & 395.68 & 1e+04 & 1425.33 & 1672.01 & 1788.62 & 1225.71 & 3284.80 & 2853.34  \\ 
 \multicolumn{6}{|c||}{Average all solvers feasible (n=85)} &  21.43 & 0.86 & 3.64 & 24.57 & 16.19 & 2e+04 & 928.54 & 833.73 & 1557.83 & 1001.64 & 2787.72 & 2660.87  \\ 
-\multicolumn{6}{|c||}{Average all local solvers feasible (n=113)} &  18.48 & 0.94 & 11.19 & 20.69 & - & - & 918.02 & 845.16 & 1419.63 & 1112.49 & - & -  \\ 
-\hline 
-Instance   & $|V|$& $|C|$& $|I|$& $|NC|$ & best obj.  & juniper    & bonmin  & minot &  knitro & couenne        & scip            & juniper          & bonmin  & minot & knitro  & couenne         & scip \\ 
-\hline 
-                             oil2 &          937 &          927 &           2 &          284 &              -0.73 &  \textbf{0.00} &\textbf{0.00} &  \textbf{0.00} &\textbf{0.00} &              - &             - &            7 &                  3 &         \textbf{2} &                  8 &           - &            - \\ 
-                         bchoco08 &          169 &          191 &           9 &           79 &               0.98 &              - &            - &  \textbf{0.00} &         0.71 &              - &             - &            - &                  - &        \textbf{46} &                153 &           - &            - \\ 
-                squfl015-080persp &         2416 &         2481 &          15 &         1200 &             402.48 &  \textbf{0.00} &\textbf{0.00} &           4.61 &\textbf{0.00} &           0.93 & \textbf{0.00} &           27 &        \textbf{23} &                259 &        \textbf{23} &         T.L &           94 \\ 
-                 transswitch0014p &          139 &          278 &          20 &          121 &            8082.58 &  \textbf{0.00} &\textbf{0.00} &  \textbf{0.00} &\textbf{0.00} &  \textbf{0.00} &             - &            2 &                 14 &         $\bm{< 1}$ &                 32 &         T.L &            - \\ 
-                squfl030-100persp &         6031 &         6101 &          30 &         3000 &             363.09 &  \textbf{0.00} &\textbf{0.00} &          43.71 &\textbf{0.00} &         137.24 & \textbf{0.00} &          683 &                919 &                T.L &         \textbf{5} &         T.L &          489 \\ 
-                          FLay05M &           63 &           66 &          40 &            5 &              64.50 &  \textbf{0.00} &\textbf{0.00} &  \textbf{0.00} &\textbf{0.00} &  \textbf{0.00} & \textbf{0.00} &         1283 &                561 &               1213 &               1679 &         117 &  \textbf{71} \\ 
-                           ndcc13 &          631 &          255 &          42 &           42 &              84.63 &           5.80 &\textbf{0.00} &  \textbf{0.00} &            - &              - &          3.30 &          T.L &               1721 &      \textbf{1172} &                  - &           - &          T.L \\ 
-                        CLay0205H &          261 &          366 &          50 &           40 &            8092.50 &  \textbf{0.00} &\textbf{0.00} &         891.18 &         1.61 &              - & \textbf{0.00} &         2548 &               1091 &                T.L &                T.L &           - &  \textbf{71} \\ 
-                  procurement1mot &          785 &          750 &          60 &            1 &             291.54 &  \textbf{0.00} &\textbf{0.00} &  \textbf{0.00} &\textbf{0.00} &           8.19 &          1.95 &          445 &       \textbf{204} &                385 &               2345 &         T.L &          T.L \\ 
-                      fo9\_ar2\_1 &          181 &          436 &          72 &           18 &              32.62 &              - &            - &         115.90 &            - &          56.21 & \textbf{0.00} &            - &                  - &                T.L &                  - &         T.L &\textbf{3454} \\ 
-           crudeoil\_pooling\_ct1 &          311 &          566 &          80 &           37 &          210537.49 &          43.82 &\textbf{0.00} &           3.06 &            - &           2.34 & \textbf{0.00} & \textbf{T.L} &       \textbf{T.L} &       \textbf{T.L} &                  - &\textbf{T.L} & \textbf{T.L} \\ 
-               multiplants\_mtg1a &          194 &          257 &          93 &           28 &             391.61 &  \textbf{0.00} &\textbf{0.00} &           3.08 &            - &           2.46 & \textbf{0.00} &          909 &       \textbf{901} &                T.L &                  - &         T.L &          997 \\ 
-                multiplants\_mtg2 &          230 &          307 &         112 &           37 &            7099.19 &  \textbf{0.00} &\textbf{0.00} &           0.14 &            - &  \textbf{0.00} &         27.54 &         3390 &      \textbf{1877} &                T.L &                  - &         T.L &          T.L \\ 
-           crudeoil\_pooling\_ct3 &          730 &         1199 &         128 &          211 &          287000.00 &          32.69 &            - &              - &            - &          16.82 & \textbf{0.00} & \textbf{T.L} &                  - &                  - &                  - &\textbf{T.L} & \textbf{T.L} \\ 
-                    pooling\_epa3 &         1105 &         1718 &         150 &          274 &          -14948.12 &  \textbf{0.00} &            - &              - &         0.17 &              - &             - & \textbf{T.L} &                  - &                  - &       \textbf{T.L} &           - &            - \\ 
-                 transswitch0118r &         1240 &         1764 &         179 &         1311 &          129457.85 &           0.45 &            - &              - &\textbf{0.00} &              - &             - & \textbf{181} &                  - &                  - &                491 &           - &            - \\ 
-         graphpart\_3pm-0444-0444 &          193 &           65 &         192 &            1 &             -65.00 &  \textbf{0.00} &         3.08 &  \textbf{0.00} &         7.69 &  \textbf{0.00} & \textbf{0.00} &           45 &         $\bm{< 1}$ &                T.L &         $\bm{< 1}$ &         T.L &          T.L \\ 
-                              qap &          226 &           31 &         225 &            1 &          389718.00 &           0.50 &         0.38 &           6.79 &\textbf{0.00} &          10.94 &          6.53 &         1404 &                428 &                T.L &       \textbf{137} &         T.L &          T.L \\ 
-                          csched2 &          401 &          138 &         308 &            1 &         -166102.00 &              - &\textbf{0.00} &           4.16 &            - &          14.05 &          6.69 &            - &        \textbf{18} &                T.L &                  - &         T.L &          T.L \\ 
-                  edgecross22-048 &          463 &         6161 &         462 &            1 &              84.00 &  \textbf{0.00} &\textbf{0.00} &  \textbf{0.00} &\textbf{0.00} &  \textbf{0.00} & \textbf{0.00} &  \textbf{12} &                121 &                 98 &                 23 &         162 &         2201 \\ 
-           crudeoil\_pooling\_dt1 &         3713 &         5779 &         916 &          570 &          209585.27 &         368.25 &            - &           4.59 &            - &              - & \textbf{0.00} &          T.L &                  - &                T.L &                  - &           - &\textbf{3429} \\ 
-\hline 
-\end{tabular}\\ 
-\label{table:results} 
-\end{table*} 
