@@ -200,14 +200,15 @@ d3.select('#file')
 
 d3.select('#instance_search')
 .on("keyup", function () {
-    var instname = document.getElementById("instance_search").value;
+    var instname = document.getElementById("instance_search").value.toLowerCase();
     for (let circle of g.selectAll(".timeCircles").data()) {
-        if ((circle.instance.indexOf(instname) >= 0) && (instname.length > 0)) {
-            g.select("#circle-"+circle.instance)
+        let circle_inst_name = circle.instance.toLowerCase();
+        if ((circle_inst_name.indexOf(instname) >= 0) && (instname.length > 0)) {
+            g.select("#circle-"+circle_inst_name)
             .attr("stroke-width", "2px")
             .attr("stroke", "orange")
         } else {
-            g.select("#circle-"+circle.instance)
+            g.select("#circle-"+circle_inst_name)
             .attr("stroke-width", "0px")
         }
     }

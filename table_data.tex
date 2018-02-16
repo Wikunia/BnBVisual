@@ -2,51 +2,13 @@
 \begin{table*}[t] 
 \footnotesize 
 \caption{Quality and Runtime Results for Various Instances} 
-\begin{tabular}{|r|r|r|r|r||r||r|r|r|r|r||r|r|r|r|r|r|} 
+\begin{tabular}{|r|r|r|r|r||r||r|r|r|r|r|r||r|r|r|r|r|r|r|} 
 \hline 
- \multicolumn{6}{|c||}{} & juniper    & bonmin  & knitro & couenne        & scip            & juniper          & bonmin  & knitro  & couenne         & scip \\  
+ \multicolumn{6}{|c||}{} & juniper    & bon  & minot & knitro & coue        & scip            & juniper          & bon  & minot & knitro  & coue         & scip \\  
     \hline 
     \hline 
-\multicolumn{6}{|c||}{Feasible instances / Time Limit reached} & 123 & 113 & 73 & 107 & 122 & 12 & 5 & 12 & 99 & 94  \\ 
+\multicolumn{6}{|c||}{Feasible instances / Time Limit reached} & 228 & 196 & 193 & 187 & 183 & 257 & 114 & 105 & 134 & 144 & 247 & 215  \\ 
 \hline 
-\multicolumn{6}{|c||}{} & \multicolumn{5}{c||}{Gap (\%)} &  \multicolumn{5}{c|}{Runtime (seconds)} \\ \hline 
-\multicolumn{6}{|c||}{Average solver feasible} & 20.17 & 0.71 & 2.81 & 14.75 & 2674.23 & 671.66 & 622.59 & 253.99 & 3069.85 & 3086.70  \\ 
-\multicolumn{6}{|c||}{Average all solvers feasible (n=58)} &  0.95 & 0.52 & 3.49 & 7.82 & 10.86 & 408.37 & 265.43 & 271.65 & 2767.32 & 3041.62  \\ 
-\hline 
-Instance   & $|V|$& $|C|$& $|I|$& $|NC|$ & obj  & juniper    & bonmin  & knitro & couenne        & scip            & juniper          & bonmin  & knitro  & couenne         & scip \\ 
-\hline 
-                            nous1 &           51 &           44 &           2 &          29 &              1.57 & \textbf{0.00} &            - & \textbf{0.00} & \textbf{0.00} & \textbf{0.00} &            4 &                  - &         $\bm{< 1}$ &          T.L &         3067 \\ 
-                  sfacloc1\_4\_95 &          296 &          355 &           9 &          15 &             11.18 &          0.53 &\textbf{0.00} &          0.40 &         10.55 &          0.40 &            4 &                  7 &         \textbf{2} &          T.L &          T.L \\ 
-                           ex1233 &           53 &           65 &          12 &           1 &         155010.67 & \textbf{0.00} &\textbf{0.00} & \textbf{0.00} & \textbf{0.00} & \textbf{0.00} &            3 &                  2 &         $\bm{< 1}$ &          T.L &          T.L \\ 
-                     squfl015-080 &         1216 &         1281 &          15 &           1 &            402.49 & \textbf{0.00} &\textbf{0.00} & \textbf{0.00} & \textbf{0.00} &         22.68 &          106 &        \textbf{26} &                 34 &          299 &          T.L \\ 
-               cvxnonsep\_psig40r &           83 &           43 &          20 &          41 &             86.55 & \textbf{0.00} &\textbf{0.00} & \textbf{0.00} & \textbf{0.00} & \textbf{0.00} &            5 &         $\bm{< 1}$ &         $\bm{< 1}$ &          T.L &          T.L \\ 
-                     squfl020-050 &         1021 &         1051 &          20 &           1 &            230.20 & \textbf{0.00} &\textbf{0.00} & \textbf{0.00} & \textbf{0.00} &          6.02 &           64 &        \textbf{21} &                 37 &          300 &          T.L \\ 
-                     waterno2\_03 &          499 &          617 &          27 &         195 &            115.00 & \textbf{0.00} &\textbf{0.00} &         26.40 & \textbf{0.00} & \textbf{0.00} &          177 &                297 &        \textbf{75} &          T.L &          293 \\ 
-                  sfacloc1\_3\_90 &          262 &          422 &          30 &          15 &             11.62 & \textbf{0.00} &\textbf{0.00} &             - &         28.43 &          0.46 &            4 &         $\bm{< 1}$ &                  - &          T.L &          T.L \\ 
-                             tln5 &           36 &           31 &          35 &           5 &             10.30 & \textbf{0.00} &         0.97 & \textbf{0.00} & \textbf{0.00} & \textbf{0.00} &         1752 &                T.L &        \textbf{79} &          T.L &          130 \\ 
-                      ndcc15persp &          721 &          347 &          40 &          40 &             94.61 & \textbf{0.00} &\textbf{0.00} &             - &             - &          4.13 &           50 &        \textbf{45} &                  - &            - &          T.L \\ 
-                          FLay05H &          383 &          466 &          40 &           5 &             64.50 & \textbf{0.00} &\textbf{0.00} & \textbf{0.00} & \textbf{0.00} & \textbf{0.00} &          T.L &               1730 &                417 &          802 & \textbf{146} \\ 
-         portfol\_classical050\_1 &          151 &          104 &          50 &           1 &             -0.09 & \textbf{0.00} &\textbf{0.00} &          0.25 &          7.29 & \textbf{0.00} &  \textbf{15} &                 39 &                498 &          T.L &           72 \\ 
-             graphpart\_clique-20 &           61 &           21 &          60 &           1 &            147.00 & \textbf{0.00} &\textbf{0.00} &             - & \textbf{0.00} & \textbf{0.00} &           19 &         $\bm{< 1}$ &                  - &           66 &           91 \\ 
-                        sssd15-04 &           89 &           48 &          72 &          12 &         205054.43 & \textbf{0.00} &\textbf{0.00} &             - &          0.60 &          0.24 &  \textbf{14} &                 18 &                  - &          T.L &          T.L \\ 
-                  edgecross14-039 &          183 &         1457 &          80 &           1 &            109.00 &          4.59 &         0.92 &          1.83 &          1.83 & \textbf{0.00} &           18 &         \textbf{5} &                 15 &          T.L &          272 \\ 
-                  sfacloc2\_4\_90 &          369 &          600 &          90 &          60 &             13.41 &          4.28 &\textbf{0.00} & \textbf{0.00} & \textbf{0.00} & \textbf{0.00} &          T.L &                964 &               2208 &         1344 & \textbf{177} \\ 
-                         blend531 &          273 &          737 &         104 &          32 &             20.04 & \textbf{0.00} &\textbf{0.00} &             - &          0.35 & \textbf{0.00} &         1447 &                372 &                  - &          T.L &  \textbf{64} \\ 
-                        sssd15-06 &          133 &           64 &         108 &          18 &         539635.41 & \textbf{0.00} &\textbf{0.00} &             - &         22.74 &          0.23 &\textbf{1769} &               2166 &                  - &          T.L &          T.L \\ 
-               multiplants\_mtg1c &          245 &          319 &         120 &          28 &            683.97 & \textbf{0.00} &            - &             - &          0.16 & \textbf{0.00} & \textbf{920} &                  - &                  - &          T.L &          T.L \\ 
-                        sssd18-06 &          151 &           67 &         126 &          18 &         397992.25 & \textbf{0.00} &\textbf{0.00} &             - &         15.18 &          0.32 & \textbf{920} &               1173 &                  - &          T.L &          T.L \\ 
-             chp\_shorttermplan1a &         1009 &         2069 &         144 &         384 &            214.84 &          0.34 &         0.35 &         21.25 &         18.35 & \textbf{0.00} &  \textbf{18} &                 40 &                 24 &          T.L &          230 \\ 
-                        nuclearvb &          352 &          318 &         168 &         267 &             -1.03 & \textbf{0.00} &         0.43 &          0.73 &          0.70 &          0.80 &           22 &                  5 &         \textbf{2} &          T.L &          T.L \\ 
-                        nuclearvf &          352 &          318 &         168 &         267 &             -1.02 & \textbf{0.00} &         0.74 &          0.68 &             - &          1.06 &           42 &                  5 &         \textbf{2} &            - &          T.L \\ 
-                  edgecross14-176 &          183 &         1457 &         182 &           1 &           5875.00 &          0.48 &\textbf{0.00} & \textbf{0.00} &             - & \textbf{0.00} &            2 &                  2 &         $\bm{< 1}$ &            - &          520 \\ 
-                        faclay20h &          191 &         2281 &         190 &           1 &          16099.00 &          2.07 &         1.83 &          2.07 & \textbf{0.00} &          0.71 &            2 &                  3 &         $\bm{< 1}$ &          T.L &          T.L \\ 
-                     RSyn0820M02H &          979 &         1501 &         208 &          28 &           1092.09 & \textbf{0.00} &\textbf{0.00} & \textbf{0.00} &          4.07 & \textbf{0.00} &           42 &        \textbf{29} &                130 &          T.L &          228 \\ 
-                              qap &          226 &           31 &         225 &           1 &         391209.99 &          0.12 &\textbf{0.00} &             - &         10.52 &          5.85 &         1459 &       \textbf{448} &                  - &          T.L &          T.L \\ 
-         graphpart\_2pm-0099-0999 &          244 &           82 &         243 &           1 &            -64.00 & \textbf{0.00} &         1.56 &          7.81 & \textbf{0.00} &          4.69 &           65 &         $\bm{< 1}$ &         $\bm{< 1}$ &          T.L &          T.L \\ 
-                        Syn40M04H &         1529 &         2905 &         320 &         112 &            901.75 & \textbf{0.00} &\textbf{0.00} & \textbf{0.00} &             - &          0.02 &           72 &        \textbf{41} &                 62 &            - &          T.L \\ 
-                  edgecross20-040 &          381 &         4561 &         380 &           1 &             57.00 &          1.75 &         1.75 &         14.04 & \textbf{0.00} & \textbf{0.00} &           12 &                 35 &         \textbf{4} &          118 &         1057 \\ 
-                  edgecross24-057 &          553 &         8097 &         552 &           1 &            178.00 &         24.72 &\textbf{0.00} & \textbf{0.00} &          1.12 &          3.93 &  \textbf{23} &                158 &                 26 &          T.L &          T.L \\ 
-\hline 
-\end{tabular}\\ 
-\label{table:results} 
-\end{table*} 
+\multicolumn{6}{|c||}{} & \multicolumn{6}{c||}{Gap (\%)} &  \multicolumn{6}{c|}{Runtime (seconds)} \\ \hline 
+\multicolumn{6}{|c||}{Average solver feasible} & 324.51 & 6.34 & 25.52 & 1364.77 & 395.68 & 1e+04 & 1425.33 & 1672.01 & 1788.62 & 1225.71 & 3284.80 & 2853.34  \\ 
+\multicolumn{6}{|c||}{Average all solvers feasible (n=85)} &  21.43 & 0.86 & 3.64 & 24.57 & 16.19 & 2e+04 & 928.54 & 833.73 & 1557.83 & 1001.64 & 2787.72 & 2660.87  \\ 

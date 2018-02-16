@@ -5,16 +5,17 @@ using CSV
 using LatexPrint
 include("util.jl")
 
-files = ["juniper","bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw"]
+files = ["juniper","bonmin-nlw","knitro-nlw","minotaur-nlw","couenne-nlw","scip-nlw"]
 header = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
 "sense","objval","best_bound","status","time"]
-objval_cols = [:scip_objval,:couenne_objval,:bonmin_objval,:juniper_objval]
-solver_names = [:scip,:couenne,:bonmin,:knitro,:juniper]
+objval_cols = [:scip_objval,:couenne_objval,:bonmin_objval,:juniper_objval,:knitro_objval,:minotaur_objval]
+solver_names = [:scip,:couenne,:bonmin,:minotaur,:knitro,:juniper]
+local_solver_names = [:bonmin,:minotaur,:knitro,:juniper]
 tex_headers = [:instance,:nodes,:constraints,:disc_vars,:nl_constr,:objval,
-:juniper_gap,:bonmin_gap,:knitro_gap,:couenne_gap,:scip_gap,
-:juniper_time,:bonmin_time,:knitro_time,:couenne_time,:scip_time]
+:juniper_gap,:bonmin_gap,:minotaur_gap,:knitro_gap,:couenne_gap,:scip_gap,
+:juniper_time,:bonmin_time,:minotaur_time,:knitro_time,:couenne_time,:scip_time]
 
-mlibheader = ["instance", "gams_obj", "bin", "int", "nl_constr"]
+mlibheader = ["instance", "nodes", "constraints", "bin_vars", "int_vars", "nl_constr","sense","dual"]
 dir = "/home/ole/GitHub/bnb_visual/"
 
 function readjoindata()
@@ -35,13 +36,11 @@ function readjoindata()
         end
     
         delete!(df, :stdout)
-        if c != 1
-            delete!(df, :sense)
-            delete!(df, :nodes)
-            delete!(df, :bin_vars)
-            delete!(df, :int_vars)
-            delete!(df, :constraints)
-        end
+        delete!(df, :sense)
+        delete!(df, :nodes)
+        delete!(df, :bin_vars)
+        delete!(df, :int_vars)
+        delete!(df, :constraints)
         delete!(df, :best_bound)
     
         for col in [:objval,:status,:time]
@@ -57,7 +56,7 @@ function readjoindata()
         c += 1
     end
     
-    df = CSV.read(dir*"data/minlib_extra_data.csv"; header=mlibheader, types=[String for h in mlibheader])
+    df = CSV.read(dir*"data/minlib_extra_data.csv"; header=mlibheader, types=[String,Int64,Int64,Int64,Int64,Int64,String,Float64])
     println(df)
     push!(data,df)
     
@@ -70,8 +69,7 @@ function readjoindata()
     println("size: ",size(f,1))
     f = sort(f, cols = :bin_vars)
     println(f)
-    return f #f[1:172,:] # first 172 instances as rest is missing ...
-    
+    return f     
 end
 
 
@@ -81,10 +79,11 @@ end
     generateviewdf(f)
 
 Set time to NaN if gap is NaN
-Get only every forth entry
+Get only every Xth entry (atm x = 13 :D)
 """
 function generateviewdf(of)
     f = deepcopy(of)
+    delete_idx = Vector{Int64}()
     idx = 1
     for r in eachrow(f)
         for solver in solver_names
@@ -94,16 +93,40 @@ function generateviewdf(of)
                 r[time_col] = NaN
             end
         end
+        cnf = 0
+        for solver in local_solver_names
+            gap_sym = Symbol(string(solver)*"_gap")
+            if isnan(r[gap_sym])
+                cnf += 1
+            end
+        end
+        if cnf == length(local_solver_names)
+            push!(delete_idx,idx)
+        end
         idx += 1
     end
+    deleterows!(f, delete_idx)
     println("size of view before uniform: ",size(f,1))
-    return f,f[1:4:end,:]
+    return f,f[1:13:end,:]
 end
 
 f = readjoindata()
 f = fillmissings(f)
 f = computegaps(f)
 f = sort(f, cols = :disc_vars)
+
+println("Check for dual bounds")
+
+nviolations = 0
+for row in eachrow(f)
+    if (row[:sense] == "Min" && row[:objval]+0.05*(abs(row[:objval])+0.001) < row[:dual]) ||
+        (row[:sense] == "Max" && row[:objval]-0.05*(abs(row[:objval])+0.001) > row[:dual])
+        println(row)
+        nviolations += 1
+    end
+end
+println("#Violations: ", nviolations)
+
 # remove objval columns
 for obj_col in objval_cols
     delete!(f, obj_col)
@@ -150,9 +173,9 @@ tex_start = ["",
 "\\begin{table*}[t]",
 "\\footnotesize",
 "\\caption{Quality and Runtime Results for Various Instances}",
-"\\begin{tabular}{|r|r|r|r|r||r||r|r|r|r|r||r|r|r|r|r|r|}",
+"\\begin{tabular}{|r|r|r|r|r||r||r|r|r|r|r|r||r|r|r|r|r|r|r|}",
 "\\hline",
-" \\multicolumn{6}{|c||}{} & juniper    & bonmin  & knitro & couenne        & scip            & juniper          & bonmin  & knitro  & couenne         & scip \\\\ ",
+" \\multicolumn{6}{|c||}{} & juniper    & bon  & minot & knitro & coue        & scip            & juniper          & bon  & minot & knitro  & coue         & scip \\\\ ",
 "    \\hline",
 "    \\hline"]
 
@@ -174,9 +197,6 @@ for head in tex_headers
         vals = []
         tl_reached = 0
         for r in eachrow(f)
-            if r[:instance] == "heatexch_gen1"
-                continue
-            end
             if !isnan(r[Symbol(spsthead[1]*"_gap")])
                 push!(vals,r[head])
             end
@@ -192,14 +212,18 @@ for head in tex_headers
         else
             ln *= string(@sprintf "%d" tl_reached) * " & "
         end
-        ln2 *= string(@sprintf "%.2f" mean_val) * " & "
+        if mean_val >= 10000
+            ln2 *= string(@sprintf "%.0e" mean_val) * " & "
+        else
+            ln2 *= string(@sprintf "%.2f" mean_val) * " & "
+        end
     end
 end
 ln = ln[1:end-2]*" \\\\"
 ln2 = ln2[1:end-2]*" \\\\"
 write(tex_file, "$ln \n")
 write(tex_file, "\\hline \n")
-write(tex_file, "\\multicolumn{6}{|c||}{} & \\multicolumn{5}{c||}{Gap (\\%)} &  \\multicolumn{5}{c|}{Runtime (seconds)} \\\\ ")
+write(tex_file, "\\multicolumn{6}{|c||}{} & \\multicolumn{6}{c||}{Gap (\\%)} &  \\multicolumn{6}{c|}{Runtime (seconds)} \\\\ ")
 write(tex_file, "\\hline \n")
 write(tex_file, "$ln2 \n")
 
@@ -215,23 +239,84 @@ for head in tex_headers
     if Symbol(spsthead[1]) in solver_names
         vals = []
         for r in eachrow(f)
-            if r[:instance] == "heatexch_gen1"
-                continue
-            end
-            if allfeasible(r)
+            if allfeasible(r,solver_names)
                 push!(vals,r[head])
+                if Symbol(spsthead[1]) == :juniper && spsthead[2] == "gap" && r[head] > 100
+                    println(r)
+                end
             end
         end
         mean_val = mean(vals)
         l_vals = length(vals)
-        ln *= string(@sprintf "%.2f" mean_val) * " & "
+        if mean_val >= 10000
+            ln *= string(@sprintf "%.0e" mean_val) * " & "
+        else
+            ln *= string(@sprintf "%.2f" mean_val) * " & "
+        end
     end
 end
 ln = ln[1:end-2]*" \\\\"
 title_line = "\\multicolumn{6}{|c||}{Average all solvers feasible (n=$l_vals)} & "
 write(tex_file, "$title_line $ln \n")
+
+
+# average where local solves find feasible
+ln = ""
+l_vals = 0
+histo_dict = Dict{Symbol,Vector{Int16}}()
+for solver_name in local_solver_names
+    histo_dict[solver_name] = zeros(Int16,7)
+end
+
+for head in tex_headers 
+    sthead = string(head)
+    spsthead = split(sthead,"_")
+    println(head)
+    if Symbol(spsthead[1]) in solver_names
+        if Symbol(spsthead[1]) in local_solver_names
+            vals = []
+            for r in eachrow(f)
+                if allfeasible(r,local_solver_names)
+                    if Symbol(spsthead[2]) == :gap 
+                        if r[head] < 1
+                            histo_dict[Symbol(spsthead[1])][1] += 1
+                        elseif r[head] < 5
+                            histo_dict[Symbol(spsthead[1])][2] += 1
+                        elseif r[head] < 10
+                            histo_dict[Symbol(spsthead[1])][3] += 1
+                        elseif r[head] < 20
+                            histo_dict[Symbol(spsthead[1])][4] += 1
+                        elseif r[head] < 50
+                            histo_dict[Symbol(spsthead[1])][5] += 1
+                        elseif r[head] < 100
+                            histo_dict[Symbol(spsthead[1])][6] += 1
+                        else
+                            histo_dict[Symbol(spsthead[1])][7] += 1
+                        end
+                    end
+                    push!(vals,r[head])
+                end
+            end
+            mean_val = mean(vals)
+            l_vals = length(vals)
+            if mean_val >= 10000
+                ln *= string(@sprintf "%.0e" mean_val) * " & "
+            else
+                ln *= string(@sprintf "%.2f" mean_val) * " & "
+            end
+        else
+            ln *= "- & "
+        end
+    end
+end
+println(histo_dict)
+error("1")
+ln = ln[1:end-2]*" \\\\"
+title_line = "\\multicolumn{6}{|c||}{Average all local solvers feasible (n=$l_vals)} & "
+write(tex_file, "$title_line $ln \n")
+
 write(tex_file, "\\hline \n")
-write(tex_file, "Instance   & \$|V|\$& \$|C|\$& \$|I|\$& \$|NC|\$ & obj  & juniper    & bonmin  & knitro & couenne        & scip            & juniper          & bonmin  & knitro  & couenne         & scip \\\\ \n")
+write(tex_file, "Instance   & \$|V|\$& \$|C|\$& \$|I|\$& \$|NC|\$ & best obj.  & juniper    & bon  & minot &  knitro & coue        & scip            & juniper          & bon  & minot & knitro  & coue         & scip \\\\ \n")
 write(tex_file, "\\hline \n")
 
 rc = 0
@@ -277,7 +362,7 @@ for r in eachrow(vf)
     rc += 1
  
 
-    if write_counter % 35 == 0 && rc != last_rc
+    if write_counter % 35 == 0 && rc != last_rc && size(vf,1) % 35 != 0
         last_rc = rc
         for eln in tex_end
             write(tex_file, "$eln \n")

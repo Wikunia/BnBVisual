@@ -20,14 +20,8 @@ function get_gap(status, value, best_obj)
     if status == "Infeasible" || status == "Error" || status == "Unbounded" || isnan(value)
         return NaN
     end
-    if abs(best_obj-value)/abs(best_obj)*100 > 300
-        println("status: ", status)
-        println("best_obj: ", best_obj)
-        println("value: ", value)
-        println("gap: ", abs(best_obj-value)/abs(best_obj)*100)
-    end
 
-    return abs(best_obj-value)/abs(best_obj)*100
+    return abs(best_obj-value)/(abs(best_obj)+0.0001)*100
 end
 
 function fillmissings(f)
@@ -86,6 +80,12 @@ function computegaps(f; knitro=true)
             status = r[Symbol(string(solver)*"_status")]
             value = r[Symbol(string(solver)*"_objval")]
             r[gap_col] = get_gap(status, value, r[:objval])
+            if r[gap_col] > 1000
+                println("Solver:", solver)
+                println("--------------------------------")
+                println(r)
+                println("--------------------------------")
+            end
         end
 
         r[:disc_vars] = r[:int_vars]+r[:bin_vars]
@@ -142,8 +142,8 @@ function format_instance(val)
     return replace(val,"_","\\_")
 end
 
-function allfeasible(r)
-    for solver in solver_names
+function allfeasible(r, solvers)
+    for solver in solvers
         gap_sym = Symbol(string(solver)*"_gap")
         if isnan(r[gap_sym])
             return false

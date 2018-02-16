@@ -7,13 +7,20 @@ var configs = qconfigs ? true : false;
 
 var width = 1200,
 height = 600,
-legend_nof_instances = 306;
+legend_nof_instances = 298;
+var set_100_perc = true;
 
-var max_time = 1200;
+var max_time = 3600;
+
+/*
+    Paper:
+    panorama compact: 900x280 later 900x250
+    compact: 450x300 
+*/
 
 if (compact) {
-    width = 450;
-    height = 450;
+    width = 900;
+    height = 280;
 }
 
 // My header
@@ -30,7 +37,7 @@ if (getQueryVariable("ots") == "true") {
 
 
     if (compact) {
-        files = ["juniper", "bonmin-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
+        files = ["juniper", "bonmin-nlw","minotaur-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
     } else {
         files = ["ibm/bonmin-nlw","ibm/couenne-nlw","ibm/scip-nlw",
                  "ibm/minotaur-bnb-nlw","ibm/minotaur-msbnb-nlw","ibm/minotaur-bnb-ipopt-nlw"
@@ -42,15 +49,15 @@ if (getQueryVariable("ots") == "true") {
 
         // files = ["complete/juniper", "complete/bonmin-nlw", "complete/minotaur-nlw", 
         //         "complete/couenne-nlw","complete/scip-nlw"];
-        files = ["devel/juniper_devel","devel/juniper_rerun-strong-200"];
+        files = ["devel/juniper_devel","devel/juniper_presolve"];
         
         files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-ipopt-grb",
-            "juniper-ipopt-cbc","juniper-ipopt-glpk","juniper-ipopt","juniper-knitro-cbc","juniper-ic","juniper-p02",
+            "juniper-ipopt-cbc","juniper-ipopt-glpk","juniper-ipopt","juniper-ic","juniper-p02",
              "juniper-p04","juniper-p08","juniper-p16","juniper-ts-dbfs",
              "bonmin-nlw","knitro-nlw","minotaur-nlw","couenne-nlw","scip-nlw"];
     }
     if (parallel) {
-        files = ["juniper", "juniper-p03","juniper-p05","juniper-p09","juniper-p17"];
+        files = ["juniper", "juniper-p02","juniper-p04","juniper-p08","juniper-p16"];
     }
     if (configs) {
         files = ["juniper-ipopt","juniper-ipopt-grb","juniper-ipopt-glpk","juniper-ipopt-cbc",
@@ -105,7 +112,7 @@ if (!compact) {
     legend.attr("transform", "translate("+(width-legend_w+35)+","+margin_top+")");
 } else {
     if (linearScale) {
-        legend.attr("transform", "translate("+(width-legend_w-75)+","+(margin_top+200)+")");
+        legend.attr("transform", "translate("+(width-legend_w-75)+","+(margin_top+75)+")");
     } else {
         legend.attr("transform", "translate("+(axis_width+35)+","+margin_top+")");
     }   
@@ -146,7 +153,13 @@ function createLegend(data,maxTime,max_perc) {
     lAlg.enter().append("circle")
         .attr("class", "lAlg")
         .attr("cx", 20)
-        .attr("cy", (d,i) => {return 10+(10*2+5)*i})
+        .attr("cy", (d,i) => {
+            if (compact) {
+                return 15+(7*2+5)*i
+            } else {
+                return 15+(10*2+5)*i
+            }
+        })
         .attr("r", 3)
         .attr("fill", d=> {
             if ("no" in d && d.no) {
@@ -159,7 +172,13 @@ function createLegend(data,maxTime,max_perc) {
     lAlgText.enter().append("text")
         .attr("class", "lAlgText")
         .attr("x", 40)
-        .attr("y", (d,i) => {return 15+(10*2+5)*i})
+        .attr("y", (d,i) => {
+            if (compact) {
+                return 15+(7*2+5)*i
+            } else {
+                return 15+(10*2+5)*i
+            }
+        })
         .text(d=>{
             let t = d.alg;
             t = t.replace("ots-","")
@@ -215,11 +234,15 @@ function data2line(data,maxTime) {
                 n += 1
             }
             if (t >= 1) {
+                var N = data[alg].data.length;
+                if (set_100_perc) {
+                    N = legend_nof_instances
+                }
                 data[alg].line.push({
                     x: t,
-                    y: (n/data[alg].data.length)*100,
+                    y: (n/N)*100,
                 })
-                lastY = (n/data[alg].data.length)*100;
+                lastY = (n/N)*100;
             }
         }
         /*data[alg].line.unshift({
@@ -388,6 +411,10 @@ function getandrenderdata(i,files,data) {
             data = fillNotDefined(data);
             data = algArray(data);
             nof_instances = data[0].data.length;
+            if (set_100_perc) {
+                nof_instances = legend_nof_instances;
+            }
+
             d3.select("#title").text(d3.select("#title").text()+" ("+nof_instances+" Instances) ");
             let maxTime = 0;
             for (let alg in data) {
@@ -396,7 +423,6 @@ function getandrenderdata(i,files,data) {
             }
             maxTime = 4000;
             data,max_perc = data2line(data,maxTime);
-            console.log(data)
             render(data,maxTime,max_perc);
         }else {
           getandrenderdata(i+1,files,data)

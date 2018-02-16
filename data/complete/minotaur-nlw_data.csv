@@ -62,7 +62,6 @@
 ./cases/minotaur-bnb-nlw/JuniperLib/SLay07M.stdout:DATA, SLay07M.jl, 141, 84, 0, 190, Min, 64748.82412672743, NaN, Optimal, 10.167326927185059
 ./cases/minotaur-bnb-nlw/JuniperLib/squfl025-025.stdout:DATA, squfl025-025.jl, 651, 25, 0, 651, Min, 168.80717808792568, NaN, Optimal, 93.45305895805359
 ./cases/minotaur-bnb-nlw/JuniperLib/crudeoil_lee2_06.stdout:DATA, crudeoil_lee2_06.jl, 1387, 84, 0, 3118, Max, NaN, NaN, UserLimit, 601.6888720989227
-./cases/minotaur-bnb-nlw/JuniperLib/sepasequ_complex.stdout:DATA, sepasequ_complex.jl, 498, 50, 0, 1311, Min, 390.9173615753797, NaN, UserLimit, 607.258406162262
 ./cases/minotaur-bnb-nlw/JuniperLib/gasprod_sarawak01.stdout:DATA, gasprod_sarawak01.jl, 132, 38, 0, 213, Min, -32445.405466774584, NaN, Optimal, 2.1266860961914062
 ./cases/minotaur-bnb-nlw/JuniperLib/squfl020-050persp.stdout:DATA, squfl020-050persp.jl, 2021, 20, 0, 2051, Min, 230.20186080606075, NaN, Optimal, 77.46682786941528
 ./cases/minotaur-bnb-nlw/JuniperLib/sssd20-08persp.stdout:DATA, sssd20-08persp.jl, 217, 184, 0, 85, Min, 0, NaN, Infeasible, 0.26833105087280273
@@ -88,7 +87,6 @@
 ./cases/minotaur-bnb-nlw/JuniperLib/procurement1mot.stdout:DATA, procurement1mot.jl, 785, 60, 0, 750, Max, 291.5416611598056, NaN, UserLimit, 387.49822306632996
 ./cases/minotaur-bnb-nlw/JuniperLib/enpro48pb.stdout:DATA, enpro48pb.jl, 154, 92, 0, 215, Min, 187277.25167986882, NaN, Optimal, 49.29487895965576
 ./cases/minotaur-bnb-nlw/JuniperLib/multiplants_stg1.stdout:DATA, multiplants_stg1.jl, 415, 198, 0, 262, Max, 269.55525830789213, NaN, UserLimit, 600.2931089401245
-./cases/minotaur-bnb-nlw/JuniperLib/fo8_ar2_1.stdout:DATA, fo8_ar2_1.jl, 145, 0, 56, 348, Min, NaN, NaN, UserLimit, 600.4494581222534
 ./cases/minotaur-bnb-nlw/JuniperLib/Syn15M03M.stdout:DATA, Syn15M03M.jl, 256, 90, 0, 538, Max, 3850.1818560680763, NaN, Optimal, 0.7469468116760254
 ./cases/minotaur-bnb-nlw/JuniperLib/graphpart_3g-0334-0334.stdout:DATA, graphpart_3g-0334-0334.jl, 109, 108, 0, 37, Min, -3.410695999999999e6, NaN, Optimal, 4.340946912765503
 ./cases/minotaur-bnb-nlw/JuniperLib/Syn40M.stdout:DATA, Syn40M.jl, 131, 40, 0, 227, Max, 67.71328681283234, NaN, Optimal, 1.148723840713501
@@ -121,7 +119,6 @@
 ./cases/minotaur-bnb-nlw/JuniperLib/edgecross10-060.stdout:DATA, edgecross10-060.jl, 91, 44, 0, 481, Min, 462.9999818931304, NaN, Optimal, 1.1386170387268066
 ./cases/minotaur-bnb-nlw/JuniperLib/super3t.stdout:DATA, super3t.jl, 1056, 44, 0, 1343, Min, -0.6776485843885112, NaN, UserLimit, 602.762622833252
 ./cases/minotaur-bnb-nlw/JuniperLib/fin2bb.stdout:DATA, fin2bb.jl, 589, 175, 0, 619, Min, NaN, NaN, UserLimit, 600.526389837265
-./cases/minotaur-bnb-nlw/JuniperLib/lop97icx.stdout:DATA, lop97icx.jl, 987, 0, 899, 88, Min, 2545.8328976, NaN, UserLimit, 602.3204431533813
 ./cases/minotaur-bnb-nlw/JuniperLib/graphpart_2pm-0055-0055.stdout:DATA, graphpart_2pm-0055-0055.jl, 76, 75, 0, 26, Min, -20.0, NaN, Optimal, 0.6582341194152832
 ./cases/minotaur-bnb-nlw/JuniperLib/fo8_ar3_1.stdout:DATA, fo8_ar3_1.jl, 145, 0, 56, 348, Min, NaN, NaN, UserLimit, 600.3902180194855
 ./cases/minotaur-bnb-nlw/JuniperLib/Syn05M02H.stdout:DATA, Syn05M02H.jl, 105, 20, 0, 152, Max, 3032.735712527595, NaN, Optimal, 0.2843301296234131
@@ -181,7 +178,6 @@
 ./cases/minotaur-bnb-nlw/JuniperLib/sssd18-08persp.stdout:DATA, sssd18-08persp.jl, 201, 168, 0, 83, Min, 0, NaN, Infeasible, 0.23473882675170898
 ./cases/minotaur-bnb-nlw/JuniperLib/crudeoil_lee3_06.stdout:DATA, crudeoil_lee3_06.jl, 1537, 84, 0, 3360, Max, NaN, NaN, UserLimit, 626.2711179256439
 ./cases/minotaur-bnb-nlw/JuniperLib/genpooling_lee2.stdout:DATA, genpooling_lee2.jl, 54, 9, 0, 93, Min, -3849.265440159968, NaN, Optimal, 1.5369951725006104
-./cases/minotaur-bnb-nlw/JuniperLib/sepasequ_convent.stdout:DATA, sepasequ_convent.jl, 642, 20, 0, 1129, Min, NaN, NaN, UserLimit, 698.0562219619751
 ./cases/minotaur-bnb-nlw/JuniperLib/squfl020-150persp.stdout:DATA, squfl020-150persp.jl, 6021, 20, 0, 6151, Min, 646.1053265607613, NaN, UserLimit, 607.6169819831848
 ./cases/minotaur-bnb-nlw/JuniperLib/crossdock_15x8.stdout:DATA, crossdock_15x8.jl, 241, 240, 0, 47, Min, 16859.000000000007, NaN, UserLimit, 602.0847778320312
 ./cases/minotaur-bnb-nlw/JuniperLib/edgecross10-090.stdout:DATA, edgecross10-090.jl, 91, 90, 0, 481, Min, 1387.0000000000248, NaN, Optimal, 2.1993629932403564
@@ -195,7 +191,6 @@
 ./cases/minotaur-bnb-nlw/JuniperLib/RSyn0840H.stdout:DATA, RSyn0840H.jl, 569, 72, 0, 838, Max, 325.55460397010495, NaN, Optimal, 1.8278160095214844
 ./cases/minotaur-bnb-nlw/JuniperLib/chp_shorttermplan2a.stdout:DATA, chp_shorttermplan2a.jl, 1585, 240, 0, 3897, Min, 246754.86147638693, NaN, Optimal, 0.8365597724914551
 ./cases/minotaur-bnb-nlw/JuniperLib/Syn20M04H.stdout:DATA, Syn20M04H.jl, 765, 160, 0, 1453, Max, 3532.744585869166, NaN, Optimal, 2.709892988204956
-./cases/minotaur-bnb-nlw/JuniperLib/lop97ic.stdout:DATA, lop97ic.jl, 1754, 0, 1662, 92, Min, 0.0, NaN, UserLimit, 601.3329210281372
 ./cases/minotaur-bnb-nlw/JuniperLib/multiplants_stg1b.stdout:DATA, multiplants_stg1b.jl, 476, 243, 0, 280, Max, NaN, NaN, UserLimit, 603.3914129734039
 ./cases/minotaur-bnb-nlw/JuniperLib/RSyn0810M02M.stdout:DATA, RSyn0810M02M.jl, 411, 168, 0, 867, Max, 1736.0430230798713, NaN, UserLimit, 600.4238240718842
 ./cases/minotaur-bnb-nlw/JuniperLib/ex1265.stdout:DATA, ex1265.jl, 131, 100, 0, 75, Min, 10.599999904401548, NaN, Optimal, 16.786192893981934
@@ -361,7 +356,6 @@
 ./cases/minotaur-bnb-nlw/JuniperLib/portfol_classical050_1.stdout:DATA, portfol_classical050_1.jl, 151, 50, 0, 104, Min, -0.09476013762707526, NaN, Optimal, 17.5166277885437
 ./cases/minotaur-bnb-nlw/JuniperLib/sssd25-08.stdout:DATA, sssd25-08.jl, 257, 224, 0, 90, Min, 473233.4586727987, NaN, UserLimit, 600.5837378501892
 ./cases/minotaur-bnb-nlw/JuniperLib/watercontamination0202.stdout:DATA, watercontamination0202.jl, 106705, 0, 0, 0, Min, 0.0, NaN, Optimal, 0.35295605659484863
-./cases/minotaur-bnb-nlw/JuniperLib/gams02.stdout:DATA, gams02.jl, 12689, 96, 0, 14609, Min, 716.8088126447466, NaN, Optimal, 17.902542114257812
 ./cases/minotaur-bnb-nlw/JuniperLib/wastepaper5.stdout:DATA, wastepaper5.jl, 105, 65, 0, 47, Min, 0.005366098665916224, NaN, UserLimit, 600.5725381374359
 ./cases/minotaur-bnb-nlw/JuniperLib/crudeoil_lee4_05.stdout:DATA, crudeoil_lee4_05.jl, 1956, 95, 0, 4242, Max, NaN, NaN, UserLimit, 614.9317882061005
 ./cases/minotaur-bnb-nlw/JuniperLib/deb6.stdout:DATA, deb6.jl, 476, 20, 0, 508, Min, 201.73923293161468, NaN, Optimal, 14.088642835617065
@@ -545,7 +539,6 @@
 ./cases/minotaur-bnb-nlw/JuniperLib/crudeoil_lee2_05.stdout:DATA, crudeoil_lee2_05.jl, 1156, 70, 0, 2582, Max, NaN, NaN, UserLimit, 600.627692937851
 ./cases/minotaur-bnb-nlw/JuniperLib/eniplac.stdout:DATA, eniplac.jl, 142, 24, 0, 190, Min, -130736.40805546565, NaN, Optimal, 38.05461812019348
 ./cases/minotaur-bnb-nlw/JuniperLib/sep1.stdout:DATA, sep1.jl, 30, 2, 0, 32, Min, -510.0809900138111, NaN, Optimal, 0.23287391662597656
-./cases/minotaur-bnb-nlw/JuniperLib/transswitch0039r.stdout:DATA, transswitch0039r.jl, 329, 46, 0, 474, Min, 82.08383893152129, NaN, UserLimit, 606.0406930446625
 ./cases/minotaur-bnb-nlw/JuniperLib/edgecross14-098.stdout:DATA, edgecross14-098.jl, 183, 182, 0, 1457, Min, 1376.9999999999973, NaN, UserLimit, 601.4991710186005
 ./cases/minotaur-bnb-nlw/JuniperLib/nous1.stdout:DATA, nous1.jl, 51, 2, 0, 44, Min, 1.5670719357128067, NaN, Optimal, 0.410398006439209
 ./cases/minotaur-bnb-nlw/JuniperLib/pooling_epa3.stdout:DATA, pooling_epa3.jl, 1105, 150, 0, 1718, Min, NaN, NaN, UserLimit, 612.3268389701843
@@ -617,7 +610,6 @@
 ./cases/minotaur-bnb-nlw/JuniperLib/fo9_ar5_1.stdout:DATA, fo9_ar5_1.jl, 181, 0, 72, 436, Min, NaN, NaN, UserLimit, 600.4098219871521
 ./cases/minotaur-bnb-nlw/JuniperLib/netmod_kar2.stdout:DATA, netmod_kar2.jl, 457, 136, 0, 667, Min, -0.4197896464935226, NaN, Optimal, 28.941153049468994
 ./cases/minotaur-bnb-nlw/JuniperLib/crudeoil_lee4_10.stdout:DATA, crudeoil_lee4_10.jl, 3911, 190, 0, 8702, Max, NaN, NaN, UserLimit, 726.9719099998474
-./cases/minotaur-bnb-nlw/JuniperLib/wastepaper4.stdout:DATA, wastepaper4.jl, 77, 44, 0, 39, Min, 0.028366530562179134, NaN, UserLimit, 600.4774789810181
 ./cases/minotaur-bnb-nlw/JuniperLib/st_test3.stdout:DATA, st_test3.jl, 14, 0, 13, 11, Min, -7.000000198549894, NaN, Optimal, 0.2292330265045166
 ./cases/minotaur-bnb-nlw/JuniperLib/transswitch0014p.stdout:DATA, transswitch0014p.jl, 139, 20, 0, 278, Min, 8082.62390128216, NaN, UserLimit, 0.3107888698577881
 ./cases/minotaur-bnb-nlw/JuniperLib/edgecross14-019.stdout:DATA, edgecross14-019.jl, 183, 182, 0, 1457, Min, 3.999999999999977, NaN, Optimal, 0.444929838180542

@@ -24,7 +24,6 @@
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/sssd18-06persp.stdout:DATA, sssd18-06persp.jl, 151, 126, 0, 67, Min, 0, NaN, Infeasible, 0.28159403800964355
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/tspn08.stdout:DATA, tspn08.jl, 45, 28, 0, 19, Min, 290.5667993246383, NaN, Optimal, 0.21490693092346191
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/squfl025-025.stdout:DATA, squfl025-025.jl, 651, 25, 0, 651, Min, 168.80717808792568, NaN, Optimal, 105.5611801147461
-./solvers/minotaur-bnb-nlw/JuniperLibSm/sepasequ_complex.stdout:DATA, sepasequ_complex.jl, 498, 50, 0, 1311, Min, 390.9173615753797, NaN, UserLimit, 3605.4474778175354
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/sssd20-08persp.stdout:DATA, sssd20-08persp.jl, 217, 184, 0, 85, Min, 0, NaN, Infeasible, 0.2778611183166504
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/crudeoil_pooling_ct2.stdout:DATA, crudeoil_pooling_ct2.jl, 404, 108, 0, 733, Max, NaN, NaN, UserLimit, 3602.2489438056946
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/multiplants_stg1a.stdout:DATA, multiplants_stg1a.jl, 424, 216, 0, 250, Max, 386.3917683737755, NaN, UserLimit, 3601.8736670017242
@@ -37,7 +36,6 @@
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/tspn05.stdout:DATA, tspn05.jl, 21, 10, 0, 11, Min, 191.25510183967802, NaN, Optimal, 0.1979198455810547
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/procurement1mot.stdout:DATA, procurement1mot.jl, 785, 60, 0, 750, Max, 291.5416611598056, NaN, Optimal, 384.8429388999939
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/multiplants_stg1.stdout:DATA, multiplants_stg1.jl, 415, 198, 0, 262, Max, 351.4163001604963, NaN, UserLimit, 3600.6001420021057
-./solvers/minotaur-bnb-nlw/JuniperLibSm/fo8_ar2_1.stdout:DATA, fo8_ar2_1.jl, 145, 0, 56, 348, Min, NaN, NaN, UserLimit, 3602.0597488880157
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/multiplants_mtg5.stdout:DATA, multiplants_mtg5.jl, 191, 78, 0, 309, Max, 5924.599945690483, NaN, UserLimit, 2521.0751609802246
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/sssd15-04.stdout:DATA, sssd15-04.jl, 89, 72, 0, 48, Min, 0, NaN, Infeasible, 0.21706509590148926
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/genpooling_meyer04.stdout:DATA, genpooling_meyer04.jl, 119, 55, 0, 142, Min, 0, NaN, Infeasible, 0.25040698051452637
@@ -58,7 +56,6 @@
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/o7_2.stdout:DATA, o7_2.jl, 115, 42, 0, 212, Min, 151.0608188698808, NaN, UserLimit, 3602.496255874634
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/edgecross10-060.stdout:DATA, edgecross10-060.jl, 91, 44, 0, 481, Min, 462.9999818931304, NaN, Optimal, 1.1354169845581055
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/super3t.stdout:DATA, super3t.jl, 1056, 44, 0, 1343, Min, -0.6776485843885112, NaN, UserLimit, 3600.697527885437
-./solvers/minotaur-bnb-nlw/JuniperLibSm/lop97icx.stdout:DATA, lop97icx.jl, 987, 0, 899, 88, Min, 2496.4234255999995, NaN, UserLimit, 3614.6693811416626
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/4stufen.stdout:DATA, 4stufen.jl, 150, 48, 0, 99, Min, 0, NaN, Infeasible, 1.0749180316925049
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/portfol_shortfall200_05.stdout:DATA, portfol_shortfall200_05.jl, 805, 201, 0, 608, Min, -1.0705297547465535, NaN, UserLimit, 3600.9797739982605
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/squfl025-040.stdout:DATA, squfl025-040.jl, 1026, 25, 0, 1041, Min, 197.3338333820758, NaN, Optimal, 1097.3462090492249
@@ -78,11 +75,9 @@
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/waterno2_24.stdout:DATA, waterno2_24.jl, 3985, 216, 0, 4943, Min, NaN, NaN, UserLimit, 3601.7624559402466
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/sssd18-08persp.stdout:DATA, sssd18-08persp.jl, 201, 168, 0, 83, Min, 0, NaN, Infeasible, 0.2410569190979004
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/crudeoil_lee3_06.stdout:DATA, crudeoil_lee3_06.jl, 1537, 84, 0, 3360, Max, NaN, NaN, UserLimit, 3602.9692718982697
-./solvers/minotaur-bnb-nlw/JuniperLibSm/sepasequ_convent.stdout:DATA, sepasequ_convent.jl, 642, 20, 0, 1129, Min, 493.3601612537644, NaN, Optimal, 805.237536907196
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/squfl020-150persp.stdout:DATA, squfl020-150persp.jl, 6021, 20, 0, 6151, Min, 595.601706568548, NaN, UserLimit, 4107.347995996475
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/crossdock_15x8.stdout:DATA, crossdock_15x8.jl, 241, 240, 0, 47, Min, 16390.000000000004, NaN, UserLimit, 3605.5461659431458
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/fo9_ar3_1.stdout:DATA, fo9_ar3_1.jl, 181, 0, 72, 436, Min, NaN, NaN, UserLimit, 3601.743406057358
-./solvers/minotaur-bnb-nlw/JuniperLibSm/lop97ic.stdout:DATA, lop97ic.jl, 1754, 0, 1662, 92, Min, 0.0, NaN, UserLimit, 3603.366189956665
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/multiplants_stg1b.stdout:DATA, multiplants_stg1b.jl, 476, 243, 0, 280, Max, NaN, NaN, UserLimit, 3603.2527849674225
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/tspn10.stdout:DATA, tspn10.jl, 66, 45, 0, 22, Min, 225.12585150679124, NaN, Optimal, 0.23059296607971191
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/graphpart_3pm-0334-0334.stdout:DATA, graphpart_3pm-0334-0334.jl, 109, 108, 0, 37, Min, -36.0, NaN, Optimal, 28.708942890167236
@@ -168,7 +163,6 @@
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/space25a.stdout:DATA, space25a.jl, 384, 240, 0, 202, Min, 484.328609385525, NaN, Optimal, 8.548484086990356
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/kport40.stdout:DATA, kport40.jl, 268, 3, 111, 49, Min, 38.03777958587597, NaN, UserLimit, 3601.057610988617
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/sssd25-08.stdout:DATA, sssd25-08.jl, 257, 224, 0, 90, Min, 473233.4586727987, NaN, UserLimit, 3603.3685159683228
-./solvers/minotaur-bnb-nlw/JuniperLibSm/gams02.stdout:DATA, gams02.jl, 12689, 96, 0, 14609, Min, 716.8088126447466, NaN, Optimal, 17.784642934799194
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/wastepaper5.stdout:DATA, wastepaper5.jl, 105, 65, 0, 47, Min, 0.005366098665916224, NaN, UserLimit, 3603.073641061783
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/deb6.stdout:DATA, deb6.jl, 476, 20, 0, 508, Min, 201.73923293161468, NaN, Optimal, 14.502968788146973
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/crudeoil_li21.stdout:DATA, crudeoil_li21.jl, 1349, 216, 0, 4682, Max, NaN, NaN, UserLimit, 3646.32435798645
@@ -240,7 +234,6 @@
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/genpooling_meyer10.stdout:DATA, genpooling_meyer10.jl, 395, 187, 0, 424, Min, 1.0861871237674553e6, NaN, Optimal, 1586.3627190589905
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/ndcc12persp.stdout:DATA, ndcc12persp.jl, 691, 46, 0, 284, Min, 0, NaN, Infeasible, 0.5135529041290283
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/gasnet_al3.stdout:DATA, gasnet_al3.jl, 725, 136, 0, 831, Min, 0, NaN, Infeasible, 0.20670795440673828
-./solvers/minotaur-bnb-nlw/JuniperLibSm/transswitch0039r.stdout:DATA, transswitch0039r.jl, 329, 46, 0, 474, Min, 82.08383893152129, NaN, Optimal, 873.9708230495453
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/edgecross14-098.stdout:DATA, edgecross14-098.jl, 183, 182, 0, 1457, Min, 1376.9999999999973, NaN, UserLimit, 3602.154386997223
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/nous1.stdout:DATA, nous1.jl, 51, 2, 0, 44, Min, 1.5670719357128067, NaN, Optimal, 0.3950669765472412
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/pooling_epa3.stdout:DATA, pooling_epa3.jl, 1105, 150, 0, 1718, Min, NaN, NaN, UserLimit, 3602.9489607810974
@@ -277,7 +270,6 @@
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/CLay0305H.stdout:DATA, CLay0305H.jl, 276, 55, 0, 396, Min, 8092.499764165734, NaN, Optimal, 1694.274209022522
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/fo9_ar5_1.stdout:DATA, fo9_ar5_1.jl, 181, 0, 72, 436, Min, NaN, NaN, UserLimit, 3601.771682024002
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/crudeoil_lee4_10.stdout:DATA, crudeoil_lee4_10.jl, 3911, 190, 0, 8702, Max, NaN, NaN, UserLimit, 3659.5059711933136
-./solvers/minotaur-bnb-nlw/JuniperLibSm/wastepaper4.stdout:DATA, wastepaper4.jl, 77, 44, 0, 39, Min, 0.0, NaN, Optimal, 3561.283254146576
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/transswitch0014p.stdout:DATA, transswitch0014p.jl, 139, 20, 0, 278, Min, 8082.62390128216, NaN, UserLimit, 0.31925201416015625
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/transswitch0118r.stdout:DATA, transswitch0118r.jl, 1240, 179, 0, 1764, Min, NaN, NaN, UserLimit, 3615.493145942688
 ./solvers/minotaur-bnb-nlw/JuniperLibSm/eg_int_s.stdout:DATA, eg_int_s.jl, 8, 0, 3, 28, Min, 6.453102528070694, NaN, Optimal, 26.456151008605957

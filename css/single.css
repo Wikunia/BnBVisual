@@ -1,0 +1,24 @@
+th, td {
+    vertical-align: top;
+}
+
+#faster {
+    cursor: pointer;
+}
+
+#more {
+    cursor: pointer;
+}
+
+.scroll-div {
+    height: 150px;
+    overflow-y: scroll;
+}
+
+.inst {
+    cursor: pointer;
+}
+
+#specific_instance td {
+    text-align: center;
+}
