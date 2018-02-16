@@ -142,8 +142,10 @@ function algArray(data) {
                 gap = NaN;
             }
             algObj[alg].push({alg: alg, inst: inst, time:o.time,status:o.status,
-                 objval: o.objval, best_bound: o.best_bound, gap: gap,
-                nodes: o.nodes, constraints: o.constraints});
+                objval: o.objval, best_bound: o.best_bound, gap: gap,
+                nodes: o.nodes, constraints: o.constraints, sense: o.sense,
+                bins: o.bin_vars, ints: o.int_vars
+            });
         }
     }   
     let algArr = [];
