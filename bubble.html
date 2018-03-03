@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>Juniper</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="//rawgithub.com/Caged/d3-tip/master/examples/example-styles.css">
+    <link rel="stylesheet" href="css/navbar.css">
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html">Performance</a>
+        <a class="active" href="bubble.html">Bubble</a>
+        <a href="feasible.html">Feasibility & Objective</a>
+        <!-- <a href="ots_index.html?ots=true">OTS Bubble</a> -->
+        <!-- <a href="ots_perc.html?ots=true">OTS Solved over time</a> -->
+    </div>
+    <div class="graphic">
+        <h2>Visualization of instance,duration,discrete variables and status</h2>
+        <select id="file">
+            <option value="juniper_data" selected="selected">juniper</option>
+            <option value="juniper-bs-nsr_data">juniper-bs-nsr</option>
+            <option value="juniper-bs-r_data">juniper-bs-r</option>
+            <option value="juniper-ipopt-grb_data">juniper-ipopt-grb</option>
+            <option value="juniper-ipopt-glpk_data">juniper-ipopt-glpk</option>
+            <option value="juniper-knitro-cbc_data">juniper-knitro-cbc</option>
+            <option value="juniper-ic_data">juniper-ic</option>
+            <option value="juniper-p02_data">juniper-p02</option>
+            <option value="juniper-p04_data">juniper-p04</option>
+            <option value="juniper-p08_data">juniper-p08</option>
+            <option value="juniper-p16_data">juniper-p16</option>
+            <option value="juniper-ts-dbfs_data">juniper-ts-dbfs</option>
+            <option value="bonmin-nlw_data">bonmin-nlw</option>
+            <option value="minotaur-nlw_data">minotaur-nlw</option>
+            <option value="knitro-nlw_data">knitro-nlw</option>
+            <option value="couenne-nlw_data">couenne-nlw</option>
+            <option value="scip-nlw_data">scip-nlw</option>
+        </select>
+        <input id="instance_search" />
+        <div id="chart"></div>
+    </div>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-axis.v1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.8.0-alpha.1/d3-tip.min.js"></script>
+    <script src="./js/util.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
