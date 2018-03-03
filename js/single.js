@@ -19,13 +19,14 @@ var dataArr;
 
 var minlp2_solvers = ["juniper","bonmin-nlw","minotaur-nlw",
 "knitro-nlw","couenne-nlw","scip-nlw","juniper-bs-nsr","juniper-bs-r","juniper-fp-grb",
-"juniper-ic","juniper-p02","juniper-p04","juniper-p08","juniper-p16","juniper-ts-dbfs"];
+"juniper-p02","juniper-p04","juniper-p08","juniper-p16","juniper-ts-dbfs",
+"juniper-ic","juniper-ipopt","juniper-ipopt-glpk","juniper-ipopt-grb","juniper-knitro-cbc"];
 
 var ibm_solvers =  ["juniper","bonmin-nlw","minotaur-bnb-ipopt","minotaur-bnb-nlw","minotaur-msbnb-nlw",
 "couenne-nlw","scip-nlw"];
 
 var devel_solvers = ["juniper_devel", "juniper_fp-best","juniper_mu-0.5","juniper_presolve",
-"juniper_rerun-strong", "juniper-rerun-strong-200"];                    
+"juniper_rerun-strong", "juniper-rerun-strong-200","juniper_candidates","juniper_candidates_asc","juniper_evenly"];                    
 
 var gsolvers = {
     minlp2: minlp2_solvers,

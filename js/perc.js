@@ -6,7 +6,7 @@ var parallel = qparallel ? true : false;
 var configs = qconfigs ? true : false;
 
 var width = 1200,
-height = 600,
+height = 550,
 legend_nof_instances = 298;
 var set_100_perc = true;
 
@@ -14,13 +14,13 @@ var max_time = 3600;
 
 /*
     Paper:
-    panorama compact: 900x280 later 900x250
-    compact: 450x300 
+    panorama compact: 900x400 later 900x370
+    compact: 450x400 later 450*370
 */
 
 if (compact) {
-    width = 900;
-    height = 280;
+    width = 450;
+    height = 400;
 }
 
 // My header
@@ -38,20 +38,8 @@ if (getQueryVariable("ots") == "true") {
 
     if (compact) {
         files = ["juniper", "bonmin-nlw","minotaur-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
-    } else {
-        files = ["ibm/bonmin-nlw","ibm/couenne-nlw","ibm/scip-nlw",
-                 "ibm/minotaur-bnb-nlw","ibm/minotaur-msbnb-nlw","ibm/minotaur-bnb-ipopt-nlw"
-            ]
-    
-       files = ["bonmin-nlw","couenne-nlw","scip-nlw",
-            "minotaur-bnb-nlw","juniper"
-       ]
-
-        // files = ["complete/juniper", "complete/bonmin-nlw", "complete/minotaur-nlw", 
-        //         "complete/couenne-nlw","complete/scip-nlw"];
-        files = ["devel/juniper_devel","devel/juniper_presolve"];
-        
-        files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-ipopt-grb",
+    } else {      
+         files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-ipopt-grb",
             "juniper-ipopt-cbc","juniper-ipopt-glpk","juniper-ipopt","juniper-ic","juniper-p02",
              "juniper-p04","juniper-p08","juniper-p16","juniper-ts-dbfs",
              "bonmin-nlw","knitro-nlw","minotaur-nlw","couenne-nlw","scip-nlw"];
@@ -112,9 +100,9 @@ if (!compact) {
     legend.attr("transform", "translate("+(width-legend_w+35)+","+margin_top+")");
 } else {
     if (linearScale) {
-        legend.attr("transform", "translate("+(width-legend_w-75)+","+(margin_top+75)+")");
+        legend.attr("transform", "translate("+(width-legend_w+100)+","+(margin_top+100)+")");
     } else {
-        legend.attr("transform", "translate("+(axis_width+35)+","+margin_top+")");
+        legend.attr("transform", "translate("+(axis_width)+","+margin_top+")");
     }   
 }
 
@@ -155,9 +143,9 @@ function createLegend(data,maxTime,max_perc) {
         .attr("cx", 20)
         .attr("cy", (d,i) => {
             if (compact) {
-                return 15+(7*2+5)*i
+                return (7*2+5)*i
             } else {
-                return 15+(10*2+5)*i
+                return 10+(10*2+5)*i
             }
         })
         .attr("r", 3)
@@ -171,10 +159,10 @@ function createLegend(data,maxTime,max_perc) {
     let lAlgText = legend_alg.selectAll(".lAlgText").data(data);
     lAlgText.enter().append("text")
         .attr("class", "lAlgText")
-        .attr("x", 40)
+        .attr("x", 30)
         .attr("y", (d,i) => {
             if (compact) {
-                return 15+(7*2+5)*i
+                return 5+(7*2+5)*i
             } else {
                 return 15+(10*2+5)*i
             }
@@ -186,7 +174,9 @@ function createLegend(data,maxTime,max_perc) {
             if (split.length > 1) {
                 t = split[split.length-1];
             }
-    
+            t = t.replace("juniper-ipopt", "jp-ipopt");
+            t = t.replace("juniper-knitro", "jp-knitro");
+
             return t;
         })
         .on("click", (d,i) => {
@@ -226,6 +216,7 @@ function data2line(data,maxTime) {
         times = times.sort(numberSort);
         let n = 0;
         let first = true;
+        let first50 = true;
         for (let t of times) {
             // if there is a problem which took exactly 1s
             if (first && t == 1) {
@@ -243,6 +234,9 @@ function data2line(data,maxTime) {
                     y: (n/N)*100,
                 })
                 lastY = (n/N)*100;
+                if (lastY >= 50 && first50) {
+                    first50 = false;
+                }
             }
         }
         /*data[alg].line.unshift({
@@ -342,7 +336,7 @@ function render(data,maxTime,max_perc,first_render=true) {
         .attr("text-anchor", "middle")  
         .attr("font-family", "sans-serif")
         .attr("transform", "translate(15,"+(height/2-margin_top)+") rotate(-90)")
-        .text("Percentage solved (n="+legend_nof_instances+")");
+        .text("Solved (n="+legend_nof_instances+")");
     
 
     let xName = xAxisName.append("text")

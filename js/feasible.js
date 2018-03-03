@@ -1,4 +1,4 @@
-var width = 1500,
+var width = 1300,
 height = 600,
 centered;
 var max_time = 3600;
@@ -111,7 +111,11 @@ function render(data,first_render=true) {
         .attr("class", "axisLeft")
         .attr("x", 0)
         .attr("y", (d,i) => {return scaleY(i)+(scaleY(i+1)-scaleY(i))/2})
-        .text(d=>{return d.alg})
+        .text(d=>{
+            let desc = d.alg;
+            desc = desc.replace("juniper-","jun-") 
+            return desc;
+        })
     axisLeft.exit().remove();
 
     let axisTop = g.selectAll(".axisTop").data(data[0].data);

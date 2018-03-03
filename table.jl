@@ -15,7 +15,7 @@ tex_headers = [:instance,:nodes,:constraints,:disc_vars,:nl_constr,:objval,
 :juniper_gap,:bonmin_gap,:minotaur_gap,:knitro_gap,:couenne_gap,:scip_gap,
 :juniper_time,:bonmin_time,:minotaur_time,:knitro_time,:couenne_time,:scip_time]
 
-mlibheader = ["instance", "nodes", "constraints", "bin_vars", "int_vars", "nl_constr","sense","dual"]
+mlibheader = ["instance", "nodes", "constraints", "bin_vars", "int_vars", "nl_constr","sense","dual","primal"]
 dir = "/home/ole/GitHub/bnb_visual/"
 
 function readjoindata()
@@ -56,7 +56,7 @@ function readjoindata()
         c += 1
     end
     
-    df = CSV.read(dir*"data/minlib_extra_data.csv"; header=mlibheader, types=[String,Int64,Int64,Int64,Int64,Int64,String,Float64])
+    df = CSV.read(dir*"data/minlib_extra_data.csv"; header=mlibheader, types=[String,Int64,Int64,Int64,Int64,Int64,String,Float64,Float64])
     println(df)
     push!(data,df)
     
@@ -101,6 +101,9 @@ function generateviewdf(of)
             end
         end
         if cnf == length(local_solver_names)
+            push!(delete_idx,idx)
+        end
+        if r[:instance] == "graphpart_3pm-0444-0444"
             push!(delete_idx,idx)
         end
         idx += 1
@@ -172,7 +175,7 @@ tex_file = open(dir*"table_data.tex", "w")
 tex_start = ["",
 "\\begin{table*}[t]",
 "\\footnotesize",
-"\\caption{Quality and Runtime Results for Various Instances}",
+"\\caption{untime and optimality gap statistics for 298 MINLPLib2 Instances solved by different local and global solvers.}",
 "\\begin{tabular}{|r|r|r|r|r||r||r|r|r|r|r|r||r|r|r|r|r|r|r|}",
 "\\hline",
 " \\multicolumn{6}{|c||}{} & juniper    & bon  & minot & knitro & coue        & scip            & juniper          & bon  & minot & knitro  & coue         & scip \\\\ ",
@@ -309,8 +312,6 @@ for head in tex_headers
         end
     end
 end
-println(histo_dict)
-error("1")
 ln = ln[1:end-2]*" \\\\"
 title_line = "\\multicolumn{6}{|c||}{Average all local solvers feasible (n=$l_vals)} & "
 write(tex_file, "$title_line $ln \n")
