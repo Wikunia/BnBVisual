@@ -62,6 +62,7 @@
 ./cases/couenne-nlw/JuniperLib/SLay07M.stdout:DATA, SLay07M.jl, 141, 84, 0, 190, Min, 64748.82514721797, NaN, Optimal, 3.9808671474456787
 ./cases/couenne-nlw/JuniperLib/squfl025-025.stdout:DATA, squfl025-025.jl, 651, 25, 0, 651, Min, 168.80685928719976, NaN, Optimal, 68.50649189949036
 ./cases/couenne-nlw/JuniperLib/crudeoil_lee2_06.stdout:DATA, crudeoil_lee2_06.jl, 1387, 84, 0, 3118, Max, 0, NaN, Infeasible, 456.3054521083832
+./cases/couenne-nlw/JuniperLib/sepasequ_complex.stdout:DATA, sepasequ_complex.jl, 498, 50, 0, 1311, Min, 432.8108376396616, NaN, Optimal, 286.1467549800873
 ./cases/couenne-nlw/JuniperLib/gasprod_sarawak01.stdout:DATA, gasprod_sarawak01.jl, 132, 38, 0, 213, Min, -32445.40490918562, NaN, Optimal, 49.48154401779175
 ./cases/couenne-nlw/JuniperLib/squfl020-050persp.stdout:DATA, squfl020-050persp.jl, 2021, 20, 0, 2051, Min, 371.9423036526498, NaN, UserLimit, 615.3948149681091
 ./cases/couenne-nlw/JuniperLib/sssd20-08persp.stdout:DATA, sssd20-08persp.jl, 217, 184, 0, 85, Min, 679048.7092188807, NaN, UserLimit, 640.7463870048523
@@ -87,6 +88,7 @@
 ./cases/couenne-nlw/JuniperLib/procurement1mot.stdout:DATA, procurement1mot.jl, 785, 60, 0, 750, Max, 256.92382629023547, NaN, UserLimit, 621.0255439281464
 ./cases/couenne-nlw/JuniperLib/enpro48pb.stdout:DATA, enpro48pb.jl, 154, 92, 0, 215, Min, 187276.85120389645, NaN, Optimal, 4.509967088699341
 ./cases/couenne-nlw/JuniperLib/multiplants_stg1.stdout:DATA, multiplants_stg1.jl, 415, 198, 0, 262, Max, NaN, NaN, UserLimit, 622.4737339019775
+./cases/couenne-nlw/JuniperLib/fo8_ar2_1.stdout:DATA, fo8_ar2_1.jl, 145, 0, 56, 348, Min, 39.04936671518418, NaN, UserLimit, 633.2814309597015
 ./cases/couenne-nlw/JuniperLib/Syn15M03M.stdout:DATA, Syn15M03M.jl, 256, 90, 0, 538, Max, 3850.1818419178935, NaN, Optimal, 150.56569504737854
 ./cases/couenne-nlw/JuniperLib/graphpart_3g-0334-0334.stdout:DATA, graphpart_3g-0334-0334.jl, 109, 108, 0, 37, Min, -3.410696e6, NaN, Optimal, 10.535084962844849
 ./cases/couenne-nlw/JuniperLib/Syn40M.stdout:DATA, Syn40M.jl, 131, 40, 0, 227, Max, 47.90320083888404, NaN, UserLimit, 605.2347609996796
@@ -119,6 +121,7 @@
 ./cases/couenne-nlw/JuniperLib/edgecross10-060.stdout:DATA, edgecross10-060.jl, 91, 44, 0, 481, Min, 459.00000000000017, NaN, Optimal, 124.21292781829834
 ./cases/couenne-nlw/JuniperLib/super3t.stdout:DATA, super3t.jl, 1056, 44, 0, 1343, Min, NaN, NaN, UserLimit, 604.0571448802948
 ./cases/couenne-nlw/JuniperLib/fin2bb.stdout:DATA, fin2bb.jl, 589, 175, 0, 619, Min, 107.02047269793171, NaN, UserLimit, 602.3560469150543
+./cases/couenne-nlw/JuniperLib/lop97icx.stdout:DATA, lop97icx.jl, 987, 0, 899, 88, Min, 4252.3654448, NaN, UserLimit, 637.036327123642
 ./cases/couenne-nlw/JuniperLib/graphpart_2pm-0055-0055.stdout:DATA, graphpart_2pm-0055-0055.jl, 76, 75, 0, 26, Min, -20.0, NaN, Optimal, 1.9678688049316406
 ./cases/couenne-nlw/JuniperLib/fo8_ar3_1.stdout:DATA, fo8_ar3_1.jl, 145, 0, 56, 348, Min, 48.232285535755636, NaN, UserLimit, 633.6164171695709
 ./cases/couenne-nlw/JuniperLib/Syn05M02H.stdout:DATA, Syn05M02H.jl, 105, 20, 0, 152, Max, 3032.738392682535, NaN, Optimal, 1.2089018821716309
@@ -179,6 +182,7 @@
 ./cases/couenne-nlw/JuniperLib/sssd18-08persp.stdout:DATA, sssd18-08persp.jl, 201, 168, 0, 83, Min, 1.475621698758643e6, NaN, UserLimit, 644.3922300338745
 ./cases/couenne-nlw/JuniperLib/crudeoil_lee3_06.stdout:DATA, crudeoil_lee3_06.jl, 1537, 84, 0, 3360, Max, NaN, NaN, UserLimit, 602.037633895874
 ./cases/couenne-nlw/JuniperLib/genpooling_lee2.stdout:DATA, genpooling_lee2.jl, 54, 9, 0, 93, Min, -3848.2151693854585, NaN, Optimal, 44.77475190162659
+./cases/couenne-nlw/JuniperLib/sepasequ_convent.stdout:DATA, sepasequ_convent.jl, 642, 20, 0, 1129, Min, 0, NaN, Infeasible, 42.05798387527466
 ./cases/couenne-nlw/JuniperLib/squfl020-150persp.stdout:DATA, squfl020-150persp.jl, 6021, 20, 0, 6151, Min, 777.1095620830614, NaN, UserLimit, 600.7271120548248
 ./cases/couenne-nlw/JuniperLib/crossdock_15x8.stdout:DATA, crossdock_15x8.jl, 241, 240, 0, 47, Min, NaN, NaN, UserLimit, 648.3637790679932
 ./cases/couenne-nlw/JuniperLib/edgecross10-090.stdout:DATA, edgecross10-090.jl, 91, 90, 0, 481, Min, 0, NaN, Infeasible, 18.8829128742218
@@ -192,6 +196,7 @@
 ./cases/couenne-nlw/JuniperLib/RSyn0840H.stdout:DATA, RSyn0840H.jl, 569, 72, 0, 838, Max, 259.2487121894731, NaN, Optimal, 368.1702301502228
 ./cases/couenne-nlw/JuniperLib/chp_shorttermplan2a.stdout:DATA, chp_shorttermplan2a.jl, 1585, 240, 0, 3897, Min, 248224.59936664073, NaN, UserLimit, 606.1035511493683
 ./cases/couenne-nlw/JuniperLib/Syn20M04H.stdout:DATA, Syn20M04H.jl, 765, 160, 0, 1453, Max, 0, NaN, Infeasible, 609.000186920166
+./cases/couenne-nlw/JuniperLib/lop97ic.stdout:DATA, lop97ic.jl, 1754, 0, 1662, 92, Min, 5186.607160000182, NaN, UserLimit, 629.9361951351166
 ./cases/couenne-nlw/JuniperLib/multiplants_stg1b.stdout:DATA, multiplants_stg1b.jl, 476, 243, 0, 280, Max, NaN, NaN, UserLimit, 619.6584961414337
 ./cases/couenne-nlw/JuniperLib/RSyn0810M02M.stdout:DATA, RSyn0810M02M.jl, 411, 168, 0, 867, Max, 1631.7164192896503, NaN, UserLimit, 605.6592168807983
 ./cases/couenne-nlw/JuniperLib/ex1265.stdout:DATA, ex1265.jl, 131, 100, 0, 75, Min, 10.3, NaN, Optimal, 7.4330830574035645
@@ -356,6 +361,7 @@
 ./cases/couenne-nlw/JuniperLib/portfol_classical050_1.stdout:DATA, portfol_classical050_1.jl, 151, 50, 0, 104, Min, -0.08785234088870136, NaN, UserLimit, 627.8357989788055
 ./cases/couenne-nlw/JuniperLib/sssd25-08.stdout:DATA, sssd25-08.jl, 257, 224, 0, 90, Min, 484285.30278759473, NaN, UserLimit, 634.4830050468445
 ./cases/couenne-nlw/JuniperLib/watercontamination0202.stdout:DATA, watercontamination0202.jl, 106705, 0, 0, 0, Min, 0.0, NaN, Optimal, 46.861552000045776
+./cases/couenne-nlw/JuniperLib/gams02.stdout:DATA, gams02.jl, 12689, 96, 0, 14609, Min, NaN, NaN, UserLimit, 601.8324208259583
 ./cases/couenne-nlw/JuniperLib/wastepaper5.stdout:ANALYSIS TEST: DATA, wastepaper5.jl, 105, 65, 0, 47, Min, NaN, NaN, Error, 0.1994030475616455
 ./cases/couenne-nlw/JuniperLib/crudeoil_lee4_05.stdout:DATA, crudeoil_lee4_05.jl, 1956, 95, 0, 4242, Max, NaN, NaN, UserLimit, 600.7068860530853
 ./cases/couenne-nlw/JuniperLib/deb6.stdout:DATA, deb6.jl, 476, 20, 0, 508, Min, NaN, NaN, UserLimit, 606.3744649887085
@@ -537,6 +543,7 @@
 ./cases/couenne-nlw/JuniperLib/crudeoil_lee2_05.stdout:DATA, crudeoil_lee2_05.jl, 1156, 70, 0, 2582, Max, NaN, NaN, UserLimit, 600.7467849254608
 ./cases/couenne-nlw/JuniperLib/eniplac.stdout:DATA, eniplac.jl, 142, 24, 0, 190, Min, -132117.0830259617, NaN, Optimal, 143.99044394493103
 ./cases/couenne-nlw/JuniperLib/sep1.stdout:DATA, sep1.jl, 30, 2, 0, 32, Min, -510.0810020558575, NaN, Optimal, 0.30130791664123535
+./cases/couenne-nlw/JuniperLib/transswitch0039r.stdout:DATA, transswitch0039r.jl, 329, 46, 0, 474, Min, NaN, NaN, UserLimit, 612.4723110198975
 ./cases/couenne-nlw/JuniperLib/edgecross14-098.stdout:DATA, edgecross14-098.jl, 183, 182, 0, 1457, Min, 1358.9999999999975, NaN, UserLimit, 606.5663042068481
 ./cases/couenne-nlw/JuniperLib/nous1.stdout:DATA, nous1.jl, 51, 2, 0, 44, Min, 1.5670719456955358, NaN, UserLimit, 658.8026750087738
 ./cases/couenne-nlw/JuniperLib/pooling_epa3.stdout:DATA, pooling_epa3.jl, 1105, 150, 0, 1718, Min, NaN, NaN, Error, 0.3819711208343506
@@ -608,6 +615,7 @@
 ./cases/couenne-nlw/JuniperLib/fo9_ar5_1.stdout:DATA, fo9_ar5_1.jl, 181, 0, 72, 436, Min, 43.661364233251945, NaN, UserLimit, 630.8691320419312
 ./cases/couenne-nlw/JuniperLib/netmod_kar2.stdout:DATA, netmod_kar2.jl, 457, 136, 0, 667, Min, -0.316075007986124, NaN, UserLimit, 624.6275730133057
 ./cases/couenne-nlw/JuniperLib/crudeoil_lee4_10.stdout:DATA, crudeoil_lee4_10.jl, 3911, 190, 0, 8702, Max, NaN, NaN, UserLimit, 601.3677349090576
+./cases/couenne-nlw/JuniperLib/wastepaper4.stdout:ANALYSIS TEST: DATA, wastepaper4.jl, 77, 44, 0, 39, Min, NaN, NaN, Error, 0.21291303634643555
 ./cases/couenne-nlw/JuniperLib/st_test3.stdout:DATA, st_test3.jl, 14, 0, 13, 11, Min, -7.000000000000001, NaN, Optimal, 0.22982406616210938
 ./cases/couenne-nlw/JuniperLib/transswitch0014p.stdout:DATA, transswitch0014p.jl, 139, 20, 0, 278, Min, 8082.5816172533605, NaN, UserLimit, 619.3166630268097
 ./cases/couenne-nlw/JuniperLib/edgecross14-019.stdout:DATA, edgecross14-019.jl, 183, 182, 0, 1457, Min, 3.999999999999973, NaN, Optimal, 2.5879921913146973
