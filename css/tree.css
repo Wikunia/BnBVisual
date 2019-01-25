@@ -1,0 +1,21 @@
+.node circle {
+  fill: #fff;
+  stroke-width: 3px;
+}
+
+.node text {
+  font: 12px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}
+
+#draggable { 
+  width: 400px;
+  height: 400px; 
+  padding: 0.5em; 
+  background-color:rgba(200,200,200,0.5);
+}

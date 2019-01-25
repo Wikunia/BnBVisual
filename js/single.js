@@ -20,13 +20,15 @@ var dataArr;
 var minlp2_solvers = ["juniper","bonmin-nlw","minotaur-nlw",
 "knitro-nlw","couenne-nlw","scip-nlw","juniper-bs-nsr","juniper-bs-r","juniper-fp-grb",
 "juniper-p02","juniper-p04","juniper-p08","juniper-p16","juniper-ts-dbfs",
-"juniper-ic","juniper-ipopt","juniper-ipopt-glpk","juniper-ipopt-grb","juniper-knitro-cbc"];
+"juniper-ic","juniper-ipopt","juniper-ipopt-glpk","juniper-ipopt-grb","juniper-knitro-cbc","juniper-par-p02","juniper-par-p04"];
 
 var ibm_solvers =  ["juniper","bonmin-nlw","minotaur-bnb-ipopt","minotaur-bnb-nlw","minotaur-msbnb-nlw",
 "couenne-nlw","scip-nlw"];
 
-var devel_solvers = ["juniper_devel", "juniper_fp-best","juniper_mu-0.5","juniper_presolve",
-"juniper_rerun-strong", "juniper-rerun-strong-200","juniper_candidates","juniper_candidates_asc","juniper_evenly"];                    
+var devel_solvers = ["juniper_devel", "juniper_fp-best","juniper_mu-0.5","juniper_mu-0.5_36","juniper_presolve",
+"juniper_rerun-strong", "juniper-rerun-strong-200","juniper_candidates","juniper_candidates_asc","juniper_evenly",
+"juniper_reliable_new","juniper_presolve_tighten","juniper_p-3","juniper_strong_parallel","juniper_gain_mu","juniper_020",
+"juniper_diverse_strong","juniper_ref_inf_gain", "juniper_v0.2.2", "juniper_v0.2.2_mu_init", "juniper_v0.2.2_debug", "juniper_v0.2.2_inf_gains"];                    
 
 var gsolvers = {
     minlp2: minlp2_solvers,
@@ -211,7 +213,6 @@ function getandrenderdata(i,group,files,data) {
                 let maxInAlg = Math.max(...data[alg].data.map(d => {return d.time}));
                 maxTime = maxTime > maxInAlg ? maxTime : maxInAlg;
             }
-            console.log(data);
             getDifferences(data);
             if (instances_group == "Faster") {
                 document.getElementById('faster').click();
@@ -259,8 +260,6 @@ function getDifferences(data) {
             }
         }
     }
-    console.log("faster[0]: ", faster[0])
-    console.log("faster[1]: ", faster[1])
 
     document.getElementById("file1_faster").innerHTML = counter_1;
     document.getElementById("file2_faster").innerHTML = counter_2;

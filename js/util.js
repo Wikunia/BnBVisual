@@ -155,6 +155,35 @@ function algArray(data) {
     return algArr;
 }
 
+function arr2Obj(data, key) {
+    var obj = {};
+    for (let d of data) {
+        obj[d[key]] = d;
+    }   
+    return obj;
+}
+
+function obj2Arr(data) {
+    var result = [];
+    for (let d of Object.keys(data)) {
+        result.push(data[d]);
+    }
+    return result;
+}
+
+function updateBest(best, newData) {
+    let diff = getDiff(Object.keys(best),Object.keys(newData));
+    for (let k of diff.add_l) {
+        best[k] = newData[k];
+    }
+    for (let k in newData) {
+        let d = newData[k];
+        if (d.time < best[k].time && d.status == "Optimal") {
+            best[k] = d;
+        }
+    }
+} 
+
 
 function computeGlobGap(data,ai,i) {
     let realObj = data[0].data[i].objval;
@@ -168,12 +197,17 @@ function computeGlobGap(data,ai,i) {
 /**
  * Change the status from UserLimit to status optimal if solution found and
  * if time limit not reached
+ * Change from Optimal to UserLimit if the other way around (only if fixtime is set to true)
  * @param {Object} d one data object
+ * @param {Boolean} fixtime=false 
  */
-function getRealStatus(d) {
+function getRealStatus(d, fixtime=false) {
     d.status = d.status.trim();
     if ((d.status == "UserLimit") && !isNaN(d.objval) && (d.time <= max_time-10)) { // close to max time
         return "Optimal";
+    }
+    if (fixtime && (d.status == "Optimal") && (d.time > max_time)) {
+        return "UserLimit"
     }
     return d.status;
 }

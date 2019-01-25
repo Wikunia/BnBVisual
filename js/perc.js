@@ -1,9 +1,13 @@
 var qcompact = getQueryVariable("compact");
 var qparallel = getQueryVariable("parallel");
 var qconfigs = getQueryVariable("configs");
+var qdevel = getQueryVariable("devel");
+var qconference = getQueryVariable("conference");
 var compact = qcompact ? true : false;
 var parallel = qparallel ? true : false;
 var configs = qconfigs ? true : false;
+var devel = qdevel ? true : false;
+var conference = qconference ? true : false;
 
 var width = 1200,
 height = 550,
@@ -11,6 +15,8 @@ legend_nof_instances = 298;
 var set_100_perc = true;
 
 var max_time = 3600;
+var fixtime = true; // everything above max_time will set to UserLimit
+var best_juniper = true;
 
 /*
     Paper:
@@ -42,7 +48,7 @@ if (getQueryVariable("ots") == "true") {
          files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-ipopt-grb",
             "juniper-ipopt-cbc","juniper-ipopt-glpk","juniper-ipopt","juniper-ic","juniper-p02",
              "juniper-p04","juniper-p08","juniper-p16","juniper-ts-dbfs",
-             "bonmin-nlw","knitro-nlw","minotaur-nlw","couenne-nlw","scip-nlw"];
+              "bonmin-nlw","knitro-nlw","minotaur-nlw","couenne-nlw","scip-nlw"];
     }
     if (parallel) {
         files = ["juniper", "juniper-p02","juniper-p04","juniper-p08","juniper-p16"];
@@ -51,7 +57,14 @@ if (getQueryVariable("ots") == "true") {
         files = ["juniper-ipopt","juniper-ipopt-grb","juniper-ipopt-glpk","juniper-ipopt-cbc",
                  "juniper-knitro-cbc"];
     }
-    
+    if (devel) {
+        set_100_perc = false;
+        files = ["devel/juniper_020", "devel/juniper_v0.2.2_debug", "devel/juniper_v0.2.2_inf_gains"];
+    }
+    if (conference) {
+        set_100_perc = false;
+        files = ["juniper", "juniper-p16", "bonmin-nlw","minotaur-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
+    }
 }
 
 var legend_w = 300;
@@ -362,6 +375,9 @@ function getdata(section,cb) {
     d3.text("data/"+section+"_data.csv", function(error, data) {
         // Then I add the header and parse to csv
         data = d3.csvParse(headers +"\n"+ data,d=>{
+            if (d.stdout.length == 0) {
+                return;
+            }
             if (ots) {
                 return {
                     stdout: d.stdout,
@@ -370,7 +386,7 @@ function getdata(section,cb) {
                     branch: +d.branch,
                     objval: +d.objval,
                     best_bound: +d.best_bound,
-                    status: getRealStatus(d),
+                    status: getRealStatus(d, fixtime),
                     time: +d.time
                 }
             } else {
@@ -384,7 +400,7 @@ function getdata(section,cb) {
                     sense: d.sense.trim(),
                     objval: +d.objval,
                     best_bound: +d.best_bound,
-                    status: getRealStatus(d),
+                    status: getRealStatus(d, fixtime),
                     time: +d.time
                 }
             }
@@ -396,12 +412,29 @@ function getdata(section,cb) {
     });
 }
 
+var bestJuniperFirst = true;
+var bestJuniperObj;
 function getandrenderdata(i,files,data) {
     let file = files[i];
     getdata(file,function(d) {
         // d = filterInstances(d);
+        let parts = file.split("/")
+        let solver = parts.length > 1 ? parts[1] : parts[0];
+        if (solver.substr(0,7) == "juniper" && solver.substr(0,9) != "juniper-p" && best_juniper) {
+            if (bestJuniperFirst) {
+                bestJuniperFirst = false;
+                bestJuniperObj = arr2Obj(d,"instance");
+            } else {
+                updateBest(bestJuniperObj,arr2Obj(d,"instance"));
+            }
+        }
+
         data[file] = d;
         if (i == files.length-1) {
+            if (best_juniper) {
+                files.push("juniper-combined");
+                data["juniper-combined"] = obj2Arr(bestJuniperObj);
+            }
             data = fillNotDefined(data);
             data = algArray(data);
             nof_instances = data[0].data.length;
