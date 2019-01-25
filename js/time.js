@@ -9,10 +9,10 @@ var headers;
 var ots = false;
 if (getQueryVariable("ots") == "true") {
     ots = true;
-    headers = ["stdout","instance","bus","branch","objval","best_bound","time","status"].join(",");
+    headers = ["stdout","instance","bus","branch","objVal","best_bound","time","status"].join(",");
 } else {
     headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
-    "sense","objval","best_bound","status","time"].join(",");
+    "sense","objVal","best_bound","status","time"].join(",");
 }
 
 // Set svg width & height
@@ -230,7 +230,7 @@ function getandrenderdata(section) {
                     instance: d.instance.trim(), 
                     bus: +d.bus,
                     branch: +d.branch,
-                    objval: +d.objval,
+                    objVal: +d.objVal,
                     best_bound: +d.best_bound,
                     status: getRealStatus(d),
                     time: +d.time
@@ -244,7 +244,7 @@ function getandrenderdata(section) {
                     int_vars: +d.int_vars,
                     constraints: +d.constraints,
                     sense: d.sense.trim(),
-                    objval: +d.objval,
+                    objVal: +d.objVal,
                     best_bound: +d.best_bound,
                     status: getRealStatus(d),
                     time: +d.time

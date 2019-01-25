@@ -15,7 +15,7 @@ legend_nof_instances = 298;
 var set_100_perc = true;
 
 var max_time = 3600;
-var fixtime = true; // everything above max_time will set to UserLimit
+var fixTime = true; // everything above max_time will set to UserLimit
 var best_juniper = true;
 
 /*
@@ -35,11 +35,11 @@ var ots = false;
 var files;
 if (getQueryVariable("ots") == "true") {
     ots = true;
-    headers = ["stdout","instance","bus","branch","objval","best_bound","time","status"].join(",");
+    headers = ["stdout","instance","bus","branch","objVal","best_bound","time","status"].join(",");
     files = ["ots-juniper","ots-bonmin","ots-couenne","ots-bonmin-nlw","ots-couenne-nlw"];
 } else {
     headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
-    "sense","objval","best_bound","status","time"].join(",");
+    "sense","objVal","best_bound","status","time"].join(",");
 
 
     if (compact) {
@@ -384,9 +384,9 @@ function getdata(section,cb) {
                     instance: d.instance.trim(), 
                     bus: +d.bus,
                     branch: +d.branch,
-                    objval: +d.objval,
+                    objVal: +d.objVal,
                     best_bound: +d.best_bound,
-                    status: getRealStatus(d, fixtime),
+                    status: getRealStatus(d, fixTime),
                     time: +d.time
                 }
             } else {
@@ -398,9 +398,9 @@ function getdata(section,cb) {
                     int_vars: +d.int_vars,
                     constraints: +d.constraints,
                     sense: d.sense.trim(),
-                    objval: +d.objval,
+                    objVal: +d.objVal,
                     best_bound: +d.best_bound,
-                    status: getRealStatus(d, fixtime),
+                    status: getRealStatus(d, fixTime),
                     time: +d.time
                 }
             }

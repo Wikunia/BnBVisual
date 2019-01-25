@@ -1,6 +1,6 @@
 var ots = false;
 var headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
-    "sense","objval","best_bound","status","time"].join(",");
+    "sense","objVal","best_bound","status","time"].join(",");
 var files = ["juniper", "bonmin-nlw","minotaur-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
 
 var max_time = 3600;
@@ -18,7 +18,7 @@ function getdata(section,cb) {
                     instance: d.instance.trim(), 
                     bus: +d.bus,
                     branch: +d.branch,
-                    objval: +d.objval,
+                    objVal: +d.objVal,
                     best_bound: +d.best_bound,
                     status: getRealStatus(d),
                     time: +d.time
@@ -32,7 +32,7 @@ function getdata(section,cb) {
                     int_vars: +d.int_vars,
                     constraints: +d.constraints,
                     sense: d.sense.trim(),
-                    objval: +d.objval,
+                    objVal: +d.objVal,
                     best_bound: +d.best_bound,
                     status: getRealStatus(d),
                     time: +d.time
@@ -122,7 +122,7 @@ function render(data) {
     for (let alg in data) {
         objdata[alg] = []
         for (let i = 0; i < data[alg].length; i++) {
-            if (!isNaN(data[alg][i].objval) && (data[alg][i].status == "Optimal" /*|| data[alg][i].status == "UserLimit"*/)) {
+            if (!isNaN(data[alg][i].objVal) && (data[alg][i].status == "Optimal" /*|| data[alg][i].status == "UserLimit"*/)) {
                 objdata[alg].push(data[alg][i].instance);
             }
         }

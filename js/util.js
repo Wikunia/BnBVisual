@@ -77,7 +77,7 @@ function nanrow(inst) {
         int_vars: NaN,
         constraints: NaN,
         sense: NaN,
-        objval: NaN,
+        objVal: NaN,
         best_bound: NaN,
         status: "Error",
         gap: NaN,
@@ -142,7 +142,7 @@ function algArray(data) {
                 gap = NaN;
             }
             algObj[alg].push({alg: alg, inst: inst, time:o.time,status:o.status,
-                objval: o.objval, best_bound: o.best_bound, gap: gap,
+                objVal: o.objVal, best_bound: o.best_bound, gap: gap,
                 nodes: o.nodes, constraints: o.constraints, sense: o.sense,
                 bins: o.bin_vars, ints: o.int_vars
             });
@@ -186,8 +186,8 @@ function updateBest(best, newData) {
 
 
 function computeGlobGap(data,ai,i) {
-    let realObj = data[0].data[i].objval;
-    let obj = data[ai].data[i].objval;
+    let realObj = data[0].data[i].objVal;
+    let obj = data[ai].data[i].objVal;
     if (data[ai].data[i].status == "Optimal" && data[ai].data[i].status == "UserLimit") {
         return NaN;
     }
@@ -197,16 +197,16 @@ function computeGlobGap(data,ai,i) {
 /**
  * Change the status from UserLimit to status optimal if solution found and
  * if time limit not reached
- * Change from Optimal to UserLimit if the other way around (only if fixtime is set to true)
+ * Change from Optimal to UserLimit if the other way around (only if fixTime is set to true)
  * @param {Object} d one data object
- * @param {Boolean} fixtime=false 
+ * @param {Boolean} fixTime=false 
  */
-function getRealStatus(d, fixtime=false) {
+function getRealStatus(d, fixTime=false) {
     d.status = d.status.trim();
-    if ((d.status == "UserLimit") && !isNaN(d.objval) && (d.time <= max_time-10)) { // close to max time
+    if ((d.status == "UserLimit") && !isNaN(d.objVal) && (d.time <= max_time-10)) { // close to max time
         return "Optimal";
     }
-    if (fixtime && (d.status == "Optimal") && (d.time > max_time)) {
+    if (fixTime && (d.status == "Optimal") && (d.time > max_time)) {
         return "UserLimit"
     }
     return d.status;

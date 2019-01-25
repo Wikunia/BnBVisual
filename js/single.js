@@ -1,5 +1,5 @@
 var headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
-"sense","objval","best_bound","status","time"].join(",");
+"sense","objVal","best_bound","status","time"].join(",");
 
 var width = 1500,
 height = 600,
@@ -151,8 +151,8 @@ function instClick(inst) {
     html += "<tr><th>Status</th><td>"+entry1.status+"</td><td>"+entry2.status+"</td></tr>";
     // time
     html += "<tr><th>Time</th><td>"+entry1.time+"</td><td>"+entry2.time+"</td></tr>";
-    // objval
-    html += "<tr><th>Obj.</th><td>"+entry1.objval+"</td><td>"+entry2.objval+"</td></tr>";
+    // objVal
+    html += "<tr><th>Obj.</th><td>"+entry1.objVal+"</td><td>"+entry2.objVal+"</td></tr>";
 
     // General info
     // Variables, Constraints, Ints, Bins
@@ -185,7 +185,7 @@ function getdata(group,section,cb) {
                 int_vars: +d.int_vars,
                 constraints: +d.constraints,
                 sense: d.sense.trim(),
-                objval: +d.objval,
+                objVal: +d.objVal,
                 best_bound: +d.best_bound,
                 status: getRealStatus(d),
                 time: +d.time

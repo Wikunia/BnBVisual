@@ -84,9 +84,9 @@ d3.json("data/json/v0.2.2_inf_gains/"+filename, function(error, jsonData) {
 
   console.log("sense: ",jsonData.info.sense);
   if (jsonData.info.sense == "Min") {
-    scaleC.domain([jsonData.relaxation.objval,jsonData.solution.objval]);
+    scaleC.domain([jsonData.relaxation.objVal,jsonData.solution.objVal]);
   } else {
-    scaleC.domain([jsonData.solution.objval, jsonData.relaxation.objval]);
+    scaleC.domain([jsonData.solution.objVal, jsonData.relaxation.objVal]);
   }
 
   root = d3.hierarchy(jsonData.tree, function(d) {

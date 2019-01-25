@@ -75,7 +75,7 @@ function render(data,first_render=true) {
     tip = d3.tip().attr('class', 'd3-tip').html(function(d) {
         if (d.alg == "minlib_extra") {
             // show objective for minlip (which just represents the global objective)
-            return "<span>Obj: "+d.objval+"</span>";
+            return "<span>Obj: "+d.objVal+"</span>";
         }
         if (d.status == "Infeasible" || d.status == "Error" || d.status == "Unbounded") {
             return "<span>"+d.status+"</span>";
@@ -100,7 +100,7 @@ function render(data,first_render=true) {
             .attr("stroke-width", "4px")
             .attr("stroke", d => {return strokeColor(d)})
             .attr("fill", d => {return color(d)})
-            .attr("data-objval", d => {return d.objval})
+            .attr("data-objVal", d => {return d.objVal})
             .attr("data-status", d => {return d.status})
             .attr("data-gap", d => {return d.gap})
         rects[alg].exit().remove();
@@ -143,7 +143,7 @@ function render(data,first_render=true) {
 getandrenderdata(0,files,{});
 
 var headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
-"sense","objval","best_bound","status","time"].join(",");
+"sense","objVal","best_bound","status","time"].join(",");
 
 var headers_obj = ["instance", "var", "constr", "bin", "int", "nl_constr","sense","dual","primal"].join(",");
 
@@ -155,7 +155,7 @@ function getdata(section,cb) {
                     instance: d.instance,
                     bin_vars: +d.bin,
                     int_vars: +d.int,
-                    objval: +d.primal,
+                    objVal: +d.primal,
                     status: d.primal != "" ? "Optimal" : "Error"
                 }
             }); 
@@ -169,7 +169,7 @@ function getdata(section,cb) {
                     int_vars: +d.int_vars,
                     constraints: +d.constraints,
                     sense: d.sense.trim(),
-                    objval: +d.objval,
+                    objVal: +d.objVal,
                     best_bound: +d.best_bound,
                     status: getRealStatus(d),
                     time: +d.time
