@@ -199,11 +199,13 @@ function computeGlobGap(data,ai,i) {
  * if time limit not reached
  * Change from Optimal to UserLimit if the other way around (only if fixTime is set to true)
  * @param {Object} d one data object
+ * @param {String} solver name of the solver or section
  * @param {Boolean} fixTime=false 
  */
-function getRealStatus(d, fixTime=false) {
+function getRealStatus(d, solver, fixTime=false) {
     d.status = d.status.trim();
-    if ((d.status == "UserLimit") && !isNaN(d.objVal) && (d.time <= max_time-10)) { // close to max time
+    // don't change from UserLimit to optimal for knitro instances (they have a node limit sometimes)
+    if ((d.status == "UserLimit") && !isNaN(d.objVal) && (d.time <= max_time-10) && solver.indexOf("knitro") < 0) { // close to max time
         return "Optimal";
     }
     if (fixTime && (d.status == "Optimal") && (d.time > max_time)) {

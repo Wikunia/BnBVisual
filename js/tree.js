@@ -14,7 +14,9 @@ function getQueryVariable(variable)
 $( "#draggable" ).draggable();
 
 
+var dir_name = getQueryVariable("d");
 var filename = getQueryVariable("f")+".json";
+console.log("Directory name: ", dir_name);
 console.log("Filename: ", filename);
 // Set the dimensions and margins of the diagram
 var margin = { top: 20, right: 90, bottom: 30, left: 90 },
@@ -79,7 +81,7 @@ function sumNodesWithChildren(d) {
 var treemap = d3.tree().size([width, height]);
 
 // Assigns parent, children, height, depth
-d3.json("data/json/v0.2.2_inf_gains/"+filename, function(error, jsonData) {
+d3.json("data/json/"+dir_name+"/"+filename, function(error, jsonData) {
 
 
   console.log("sense: ",jsonData.info.sense);

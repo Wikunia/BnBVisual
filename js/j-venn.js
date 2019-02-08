@@ -20,7 +20,7 @@ function getdata(section,cb) {
                     branch: +d.branch,
                     objVal: +d.objVal,
                     best_bound: +d.best_bound,
-                    status: getRealStatus(d),
+                    status: getRealStatus(d, section),
                     time: +d.time
                 }
             } else {
@@ -34,7 +34,7 @@ function getdata(section,cb) {
                     sense: d.sense.trim(),
                     objVal: +d.objVal,
                     best_bound: +d.best_bound,
-                    status: getRealStatus(d),
+                    status: getRealStatus(d, section),
                     time: +d.time
                 }
             }

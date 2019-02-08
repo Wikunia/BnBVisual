@@ -28,7 +28,8 @@ var ibm_solvers =  ["juniper","bonmin-nlw","minotaur-bnb-ipopt","minotaur-bnb-nl
 var devel_solvers = ["juniper_devel", "juniper_fp-best","juniper_mu-0.5","juniper_mu-0.5_36","juniper_presolve",
 "juniper_rerun-strong", "juniper-rerun-strong-200","juniper_candidates","juniper_candidates_asc","juniper_evenly",
 "juniper_reliable_new","juniper_presolve_tighten","juniper_p-3","juniper_strong_parallel","juniper_gain_mu","juniper_020",
-"juniper_diverse_strong","juniper_ref_inf_gain", "juniper_v0.2.2", "juniper_v0.2.2_mu_init", "juniper_v0.2.2_debug", "juniper_v0.2.2_inf_gains"];                    
+"juniper_diverse_strong","juniper_ref_inf_gain", "juniper_v0.2.2", "juniper_v0.2.2_mu_init", "juniper_v0.2.2_debug", "juniper_v0.2.2_inf_gains",
+"juniper_v0.2.4_presolve","juniper_v0.2.4_presolve_ma27","juniper_v0.2.4_presolve_v2","juniper_v0.2.4_lin_BFS"];                    
 
 var gsolvers = {
     minlp2: minlp2_solvers,
@@ -187,7 +188,7 @@ function getdata(group,section,cb) {
                 sense: d.sense.trim(),
                 objVal: +d.objVal,
                 best_bound: +d.best_bound,
-                status: getRealStatus(d),
+                status: getRealStatus(d, section),
                 time: +d.time
             }
         }); 

@@ -3,11 +3,13 @@ var qparallel = getQueryVariable("parallel");
 var qconfigs = getQueryVariable("configs");
 var qdevel = getQueryVariable("devel");
 var qconference = getQueryVariable("conference");
+var qsolvers = getQueryVariable("solvers");
 var compact = qcompact ? true : false;
 var parallel = qparallel ? true : false;
 var configs = qconfigs ? true : false;
 var devel = qdevel ? true : false;
 var conference = qconference ? true : false;
+var solvers = qsolvers ? true : false;
 
 var width = 1200,
 height = 550,
@@ -59,11 +61,16 @@ if (getQueryVariable("ots") == "true") {
     }
     if (devel) {
         set_100_perc = false;
-        files = ["devel/juniper_020", "devel/juniper_v0.2.2_debug", "devel/juniper_v0.2.2_inf_gains"];
+        legend_nof_instances = 167
+        files = ["devel/juniper_v0.2.2", "devel/juniper_v0.2.4_lin_BFS"];
     }
     if (conference) {
         set_100_perc = false;
         files = ["juniper", "juniper-p16", "bonmin-nlw","minotaur-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
+    }
+    if (solvers) {
+        best_juniper = false;
+        files = ["juniper", "bonmin-nlw","minotaur-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
     }
 }
 
@@ -386,7 +393,7 @@ function getdata(section,cb) {
                     branch: +d.branch,
                     objVal: +d.objVal,
                     best_bound: +d.best_bound,
-                    status: getRealStatus(d, fixTime),
+                    status: getRealStatus(d, section, fixTime),
                     time: +d.time
                 }
             } else {
@@ -400,7 +407,7 @@ function getdata(section,cb) {
                     sense: d.sense.trim(),
                     objVal: +d.objVal,
                     best_bound: +d.best_bound,
-                    status: getRealStatus(d, fixTime),
+                    status: getRealStatus(d, section, fixTime),
                     time: +d.time
                 }
             }

@@ -139,7 +139,7 @@ function format_int(val)
 end
 
 function format_instance(val)
-    return replace(val,"_","\\_")
+    return replace(val,"_" => "\\_")
 end
 
 function allfeasible(r, solvers)

@@ -232,7 +232,7 @@ function getandrenderdata(section) {
                     branch: +d.branch,
                     objVal: +d.objVal,
                     best_bound: +d.best_bound,
-                    status: getRealStatus(d),
+                    status: getRealStatus(d, section),
                     time: +d.time
                 }
             } else {
@@ -246,7 +246,7 @@ function getandrenderdata(section) {
                     sense: d.sense.trim(),
                     objVal: +d.objVal,
                     best_bound: +d.best_bound,
-                    status: getRealStatus(d),
+                    status: getRealStatus(d, section),
                     time: +d.time
                 }
             }
