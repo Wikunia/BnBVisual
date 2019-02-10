@@ -35,6 +35,9 @@ if (compact) {
 var headers;
 var ots = false;
 var files;
+var minlib_headers =  ["instance","variables","constraints","bin_vars","int_vars","nl_constraints",
+"sense","dual","primal"].join(",");
+
 if (getQueryVariable("ots") == "true") {
     ots = true;
     headers = ["stdout","instance","bus","branch","objVal","best_bound","time","status"].join(",");
@@ -216,19 +219,46 @@ numberSort = function (a,b) {
     return a - b;
 };
 
+function optimalFilter(minlib_data, data, params) {
+    console.log("data: ", data);
+    return data.filter(d => {
+        return d.status == "Optimal" || d.status == "LocalOptimal";
+    });
+}
+
+function boundFilter(minlib_data, data, params) {
+    return data.filter(d => {
+        minlib_inst = minlib_data[d.inst];
+        if ((d.status != "Infeasible") && d.time < params.max_time && !isNaN(d.objVal)) {
+            console.log("minlib: ", minlib_inst)
+            console.log("obj: ", d.objVal)
+            console.log("primal: ", minlib_inst.primal)
+            if (minlib_inst.sense == "Min") {
+                console.log("off by: ", (d.objVal - minlib_inst.primal)/minlib_inst.primal)
+                return (d.objVal - minlib_inst.primal)/minlib_inst.primal < params.perc/100.0
+            } else {
+                console.log("off by: ", (d.objVal - minlib_inst.primal)/minlib_inst.primal)
+                return (minlib_inst.primal - d.objVal)/minlib_inst.primal < params.perc/100.0
+            }
+        }
+        return false;
+    });
+}
+
 /**
  * Convert data to line format
- * @param {Array} data 
- * @param {Float} maxTime 
+ * @param {Array}       minlib_data 
+ * @param {Array}       data 
+ * @param {Float}       maxTime 
+ * @param {Function}    function which determines whether it is "solved"
+ * @param {Object}      filteringParams  parameters for the filtering function
  */
-function data2line(data,maxTime) {
+function data2line(minlib_data,data,maxTime,filteringFct,filteringParams) {
     let max_perc = 0
     for (let alg in data) {
         let dalg = data[alg].data;
         data[alg].line = [];
-        let fdata = dalg.filter(d => {
-            return d.status == "Optimal" || d.status == "LocalOptimal";
-        });
+        let fdata = filteringFct(minlib_data, dalg, filteringParams);
         let times = fdata.map(d => {
             return d.time;
         });
@@ -264,7 +294,7 @@ function data2line(data,maxTime) {
             y: 0,
         })*/
         data[alg].line.push({
-            x: maxTime,
+            x: maxTime+100,
             y: lastY,
         })
         if (lastY > max_perc) {
@@ -356,7 +386,7 @@ function render(data,maxTime,max_perc,first_render=true) {
         .attr("text-anchor", "middle")  
         .attr("font-family", "sans-serif")
         .attr("transform", "translate(15,"+(height/2-margin_top)+") rotate(-90)")
-        .text("Solved (n="+legend_nof_instances+")");
+        .text("Solved within 1% (n="+legend_nof_instances+")");
     
 
     let xName = xAxisName.append("text")
@@ -456,8 +486,27 @@ function getandrenderdata(i,files,data) {
                 maxTime = maxTime > maxInAlg ? maxTime : maxInAlg;
             }
             maxTime = 4000;
-            data,max_perc = data2line(data,maxTime);
-            render(data,maxTime,max_perc);
+            
+             // Get the minlib data
+            d3.text("data/minlib_extra_data.csv", function(error, minlib_data) {
+                // Then I add the header and parse to csv
+                minlib_data = d3.csvParse(minlib_headers +"\n"+ minlib_data,d=>{
+                    return {
+                        instance: d.instance,
+                        variables: +d.variables,
+                        bin_vars: +d.bin_vars,
+                        int_vars: +d.int_vars,
+                        constraints: +d.constraints,
+                        sense: d.sense.trim(),
+                        primal: +d.primal,
+                        dual: +d.dual,
+                    }
+                });
+                minlib_data = arr2Obj(minlib_data,"instance")
+                console.log(minlib_data);
+                data,max_perc = data2line(minlib_data, data,maxTime, boundFilter, {perc:1.0, max_time: 3650});
+                render(data,maxTime,max_perc);
+            });
         }else {
           getandrenderdata(i+1,files,data)
         }

@@ -139,6 +139,7 @@ function format_int(val)
 end
 
 function format_instance(val)
+    val = replace(val, "graphpart_3g" => "gp3g-")
     return replace(val,"_" => "\\_")
 end
 
