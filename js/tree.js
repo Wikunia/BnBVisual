@@ -20,8 +20,8 @@ console.log("Directory name: ", dir_name);
 console.log("Filename: ", filename);
 // Set the dimensions and margins of the diagram
 var margin = { top: 20, right: 90, bottom: 30, left: 90 },
-  width = 4000 - margin.left - margin.right,
-  height = 4000 - margin.top - margin.bottom;
+  width = 2000 - margin.left - margin.right,
+  height = 1000 - margin.top - margin.bottom;
 
 var scaleC = d3
 .scaleLinear()
@@ -59,14 +59,22 @@ function getColor(d) {
 function getFill(d) {
   if (d._children) {
     return "lightsteelblue";
-  } else if(d.data.step_obj.node.relaxation_state == "Optimal") {
+  } else if(state_is_optimal(d.data.step_obj.node.relaxation_state)) {
     return "#fb0";
-  } else if(d.data.step_obj.node.relaxation_state == "Infeasible") {
+  } else if(state_is_infeasible(d.data.step_obj.node.relaxation_state)) {
     return "#f00";
   } else if(d.data.step_obj.node.relaxation_state == "Error") {
     return "#000";
   } 
   return "#fff";
+}
+
+function state_is_optimal(state) {
+  return state == "LOCALLY_SOLVED" || state == "Optimal" || state == "OPTIMAL"
+}
+
+function state_is_infeasible(state) {
+  return state == "LOCALLY_INFEASIBLE" || state == "Infeasible" || state == "INFEASIBLE"
 }
 
 var nodesWithChildren = 1; // for root
@@ -81,9 +89,11 @@ function sumNodesWithChildren(d) {
 var treemap = d3.tree().size([width, height]);
 
 // Assigns parent, children, height, depth
-d3.json("data/json/"+dir_name+"/"+filename, function(error, jsonData) {
-
-
+var file_path = "data/json/"+dir_name+"/"+filename;
+if (!dir_name) {
+  file_path = "data/json/"+filename;
+}
+d3.json(file_path, function(error, jsonData) {
   console.log("sense: ",jsonData.info.sense);
   if (jsonData.info.sense == "Min") {
     scaleC.domain([jsonData.relaxation.objVal,jsonData.solution.objVal]);
@@ -144,6 +154,7 @@ d3.json("data/json/"+dir_name+"/"+filename, function(error, jsonData) {
       })
       .on("click", click)
       .on("mouseover", (d) => {
+        console.log(d.data.step_obj);
         var html = "";
         if ("counter" in d.data.step_obj) {
           html += "<span>Counter: "+d.data.step_obj.counter+"</span><br>\n";

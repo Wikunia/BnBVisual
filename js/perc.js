@@ -73,7 +73,7 @@ if (getQueryVariable("ots") == "true") {
     }
     if (solvers) {
         best_juniper = false;
-        files = ["juniper", "bonmin-nlw","minotaur-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
+        files = ["juniper_v0.2.4", "bonmin-nlw","minotaur-nlw","knitro-nlw"];
     }
 }
 
@@ -220,7 +220,6 @@ numberSort = function (a,b) {
 };
 
 function optimalFilter(minlib_data, data, params) {
-    console.log("data: ", data);
     return data.filter(d => {
         return d.status == "Optimal" || d.status == "LocalOptimal";
     });
@@ -230,14 +229,9 @@ function boundFilter(minlib_data, data, params) {
     return data.filter(d => {
         minlib_inst = minlib_data[d.inst];
         if ((d.status != "Infeasible") && d.time < params.max_time && !isNaN(d.objVal)) {
-            console.log("minlib: ", minlib_inst)
-            console.log("obj: ", d.objVal)
-            console.log("primal: ", minlib_inst.primal)
             if (minlib_inst.sense == "Min") {
-                console.log("off by: ", (d.objVal - minlib_inst.primal)/minlib_inst.primal)
                 return (d.objVal - minlib_inst.primal)/minlib_inst.primal < params.perc/100.0
             } else {
-                console.log("off by: ", (d.objVal - minlib_inst.primal)/minlib_inst.primal)
                 return (minlib_inst.primal - d.objVal)/minlib_inst.primal < params.perc/100.0
             }
         }
@@ -386,7 +380,7 @@ function render(data,maxTime,max_perc,first_render=true) {
         .attr("text-anchor", "middle")  
         .attr("font-family", "sans-serif")
         .attr("transform", "translate(15,"+(height/2-margin_top)+") rotate(-90)")
-        .text("Solved within 1% (n="+legend_nof_instances+")");
+        .text("Solved locally (n="+legend_nof_instances+")");
     
 
     let xName = xAxisName.append("text")
@@ -504,7 +498,7 @@ function getandrenderdata(i,files,data) {
                 });
                 minlib_data = arr2Obj(minlib_data,"instance")
                 console.log(minlib_data);
-                data,max_perc = data2line(minlib_data, data,maxTime, boundFilter, {perc:1.0, max_time: 3650});
+                data,max_perc = data2line(minlib_data, data,maxTime, optimalFilter, {perc:1.0, max_time: 3650});
                 render(data,maxTime,max_perc);
             });
         }else {
