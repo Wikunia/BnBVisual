@@ -5,7 +5,7 @@ import requests
 import pandas as pd
 
 
-df = pd.read_csv("data/minlib_extra_data.csv", names=["instance", "var", "constr", "bin", "int", "nl_constr","sense","dual","primal"])
+df = pd.read_csv("data/minlib_extra_data_old.csv", names=["instance", "var", "constr", "bin", "int", "nl_constr","sense","dual","primal"])
 
 for index, row in df.iterrows():
     instance = row['instance'].lower()
@@ -54,13 +54,12 @@ for index, row in df.iterrows():
             primal_bound = max(primal_bounds)
 
     if float(row['dual']) == 0.0:
-        df.ix[index,'dual'] = dual_bound
+        df.loc[index,'dual'] = dual_bound
     if float(row['primal']) == 0.0:
-        df.ix[index,'primal'] = primal_bound
+        df.loc[index,'primal'] = primal_bound
 
-    
     print("Dual Bound: ", dual_bound)
     print("Primal Bound: ", primal_bound)
     print("===================================")
 
-    df.to_csv("data/minlib_extra_data.csv", index=False, header=False)
+    df.to_csv("data/minlib_extra_data_old.csv", index=False, header=False)

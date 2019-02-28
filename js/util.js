@@ -171,6 +171,8 @@ function obj2Arr(data) {
     return result;
 }
 
+
+
 function updateBest(best, newData) {
     let diff = getDiff(Object.keys(best),Object.keys(newData));
     for (let k of diff.add_l) {
@@ -178,7 +180,7 @@ function updateBest(best, newData) {
     }
     for (let k in newData) {
         let d = newData[k];
-        if (d.time < best[k].time && d.status == "Optimal") {
+        if (d.time < best[k].time && state_is_optimal(d.status)) {
             best[k] = d;
         }
     }
@@ -213,3 +215,11 @@ function getRealStatus(d, solver, fixTime=false) {
     }
     return d.status;
 }
+
+function state_is_optimal(state) {
+    return state == "LOCALLY_SOLVED" || state == "Optimal" || state == "OPTIMAL"
+  }
+  
+  function state_is_infeasible(state) {
+    return state == "LOCALLY_INFEASIBLE" || state == "Infeasible" || state == "INFEASIBLE"
+  }

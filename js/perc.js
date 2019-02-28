@@ -3,13 +3,13 @@ var qparallel = getQueryVariable("parallel");
 var qconfigs = getQueryVariable("configs");
 var qdevel = getQueryVariable("devel");
 var qconference = getQueryVariable("conference");
-var qsolvers = getQueryVariable("solvers");
+var qall = getQueryVariable("all");
 var compact = qcompact ? true : false;
 var parallel = qparallel ? true : false;
 var configs = qconfigs ? true : false;
 var devel = qdevel ? true : false;
 var conference = qconference ? true : false;
-var solvers = qsolvers ? true : false;
+var all = qall ? true : false;
 
 var width = 1200,
 height = 550,
@@ -19,6 +19,22 @@ var set_100_perc = true;
 var max_time = 3600;
 var fixTime = true; // everything above max_time will set to UserLimit
 var best_juniper = true;
+
+var solver_dict = [
+    {
+        name: "bonmin-nlw",
+        version: "1.8.6"
+    },
+    {
+        name: "knitro-nlw",
+        version: "11.1"
+    },
+    {
+        name: "juniper",
+        version: "0.2.5"
+    }
+]
+
 
 /*
     Paper:
@@ -43,6 +59,7 @@ if (getQueryVariable("ots") == "true") {
     headers = ["stdout","instance","bus","branch","objVal","best_bound","time","status"].join(",");
     files = ["ots-juniper","ots-bonmin","ots-couenne","ots-bonmin-nlw","ots-couenne-nlw"];
 } else {
+    best_juniper = false;
     headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
     "sense","objVal","best_bound","status","time"].join(",");
 
@@ -50,10 +67,7 @@ if (getQueryVariable("ots") == "true") {
     if (compact) {
         files = ["juniper", "bonmin-nlw","minotaur-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
     } else {      
-         files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-ipopt-grb",
-            "juniper-ipopt-cbc","juniper-ipopt-glpk","juniper-ipopt","juniper-ic","juniper-p02",
-             "juniper-p04","juniper-p08","juniper-p16","juniper-ts-dbfs",
-              "bonmin-nlw","knitro-nlw","minotaur-nlw","couenne-nlw","scip-nlw"];
+        files = ["juniper", "bonmin-nlw","minotaur-nlw","knitro-nlw"];
     }
     if (parallel) {
         files = ["juniper", "juniper-p02","juniper-p04","juniper-p08","juniper-p16"];
@@ -65,15 +79,18 @@ if (getQueryVariable("ots") == "true") {
     if (devel) {
         set_100_perc = false;
         legend_nof_instances = 167
-        files = ["devel/juniper_v0.2.2", "devel/juniper_v0.2.4_lin_BFS"];
+        files = ["devel/juniper_v0.2.2", "devel/juniper_v0.2.4_lin_BFS","devel/juniper_v0.2.4_moi"];
     }
     if (conference) {
         set_100_perc = false;
         files = ["juniper", "juniper-p16", "bonmin-nlw","minotaur-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
     }
-    if (solvers) {
+    if (all) {
         best_juniper = false;
-        files = ["juniper_v0.2.4", "bonmin-nlw","minotaur-nlw","knitro-nlw"];
+        files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-ipopt-grb",
+            "juniper-ipopt-cbc","juniper-ipopt-glpk","juniper-ipopt","juniper-ic","juniper-p02",
+             "juniper-p04","juniper-p08","juniper-p16","juniper-ts-dbfs",
+              "bonmin-nlw","knitro-nlw","minotaur-nlw","couenne-nlw","scip-nlw"];
     }
 }
 
@@ -199,6 +216,9 @@ function createLegend(data,maxTime,max_perc) {
             }
             t = t.replace("juniper-ipopt", "jp-ipopt");
             t = t.replace("juniper-knitro", "jp-knitro");
+            for (let solver of solver_dict) {
+                t = t.replace(RegExp("^"+solver.name+"$"), solver.name+" v."+solver.version);
+            }
 
             return t;
         })
@@ -221,7 +241,7 @@ numberSort = function (a,b) {
 
 function optimalFilter(minlib_data, data, params) {
     return data.filter(d => {
-        return d.status == "Optimal" || d.status == "LocalOptimal";
+        return d.status == "Optimal" || d.status == "LocalOptimal" || d.status == "OPTIMAL" || d.status == "LOCALLY_SOLVED";
     });
 }
 
@@ -379,8 +399,13 @@ function render(data,maxTime,max_perc,first_render=true) {
         .attr("class", "yName")
         .attr("text-anchor", "middle")  
         .attr("font-family", "sans-serif")
-        .attr("transform", "translate(15,"+(height/2-margin_top)+") rotate(-90)")
-        .text("Solved locally (n="+legend_nof_instances+")");
+        .attr("transform", "translate(15,"+(height/2-margin_top)+") rotate(-90)");
+    
+    if (all) {
+        yName.text("Solved locally/globally (n="+legend_nof_instances+")");
+    } else {
+        yName.text("Solved locally (n="+legend_nof_instances+")");
+    }
     
 
     let xName = xAxisName.append("text")
@@ -497,7 +522,6 @@ function getandrenderdata(i,files,data) {
                     }
                 });
                 minlib_data = arr2Obj(minlib_data,"instance")
-                console.log(minlib_data);
                 data,max_perc = data2line(minlib_data, data,maxTime, optimalFilter, {perc:1.0, max_time: 3650});
                 render(data,maxTime,max_perc);
             });

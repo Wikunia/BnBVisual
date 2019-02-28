@@ -69,14 +69,6 @@ function getFill(d) {
   return "#fff";
 }
 
-function state_is_optimal(state) {
-  return state == "LOCALLY_SOLVED" || state == "Optimal" || state == "OPTIMAL"
-}
-
-function state_is_infeasible(state) {
-  return state == "LOCALLY_INFEASIBLE" || state == "Infeasible" || state == "INFEASIBLE"
-}
-
 var nodesWithChildren = 1; // for root
 function sumNodesWithChildren(d) {
   if (d.data.state == "Done") {
