@@ -29,7 +29,8 @@ var devel_solvers = ["juniper_devel", "juniper_fp-best","juniper_mu-0.5","junipe
 "juniper_rerun-strong", "juniper-rerun-strong-200","juniper_candidates","juniper_candidates_asc","juniper_evenly",
 "juniper_reliable_new","juniper_presolve_tighten","juniper_p-3","juniper_strong_parallel","juniper_gain_mu","juniper_020",
 "juniper_diverse_strong","juniper_ref_inf_gain", "juniper_v0.2.2", "juniper_v0.2.2_mu_init", "juniper_v0.2.2_debug", "juniper_v0.2.2_inf_gains",
-"juniper_v0.2.4_presolve","juniper_v0.2.4_presolve_ma27","juniper_v0.2.4_presolve_v2","juniper_v0.2.4_lin_BFS"];                    
+"juniper_v0.2.4_presolve","juniper_v0.2.4_presolve_ma27","juniper_v0.2.4_presolve_v2","juniper_v0.2.5","juniper_v0.2.5_bugfix_116", "juniper_v0.2.4_moi",
+ "juniper_v0.2.4_moi_03-05"];                    
 
 var gsolvers = {
     minlp2: minlp2_solvers,
@@ -206,6 +207,7 @@ function getandrenderdata(i,group,files,data) {
         if (i == files.length-1) {
             data = fillNotDefined(data);
             data = algArray(data);
+            console.log("data: ", data)
             for (let di = 0; di < data.length; di++) {
                 data[di].data.sort(sortInst);
             }
@@ -233,12 +235,14 @@ function getDifferences(data) {
     // check for instances which one solves and one doesn't
     let counter_1 = 0;
     let counter_2 = 0;
+    console.log("differences: ")
     for (let i = 0; i < data[0].data.length; i++) {
-        if (data[0].data[i].status != data[1].data[i].status) {
-            if (data[0].data[i].status == "Optimal") {
+        console.log(data[0].data[i].status," != ",data[1].data[i].status)
+        if (!state_is_optimal(data[0].data[i].status) || !state_is_optimal(data[1].data[i].status)) {
+            if (state_is_optimal(data[0].data[i].status)) {
                 more[0].push(data[0].data[i].inst);
                 counter_1 += 1;
-            } else if (data[1].data[i].status == "Optimal") {
+            } else if (state_is_optimal(data[1].data[i].status)) {
                 more[1].push(data[0].data[i].inst);
                 counter_2 += 1;
             }
@@ -251,7 +255,7 @@ function getDifferences(data) {
     counter_1 = 0;
     counter_2 = 0;
     for (let i = 0; i < data[0].data.length; i++) {
-        if (data[0].data[i].status == "Optimal" && data[1].data[i].status == "Optimal") {
+        if (state_is_optimal(data[0].data[i].status) && state_is_optimal(data[1].data[i].status)) {
             if (data[0].data[i].time+10 < data[1].data[i].time) {
                 faster[0].push(data[0].data[i].inst);
                 counter_1 += 1;

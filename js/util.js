@@ -128,7 +128,7 @@ function mapSecond(data) {
     })
 }
 
-function algArray(data) {
+function algArray(data, computeGap=true) {
     let algObj = {};
     for (let alg in data) {
         if (!(alg in algObj)) {
@@ -136,11 +136,16 @@ function algArray(data) {
         }
         for (let o of data[alg]) {
             let inst = o.instance;
-            if (alg == "minlib_extra") {
-                gap = 0;
+            if (computeGap) {
+                if (alg == "minlib_extra") {
+                    gap = 0;
+                } else {
+                    gap = NaN;
+                }
             } else {
-                gap = NaN;
+                gap = o.gap;
             }
+            
             algObj[alg].push({alg: alg, inst: inst, time:o.time,status:o.status,
                 objVal: o.objVal, best_bound: o.best_bound, gap: gap,
                 nodes: o.nodes, constraints: o.constraints, sense: o.sense,
@@ -163,10 +168,22 @@ function arr2Obj(data, key) {
     return obj;
 }
 
-function obj2Arr(data) {
+function obj2Arr(data, keyOrder=false, exclude=false) {
     var result = [];
-    for (let d of Object.keys(data)) {
-        result.push(data[d]);
+    if (keyOrder === false) {
+        keyOrder = Object.keys(data);
+    }
+
+    if (exclude === false) {
+        for (let d of keyOrder) {
+            result.push(data[d]);
+        }
+    } else {
+        for (let d of keyOrder) {
+            if (exclude.indexOf(d) == -1) {
+                result.push(data[d]);
+            }
+        }
     }
     return result;
 }
@@ -218,8 +235,12 @@ function getRealStatus(d, solver, fixTime=false) {
 
 function state_is_optimal(state) {
     return state == "LOCALLY_SOLVED" || state == "Optimal" || state == "OPTIMAL"
-  }
-  
-  function state_is_infeasible(state) {
+}
+
+function state_is_infeasible(state) {
     return state == "LOCALLY_INFEASIBLE" || state == "Infeasible" || state == "INFEASIBLE"
-  }
+}
+
+function state_is_time_limit(state) {
+    return state == "TIME_LIMIT" || state == "UserLimit"
+}

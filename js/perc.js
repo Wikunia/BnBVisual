@@ -67,7 +67,7 @@ if (getQueryVariable("ots") == "true") {
     if (compact) {
         files = ["juniper", "bonmin-nlw","minotaur-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
     } else {      
-        files = ["juniper", "bonmin-nlw","minotaur-nlw","knitro-nlw"];
+        files = ["juniper", "juniper_moi", "bonmin-nlw","minotaur-nlw","knitro-nlw"];
     }
     if (parallel) {
         files = ["juniper", "juniper-p02","juniper-p04","juniper-p08","juniper-p16"];
@@ -79,7 +79,7 @@ if (getQueryVariable("ots") == "true") {
     if (devel) {
         set_100_perc = false;
         legend_nof_instances = 167
-        files = ["devel/juniper_v0.2.2", "devel/juniper_v0.2.4_lin_BFS","devel/juniper_v0.2.4_moi"];
+        files = ["devel/juniper_v0.2.2", "devel/juniper_v0.2.5","devel/juniper_v0.2.4_moi", "devel/juniper_v0.2.4_moi_03-05"];
     }
     if (conference) {
         set_100_perc = false;
