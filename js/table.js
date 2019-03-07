@@ -79,14 +79,19 @@ $.fn.dataTable.ext.search.push(
             if (objChange.indexOf('-') < 0 && wantObjChange == "better") return false;
             if (objChange.indexOf('+') < 0 && wantObjChange == "worse") return false;
         }
-        if (objChange == "-0" && wantObjChange != "all") return false;
-        if (objChange == "+0" && wantObjChange != "all") return false;
+        if (objChange == "-0" && wantObjChange != "all" && wantObjChange != "identical") return false;
+        if (objChange == "+0" && wantObjChange != "all" && wantObjChange != "identical") return false;
+        if (wantObjChange == "identical") {
+            console.log(objChange);
+            if (objChange != "-0" && objChange != "+0") return false;
+        }
+
 
     
         if (timeChange.indexOf('-') < 0 && wantTimeChange == "better") return false;
         if (timeChange.indexOf('+') < 0 && wantTimeChange == "worse") return false;
-        if (Math.abs(parseFloat(timeChange.slice(1))) <= 30.0 && wantTimeChange != "all") return false;
-
+        if (Math.abs(parseFloat(timeChange.slice(1))) <= 30.0 && wantTimeChange != "all" && wantTimeChange != "similar") return false;
+        if (Math.abs(parseFloat(timeChange.slice(1))) > 30.0 && wantTimeChange == "similar") return false;
 
         return true;
     }
@@ -191,7 +196,7 @@ function combineData(data1, data2) {
 
         let new_data_obj = first;
         // objective value change
-        if ((new_data_obj.sense == "Min" || new_data_obj.sense == "MIN_SENSE") && state_is_optimal(new_data_obj.status) && state_is_optimal(second.status)) {
+        if ((new_data_obj.sense == "Min" || new_data_obj.sense == "MIN_SENSE") && !isNaN(new_data_obj.objVal) && !isNaN(second.objVal)) {
             let diff = precise(Math.abs(second.objVal-new_data_obj.objVal),2);
             if (new_data_obj.objVal <= second.objVal) {
                 new_data_obj.objValChange = "<span style='color:green'>-"+diff+"</span>";
@@ -199,7 +204,7 @@ function combineData(data1, data2) {
                 new_data_obj.objValChange = "<span style='color:red'>+"+diff+"</span>";
             }
         }
-        if ((new_data_obj.sense == "Max" || new_data_obj.sense == "MAX_SENSE") && state_is_optimal(new_data_obj.status) && state_is_optimal(second.status)) {
+        if ((new_data_obj.sense == "Max" || new_data_obj.sense == "MAX_SENSE") && !isNaN(new_data_obj.objVal) && !isNaN(second.objVal)) {
             let diff = precise(Math.abs(second.objVal-new_data_obj.objVal),2);
             if (new_data_obj.objVal >= second.objVal) {
                 new_data_obj.objValChange = "<span style='color:green'>+"+diff+"</span>";
