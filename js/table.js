@@ -235,7 +235,7 @@ function combineData(data1, data2) {
         if (state_is_optimal(new_data_obj.status) && state_is_optimal(second.status)) {
         } else if (state_is_optimal(new_data_obj.status)) {
             new_data_obj.status = "<span style='color:green'>"+new_data_obj.status+"</span>";
-        } else if (state_is_optimal(new_data_obj.status)) {
+        } else if (state_is_optimal(second.status)) {
             new_data_obj.status = "<span style='color:red'>"+new_data_obj.status+"</span>";
         }
 
