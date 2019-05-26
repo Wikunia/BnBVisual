@@ -30,7 +30,7 @@ var devel_solvers = ["juniper_devel", "juniper_fp-best","juniper_mu-0.5","junipe
 "juniper_reliable_new","juniper_presolve_tighten","juniper_p-3","juniper_strong_parallel","juniper_gain_mu","juniper_020",
 "juniper_diverse_strong","juniper_ref_inf_gain", "juniper_v0.2.2", "juniper_v0.2.2_mu_init", "juniper_v0.2.2_debug", "juniper_v0.2.2_inf_gains",
 "juniper_v0.2.4_presolve","juniper_v0.2.4_presolve_ma27","juniper_v0.2.4_presolve_v2","juniper_v0.2.5","juniper_v0.2.5_bugfix_116", "juniper_v0.2.4_moi",
- "juniper_v0.2.4_moi_03-05"];                    
+ "juniper_v0.2.4_moi_03-05", "juniper_v0.4.1_feature-strong-time-limit", "juniper_v0.4.1_master"];                    
 
 var gsolvers = {
     minlp2: minlp2_solvers,
@@ -161,8 +161,11 @@ function precise(x, precision=4) {
 function getData(file, path, headers, cb) {
     d3.text(path, function(error, data) {
         data = d3.csvParse(headers +"\n"+ data,d=>{
+            let instance = d.instance.substr(0,d.instance.length-3).trim(); // get rid of .jl
+            let instance_link = '<a href="http://www.minlplib.org/'+instance+'.html" target="_blank">'+instance+'</a>';
+
             return {
-                instance: d.instance.substr(0,d.instance.length-3).trim(), // get rid of .jl
+                instance: instance_link,
                 nodes: +d.nodes,
                 bin_vars: +d.bin_vars,
                 int_vars: +d.int_vars,
@@ -273,7 +276,6 @@ function getandrenderdata(group,files,data) {
             d3.select("#specific_run_table").html(null);
         }
         
-        console.log("data[0]: ", data[0])
         var container = d3.select("#specific_run_table")
             .append("thead")
             .selectAll("tr")

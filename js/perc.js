@@ -11,7 +11,7 @@ var devel = qdevel ? true : false;
 var conference = qconference ? true : false;
 var all = qall ? true : false;
 
-var width = 1200,
+var width = 1300,
 height = 550,
 legend_nof_instances = 298;
 var set_100_perc = true;
@@ -79,7 +79,8 @@ if (getQueryVariable("ots") == "true") {
     if (devel) {
         set_100_perc = false;
         legend_nof_instances = 167
-        files = ["devel/juniper_v0.2.2", "devel/juniper_v0.2.5","devel/juniper_v0.2.4_moi", "devel/juniper_v0.2.4_moi_03-05"];
+        files = ["devel/juniper_v0.2.5",
+        "devel/juniper_v0.4.1_feature-strong-time-limit", "devel/juniper_v0.4.1_master", "devel/juniper_v0.2.4_moi"];
     }
     if (conference) {
         set_100_perc = false;
@@ -94,7 +95,7 @@ if (getQueryVariable("ots") == "true") {
     }
 }
 
-var legend_w = 300;
+var legend_w = 400;
 
 // Set svg width & height
 var svg = d3.select('#chart').append('svg')
