@@ -80,7 +80,9 @@ if (getQueryVariable("ots") == "true") {
         set_100_perc = false;
         legend_nof_instances = 167
         files = ["devel/juniper_v0.2.5",
-        "devel/juniper_v0.4.1_feature-strong-time-limit", "devel/juniper_v0.4.1_master", "devel/juniper_v0.2.4_moi"];
+        "devel/juniper_v0.4.1_feature-strong-time-limit", "devel/juniper_v0.4.1_master", "devel/juniper_v0.2.4_moi", 
+        "devel/juniper_v0.4.1_feature-parallel-strong", "devel/juniper_v0.4.1_feature-parallel-strong-p3", "devel/juniper_p-3", "devel/juniper_v0.4.2_feature-node-parallel-p2"];
+        files = ["devel/juniper_v0.4.1_master", "devel/juniper_v0.4.1_feature-parallel-strong-p3", "devel/juniper_v0.4.2_feature-node-parallel-p2"];
     }
     if (conference) {
         set_100_perc = false;

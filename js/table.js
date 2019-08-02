@@ -30,7 +30,8 @@ var devel_solvers = ["juniper_devel", "juniper_fp-best","juniper_mu-0.5","junipe
 "juniper_reliable_new","juniper_presolve_tighten","juniper_p-3","juniper_strong_parallel","juniper_gain_mu","juniper_020",
 "juniper_diverse_strong","juniper_ref_inf_gain", "juniper_v0.2.2", "juniper_v0.2.2_mu_init", "juniper_v0.2.2_debug", "juniper_v0.2.2_inf_gains",
 "juniper_v0.2.4_presolve","juniper_v0.2.4_presolve_ma27","juniper_v0.2.4_presolve_v2","juniper_v0.2.5","juniper_v0.2.5_bugfix_116", "juniper_v0.2.4_moi",
- "juniper_v0.2.4_moi_03-05", "juniper_v0.4.1_feature-strong-time-limit", "juniper_v0.4.1_master"];                    
+ "juniper_v0.2.4_moi_03-05", "juniper_v0.4.1_feature-strong-time-limit", "juniper_v0.4.1_master", "juniper_v0.4.1_feature-parallel-strong", 
+ "juniper_v0.4.1_feature-parallel-strong-p3", "juniper_v0.4.2_feature-node-parallel-p2"];                    
 
 var gsolvers = {
     minlp2: minlp2_solvers,
@@ -162,7 +163,8 @@ function getData(file, path, headers, cb) {
     d3.text(path, function(error, data) {
         data = d3.csvParse(headers +"\n"+ data,d=>{
             let instance = d.instance.substr(0,d.instance.length-3).trim(); // get rid of .jl
-            let instance_link = '<a href="http://www.minlplib.org/'+instance+'.html" target="_blank">'+instance+'</a>';
+            let minlp_instance = instance.toLowerCase();
+            let instance_link = '<a href="http://www.minlplib.org/'+minlp_instance+'.html" target="_blank">'+instance+'</a>';
 
             return {
                 instance: instance_link,
