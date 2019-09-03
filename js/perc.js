@@ -15,6 +15,7 @@ var width = 1300,
 height = 550,
 legend_nof_instances = 298;
 var set_100_perc = true;
+var data_folder = "minlp2";
 
 var max_time = 3600;
 var fixTime = true; // everything above max_time will set to UserLimit
@@ -30,8 +31,13 @@ var solver_dict = [
         version: "11.1"
     },
     {
+        key: "juniper_025",
         name: "juniper",
         version: "0.2.5"
+    },
+    {
+        name: "juniper",
+        version: "0.4.2"
     }
 ]
 
@@ -63,11 +69,10 @@ if (getQueryVariable("ots") == "true") {
     headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
     "sense","objVal","best_bound","status","time"].join(",");
 
+    files = ["juniper", "juniper-p04","juniper-p08", "juniper_042", "juniper_042-p04","juniper_042-p08"];
 
     if (compact) {
         files = ["juniper", "bonmin-nlw","minotaur-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
-    } else {      
-        files = ["juniper", "juniper_moi", "bonmin-nlw","minotaur-nlw","knitro-nlw"];
     }
     if (parallel) {
         files = ["juniper", "juniper-p02","juniper-p04","juniper-p08","juniper-p16"];
@@ -78,7 +83,8 @@ if (getQueryVariable("ots") == "true") {
     }
     if (devel) {
         set_100_perc = false;
-        legend_nof_instances = 167
+        legend_nof_instances = 167;
+        
         files = ["devel/juniper_v0.2.5",
         "devel/juniper_v0.4.1_feature-strong-time-limit", "devel/juniper_v0.4.1_master", "devel/juniper_v0.2.4_moi", 
         "devel/juniper_v0.4.1_feature-parallel-strong", "devel/juniper_v0.4.1_feature-parallel-strong-p3", "devel/juniper_p-3", "devel/juniper_v0.4.2_feature-node-parallel-p2"];
@@ -212,6 +218,11 @@ function createLegend(data,maxTime,max_perc) {
         })
         .text(d=>{
             let t = d.alg;
+            let meta = d.meta;
+            if ("display" in meta) {
+                return meta.display;
+            }
+
             t = t.replace("ots-","")
             let split = t.split("/")
             if (split.length > 1) {
@@ -220,7 +231,13 @@ function createLegend(data,maxTime,max_perc) {
             t = t.replace("juniper-ipopt", "jp-ipopt");
             t = t.replace("juniper-knitro", "jp-knitro");
             for (let solver of solver_dict) {
-                t = t.replace(RegExp("^"+solver.name+"$"), solver.name+" v."+solver.version);
+                if ("key" in solver) {
+                    t = t.replace(RegExp("^"+solver.key+"$"), solver.name+" v."+solver.version);
+                    t = t.replace(RegExp("^"+solver.key+"-([0-9a-z]*)$"), solver.name+"-$1 v."+solver.version);
+                } else {
+                    t = t.replace(RegExp("^"+solver.name+"$"), solver.name+" v."+solver.version);  
+                    t = t.replace(RegExp("^"+solver.name+"-([0-9a-z]*)$"), solver.name+"-$1 v."+solver.version);                  
+                }
             }
 
             return t;
@@ -244,7 +261,7 @@ numberSort = function (a,b) {
 
 function optimalFilter(minlib_data, data, params) {
     return data.filter(d => {
-        return d.status == "Optimal" || d.status == "LocalOptimal" || d.status == "OPTIMAL" || d.status == "LOCALLY_SOLVED";
+        return state_is_optimal(d.status);
     });
 }
 
@@ -427,12 +444,10 @@ var lineFunc = d3.line()
              .y(function(d) { return scaleY(d.y); })
              .curve(d3.curveStepAfter);
 
-getandrenderdata(0,files,{});
+getandrenderdata(0,files,{},{});
 
 function getdata(section,cb) {
-    // First I get the file or URL data like text
     d3.text("data/"+section+"_data.csv", function(error, data) {
-        // Then I add the header and parse to csv
         data = d3.csvParse(headers +"\n"+ data,d=>{
             if (d.stdout.length == 0) {
                 return;
@@ -467,15 +482,22 @@ function getdata(section,cb) {
         if (!ots) {
             data = filterNoDisc(data);
         }
-        cb(data);   
+        if (fileExists("data/meta/"+data_folder+"/"+section+".json")) {
+            d3.json("data/meta/"+data_folder+"/"+section+".json", function(error, meta) {
+                cb(data, meta);   
+            });
+        } else {
+            cb(data,{});
+        }
+        
     });
 }
 
 var bestJuniperFirst = true;
 var bestJuniperObj;
-function getandrenderdata(i,files,data) {
+function getandrenderdata(i,files,data, metas) {
     let file = files[i];
-    getdata(file,function(d) {
+    getdata(file,function(d, meta) {
         // d = filterInstances(d);
         let parts = file.split("/")
         let solver = parts.length > 1 ? parts[1] : parts[0];
@@ -489,13 +511,14 @@ function getandrenderdata(i,files,data) {
         }
 
         data[file] = d;
+        metas[file] = meta;
         if (i == files.length-1) {
             if (best_juniper) {
                 files.push("juniper-combined");
                 data["juniper-combined"] = obj2Arr(bestJuniperObj);
             }
             data = fillNotDefined(data);
-            data = algArray(data);
+            data = algArray(data, metas);
             nof_instances = data[0].data.length;
             if (set_100_perc) {
                 nof_instances = legend_nof_instances;
@@ -529,7 +552,7 @@ function getandrenderdata(i,files,data) {
                 render(data,maxTime,max_perc);
             });
         }else {
-          getandrenderdata(i+1,files,data)
+          getandrenderdata(i+1,files,data, metas)
         }
     }); 
 }

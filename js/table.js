@@ -17,7 +17,7 @@ var instances_group = "More";
 var dataArr;
 var firstUse = true;
 
-var minlp2_solvers = ["juniper_moi","juniper","juniper_v0.2.4", "bonmin-nlw","minotaur-nlw",
+var minlp2_solvers = ["juniper","juniper_025","juniper_v0.2.4", "bonmin-nlw","minotaur-nlw",
 "knitro-nlw","couenne-nlw","scip-nlw","juniper-bs-nsr","juniper-bs-r","juniper-fp-grb",
 "juniper-p02","juniper-p04","juniper-p08","juniper-p16","juniper-ts-dbfs",
 "juniper-ic","juniper-ipopt","juniper-ipopt-glpk","juniper-ipopt-grb","juniper-knitro-cbc","juniper-par-p02","juniper-par-p04"];

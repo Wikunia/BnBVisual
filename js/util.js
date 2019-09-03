@@ -128,7 +128,7 @@ function mapSecond(data) {
     })
 }
 
-function algArray(data, computeGap=true) {
+function algArray(data, metas, computeGap=true) {
     let algObj = {};
     for (let alg in data) {
         if (!(alg in algObj)) {
@@ -155,7 +155,7 @@ function algArray(data, computeGap=true) {
     }   
     let algArr = [];
     for (let alg in algObj) {
-        algArr.push({alg: alg, data:algObj[alg]})
+        algArr.push({alg: alg, data:algObj[alg], meta:metas[alg]})
     }
     return algArr;
 }
@@ -234,13 +234,20 @@ function getRealStatus(d, solver, fixTime=false) {
 }
 
 function state_is_optimal(state) {
-    return state == "LOCALLY_SOLVED" || state == "Optimal" || state == "OPTIMAL"
+    return state == "ALMOST_LOCALLY_SOLVED" || state == "LOCALLY_SOLVED" || state == "Optimal" || state == "OPTIMAL"
 }
 
 function state_is_infeasible(state) {
-    return state == "LOCALLY_INFEASIBLE" || state == "Infeasible" || state == "INFEASIBLE"
+    return state == "ALMOST_LOCALLY_INFEASIBLE" || state == "LOCALLY_INFEASIBLE" || state == "Infeasible" || state == "INFEASIBLE"
 }
 
 function state_is_time_limit(state) {
     return state == "TIME_LIMIT" || state == "UserLimit"
+}
+
+function fileExists(url) {
+    let http = new XMLHttpRequest();
+    http.open('HEAD', url, false);
+    http.send();
+    return http.status != 404;
 }
