@@ -1,1 +1,1 @@
-{"branch":"feature-parallel-strong","version":"0.4.2","settings":{"time_limit":3600.0,"nlp_solver":"Ipopt","mip_solver":"Cbc"},"hash":"61dd33eba9423534e6fab0799be90999457d06e8","date":"2019-09-03","display":" (feature-parallel-strong)","julia_version":"1.1.1"}
+{"branch":"master","version":"0.5.0","settings":{"time_limit":3600.0,"nlp_solver":"Ipopt","mip_solver":"Cbc"},"hash":"fd0c8b9b393696702eb2457f0e32355cfdc4ff90","date":"2019-09-08","display":"juniper v0.5.0","julia_version":"1.2.0"}
