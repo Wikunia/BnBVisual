@@ -1,0 +1,14 @@
+{
+    "branch": "feature-parallel-strong",
+    "version": "0.4.2",
+    "settings": {
+        "time_limit": 3600.0,
+        "nlp_solver": "Ipopt",
+        "mip_solver": "Cbc",
+        "processors": 8
+    },
+    "hash": "61dd33eba9423534e6fab0799be90999457d06e8",
+    "date": "2019-09-03",
+    "display": "juniper-p08 v0.4.2 (feature-parallel-strong)",
+    "julia_version": "1.1.1"
+}

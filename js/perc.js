@@ -69,7 +69,7 @@ if (getQueryVariable("ots") == "true") {
     headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
     "sense","objVal","best_bound","status","time"].join(",");
 
-    files = ["juniper", "juniper-p04","juniper-p08", "juniper_042", "juniper_042-p04","juniper_042-p08"];
+    files = ["juniper_042_parallel_strong", "juniper_042_parallel_strong-p04","juniper_042_parallel_strong-p08", "juniper_042", "juniper_042-p04","juniper_042-p08"];
 
     if (compact) {
         files = ["juniper", "bonmin-nlw","minotaur-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
@@ -479,10 +479,12 @@ function getdata(section,cb) {
                 }
             }
         }); 
+        
         if (!ots) {
             data = filterNoDisc(data);
         }
         if (fileExists("data/meta/"+data_folder+"/"+section+".json")) {
+            console.log("section: ", section);
             d3.json("data/meta/"+data_folder+"/"+section+".json", function(error, meta) {
                 cb(data, meta);   
             });
@@ -523,6 +525,7 @@ function getandrenderdata(i,files,data, metas) {
             if (set_100_perc) {
                 nof_instances = legend_nof_instances;
             }
+            console.log(data[0].data.length)
 
             d3.select("#title").text(d3.select("#title").text()+" ("+nof_instances+" Instances) ");
             let maxTime = 0;
