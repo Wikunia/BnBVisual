@@ -69,13 +69,13 @@ if (getQueryVariable("ots") == "true") {
     headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
     "sense","objVal","best_bound","status","time"].join(",");
 
-    files = ["juniper_042_parallel_strong", "juniper_042_parallel_strong-p04","juniper_042_parallel_strong-p08", "juniper_042", "juniper_042-p04","juniper_042-p08"];
+    files = ["juniper_050", "juniper_050-p08", "bonmin-nlw","minotaur-nlw","knitro-nlw"];
 
     if (compact) {
-        files = ["juniper", "bonmin-nlw","minotaur-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
+        files = ["juniper_050", "bonmin-nlw","minotaur-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
     }
     if (parallel) {
-        files = ["juniper", "juniper-p02","juniper-p04","juniper-p08","juniper-p16"];
+        files = ["juniper_050", "juniper_050-p04","juniper_050-p08"];
     }
     if (configs) {
         files = ["juniper-ipopt","juniper-ipopt-grb","juniper-ipopt-glpk","juniper-ipopt-cbc",
@@ -96,10 +96,7 @@ if (getQueryVariable("ots") == "true") {
     }
     if (all) {
         best_juniper = false;
-        files = ["juniper","juniper-bs-nsr","juniper-bs-r","juniper-ipopt-grb",
-            "juniper-ipopt-cbc","juniper-ipopt-glpk","juniper-ipopt","juniper-ic","juniper-p02",
-             "juniper-p04","juniper-p08","juniper-p16","juniper-ts-dbfs",
-              "bonmin-nlw","knitro-nlw","minotaur-nlw","couenne-nlw","scip-nlw"];
+        files = ["juniper_050", "juniper_050-p04","juniper_050-p08", "bonmin-nlw","minotaur-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
     }
 }
 

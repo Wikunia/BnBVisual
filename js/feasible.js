@@ -3,9 +3,8 @@ height = 600,
 centered;
 var max_time = 3600;
 
-var files = ["minlib_extra","couenne-nlw","scip-nlw","bonmin-nlw","knitro-nlw","juniper",
-"juniper-bs-nsr","juniper-bs-r","juniper-ipopt-grb","juniper-ic","juniper-p02",
-"juniper-p04","juniper-p08","juniper-p16","juniper-ts-dbfs"];
+var files = ["minlib_extra","couenne-nlw","scip-nlw","bonmin-nlw","knitro-nlw","juniper_050",
+"juniper_050-p04","juniper_050-p08"];
 
 var legend_w = 100;
 
@@ -233,7 +232,7 @@ function getandrenderdata(i,files,data) {
         data[file] = d;
         if (i == files.length-1) {
             data = fillNotDefined(data);
-            data = algArray(data);
+            data = algArray(data,{});
             for (let di = 0; di < data.length; di++) {
                 data[di].data.sort(sortInst);
             }

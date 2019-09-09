@@ -50,11 +50,15 @@ function getRadius(d) {
 function getColor(status) {
     let statusColor = {
         "UserLimit": d3.rgb(31, 119, 180),
+        "TIME_LIMIT": d3.rgb(31, 119, 180),
         "Optimal": d3.rgb(44, 160, 44),
+        "LOCALLY_SOLVED": d3.rgb(44, 160, 44),
         "LocalOptimal": d3.rgb(44, 160, 44),
         "Infeasible": d3.rgb(214, 39, 40),
         "LocalInfeasible": d3.rgb(214, 39, 40),
+        "LOCALLY_INFEASIBLE": d3.rgb(214, 39, 40),
         "Unbounded": d3.rgb(100,100,100),
+        "ITERATION_LIMIT": d3.rgb(200,100,100),
         "Error": "black"
     };
     return statusColor[status];
