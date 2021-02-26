@@ -1,0 +1,14 @@
+{
+    "branch": "master",
+    "version": "0.6.5",
+    "settings": {
+        "time_limit": 3600.0,
+        "nlp_solver": "Ipopt",
+        "mip_solver": "Cbc",
+        "processors": 4
+    },
+    "hash": "2f18663f91ed12084986d2d2195403fe7cd4fc13",
+    "date": "2021-02-20",
+    "display": "juniper v0.6.5 P4",
+    "julia_version": "1.5.3"
+}

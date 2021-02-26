@@ -69,7 +69,7 @@ if (getQueryVariable("ots") == "true") {
     headers = ["stdout","instance","nodes","bin_vars","int_vars","constraints",
     "sense","objVal","best_bound","status","time"].join(",");
 
-    files = ["juniper_050", "juniper_050-p08", "bonmin-nlw","minotaur-nlw","knitro-nlw"];
+    files = ["juniper_065", "juniper_070", "juniper_070-p04", "juniper_070-p08", "bonmin-nlw","minotaur-nlw","knitro-nlw"];
 
     if (compact) {
         files = ["juniper_050", "bonmin-nlw","minotaur-nlw","knitro-nlw","couenne-nlw","scip-nlw"];
@@ -84,11 +84,12 @@ if (getQueryVariable("ots") == "true") {
     if (devel) {
         set_100_perc = false;
         legend_nof_instances = 167;
+        data_folder = "devel";
         
         files = ["devel/juniper_v0.2.5",
         "devel/juniper_v0.4.1_feature-strong-time-limit", "devel/juniper_v0.4.1_master", "devel/juniper_v0.2.4_moi", 
         "devel/juniper_v0.4.1_feature-parallel-strong", "devel/juniper_v0.4.1_feature-parallel-strong-p3", "devel/juniper_p-3", "devel/juniper_v0.4.2_feature-node-parallel-p2"];
-        files = ["devel/juniper_v0.4.1_master", "devel/juniper_v0.4.1_feature-parallel-strong-p3", "devel/juniper_v0.4.2_feature-node-parallel-p2"];
+        files = ["devel/juniper_v0.6.2_master-p1", "devel/juniper_v0.5.3_master-p1", "devel/juniper_v0.4.1_master"];
     }
     if (conference) {
         set_100_perc = false;
@@ -480,9 +481,21 @@ function getdata(section,cb) {
         if (!ots) {
             data = filterNoDisc(data);
         }
-        if (fileExists("data/meta/"+data_folder+"/"+section+".json")) {
-            console.log("section: ", section);
-            d3.json("data/meta/"+data_folder+"/"+section+".json", function(error, meta) {
+        let section_short = section;
+        let parts = section.split("/")
+        section_short = parts[parts.length-1];
+
+        if (!(fileExists("data/meta/"+data_folder+"/"+section_short+".json"))) {
+            let parts = section_short.split("_",3)
+            console.log(parts);
+            let version = parts[1];
+            let version_short = version.replace(/\./g, "").substr(1);
+            section_short = parts[0]+"_"+version_short+"_"+parts[2];
+            console.log("try: ", section_short)
+        }
+        if (fileExists("data/meta/"+data_folder+"/"+section_short+".json")) {
+            console.log("section: ", section_short);
+            d3.json("data/meta/"+data_folder+"/"+section_short+".json", function(error, meta) {
                 cb(data, meta);   
             });
         } else {

@@ -17,11 +17,12 @@ var instances_group = "More";
 var dataArr;
 var firstUse = true;
 
-var minlp2_solvers = ["juniper_050","juniper_050-p04","juniper_050_p-08","juniper_042_parallel_strong","juniper_042_parallel_strong-p04","juniper_042_parallel_strong-p08",
+var minlp2_solvers = ["juniper_070", "juniper_070-p04", "juniper_070-p08", "juniper_065", "juniper_065-p04", "juniper_065-p08", "juniper_050","juniper_050-p04","juniper_050_p-08","juniper_042_parallel_strong","juniper_042_parallel_strong-p04","juniper_042_parallel_strong-p08",
 "juniper_042","juniper_042-p04","juniper_042_p-08", "juniper_025","juniper_v0.2.4", "bonmin-nlw","minotaur-nlw",
 "knitro-nlw","couenne-nlw","scip-nlw","juniper-bs-nsr","juniper-bs-r","juniper-fp-grb",
 "juniper-p02","juniper-p04","juniper-p08","juniper-p16","juniper-ts-dbfs",
-"juniper-ic","juniper-ipopt","juniper-ipopt-glpk","juniper-ipopt-grb","juniper-knitro-cbc","juniper-par-p02","juniper-par-p04"];
+"juniper-ic","juniper-ipopt","juniper-ipopt-glpk","juniper-ipopt-grb","juniper-knitro-cbc","juniper-par-p02","juniper-par-p04",
+];
 
 var ibm_solvers =  ["juniper","bonmin-nlw","minotaur-bnb-ipopt","minotaur-bnb-nlw","minotaur-msbnb-nlw",
 "couenne-nlw","scip-nlw"];
@@ -32,7 +33,7 @@ var devel_solvers = ["juniper_devel", "juniper_fp-best","juniper_mu-0.5","junipe
 "juniper_diverse_strong","juniper_ref_inf_gain", "juniper_v0.2.2", "juniper_v0.2.2_mu_init", "juniper_v0.2.2_debug", "juniper_v0.2.2_inf_gains",
 "juniper_v0.2.4_presolve","juniper_v0.2.4_presolve_ma27","juniper_v0.2.4_presolve_v2","juniper_v0.2.5","juniper_v0.2.5_bugfix_116", "juniper_v0.2.4_moi",
  "juniper_v0.2.4_moi_03-05", "juniper_v0.4.1_feature-strong-time-limit", "juniper_v0.4.1_master", "juniper_v0.4.1_feature-parallel-strong", 
- "juniper_v0.4.1_feature-parallel-strong-p3", "juniper_v0.4.2_feature-node-parallel-p2"];                    
+ "juniper_v0.4.1_feature-parallel-strong-p3", "juniper_v0.4.2_feature-node-parallel-p2", "juniper_v0.5.3_master-p1", "juniper_v0.6.2_master-p1"];                    
 
 var gsolvers = {
     minlp2: minlp2_solvers,

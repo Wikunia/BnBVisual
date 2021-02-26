@@ -1,0 +1,13 @@
+{
+    "branch": "feature-strong-time-limit",
+    "version": "0.5.0",
+    "settings": {
+        "time_limit": 3600.0,
+        "nlp_solver": "Ipopt",
+        "mip_solver": "Cbc"
+    },
+    "hash": "396639ffde0e2f76db0a7dc6984575f63b4e921e",
+    "date": "2019-09-16",
+    "display": "juniper v0.5.0 (feature-strong-time-limit)",
+    "julia_version": "1.2.0"
+}

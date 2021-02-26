@@ -3,8 +3,8 @@ height = 600,
 centered;
 var max_time = 3600;
 
-var files = ["minlib_extra","couenne-nlw","scip-nlw","bonmin-nlw","knitro-nlw","juniper_050",
-"juniper_050-p04","juniper_050-p08"];
+var files = ["minlib_extra","couenne-nlw","scip-nlw","bonmin-nlw","knitro-nlw","juniper_070",
+"juniper_070-p04","juniper_070-p08"];
 
 var legend_w = 100;
 

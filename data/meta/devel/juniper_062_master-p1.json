@@ -1,0 +1,20 @@
+{
+    "julia_version": {
+        "major": 1,
+        "minor": 4,
+        "patch": 0,
+        "prerelease": [],
+        "build": []
+    },
+    "display": "Juniper 0.6.2",
+    "branch": "master",
+    "settings": {
+        "processors": 1,
+        "mip_solver": "Cbc",
+        "nlp_solver": "Ipopt",
+        "time_limit": 3600.0
+    },
+    "hash": "d365aa13b267ae9f08ad069d3d866856b68d1e06",
+    "date": "2020-03-25",
+    "version": "0.6.2"
+}
